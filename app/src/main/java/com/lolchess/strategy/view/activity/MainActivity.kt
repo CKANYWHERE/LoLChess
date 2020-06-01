@@ -1,4 +1,4 @@
-package com.lolchess.strategy
+package com.lolchess.strategy.view.activity
 
 import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
@@ -10,11 +10,18 @@ import androidx.core.view.GravityCompat
 import kotlinx.android.synthetic.main.activity_main.*
 import java.lang.ClassCastException
 import androidx.fragment.app.Fragment
+import com.lolchess.strategy.R
+import com.lolchess.strategy.view.menu.AppHome
+import com.lolchess.strategy.view.menu.ChampionSynergy
+import com.lolchess.strategy.view.menu.Items
 
 class MainActivity : AppCompatActivity() {
 
     val drawerToogle by lazy {
-        ActionBarDrawerToggle(this, drawer_layout, toolbar, R.string.drawer_open, R.string.drawer_close)
+        ActionBarDrawerToggle(this, drawer_layout, toolbar,
+            R.string.drawer_open,
+            R.string.drawer_close
+        )
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,10 +50,10 @@ class MainActivity : AppCompatActivity() {
     private fun selectDrawerItem(item: MenuItem) {
         var fragment:Fragment? = null
         val fragmentClass = when(item.itemId) {
-            R.id.firstFragmentItem -> App_Home::class.java
+            R.id.firstFragmentItem -> AppHome::class.java
             R.id.secondFragmentItem -> ChampionSynergy::class.java
             R.id.thirdFragmentItem -> Items::class.java
-            else -> App_Home::class.java
+            else -> AppHome::class.java
         }
         try {
             fragment = fragmentClass.newInstance() as Fragment

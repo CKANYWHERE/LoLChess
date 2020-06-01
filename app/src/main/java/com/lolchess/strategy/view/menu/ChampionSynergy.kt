@@ -1,4 +1,4 @@
-package com.lolchess.strategy
+package com.lolchess.strategy.view.menu
 
 
 import android.os.Bundle
@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.lolchess.strategy.R
 
 class ChampionSynergy:Fragment(){
 
