@@ -5,7 +5,7 @@ data class Champ(val name : String //챔프 이름
                  , val skill : String // 챔프 스킬
                  , val skillDescription : String // 스킬설명
                  , val cost : Int // 챔프 코스트
-                 , val synergy : List<String> // 챔프 시너지
+                 , val synergy : List<Synergy> // 챔프 시너지
                  , val hp : List<Int> // 챔프 체력 1성, 2성 ,3성 순으로 리스트에 저장
                  , val attack : List<Int> // 챔프 공격력 1성, 2성, 3성 순으로 리스트에 저장
                  , val attackSpeed : Double // 공격속도
