@@ -10,9 +10,7 @@ import com.lolchess.strategy.R
 
 class ChampionSynergy:Fragment(){
 
-    companion object {
-        fun newInstance() = ChampionSynergy()
-    }
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.fragment_second_image, container, false)
     }
