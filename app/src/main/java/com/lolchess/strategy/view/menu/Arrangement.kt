@@ -7,13 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import com.lolchess.strategy.R
 
-class Items:Fragment(){
+class Arrangement:Fragment(){
 
     companion object {
-        fun newInstance() = Items()
+        fun newInstance() = Arrangement()
     }
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.items_fragment, container, false)
+        return inflater.inflate(R.layout.arrangement_fragment, container, false)
     }
 
 }

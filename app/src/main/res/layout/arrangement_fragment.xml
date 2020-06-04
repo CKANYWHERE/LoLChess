@@ -5,10 +5,11 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/secondFragmentImageView"
+        android:text="@string/fourth_image"
+        android:id="@+id/fourthFragment"
+        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="@string/second_image" />
+        />
 
 </FrameLayout>

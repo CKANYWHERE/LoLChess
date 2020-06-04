@@ -11,9 +11,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import java.lang.ClassCastException
 import androidx.fragment.app.Fragment
 import com.lolchess.strategy.R
-import com.lolchess.strategy.view.menu.AppHome
-import com.lolchess.strategy.view.menu.ChampionSynergy
-import com.lolchess.strategy.view.menu.Items
+import com.lolchess.strategy.view.menu.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -34,8 +32,8 @@ class MainActivity : AppCompatActivity() {
             true
         }
         drawer_layout.addDrawerListener(drawerToogle)
-
     }
+
 
     override fun onPostCreate(savedInstanceState: Bundle?) {
         super.onPostCreate(savedInstanceState)
@@ -53,6 +51,7 @@ class MainActivity : AppCompatActivity() {
             R.id.firstFragmentItem -> AppHome::class.java
             R.id.secondFragmentItem -> ChampionSynergy::class.java
             R.id.thirdFragmentItem -> Items::class.java
+            R.id.fourthFragmentItem -> Arrangement::class.java
             else -> AppHome::class.java
         }
         try {
@@ -78,4 +77,6 @@ class MainActivity : AppCompatActivity() {
         fragmentTransaction.replace(R.id.fragmentContainer, fragment!!)
         fragmentTransaction.commit()
     }
+
+
 }
