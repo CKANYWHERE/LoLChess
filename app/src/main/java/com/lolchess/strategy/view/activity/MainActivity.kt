@@ -15,7 +15,7 @@ import com.lolchess.strategy.view.menu.*
 
 class MainActivity : AppCompatActivity() {
 
-    val drawerToogle by lazy {
+    private val drawerToggle by lazy {
         ActionBarDrawerToggle(this, drawer_layout, toolbar,
             R.string.drawer_open,
             R.string.drawer_close
@@ -31,25 +31,25 @@ class MainActivity : AppCompatActivity() {
             selectDrawerItem(it)
             true
         }
-        drawer_layout.addDrawerListener(drawerToogle)
+        drawer_layout.addDrawerListener(drawerToggle)
     }
 
 
     override fun onPostCreate(savedInstanceState: Bundle?) {
         super.onPostCreate(savedInstanceState)
-        drawerToogle.syncState()
+        drawerToggle.syncState()
     }
 
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
-        drawerToogle.onConfigurationChanged(newConfig)
+        drawerToggle.onConfigurationChanged(newConfig)
     }
 
     private fun selectDrawerItem(item: MenuItem) {
         var fragment:Fragment? = null
         val fragmentClass = when(item.itemId) {
             R.id.firstFragmentItem -> AppHome::class.java
-            R.id.secondFragmentItem -> ChampionSynergy::class.java
+            R.id.secondFragmentItem -> Champion::class.java
             R.id.thirdFragmentItem -> Items::class.java
             R.id.fourthFragmentItem -> Arrangement::class.java
             else -> AppHome::class.java
@@ -64,13 +64,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return if (drawerToogle.onOptionsItemSelected(item)) true else super.onOptionsItemSelected(item)
+        return if (drawerToggle.onOptionsItemSelected(item)) true else super.onOptionsItemSelected(item)
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+    /*override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.fragment_menu, menu)
         return true
-    }
+    }*/
 
     private fun replaceFragment(fragment: Fragment?){
         val fragmentTransaction = supportFragmentManager.beginTransaction()
