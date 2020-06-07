@@ -26,12 +26,8 @@ class AppHome:Fragment(){
 
         val view = inflater.inflate(R.layout.fragment_first_image, container, false)
 
-        val champ =  ChampData().getGraves()
-        view.graves.setImageResource(champ?.imgPath)
-        view.graves.setOnClickListener {
-            val myToast = Toast.makeText(context,champ.toString(),Toast.LENGTH_SHORT)
-            myToast.show()
-        }
+
+
         return view
 
 

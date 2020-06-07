@@ -13,4 +13,4 @@ data class Champ(
     , val attackRange: Int // 공격범위
     , val shield: Int // 방어력
     , val magicShield: Int // 마법 저항력
-                )
+ )
