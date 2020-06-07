@@ -16,22 +16,17 @@ import android.widget.Toast
 import com.lolchess.strategy.R
 import com.lolchess.strategy.data.ChampData
 import com.lolchess.strategy.model.Champ
-import kotlinx.android.synthetic.main.fragment_first_image.*
-import kotlinx.android.synthetic.main.fragment_first_image.view.*
+import kotlinx.android.synthetic.main.home_fragment.view.*
 
 class AppHome:Fragment(){
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
 
-        val view = inflater.inflate(R.layout.fragment_first_image, container, false)
+        val view = inflater.inflate(R.layout.home_fragment, container, false)
 
 
 
         return view
-
-
-
     }
-
 }

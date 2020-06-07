@@ -17,4 +17,10 @@
         android:title="@string/third_image"
         android:icon = "@drawable/ic_image3"
         />
+
+    <item
+        android:id = "@+id/fourthFragmentItem"
+        android:title="@string/fourth_image"
+        android:icon = "@drawable/ic_image4"
+        />
 </menu>
