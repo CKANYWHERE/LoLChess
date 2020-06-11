@@ -335,7 +335,7 @@ class ChampData {
         val hp : List<Int> = listOf(850, 1350, 2430)
         val attack : List<Double> = listOf(60.0, 108.0, 194.4)
 
-        return Champ("",R.drawable.jayce, "하늘로!","마나: 0/80","제이스가 공중으로 도약해 망치를 내려찍으며 주변 적들에게 마법 피해를 입힙니다."
+        return Champ("제이스",R.drawable.jayce, "하늘로!","마나: 0/80","제이스가 공중으로 도약해 망치를 내려찍으며 주변 적들에게 마법 피해를 입힙니다."
                 ,"피해량 : 450 / 600 / 1200",3,synergy,hp,attack,0.7,1,40,20, R.drawable.jayce_skill,synergy.size)
 
     }
@@ -427,7 +427,7 @@ class ChampData {
         val hp : List<Int> = listOf(600, 1080, 1944)
         val attack : List<Double> = listOf(90.0, 162.0, 291.6)
 
-        return Champ("",R.drawable.jhin, "속삭임","마나: 없음","기본 지속 효과: 진은 추가 공격 속도 1%를 공격력 0.8로 전환합니다. 진의 4번째 총탄은 공격력의 비례한 만큼 피해를 입힙니다.",
+        return Champ("진",R.drawable.jhin, "속삭임","마나: 없음","기본 지속 효과: 진은 추가 공격 속도 1%를 공격력 0.8로 전환합니다. 진의 4번째 총탄은 공격력의 비례한 만큼 피해를 입힙니다.",
                 "공격력 : 244% / 344% / 4444%",4,synergy,hp,attack, 0.85,5,20,20, R.drawable.jhin_skill,synergy.size)
 
     }
