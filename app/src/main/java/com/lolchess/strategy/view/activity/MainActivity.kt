@@ -3,7 +3,6 @@ package com.lolchess.strategy.view.activity
 import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
@@ -48,11 +47,11 @@ class MainActivity : AppCompatActivity() {
     private fun selectDrawerItem(item: MenuItem) {
         var fragment:Fragment? = null
         val fragmentClass = when(item.itemId) {
-            R.id.firstFragmentItem -> AppHome::class.java
+            R.id.firstFragmentItem -> Simulator::class.java
             R.id.secondFragmentItem -> ChampionSynergy::class.java
             R.id.thirdFragmentItem -> Items::class.java
             R.id.fourthFragmentItem -> Arrangement::class.java
-            else -> AppHome::class.java
+            else -> Simulator::class.java
         }
         try {
             fragment = fragmentClass.newInstance() as Fragment

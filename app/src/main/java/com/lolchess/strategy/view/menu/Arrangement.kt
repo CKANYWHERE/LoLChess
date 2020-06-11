@@ -13,7 +13,7 @@ class Arrangement:Fragment(){
         fun newInstance() = Arrangement()
     }
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.champ_home_item, container, false)
+        return inflater.inflate(R.layout.arrangement_fragment, container, false)
     }
 
 }
