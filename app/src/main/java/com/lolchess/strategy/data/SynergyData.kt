@@ -20,14 +20,14 @@ class SynergyData {
 
     fun getDarkStar(): Synergy{
         val description : String = "아군 챔피언이 죽으면 모든 아군 암흑의 별 챔피언의 공격력 및 주문력이 증가합니다."
-        val option : List<String> = listOf("공격력 및 주문력 +12", " 공격력 및 주문력 +25", "공격력 및 주문력 +35", "공격력 및 주문력 +60")
+        val option : List<String> = listOf("공격력 및 주문력 +8", " 공격력 및 주문력 +16", "공격력 및 주문력 +24", "공격력 및 주문력 +32")
         val level: List<Int> = listOf(2, 4, 6, 8)
         return Synergy("암흑의 별", R.drawable.darkstar,description, option, level)
     }
 
     fun getProtector(): Synergy{
         val description : String = "수호자는 스킬을 사용할 때 마다 4초 동안 보호막을 얻습니다. 이 보호막은 중첩되지 않습니다."
-        val option : List<String> = listOf("최대 체력의 25%만큼 보호막", "최대 체력의 30%만큼 보호막", "최대 체력의 40%만큼 보호막")
+        val option : List<String> = listOf("최대 체력의 30%만큼 보호막", "최대 체력의 40%만큼 보호막", "최대 체력의 55%만큼 보호막")
         val level: List<Int> = listOf(2, 4, 6)
         return Synergy("수호자", R.drawable.protector,description, option, level)
     }
@@ -35,56 +35,56 @@ class SynergyData {
 
     fun getStarGuardian(): Synergy{
         val description : String = "별 수호자는 스킬 사용 시 다른 별 수호자들에게 마나를 부여합니다. (서로 적용)"
-        val option : List<String> = listOf("총 마나 30", "총 마나 50")
-        val level: List<Int> = listOf(3, 6)
+        val option : List<String> = listOf("총 마나 25", "총 마나 40", "총 마나 55")
+        val level: List<Int> = listOf(3, 6, 9)
         return Synergy("별 수호자", R.drawable.starguardian,description, option, level)
     }
 
     fun getVanguard(): Synergy{
         val description : String = "선봉대 챔피언은 추가 방어력을 얻습니다."
-        val option : List<String> = listOf(" 방어력 125", "방어력 250")
-        val level: List<Int> = listOf(2, 4)
+        val option : List<String> = listOf(" 방어력 125", "방어력 300", "방어력 1000")
+        val level: List<Int> = listOf(2, 4, 6)
         return Synergy("선봉대", R.drawable.vanguard,description, option, level)
     }
 
     fun getBladmaster(): Synergy{
         val description : String = "검사는 기본 공격 시 일정 확률로 대상에게 두 번의 추가 공격을 가합니다. 추가 공격은 기본 공격 시의 피해를 입히며 적중 시 효과가 적용됩니다."
-        val option : List<String> = listOf("추가 공격 확률 30%", "추가 공격 확률 55%", "추가 공격 확률 100%")
+        val option : List<String> = listOf("추가 공격 확률 30%", "추가 공격 확률 70%", "추가 공격 확률 100%")
         val level: List<Int> = listOf(3, 6, 9)
         return Synergy("검사", R.drawable.blademaster,description, option, level)
     }
 
     fun getCelestial(): Synergy{
         val description : String = "모든 아군이 자신이 가한 피해량의 일부만큼 체력을 회복합니다."
-        val option : List<String> = listOf("회복량 15%", "회복량 35%", "회복량 60%")
+        val option : List<String> = listOf("회복량 15%", "회복량 40%", "회복량 99%")
         val level: List<Int> = listOf(2, 4, 6)
         return Synergy("천상", R.drawable.celestial,description, option, level)
     }
 
     fun getChrono(): Synergy{
         val description : String = "모든 아군의 공격 속도가 수 초마다 15% 증가합니다."
-        val option : List<String> = listOf("8초마다 공격속도 증가", "3.5초마다 공격속도 증가", "1.5초마다 공격속도 증가")
-        val level: List<Int> = listOf(2, 4, 6)
+        val option : List<String> = listOf("8초", "3.5초", "1.5초", "0,75초")
+        val level: List<Int> = listOf(2, 4, 6, 8)
         return Synergy("시공간", R.drawable.chrono,description, option, level)
     }
 
    fun getSorcerer(): Synergy{
        val description : String = "모든 아군의 주문력이 증가합니다"
-        val option : List<String> = listOf("주문력 20%", "주문력 40%", "주문력 75%", "주문력 120%")
-        val level: List<Int> = listOf(2, 4, 6, 8)
+        val option : List<String> = listOf("주문력 20%", "주문력 45%", "주문력 75%")
+        val level: List<Int> = listOf(2, 4, 6)
         return Synergy("마법사", R.drawable.sorcerer,description, option, level)
     }
 
     fun getSniper(): Synergy{
         val description : String = "저격수와 대상 사이에 놓인 칸 하나당 해당 저격수가 입히는 피해량이 증가합니다."
-        val option : List<String> = listOf("한 칸당 피해량 12% 증가", "한 칸당 피해량 20% 증가")
+        val option : List<String> = listOf("한 칸당 피해량 10% 증가", "한 칸당 피해량 18% 증가")
         val level: List<Int> = listOf(2, 4)
         return Synergy("저격수", R.drawable.sniper,description, option, level)
     }
 
     fun getCybernetic(): Synergy{
         val description : String = "사이버네틱 챔피언은 하나 이상의 아이템을 장착하면 체력과 공격력을 얻습니다."
-        val option : List<String> = listOf("체력 350 및 공격력 50", "체력 600 및 공격력 90")
+        val option : List<String> = listOf("체력 350 및 공격력 40", "체력 600 및 공격력 80")
         val level: List<Int> = listOf(3, 6)
         return Synergy("사이버네틱", R.drawable.cybernetic,description, option, level)
     }
@@ -105,8 +105,8 @@ class SynergyData {
 
     fun getBattlecast(): Synergy{
         val description : String = "전투 기계 챔피언은 피해를 10회 입히거나 입으면 현재 체력에 따라 추가 효과를 적용받습니다. 체력이 절반 이상인 경우 가장 가까운 적에게 마법 피해를 입힙니다. 체력이 절반 이하인 경우 체력을 회복합니다."
-        val option : List<String> = listOf("회복량 75 / 피해량 75", " 회복량 150/ 피해량 150",  "회복량 250 / 피해량 250")
-        val level: List<Int> = listOf(2, 4, 6)
+        val option : List<String> = listOf("회복량 75 / 피해량 75", " 회복량 160/ 피해량 160",  "회복량 325 / 피해량 325", "회복량 600 / 피해량 600")
+        val level: List<Int> = listOf(2, 4, 6, 8)
         return Synergy("전투기계", R.drawable.battlecast,description, option, level)
     }
 
@@ -147,7 +147,7 @@ class SynergyData {
 
     fun getMystic(): Synergy{
         val description : String = "모든 아군이 마법 저항력을 얻습니다."
-        val option : List<String> = listOf("마법 저항력 40", "마법 저항력 105")
+        val option : List<String> = listOf("마법 저항력 50", "마법 저항력 125")
         val level: List<Int> = listOf(2, 4)
         return Synergy("신비술사", R.drawable.mystic, description, option, level)
     }

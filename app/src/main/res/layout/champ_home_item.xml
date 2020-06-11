@@ -12,26 +12,31 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="129dp"
         android:orientation="horizontal">
 
-        <ImageView
-            android:id="@+id/imgCost"
-            android:layout_width="wrap_content"
-            android:layout_height="130dp"
-            android:layout_weight="0.3"
-            android:background="@color/cost2" />
+
 
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="124dp"
             android:layout_weight="9"
             android:orientation="vertical">
+
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="12dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/imgCost"
+                    android:background="@color/cost2"
+                    >
+
+                </ImageView>
 
 
                 <ImageView
@@ -72,27 +77,26 @@
                         android:id="@+id/txtFirstSyn"
                         android:layout_width="match_parent"
                         android:layout_height="25dp"
-                        android:text="별 수호자"
                         android:gravity="center_horizontal"
-                        android:textSize="20dp" />
+                        android:text="별 수호자"
+                        android:textSize="20sp" />
 
                     <TextView
                         android:id="@+id/txtSecondSyn"
                         android:layout_width="match_parent"
                         android:layout_height="25dp"
-                        android:text="마법사"
                         android:gravity="center_horizontal"
-                        android:textSize="20dp" />
+                        android:text="마법사"
+                        android:textSize="20sp" />
 
                     <TextView
                         android:id="@+id/txtThirdSyn"
                         android:layout_width="match_parent"
                         android:layout_height="25dp"
                         android:gravity="center_horizontal"
-                        android:textSize="20dp" />
+                        android:textSize="20sp" />
 
                 </LinearLayout>
-
 
 
             </LinearLayout>
@@ -108,8 +112,224 @@
                 android:gravity="center_horizontal"
                 android:text="아리"
                 android:textColor="@color/colorTxt"
-                android:textSize="30dp"
+                android:textSize="30sp"
                 android:textStyle="bold" />
+
         </LinearLayout>
+
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="565dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="60dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="132dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="175dp"
+                android:layout_height="33dp"
+                android:gravity="center"
+                android:text="체력: 600, 1080, 1944"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="175dp"
+                android:layout_height="33dp"
+                android:layout_marginStart="175dp"
+                android:layout_marginTop="-33dp"
+                android:gravity="center"
+                android:text="마나: 0/60"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="175dp"
+                android:layout_height="33dp"
+                android:gravity="center"
+                android:text="공격력: 45.0, 81.0, 145.8"
+                android:textSize="15sp" />
+
+
+            <TextView
+                android:layout_width="175dp"
+                android:layout_height="33dp"
+                android:layout_marginStart="175dp"
+                android:layout_marginTop="-33dp"
+                android:gravity="center"
+                android:text="공격속도: 0.75"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="175dp"
+                android:layout_height="33dp"
+                android:gravity="center"
+                android:text="방어력: 20 "
+                android:textSize="15sp" />
+
+
+            <TextView
+                android:layout_width="175dp"
+                android:layout_height="33dp"
+                android:layout_marginStart="175dp"
+                android:layout_marginTop="-33dp"
+                android:gravity="center"
+                android:text="마법 저항력: 20"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="175dp"
+                android:layout_height="33dp"
+                android:gravity="center"
+                android:text="사거리: 3"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="175dp"
+                android:layout_height="33dp"
+                android:layout_marginStart="175dp"
+                android:layout_marginTop="-33dp"
+                android:gravity="center"
+                android:text="크리티컬 확률: 25%"
+                android:textSize="15sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="155dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="66dp"
+                android:layout_height="66dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/ahri_skill" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:text="">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:gravity="center"
+                    android:text="현혹의 구슬"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="94dp"
+                    android:gravity="center"
+                    android:text="아리가 일직선으로 구슬을 던집니다. 구슬은 닿는 모든 적에게 마법 피해를 입힙니다. 구슬은 아리에게 되돌아오며 이때 닿는 모든 적에게 고정 피해를 입힙니다."
+                    android:textSize="15sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:gravity="center"
+                    android:text="피해량 : 175 / 250 / 375"
+                    android:textSize="15sp" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="137dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="34dp"
+                    app:srcCompat="@drawable/starguardian"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/starguardian"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="별 수호자"
+                        android:textSize="25dp"
+                        android:gravity="center"/>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:text="별 수호자는 스킬 사용 시 다른 별 수호자들에게 마나를 부여합니다. (서로 적용)"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="51dp"
+                    android:text="3: 총 마나 30, 6: 총 마나 50"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="34dp"
+                app:srcCompat="@drawable/sorcerer"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/sorcerer"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="마법사"
+                    android:textSize="25dp"
+                    android:gravity="center"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:text="모든 아군의 주문력이 증가합니다"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:text="2: 주문력 20%, 4: 주문력 40%"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="26dp"
+                android:text="6: 주문력 75%, 8: 주문력 120%"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
 </androidx.cardview.widget.CardView>

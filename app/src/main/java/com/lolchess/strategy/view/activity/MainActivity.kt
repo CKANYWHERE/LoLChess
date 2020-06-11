@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() {
         var fragment:Fragment? = null
         val fragmentClass = when(item.itemId) {
             R.id.firstFragmentItem -> AppHome::class.java
-            R.id.secondFragmentItem -> Champion::class.java
+            R.id.secondFragmentItem -> ChampionSynergy::class.java
             R.id.thirdFragmentItem -> Items::class.java
             R.id.fourthFragmentItem -> Arrangement::class.java
             else -> AppHome::class.java
@@ -77,6 +77,7 @@ class MainActivity : AppCompatActivity() {
         fragmentTransaction.replace(R.id.fragmentContainer, fragment!!)
         fragmentTransaction.commit()
     }
+
 
 
 }

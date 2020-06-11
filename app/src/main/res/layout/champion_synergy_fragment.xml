@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/frameLayout"
     >
 
     <TextView
@@ -15,6 +16,24 @@
         tools:layout_editor_absoluteY="356dp"
         tools:layout_editor_absoluteX="164dp"
         tools:layout_conversion_absoluteWidth="83dp" />
+
+    <Button
+        android:id="@+id/button1"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/champion"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="80dp"/>
+
+    <Button
+        android:id="@+id/button2"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="80dp"
+        android:text="@string/synergy" />
 
 
 </FrameLayout>
