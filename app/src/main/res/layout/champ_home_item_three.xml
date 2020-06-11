@@ -16,7 +16,7 @@
     <ImageView
         android:id="@+id/imgCost"
         android:layout_width="10dp"
-        android:layout_height="108dp"
+        android:layout_height="134dp"
         android:layout_weight="1"
         android:background="@color/cost2" />
 
@@ -56,6 +56,7 @@
                     <ImageView
                         android:id="@+id/imgFirstSyn"
                         android:layout_width="wrap_content"
+
                         android:layout_height="22dp"
                         app:srcCompat="@drawable/trait_icon_starguardian" />
 
@@ -69,7 +70,15 @@
                         android:layout_height="22dp"
                         app:srcCompat="@drawable/trait_icon_sorcerer" />
 
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="8dp" />
 
+                    <ImageView
+                        android:id="@+id/imgThirdSyn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="22dp"
+                        app:srcCompat="@drawable/demolitionist" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -83,25 +92,39 @@
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
                         android:text="별 수호자"
-                        android:textSize="18dp" />
-
+                        android:textSize="17dp" />
                     <Space
                         android:layout_width="match_parent"
                         android:layout_height="8dp" />
+
                     <TextView
                         android:id="@+id/txtSecondSyn"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
                         android:text="마법사"
-                        android:textSize="18dp" />
+                        android:textSize="17dp" />
 
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="8dp" />
 
+                    <TextView
+                        android:id="@+id/txtThirdSyn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="용병"
+                        android:textSize="17dp" />
 
                 </LinearLayout>
 
 
             </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="8dp" />
 
 
             <TextView

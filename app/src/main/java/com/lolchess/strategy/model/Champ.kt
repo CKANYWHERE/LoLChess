@@ -16,4 +16,10 @@ data class Champ(
     , val shield: Int // 방어력
     , val magicShield: Int // 마법 저항력
     , val skillImg: Int //스킬 이미지 경로
- )
+    , val type: Int //챔프 뷰 타입
+ ){
+    companion object{
+        const val TWO_TYPE_SYN = 2
+        const val THREE_TYPE_SYN = 3
+    }
+}

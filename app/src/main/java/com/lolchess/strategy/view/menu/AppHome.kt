@@ -1,22 +1,18 @@
 package com.lolchess.strategy.view.menu
 
-import android.content.res.Resources
-import android.graphics.BitmapFactory
-import android.graphics.drawable.Drawable
-import android.graphics.drawable.Icon
-import android.media.Image
+
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.lolchess.strategy.R
 import com.lolchess.strategy.data.ChampData
 import com.lolchess.strategy.model.Champ
-import kotlinx.android.synthetic.main.home_fragment.view.*
+import com.lolchess.strategy.view.adapter.ChampMainAdapter
+import kotlinx.android.synthetic.main.home_fragment.*
+
 
 class AppHome:Fragment(){
 
@@ -26,7 +22,17 @@ class AppHome:Fragment(){
         val view = inflater.inflate(R.layout.home_fragment, container, false)
 
 
-
         return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val champData = ChampData()
+        val champList : List<Champ> =
+            listOf(champData.getGraves(),champData.getGangplank(),champData.getAhri(),champData.getAshe(),champData.getFizz())
+
+        recyclerView?.adapter = ChampMainAdapter(view.context,champList)
+        recyclerView?.layoutManager = LinearLayoutManager(view.context)
+
     }
 }
