@@ -1,11 +1,15 @@
 package com.lolchess.strategy.view.menu
 
 
+import android.app.SearchManager
+import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.lolchess.strategy.R
 import com.lolchess.strategy.data.ChampData
@@ -20,7 +24,6 @@ class Simulator:Fragment(){
         super.onCreateView(inflater, container, savedInstanceState)
 
         val view = inflater.inflate(R.layout.home_fragment, container, false)
-
 
         return view
     }
@@ -40,8 +43,33 @@ class Simulator:Fragment(){
                 champData.getFizz(), champData.getGangplank(), champData.getLulu(), champData.getThresh(), champData.getAurelionSol(), champData.getEkko(),
                 champData.getUrgot(), champData.getJanna(),  champData.getXerath())
 
-        recyclerView?.adapter = ChampMainAdapter(view.context,champList)
+        val champMutableList = champList.toMutableList()
+
+        recyclerView?.adapter = ChampMainAdapter(view.context,champMutableList)
         recyclerView?.layoutManager = LinearLayoutManager(view.context)
+
+        Log.e("searchViewCreate","searchViewCreate")
+
+        var searchManager = activity?.getSystemService(Context.SEARCH_SERVICE) as SearchManager
+
+        searchView!!.setSearchableInfo(searchManager.getSearchableInfo(activity?.componentName))
+
+        searchView!!.setOnQueryTextListener(object : SearchView.OnQueryTextListener,
+            android.widget.SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                (recyclerView?.adapter as ChampMainAdapter).filter(query)
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                (recyclerView?.adapter as ChampMainAdapter).filter(newText)
+                return false
+            }
+
+
+        })
 
     }
 }
+
+

@@ -22,7 +22,9 @@
 
         <SearchView
             android:layout_width="match_parent"
-            android:layout_height="50dp" />
+            android:layout_height="50dp"
+            android:inputType="textNoSuggestions"
+            android:id="@+id/searchView"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
