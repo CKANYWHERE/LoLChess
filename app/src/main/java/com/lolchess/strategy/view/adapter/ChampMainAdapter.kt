@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.lolchess.strategy.R
-import com.lolchess.strategy.controller.PreferenceApp
 import com.lolchess.strategy.model.data.ChampData
 
 import com.lolchess.strategy.model.Champ
@@ -94,10 +93,11 @@ class ChampMainAdapter(private val context : Context, private var items: Mutable
                 holder.txtFirstSyn.text = items[position]?.synergy[0].name
                 holder.txtSecondSyn.text = items[position]?.synergy[1].name
                 holder.itemView.setOnClickListener {
-                    PreferenceApp.prefs.setString("champ",items[position].name)
+                    Toast.makeText(context, "Click", Toast.LENGTH_SHORT).show()
                 }
-
             }
+
+
 
             Champ.THREE_TYPE_SYN -> {
                 (holder as ChampTirhdSynergyHolder)
@@ -118,10 +118,9 @@ class ChampMainAdapter(private val context : Context, private var items: Mutable
                 holder.txtSecondSyn.text = items[position]?.synergy[1].name
                 holder.txtThirdSyn.text = items[position]?.synergy[2].name
                 holder.itemView.setOnClickListener {
-                    PreferenceApp.prefs.setString("champ",items[position].name)
+                    Toast.makeText(context, "Click", Toast.LENGTH_SHORT).show()
                 }
             }
         }
     }
-
 }
