@@ -1,7 +1,9 @@
 package com.lolchess.strategy.view.viewholder
 
+import android.content.Context
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
+import com.lolchess.strategy.data.ChampData
 import kotlinx.android.synthetic.main.champ_home_item.view.*
 
 class ChampMainViewHolder(view: View) : RecyclerView.ViewHolder(view){ //cardview binding 해주는 클래스
@@ -12,4 +14,5 @@ class ChampMainViewHolder(view: View) : RecyclerView.ViewHolder(view){ //cardvie
     var txtFirstSyn = view.txtFirstSyn
     var txtSecondSyn = view.txtSecondSyn
     var imgCost = view.imgCost
+
 }

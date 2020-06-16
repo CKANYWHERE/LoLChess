@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.lolchess.strategy.R
 import com.lolchess.strategy.data.ChampData
@@ -19,9 +20,6 @@ import java.util.logging.Filter
 
 class ChampMainAdapter(private val context : Context, private var items: MutableList<Champ>)// recycler view binding 해주는 클래스
     : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-
-
-
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):  RecyclerView.ViewHolder
     {
@@ -64,14 +62,11 @@ class ChampMainAdapter(private val context : Context, private var items: Mutable
             items.clear()
             items.addAll(allChamp)
         }else{
-            Log.e("filterAll",allChamp.toString())
             items.clear()
             for(champ in allChamp){
                 if(champ!!.name.contains(query))
                     items.add(champ)
             }
-            Log.e("allChamp",allChamp.size.toString())
-            Log.e("aa",items.size.toString())
         }
         notifyDataSetChanged()
     }
@@ -99,6 +94,10 @@ class ChampMainAdapter(private val context : Context, private var items: Mutable
                 holder.secondImgSyn.setImageResource(items[position]?.synergy[1]?.imgPath)
                 holder.txtFirstSyn.text = items[position]?.synergy[0].name
                 holder.txtSecondSyn.text = items[position]?.synergy[1].name
+                holder.itemView.setOnClickListener {
+                    Toast.makeText(context, "ItemClick: " + items[position].name, Toast.LENGTH_LONG).show()
+                }
+
             }
 
             Champ.THREE_TYPE_SYN -> {
