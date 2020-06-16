@@ -117,6 +117,9 @@ class ChampMainAdapter(private val context : Context, private var items: Mutable
                 holder.txtFirstSyn.text = items[position]?.synergy[0].name
                 holder.txtSecondSyn.text = items[position]?.synergy[1].name
                 holder.txtThirdSyn.text = items[position]?.synergy[2].name
+                holder.itemView.setOnClickListener {
+                    PreferenceApp.prefs.setString("champ",items[position].name)
+                }
             }
         }
     }
