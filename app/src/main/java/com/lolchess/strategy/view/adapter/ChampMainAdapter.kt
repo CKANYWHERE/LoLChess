@@ -2,7 +2,6 @@ package com.lolchess.strategy.view.adapter
 
 import android.content.Context
 import android.graphics.Color
-import android.graphics.ColorSpace
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -10,13 +9,13 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.lolchess.strategy.R
-import com.lolchess.strategy.data.ChampData
+import com.lolchess.strategy.controller.PreferenceApp
+import com.lolchess.strategy.model.data.ChampData
 
 import com.lolchess.strategy.model.Champ
 import com.lolchess.strategy.view.viewholder.ChampMainViewHolder
 import com.lolchess.strategy.view.viewholder.ChampTirhdSynergyHolder
 import java.lang.RuntimeException
-import java.util.logging.Filter
 
 class ChampMainAdapter(private val context : Context, private var items: MutableList<Champ>)// recycler view binding 해주는 클래스
     : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -95,7 +94,7 @@ class ChampMainAdapter(private val context : Context, private var items: Mutable
                 holder.txtFirstSyn.text = items[position]?.synergy[0].name
                 holder.txtSecondSyn.text = items[position]?.synergy[1].name
                 holder.itemView.setOnClickListener {
-                    Toast.makeText(context, "ItemClick: " + items[position].name, Toast.LENGTH_LONG).show()
+                    PreferenceApp.prefs.setString("champ",items[position].name)
                 }
 
             }
