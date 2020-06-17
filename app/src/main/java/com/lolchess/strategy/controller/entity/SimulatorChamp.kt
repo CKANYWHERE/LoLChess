@@ -5,7 +5,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "SimulatorChamp")
- class SimulatorChamp (@PrimaryKey var name:String?,
+ class SimulatorChamp (@PrimaryKey var name:String,
                         @ColumnInfo(name = "imgPath") var imgPath: Int?,
                         @ColumnInfo(name = "firstSyn") var firstSyn: String?,
                         @ColumnInfo(name = "secondSyn") var secondSyn: String?,
