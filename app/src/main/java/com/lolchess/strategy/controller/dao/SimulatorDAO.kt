@@ -1,5 +1,6 @@
 package com.lolchess.strategy.controller.dao
 
+import android.util.Log
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy.REPLACE
@@ -18,6 +19,7 @@ interface SimulatorDAO {
 
     @Insert(onConflict = REPLACE)
     fun insert(simulatorSynergy: SimulatorSynergy)
+
 
     @Insert(onConflict = REPLACE)
     fun insert(simulatorChamp: SimulatorChamp)

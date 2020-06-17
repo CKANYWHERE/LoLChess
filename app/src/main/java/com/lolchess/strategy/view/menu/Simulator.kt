@@ -12,10 +12,14 @@ import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.lolchess.strategy.R
+import com.lolchess.strategy.controller.database.SimulatorDB
+import com.lolchess.strategy.controller.entity.SimulatorChamp
 import com.lolchess.strategy.model.data.ChampData
 import com.lolchess.strategy.model.Champ
 import com.lolchess.strategy.view.adapter.ChampMainAdapter
 import kotlinx.android.synthetic.main.home_fragment.*
+import java.lang.Exception
+import kotlin.concurrent.thread
 
 
 class Simulator:Fragment(){
@@ -56,6 +60,24 @@ class Simulator:Fragment(){
 
         var searchManager = activity?.getSystemService(Context.SEARCH_SERVICE) as SearchManager
 
+        var list = listOf<SimulatorChamp>()
+        var simulatorDB = SimulatorDB.getInstance(view.context)
+
+        var r = Runnable {
+            try {
+                list = simulatorDB?.SimulatorDAO()?.getAllChamp()!!
+                for (champ in list){
+                    Log.e("simulatorDB",champ.name)
+                }
+
+            }catch (e:Exception){
+                Log.e("err",e.toString() )
+            }
+        }
+
+        val thread  = Thread(r)
+        thread.start()
+
         searchView!!.setSearchableInfo(searchManager.getSearchableInfo(activity?.componentName))
 
         searchView!!.setOnQueryTextListener(object : SearchView.OnQueryTextListener,
@@ -70,9 +92,9 @@ class Simulator:Fragment(){
                 return false
             }
         })
-
-
     }
+
+
 }
 
 

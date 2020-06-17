@@ -98,7 +98,8 @@ class ChampMainAdapter(private val context : Context, private var items: Mutable
                 holder.txtSecondSyn.text = items[position]?.synergy[1].name
                 holder.itemView.setOnClickListener {
 
-                    val addChamp = Thread(addChamp(items[position]?.name,items[position].imgPath))
+                    val addChamp = Thread(addChamp(items[position]?.name,items[position].imgPath
+                        ,items[position]?.synergy[0].name,items[position]?.synergy[1].name,""))
                     addChamp.start()
 
                     val firstSyn = Thread(addSynergy(items[position]?.synergy[0]?.name,items[position]?.synergy[0]?.imgPath))
@@ -133,7 +134,8 @@ class ChampMainAdapter(private val context : Context, private var items: Mutable
                 holder.txtThirdSyn.text = items[position]?.synergy[2].name
                 holder.itemView.setOnClickListener {
 
-                    val addChamp = Thread(addChamp(items[position]?.name,items[position].imgPath))
+                    val addChamp = Thread(addChamp(items[position]?.name,items[position].imgPath
+                        ,items[position]?.synergy[0].name,items[position]?.synergy[1].name,items[position]?.synergy[2].name))
                     addChamp.start()
 
                     val firstSyn = Thread(addSynergy(items[position]?.synergy[0]?.name,items[position]?.synergy[0]?.imgPath))
@@ -149,10 +151,10 @@ class ChampMainAdapter(private val context : Context, private var items: Mutable
         }
     }
 
-    private fun addChamp(name:String, imgPath:Int) : Runnable{
+    private fun addChamp(name:String, imgPath:Int, firstSynergy: String, secondSynergy:String,thirdSynergy: String) : Runnable{
         val simulatorDB = SimulatorDB.getInstance(context)
         return Runnable {
-            val champ = SimulatorChamp(name,imgPath)
+            val champ = SimulatorChamp(name,imgPath,firstSynergy,secondSynergy,thirdSynergy)
             simulatorDB?.SimulatorDAO()?.insert(champ)
         }
     }
