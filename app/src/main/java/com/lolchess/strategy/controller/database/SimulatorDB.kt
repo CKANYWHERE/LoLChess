@@ -22,13 +22,17 @@ abstract class SimulatorDB: RoomDatabase() {
                 synchronized(SimulatorDB::class) {
                     INSTANCE = Room.databaseBuilder(
                         context.applicationContext,
-                        SimulatorDB::class.java, "photo.db"
+                        SimulatorDB::class.java, "simulator.db"
                     )
                         .fallbackToDestructiveMigration()
                         .build()
                 }
             }
             return INSTANCE
+        }
+
+        fun destroyInstance(){
+            INSTANCE = null
         }
     }
 }

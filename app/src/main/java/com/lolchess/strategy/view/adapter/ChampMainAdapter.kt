@@ -9,12 +9,16 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.lolchess.strategy.R
+import com.lolchess.strategy.controller.database.SimulatorDB
+import com.lolchess.strategy.controller.entity.SimulatorChamp
+import com.lolchess.strategy.controller.entity.SimulatorSynergy
 import com.lolchess.strategy.model.data.ChampData
 
 import com.lolchess.strategy.model.Champ
 import com.lolchess.strategy.view.viewholder.ChampMainViewHolder
 import com.lolchess.strategy.view.viewholder.ChampTirhdSynergyHolder
 import java.lang.RuntimeException
+import kotlin.concurrent.thread
 
 class ChampMainAdapter(private val context : Context, private var items: MutableList<Champ>)// recycler view binding 해주는 클래스
     : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -93,7 +97,17 @@ class ChampMainAdapter(private val context : Context, private var items: Mutable
                 holder.txtFirstSyn.text = items[position]?.synergy[0].name
                 holder.txtSecondSyn.text = items[position]?.synergy[1].name
                 holder.itemView.setOnClickListener {
-                    Toast.makeText(context, "Click", Toast.LENGTH_SHORT).show()
+
+                    val addChamp = Thread(addChamp(items[position]?.name,items[position].imgPath))
+                    addChamp.start()
+
+                    val firstSyn = Thread(addSynergy(items[position]?.synergy[0]?.name,items[position]?.synergy[0]?.imgPath))
+                    firstSyn.start()
+
+                    val secondSyn = Thread(addSynergy(items[position]?.synergy[1]?.name,items[position]?.synergy[1]?.imgPath))
+                    secondSyn.start()
+
+
                 }
             }
 
@@ -118,9 +132,37 @@ class ChampMainAdapter(private val context : Context, private var items: Mutable
                 holder.txtSecondSyn.text = items[position]?.synergy[1].name
                 holder.txtThirdSyn.text = items[position]?.synergy[2].name
                 holder.itemView.setOnClickListener {
-                    Toast.makeText(context, "Click", Toast.LENGTH_SHORT).show()
+
+                    val addChamp = Thread(addChamp(items[position]?.name,items[position].imgPath))
+                    addChamp.start()
+
+                    val firstSyn = Thread(addSynergy(items[position]?.synergy[0]?.name,items[position]?.synergy[0]?.imgPath))
+                    firstSyn.start()
+
+                    val secondSyn = Thread(addSynergy(items[position]?.synergy[1]?.name,items[position]?.synergy[1]?.imgPath))
+                    secondSyn.start()
+
+                    val thirdSyn = Thread(addSynergy(items[position]?.synergy[2]?.name,items[position]?.synergy[2]?.imgPath))
+                    thirdSyn.start()
                 }
             }
         }
     }
+
+    private fun addChamp(name:String, imgPath:Int) : Runnable{
+        val simulatorDB = SimulatorDB.getInstance(context)
+        return Runnable {
+            val champ = SimulatorChamp(name,imgPath)
+            simulatorDB?.SimulatorDAO()?.insert(champ)
+        }
+    }
+
+    private fun addSynergy(name:String, imgPath:Int) : Runnable{
+        val simulatorDB = SimulatorDB.getInstance(context)
+        return Runnable {
+            val synergy = SimulatorSynergy(name,imgPath)
+            simulatorDB?.SimulatorDAO()?.insert(synergy)
+        }
+    }
+
 }
