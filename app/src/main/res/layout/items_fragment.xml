@@ -5,11 +5,14 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/thirdFragment"
-        android:text="@string/third_image"
-        android:layout_gravity="center"
+        android:id="@+id/action_items"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        />
+        android:layout_gravity="center"
+        android:text="@string/items"
+        tools:layout_conversion_absoluteHeight="19dp"
+        tools:layout_editor_absoluteY="356dp"
+        tools:layout_editor_absoluteX="164dp"
+        tools:layout_conversion_absoluteWidth="83dp" />
 
 </FrameLayout>

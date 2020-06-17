@@ -1,26 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
     <item
-        android:id = "@+id/firstFragmentItem"
-        android:title="@string/first_image"
+        android:id = "@+id/action_home"
+        android:title="@string/simulator"
         android:icon = "@drawable/ic_image1"
         />
 
     <item
-        android:id = "@+id/secondFragmentItem"
-        android:title="@string/second_image"
+        android:id = "@+id/action_champion_synergy"
+        android:title="@string/championSynergy"
         android:icon = "@drawable/ic_image2"
         />
 
     <item
-        android:id = "@+id/thirdFragmentItem"
-        android:title="@string/third_image"
+        android:id = "@+id/action_items"
+        android:title="@string/items"
         android:icon = "@drawable/ic_image3"
         />
 
     <item
-        android:id = "@+id/fourthFragmentItem"
-        android:title="@string/fourth_image"
+        android:id = "@+id/action_arrangement"
+        android:title="@string/arrangement"
         android:icon = "@drawable/ic_image4"
         />
+    </group>
 </menu>

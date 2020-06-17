@@ -59,7 +59,7 @@ class ChampMainAdapter(private val context : Context, private var items: Mutable
             champData.getFizz(), champData.getGangplank(), champData.getLulu(), champData.getThresh(), champData.getAurelionSol(), champData.getEkko(),
             champData.getUrgot(), champData.getJanna(),  champData.getXerath()).toMutableList()
 
-        if(query?.isNullOrEmpty()!!){
+        if(query?.isEmpty()!!){
             Log.e("filterChamp",allChamp.toString())
             items.clear()
             items.addAll(allChamp)

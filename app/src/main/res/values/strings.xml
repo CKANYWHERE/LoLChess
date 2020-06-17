@@ -1,11 +1,10 @@
 <resources>
     <string name="app_name">TFT Strategy</string>
-    <string name="first_image">홈</string>
-    <string name="second_image">챔피언/시너지</string>
-    <string name="third_image">아이템</string>
-    <string name="fourth_image">배치 팁</string>
+    <string name="simulator">홈</string>
+    <string name="championSynergy">챔피언/시너지</string>
+    <string name="items">아이템</string>
+    <string name="arrangement">배치 팁</string>
     <string name="drawer_open">Open Navigation Drawer</string>
     <string name="drawer_close">Close Navigation Drawer</string>
-    <string name="champion">champion</string>
-    <string name="synergy">synergy</string>
+    <string name="action_settings">setting</string>
 </resources>

@@ -20,6 +20,11 @@ import kotlinx.android.synthetic.main.home_fragment.*
 
 class Simulator:Fragment(){
 
+    companion object{
+        fun newInstance() = Simulator()
+    }
+
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
 
