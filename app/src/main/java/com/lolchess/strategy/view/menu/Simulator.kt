@@ -12,7 +12,7 @@ import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.lolchess.strategy.R
-import com.lolchess.strategy.data.ChampData
+import com.lolchess.strategy.model.data.ChampData
 import com.lolchess.strategy.model.Champ
 import com.lolchess.strategy.view.adapter.ChampMainAdapter
 import kotlinx.android.synthetic.main.home_fragment.*
@@ -50,10 +50,9 @@ class Simulator:Fragment(){
 
         val champMutableList = champList.toMutableList()
 
-        recyclerView?.adapter = ChampMainAdapter(view.context,champMutableList)
+        val mAdapter = ChampMainAdapter(view.context,champMutableList)
+        recyclerView?.adapter = mAdapter
         recyclerView?.layoutManager = LinearLayoutManager(view.context)
-
-        Log.e("searchViewCreate","searchViewCreate")
 
         var searchManager = activity?.getSystemService(Context.SEARCH_SERVICE) as SearchManager
 
@@ -70,9 +69,8 @@ class Simulator:Fragment(){
                 (recyclerView?.adapter as ChampMainAdapter).filter(newText)
                 return false
             }
-
-
         })
+
 
     }
 }

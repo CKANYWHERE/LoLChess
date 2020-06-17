@@ -12,4 +12,5 @@ class ChampMainViewHolder(view: View) : RecyclerView.ViewHolder(view){ //cardvie
     var txtFirstSyn = view.txtFirstSyn
     var txtSecondSyn = view.txtSecondSyn
     var imgCost = view.imgCost
+
 }

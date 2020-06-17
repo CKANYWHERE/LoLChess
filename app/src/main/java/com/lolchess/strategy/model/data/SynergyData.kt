@@ -1,4 +1,4 @@
-package com.lolchess.strategy.data
+package com.lolchess.strategy.model.data
 
 import com.lolchess.strategy.R
 import com.lolchess.strategy.model.Synergy
