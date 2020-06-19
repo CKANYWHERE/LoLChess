@@ -20,7 +20,7 @@ import com.lolchess.strategy.view.viewholder.ChampTirhdSynergyHolder
 import java.lang.RuntimeException
 import kotlin.concurrent.thread
 
-class ChampMainAdapter(private val context : Context, private var items: MutableList<Champ>)// recycler view binding 해주는 클래스
+class ChampMainAdapter(private var context : Context, private var items: MutableList<Champ>)// recycler view binding 해주는 클래스
     : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):  RecyclerView.ViewHolder
