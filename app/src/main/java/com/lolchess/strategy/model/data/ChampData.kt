@@ -16,7 +16,7 @@ class ChampData {
 
         return Champ("그레이브즈", R.drawable.graves,"연막탄"," 마나: 50/80", "그레이브즈가 공격 속도가 가장 높은 적을 향해 연막탄을 발사합니다. 연막탄은 적중 시 폭발하며 범위 내 모든 적은 마법 피해를 입고 수 초 동안 실명됩니다."
 
-                , "실명 지속시간 : 3 / 4 / 5 초\n" + "피해량 : 150 / 200 / 400", 1, synergy, hp, attack, 0.55, 1, 40, 30, R.drawable.graves_skill,synergy.size)
+                , "실명 지속시간 : 2 / 3 / 5 초\n" + "피해량 : 150 / 200 / 400", 1, synergy, hp, attack, 0.55, 1, 40, 30, R.drawable.graves_skill,synergy.size)
     }
 
     fun getZoe(): Champ {
@@ -72,7 +72,7 @@ class ChampData {
         val attack: List<Double> = listOf(50.0, 90.0, 162.0)
 
         return Champ("자르반 4세", R.drawable.jarvanix, "영겁의 깃발", "마나: 50/100","자르반 4세가 근처에 깃발을 던져 6초 동안 주변 모든 아군의 공격 속도를 상승시킵니다."
-            , "추가 공격 속도 : 50% / 75% / 100%", 1, synergy, hp, attack, 0.6, 1, 45, 30, R.drawable.jarvanix_skill,synergy.size)
+                , "추가 공격 속도 : 65% / 75% / 85%", 1, synergy, hp, attack, 0.6, 1, 45, 30, R.drawable.jarvanix_skill,synergy.size)
 
     }
 
@@ -91,7 +91,7 @@ class ChampData {
         val hp: List<Int> = listOf(500, 900, 1620)
         val attack: List<Double> = listOf(50.0, 90.0, 162.0)
 
-        return Champ("자야", R.drawable.xayah, "죽음의 깃", "마나: 0/50","자야가 칼날 폭풍을 일으켜 8초 동안 공격 속도가 증가합니다."
+        return Champ("자야", R.drawable.xayah, "죽음의 깃", "마나: 0/70","자야가 칼날 폭풍을 일으켜 8초 동안 공격 속도가 증가합니다."
                 , "공격 속도 : 100% / 125% / 150%\n" + "지속 시간 : 8 / 8 / 8", 1, synergy, hp, attack, 0.8, 3, 20, 20, R.drawable.xayah_skill,synergy.size)
     }
 
@@ -110,7 +110,7 @@ class ChampData {
         val attack: List<Double> = listOf(45.0, 81.0, 145.8)
 
         return Champ("케이틀린", R.drawable.caitlyn, "비장의 한 발", "마나: 0/125","케이틀린이 가장 멀리 있는 적을 향해 강력한 총알을 발사합니다. 총알은 처음 적중한 적에게 마법 피해를 입힙니다."
-                , "피해량 : 750 / 1500 / 3000", 1, synergy, hp, attack, 0.75, 5, 20, 20, R.drawable.caitlyn_skill,synergy.size)
+                , "피해량 : 750 / 1500 / 2250", 1, synergy, hp, attack, 0.75, 5, 20, 20, R.drawable.caitlyn_skill,synergy.size)
     }
 
     fun getIllaoi(): Champ {
@@ -128,7 +128,7 @@ class ChampData {
         val hp: List<Int> = listOf(500, 900, 1620)
         val attack: List<Double> = listOf(50.0, 90.0, 162.0)
 
-        return Champ("녹턴", R.drawable.nocturne, "말할 수 없는 공포","마나: 50/80",  "녹턴은 대상을 위협하여 공포로 2초간 기절시킵니다. 이 시간 동안 또는 녹턴이 죽을 때 까지 피해를 입힙니다."
+        return Champ("녹턴", R.drawable.nocturne, "말할 수 없는 공포","마나: 40/80",  "녹턴은 대상을 위협하여 공포로 2초간 기절시킵니다. 이 시간 동안 또는 녹턴이 죽을 때 까지 피해를 입힙니다."
                 , "피해량 : 200 / 250 / 350\n" + "기절 시간 : 2 / 2.5 / 4초", 1, synergy, hp, attack, 0.7, 1, 20, 20, R.drawable.nocturne_skill,synergy.size)
 
     }
@@ -169,7 +169,7 @@ class ChampData {
         val attack: List<Double> = listOf(55.0, 99.0, 178.2)
 
         return Champ("블리츠크랭크", R.drawable.blitzcrank, "로켓 손", "마나: 125/125","블리츠크랭크가 가장 멀리 있는 적을 당겨 마법 피해를 입히고 2.5초 동안 기절시킵니다. 당긴 후 다음 공격은 적을 1초 동안 공중으로 띄워 올립니다. 아군은 블리츠크랭크가 당긴 적이 사거리 안에 있을 경우 우선적으로 공격합니다."
-, "피해량 : 250 / 400 / 900", 2, synergy, hp, attack, 0.5, 1, 45, 35, R.drawable.blitzcrank_skill,synergy.size)
+                , "피해량 : 200 / 350 / 850", 2, synergy, hp, attack, 0.5, 1, 45, 35, R.drawable.blitzcrank_skill,synergy.size)
 
     }
 
@@ -179,7 +179,7 @@ class ChampData {
         val attack: List<Double> = listOf(50.0, 90.0, 162.0)
 
         return Champ("루시안", R.drawable.lucian, "끈질긴 추격", "마나: 0/35","루시안이 현재 대상에서 먼 곳으로 돌진하며 기본 공격 후 이어서 추가로 공격해 마법 피해를 입힙니다."
-                , "스킬 피해량 : 150 / 200 / 325", 2, synergy, hp, attack, 0.7, 4, 25, 20, R.drawable.lucian_skill,synergy.size)
+                , "스킬 피해량 : 150 / 200 / 375", 2, synergy, hp, attack, 0.7, 4, 25, 20, R.drawable.lucian_skill,synergy.size)
     }
 
     fun getMordekaiser(): Champ {
@@ -228,7 +228,7 @@ class ChampData {
         val attack: List<Double> = listOf(40.0, 72.0, 129.6)
 
         return Champ("애니", R.drawable.annie, "은하 방패-폭발", "마나: 70/140","애니가 피해를 흡수하는 보호막을 얻고 원뿔 형태의 화염을 내뿜어 적중한 대상에게 마법 피해를 입힙니다."
-            , "피해량 : 300 / 400 / 600\n" + "보호막 흡수량 : 400 / 500 / 700", 2, synergy, hp, attack, 0.65, 2, 40, 35, R.drawable.annie_skill,synergy.size)
+                , "피해량 : 300 / 400 / 600\n" + "보호막 흡수량 : 400 / 500 / 700", 2, synergy, hp, attack, 0.65, 2, 40, 35, R.drawable.annie_skill,synergy.size)
 
     }
 
@@ -246,7 +246,7 @@ class ChampData {
         val hp: List<Int> = listOf(750, 1350, 2430)
         val attack: List<Double> = listOf(60.0, 108.0, 194.4)
 
-        return Champ("노틸러스", R.drawable.nautilus, "충격 분화구", "마나: 70/100","노틸러스가 대상 아래의 땅을 폭발시켜 공중으로 띄워 기절시키고 마법 피해를 입힙니다. 대상에 인접한 적들도 공중에 띄워 절반의 시간 동안 기절시키고 절반의 마법 피해를 입힙니다."
+        return Champ("노틸러스", R.drawable.nautilus, "충격 분화구", "마나: 60/100","노틸러스가 대상 아래의 땅을 폭발시켜 공중으로 띄워 기절시키고 마법 피해를 입힙니다. 대상에 인접한 적들도 공중에 띄워 절반의 시간 동안 기절시키고 절반의 마법 피해를 입힙니다."
                 , "기절 시간 : 3 / 3.5 / 4초\n" + "마법 피해량 : 100 / 200 / 400", 2, synergy, hp, attack, 0.65, 1, 50, 35, R.drawable.nautilus_skill,synergy.size)
 
     }
@@ -257,7 +257,7 @@ class ChampData {
         val attack: List<Double> = listOf(55.0, 99.0, 178.2)
 
         return Champ("제드", R.drawable.zed,  "약자 멸시", "마나: 없음","기본 지속 효과: 세 번째 공격마다 제드가 추가 마법 피해를 입히고 대상의 현재 공격력을 훔칩니다."
-            , "훔친 공격력 : 20 / 25 / 40%\n" + "피해량 : 50 / 90 / 150", 2, synergy, hp, attack, 0.75, 1, 25, 20, R.drawable.zed_skill,synergy.size)
+                , "훔친 공격력 : 20 / 25 / 40%\n" + "피해량 : 50 / 90 / 150", 2, synergy, hp, attack, 0.75, 1, 25, 20, R.drawable.zed_skill,synergy.size)
 
     }
 
@@ -268,7 +268,7 @@ class ChampData {
         val attack: List<Double> = listOf(50.0, 90.0, 162.0)
 
         return Champ("니코", R.drawable.neeko, "만개", "마나: 75/150","니코가 공중으로 도약한 후 지면을 강타하며 주변 모든 적에게 마법 피해를 입히고 기절시킵니다."
-            , "피해량 : 150 / 250 / 500\n" + "기절 지속시간 : 1.5 / 2 / 2.5", 3, synergy, hp, attack, 0.65, 2, 45, 40, R.drawable.neeko_skill,synergy.size)
+                , "피해량 : 150 / 250 / 500\n" + "기절 지속시간 : 1.5 / 2 / 2.5", 3, synergy, hp, attack, 0.65, 2, 45, 40, R.drawable.neeko_skill,synergy.size)
 
     }
 
@@ -297,7 +297,7 @@ class ChampData {
         val attack: List<Double> = listOf(60.0, 108.0, 194.4)
 
         return Champ("바이", R.drawable.vi,  "기동타격","마나: 70/140", "바이가 가장 멀리 있는 적에게 돌진합니다. 돌진 중 경로상에 있는 모든 적을 밀어내고 마법 피해를 입힙니다. 대상에 도달하면 대상에게 마법 피해를 입히고 공중으로 띄워 올립니다."
-            , "1차피해 : 400 / 600 / 1200\n" + "2차피해 : 150 / 200 / 500\n" + "기절 지속시간 : 2 / 2.5 / 3", 3, synergy, hp, attack, 0.65, 1, 45, 40, R.drawable.vi_skill,synergy.size)
+                , "1차피해 : 400 / 600 / 1200\n" + "2차피해 : 150 / 200 / 500\n" + "기절 지속시간 : 2 / 2.5 / 3", 3, synergy, hp, attack, 0.65, 1, 45, 40, R.drawable.vi_skill,synergy.size)
 
     }
 
@@ -447,7 +447,7 @@ class ChampData {
         val attack : List<Double> = listOf(60.0, 108.0, 194.4)
 
         return Champ("피즈",R.drawable.fizz, "미끼 뿌리기","마나: 60/120","피즈가 미끼를 뿌립니다. 잠시 후 상어가 위로 솟구치며 부딪친 적들에게 마법 피해를 입히고 뒤로 밀어내며 1.5초 동안 기절시킵니다.",
-            "피해량 : 450 / 600 / 5000",4,synergy,hp,attack,0.85,1,25,20, R.drawable.fizz_skill,synergy.size)
+                "피해량 : 450 / 600 / 5000",4,synergy,hp,attack,0.85,1,25,20, R.drawable.fizz_skill,synergy.size)
 
     }
 
@@ -557,7 +557,7 @@ class ChampData {
 
         return Champ("아우렐리온 솔",R.drawable.aurelionsol, "함대 출격","마나: 120/120","아우렐리온 솔이 전투기를 출격시킵니다. 처음 스킬 사용 시 4대의 전투기가 출격합니다. 이후 스킬을 사용할 때마다 2대의 전투기가 추가로 출격합니다. 전투기는 가까운 적을 먼저 공격합니다.\n " +
                 "전투기가 대상의 마나를 감소시킵니다.",
-                "피해량 : 80 / 150 / 750\n" +"마나 감소: 10/25/50",5,synergy,hp,attack,0.2,1,55,40, R.drawable.aurelionsol_skill,synergy.size)
+                "피해량 : 110 / 150 / 750\n" +"마나 흡수량 : 15 / 25 / 50",5,synergy,hp,attack,0.2,1,55,40, R.drawable.aurelionsol_skill,synergy.size)
 
     }
 
@@ -566,7 +566,7 @@ class ChampData {
         val hp : List<Int> = listOf(950, 1710, 3078)
         val attack : List<Double> = listOf(80.0, 144.0, 259.2)
 
-        return Champ("우르곳",R.drawable.urgot, "불사의 공포","마나: 40/100","우르곳이 공격 사거리 내에서 가장 먼 적에게 드릴을 발사하여 당겨옵니다. 당겨진 적은 2000의 고정 피해를 지속적으로 입으면서 우르곳에게 닿으면 사망하고, 우르곳의 스킬 마나 소모량이 줄어듭니다.",
+        return Champ("우르곳",R.drawable.urgot, "불사의 공포","마나: 30/100","우르곳이 공격 사거리 내에서 가장 먼 적에게 드릴을 발사하여 당겨옵니다. 당겨진 적은 2000의 고정 피해를 지속적으로 입으면서 우르곳에게 닿으면 사망하고, 우르곳의 스킬 마나 소모량이 줄어듭니다.",
                 "줄어드는 마나 소모량 : 10 / 20 / 100",5,synergy,hp,attack,0.7,3,30,20, R.drawable.urgot_skill,synergy.size)
 
     }
