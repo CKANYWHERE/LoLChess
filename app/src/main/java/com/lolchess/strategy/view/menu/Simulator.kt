@@ -17,7 +17,7 @@ import com.lolchess.strategy.controller.entity.SimulatorChamp
 import com.lolchess.strategy.model.data.ChampData
 import com.lolchess.strategy.model.Champ
 import com.lolchess.strategy.view.adapter.ChampMainAdapter
-import kotlinx.android.synthetic.main.home_fragment.*
+import kotlinx.android.synthetic.main.simulator_fragment.*
 import java.lang.Exception
 import kotlin.concurrent.thread
 
@@ -32,7 +32,7 @@ class Simulator:Fragment(){
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
 
-        val view = inflater.inflate(R.layout.home_fragment, container, false)
+        val view = inflater.inflate(R.layout.simulator_fragment, container, false)
 
         return view
     }

@@ -13,10 +13,7 @@ import java.lang.ClassCastException
 import androidx.fragment.app.Fragment
 import com.lolchess.strategy.R
 import com.google.android.material.navigation.NavigationView
-import com.lolchess.strategy.view.menu.Arrangement
-import com.lolchess.strategy.view.menu.ChampionSynergy
-import com.lolchess.strategy.view.menu.Items
-import com.lolchess.strategy.view.menu.Simulator
+import com.lolchess.strategy.view.menu.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 import java.lang.reflect.Array.newInstance
 
@@ -39,7 +36,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         drawer_layout.addDrawerListener(drawerToggle)
         drawerToggle.syncState()
 
-        val fragment = Simulator.newInstance()
+        val fragment = Home.newInstance()
         replacementFragment(fragment)
 
         navigationView.setCheckedItem(R.id.action_home)
@@ -66,10 +63,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private fun selectDrawerItem(item:MenuItem) {
         var fragment:Fragment? = null
         val fragmentClass = when (item.itemId) {
-            R.id.action_home -> Simulator::class.java
+            R.id.action_home -> Home::class.java
             R.id.action_champion_synergy -> ChampionSynergy::class.java
             R.id.action_items -> Items::class.java
             R.id.action_arrangement -> Arrangement::class.java
+            R.id.action_simulator -> Simulator::class.java
+
             else -> Simulator::class.java
         }
         try {
@@ -84,7 +83,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when(item.itemId) {
             R.id.action_home -> {
-                val fragment = Simulator.newInstance()
+                val fragment = Home.newInstance()
                 replacementFragment(fragment)
 
                 true
@@ -107,6 +106,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 replacementFragment(fragment)
                 true
             }
+            R.id.action_simulator -> {
+                val fragment = Simulator.newInstance()
+                replacementFragment(fragment)
+
+                true
+            }
+
         }
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
