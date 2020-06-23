@@ -17,6 +17,9 @@ interface SimulatorDAO {
     @Query("Select * From SimulatorSynergy")
     fun getAllSynergy(): List<SimulatorSynergy>
 
+    @Query("Select(Count(*)) From SimulatorChamp")
+    fun getChampCount():Int
+
     @Insert(onConflict = REPLACE)
     fun insert(simulatorSynergy: SimulatorSynergy)
 

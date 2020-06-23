@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -14,6 +15,7 @@ import android.widget.LinearLayout
 import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.lolchess.strategy.R
 import com.lolchess.strategy.controller.database.SimulatorDB
 import com.lolchess.strategy.controller.entity.SimulatorChamp
@@ -36,6 +38,7 @@ class Simulator:Fragment(){
         fun newInstance() = Simulator()
     }
 
+    private lateinit var simulatorDB:SimulatorDB
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
@@ -61,18 +64,33 @@ class Simulator:Fragment(){
                 champData.getUrgot(), champData.getJanna(),  champData.getXerath())
 
         val champMutableList = champList.toMutableList()
-
         val mAdapter = ChampMainAdapter(view.context,champMutableList)
         recyclerView?.adapter = mAdapter
         recyclerView?.layoutManager = LinearLayoutManager(view.context)
 
+        recyclerView.addOnItemTouchListener(object : RecyclerView.OnItemTouchListener{
+            override fun onTouchEvent(rv: RecyclerView, e: MotionEvent) {
+                TODO("Not yet implemented")
+                val child = rv.findChildViewUnder(e.x, e.y)
+                val position = rv.getChildAdapterPosition(child!!)
+                Log.e("position",position.toString())
+                //lifecycleScope.launch(Dispatchers.IO) {
+//
+  //              }
+            }
 
+            override fun onInterceptTouchEvent(rv: RecyclerView, e: MotionEvent): Boolean {
+                TODO("Not yet implemented")
+            }
+
+            override fun onRequestDisallowInterceptTouchEvent(disallowIntercept: Boolean) {
+                TODO("Not yet implemented")
+            }
+
+        })
 
         var searchManager = activity?.getSystemService(Context.SEARCH_SERVICE) as SearchManager
-
-
         searchView!!.setSearchableInfo(searchManager.getSearchableInfo(activity?.componentName))
-
         searchView!!.setOnQueryTextListener(object : SearchView.OnQueryTextListener,
             android.widget.SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
@@ -86,31 +104,36 @@ class Simulator:Fragment(){
             }
         })
 
+        simulatorDB = SimulatorDB.getInstance(view.context)!!
         initSimulation(view)
+
+
     }
+
+
 
     private fun initSimulation(view:View){
         var list = listOf<SimulatorChamp>()
-        val simulatorDB = SimulatorDB.getInstance(view.context)
         lifecycleScope.launch(Dispatchers.IO) {
             list = simulatorDB?.SimulatorDAO()?.getAllChamp()!!
             val layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.MATCH_PARENT,1f)
-            for (i in 1..5){
-                val imgView = ImageView(view?.context)
-                list[i].imgPath?.let {
-                    imgView.setImageResource(it)
-                }
-                imgView.layoutParams = layoutParams
-                layoutTop.addView(imgView)
-            }
 
-            for (i in 6..10){
-                val imgView = ImageView(view?.context)
-                list[i].imgPath?.let {
-                    imgView.setImageResource(it)
+            for(i in 0..list.size - 1){
+                if(i < 5){
+                    list[i]?.imgPath?.let {
+                        val imgView = ImageView(view?.context)
+                        imgView.setImageResource(it)
+                        imgView.layoutParams = layoutParams
+                        layoutTop.addView(imgView)
+                    }
+                }else{
+                    list[i]?.imgPath?.let {
+                        val imgView = ImageView(view?.context)
+                        imgView.setImageResource(it)
+                        imgView.layoutParams = layoutParams
+                        layoutBottom.addView(imgView)
+                    }
                 }
-                imgView.layoutParams = layoutParams
-                layoutBottom.addView(imgView)
             }
         }
     }

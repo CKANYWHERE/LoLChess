@@ -8,7 +8,7 @@ import com.lolchess.strategy.controller.dao.SimulatorDAO
 import com.lolchess.strategy.controller.entity.SimulatorChamp
 import com.lolchess.strategy.controller.entity.SimulatorSynergy
 
-@Database(entities = [SimulatorChamp::class, SimulatorSynergy::class],version = 1)
+@Database(entities = [SimulatorChamp::class, SimulatorSynergy::class],version = 4)
 abstract class SimulatorDB: RoomDatabase() {
     abstract fun SimulatorDAO(): SimulatorDAO
 

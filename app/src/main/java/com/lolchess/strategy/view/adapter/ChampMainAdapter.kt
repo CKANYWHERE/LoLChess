@@ -23,10 +23,13 @@ import kotlin.concurrent.thread
 class ChampMainAdapter(private var context : Context, private var items: MutableList<Champ>)// recycler view binding 해주는 클래스
     : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
+    private var champCnt = 1
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):  RecyclerView.ViewHolder
     {
 
         val view : View?
+
 
         return when (viewType){
             Champ.TWO_TYPE_SYN ->{
@@ -108,10 +111,8 @@ class ChampMainAdapter(private var context : Context, private var items: Mutable
                     val secondSyn = Thread(addSynergy(items[position]?.synergy[1]?.name,items[position]?.synergy[1]?.imgPath))
                     secondSyn.start()
 
-
                 }
             }
-
 
 
             Champ.THREE_TYPE_SYN -> {
@@ -133,6 +134,10 @@ class ChampMainAdapter(private var context : Context, private var items: Mutable
                 holder.txtSecondSyn.text = items[position]?.synergy[1].name
                 holder.txtThirdSyn.text = items[position]?.synergy[2].name
                 holder.itemView.setOnClickListener {
+                    val thread = Thread(getChampCnt())
+                    thread.start()
+
+                    Log.e("getChampCnt",champCnt.toString())
 
                     val addChamp = Thread(addChamp(items[position]?.name,items[position].imgPath
                         ,items[position]?.synergy[0].name,items[position]?.synergy[1].name,items[position]?.synergy[2].name))
@@ -151,11 +156,19 @@ class ChampMainAdapter(private var context : Context, private var items: Mutable
         }
     }
 
+    private fun getChampCnt(): Runnable{
+        val simulatorDB = SimulatorDB.getInstance(context)
+        return Runnable{
+            champCnt = simulatorDB?.SimulatorDAO()?.getChampCount()!!
+        }
+    }
+
     private fun addChamp(name:String, imgPath:Int, firstSynergy: String, secondSynergy:String,thirdSynergy: String) : Runnable{
         val simulatorDB = SimulatorDB.getInstance(context)
         return Runnable {
             val champ = SimulatorChamp(name,imgPath,firstSynergy,secondSynergy,thirdSynergy)
             simulatorDB?.SimulatorDAO()?.insert(champ)
+            notifyDataSetChanged()
         }
     }
 
@@ -164,6 +177,7 @@ class ChampMainAdapter(private var context : Context, private var items: Mutable
         return Runnable {
             val synergy = SimulatorSynergy(name,imgPath)
             simulatorDB?.SimulatorDAO()?.insert(synergy)
+            notifyDataSetChanged()
         }
     }
 
