@@ -7,15 +7,14 @@ import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
-import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.lolchess.strategy.R
 import com.lolchess.strategy.controller.database.SimulatorDB
 import com.lolchess.strategy.controller.entity.SimulatorChamp
@@ -23,13 +22,9 @@ import com.lolchess.strategy.model.data.ChampData
 import com.lolchess.strategy.model.Champ
 import com.lolchess.strategy.view.adapter.ChampMainAdapter
 
-import kotlinx.android.synthetic.main.home_fragment.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.android.synthetic.main.simulator_fragment.*
-
-import java.lang.Exception
-import kotlin.concurrent.thread
 
 
 class Simulator:Fragment(){
@@ -38,8 +33,8 @@ class Simulator:Fragment(){
         fun newInstance() = Simulator()
     }
 
-    private lateinit var simulatorDB:SimulatorDB
 
+    private lateinit var simulatorDB:SimulatorDB
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
 
@@ -65,29 +60,17 @@ class Simulator:Fragment(){
 
         val champMutableList = champList.toMutableList()
         val mAdapter = ChampMainAdapter(view.context,champMutableList)
-        recyclerView?.adapter = mAdapter
-        recyclerView?.layoutManager = LinearLayoutManager(view.context)
 
-        recyclerView.addOnItemTouchListener(object : RecyclerView.OnItemTouchListener{
-            override fun onTouchEvent(rv: RecyclerView, e: MotionEvent) {
-                TODO("Not yet implemented")
-                val child = rv.findChildViewUnder(e.x, e.y)
-                val position = rv.getChildAdapterPosition(child!!)
-                Log.e("position",position.toString())
-                //lifecycleScope.launch(Dispatchers.IO) {
-//
-  //              }
-            }
-
-            override fun onInterceptTouchEvent(rv: RecyclerView, e: MotionEvent): Boolean {
-                TODO("Not yet implemented")
-            }
-
-            override fun onRequestDisallowInterceptTouchEvent(disallowIntercept: Boolean) {
-                TODO("Not yet implemented")
+        mAdapter.setItemClickListener(object : ChampMainAdapter.ItemClickListener{
+            override fun onClick(view: View, position: Int) {
+                Log.e("onClick",position.toString())
             }
 
         })
+
+        recyclerView?.layoutManager = LinearLayoutManager(view.context)
+        recyclerView?.adapter = mAdapter
+
 
         var searchManager = activity?.getSystemService(Context.SEARCH_SERVICE) as SearchManager
         searchView!!.setSearchableInfo(searchManager.getSearchableInfo(activity?.componentName))
