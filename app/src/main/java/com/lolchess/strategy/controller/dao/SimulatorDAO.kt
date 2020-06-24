@@ -27,6 +27,12 @@ interface SimulatorDAO {
     @Insert(onConflict = REPLACE)
     fun insert(simulatorChamp: SimulatorChamp)
 
+    @Query("Delete From SimulatorChamp")
+    fun deleteAllChamp()
+
+    @Query("Delete From SimulatorSynergy")
+    fun deleteAllSynergy()
+
     @Query("Delete From SimulatorChamp Where name = :name")
     fun deleteChamp(name:String)
 
