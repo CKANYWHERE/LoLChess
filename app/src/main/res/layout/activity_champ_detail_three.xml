@@ -1,0 +1,644 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity ="center"
+        android:fillViewport="true"
+        android:paddingBottom="10dp"
+        android:id="@+id/scrollView">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="716dp"
+        android:orientation="vertical"
+        android:paddingLeft="5dp"
+        android:paddingTop="5dp"
+        android:paddingRight="5dp"
+        android:paddingBottom="5dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingTop="@dimen/margin_medium"
+            android:paddingBottom="@dimen/margin_medium"
+            android:paddingLeft="@dimen/margin_medium"
+            android:paddingRight="@dimen/margin_medium"
+            app:cardCornerRadius="5dp"
+            app:cardUseCompatPadding="true">
+
+
+            <ImageView
+                android:id="@+id/imgCost"
+                android:layout_width="10dp"
+                android:layout_height="134dp"
+                android:layout_weight="1"
+                android:background="@color/cost2" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9"
+                    android:orientation="vertical">
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="8dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+
+                        <ImageView
+                            android:id="@+id/imgMain"
+                            android:layout_width="100dp"
+                            android:layout_height="60dp"
+                            android:layout_gravity="center"
+                            app:srcCompat="@drawable/ahri" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/imgFirstSyn"
+                                android:layout_width="wrap_content"
+
+                                android:layout_height="22dp"
+                                app:srcCompat="@drawable/trait_icon_starguardian" />
+
+                            <Space
+                                android:layout_width="match_parent"
+                                android:layout_height="8dp" />
+
+                            <ImageView
+                                android:id="@+id/imgSecondSyn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="22dp"
+                                app:srcCompat="@drawable/trait_icon_sorcerer" />
+
+                            <Space
+                                android:layout_width="match_parent"
+                                android:layout_height="8dp" />
+
+                            <ImageView
+                                android:id="@+id/imgThirdSyn"
+                                android:layout_width="wrap_content"
+                                android:layout_height="22dp"
+                                app:srcCompat="@drawable/demolitionist" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtFirstSyn"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_horizontal"
+                                android:text="별 수호자"
+                                android:textSize="17dp" />
+                            <Space
+                                android:layout_width="match_parent"
+                                android:layout_height="8dp" />
+
+                            <TextView
+                                android:id="@+id/txtSecondSyn"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_horizontal"
+                                android:text="마법사"
+                                android:textSize="17dp" />
+
+                            <Space
+                                android:layout_width="match_parent"
+                                android:layout_height="8dp" />
+
+                            <TextView
+                                android:id="@+id/txtThirdSyn"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_horizontal"
+                                android:text="용병"
+                                android:textSize="17dp" />
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="8dp" />
+
+
+                    <TextView
+                        android:id="@+id/txtMain"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:text="아리"
+                        android:textColor="@color/colorTxt"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="8dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardView"
+                tools:layout_editor_absoluteX="-14dp"
+                tools:layout_editor_absoluteY="112dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="5dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:layout_gravity="center"
+                        android:orientation="vertical"
+                        android:background="@drawable/customborder">
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="200dp"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="60dp"
+                                    android:layout_height="match_parent"
+                                    android:gravity="right|center"
+                                    android:text="체력: " />
+
+                                <LinearLayout
+                                    android:layout_width="125dp"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal">
+                                    <TextView
+                                        android:id="@+id/hp1"
+                                        android:layout_width="42dp"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center"
+                                        android:text="100" />
+                                    <TextView
+                                        android:id="@+id/hp2"
+                                        android:layout_width="42dp"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center"
+                                        android:text="/150" />
+                                    <TextView
+                                        android:id="@+id/hp3"
+                                        android:layout_width="41dp"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center"
+                                        android:text="/200" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="175dp"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <TextView
+
+                                    android:layout_width="90dp"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center_vertical"
+                                    android:text="사거리: " />
+
+                                <TextView
+                                    android:id="@+id/range"
+                                    android:layout_width="100dp"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center_vertical"
+                                    android:text="2" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="200dp"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="60dp"
+                                    android:layout_height="match_parent"
+                                    android:gravity="right|center"
+                                    android:text="공격력 :" />
+
+                                <LinearLayout
+                                    android:layout_width="125dp"
+                                    android:layout_height="match_parent"
+                                    android:orientation="horizontal">
+                                    <TextView
+                                        android:id="@+id/attack1"
+                                        android:layout_width="42dp"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center"
+                                        android:text="100" />
+                                    <TextView
+                                        android:id="@+id/attack2"
+                                        android:layout_width="42dp"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center"
+                                        android:text="/150" />
+                                    <TextView
+                                        android:id="@+id/attack3"
+                                        android:layout_width="41dp"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center"
+                                        android:text="/200" />
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="175dp"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="90dp"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center_vertical"
+                                    android:text="공격속도 : " />
+
+                                <TextView
+                                    android:id="@+id/attack_speed"
+                                    android:layout_width="100dp"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center_vertical"
+                                    android:text="0.75" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:orientation="horizontal">
+
+                            <LinearLayout
+                                android:layout_width="200dp"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="60dp"
+                                    android:layout_height="match_parent"
+                                    android:gravity="right|center"
+                                    android:text="방어력 :" />
+
+                                <TextView
+                                    android:id="@+id/armor"
+                                    android:layout_width="41dp"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center"
+                                    android:text="20" />
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="175dp"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="90dp"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center_vertical"
+                                    android:text="마법 저항력 : " />
+
+                                <TextView
+                                    android:id="@+id/magic_resistance"
+                                    android:layout_width="100dp"
+                                    android:layout_height="match_parent"
+                                    android:gravity="center_vertical"
+                                    android:text="20" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="242dp"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/imgSkill"
+                                android:layout_width="100dp"
+                                android:layout_height="60dp"
+                                android:layout_gravity="center"
+                                app:srcCompat="@drawable/ahri_skill" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/txtSkill"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:gravity="center"
+                                    android:text="현혹의 구슬"
+                                    android:textSize="20dp" />
+
+                                <TextView
+                                    android:id="@+id/txtMana"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:gravity="center"
+                                    android:text="마나 0/60"
+                                    android:textColor="#2EFEF7"
+                                    android:textSize="15dp" />
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/txtSkillDes"
+                            android:layout_width="match_parent"
+                            android:layout_height="103dp"
+                            android:layout_gravity="center"
+                            android:gravity="center_vertical"
+                            android:text="아리가 일직선으로 구슬을 던집니다. 구슬은 닿는 모든 적에게 마법 피해를 입힙니다. 구슬은 아리에게 되돌아오며 이때 닿는 모든 적에게 고정 피해를 입힙니다." />
+
+                        <TextView
+                            android:id="@+id/txtSKillEffect"
+                            android:layout_width="match_parent"
+                            android:layout_height="68dp"
+                            android:gravity="center"
+                            android:text="피해량 : 175 / 250 / 375" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="240dp"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="105dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/imgFirstSyn2"
+                                android:layout_width="50dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center"
+                                />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/txtFirstSyn2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="20dp"
+                                    android:gravity="center"
+                                    android:text="별 수호자" />
+
+                                <TextView
+                                    android:id="@+id/txtSynDes"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="85dp"
+                                    android:gravity="center_vertical"
+                                    android:text="별 수호자는 스킬 사용 시 다른 별 수호자들에게 마나를 부여합니다. (서로 적용)"
+                                    android:textSize="15dp" />
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/SynLevel1"
+                            android:layout_width="match_parent"
+                            android:layout_height="33dp"
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:text=""
+                            android:textSize="15dp"/>
+
+                        <TextView
+                            android:id="@+id/SynLevel2"
+                            android:layout_width="match_parent"
+                            android:layout_height="33dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:textSize="15dp"/>
+
+                        <TextView
+                            android:id="@+id/SynLevel3"
+                            android:layout_width="match_parent"
+                            android:layout_height="33dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:textSize="15dp"/>
+
+                        <TextView
+                            android:id="@+id/SynLevel4"
+                            android:layout_width="match_parent"
+                            android:layout_height="33dp"
+                            android:gravity="center"
+                            android:text=""
+                            android:textSize="15dp"/>
+
+
+
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="240dp"
+                            android:layout_gravity="center"
+                            android:orientation="vertical">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="105dp"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:id="@+id/imgSecondSyn2"
+                                    android:layout_width="50dp"
+                                    android:layout_height="30dp"
+                                    android:layout_gravity="center"
+                                    />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/txtSecondSyn2"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="20dp"
+                                        android:gravity="center"
+                                        android:text="마법사"/>
+
+                                    <TextView
+                                        android:id="@+id/txtSynDes2"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="85dp"
+                                        android:gravity="center_vertical"
+                                        android:text="별 수호자는 스킬 사용 시 다른 별 수호자들에게 마나를 부여합니다. (서로 적용)"
+                                        android:textSize="15dp" />
+
+                                </LinearLayout>
+
+
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/SynLevel_1"
+                                android:layout_width="match_parent"
+                                android:layout_height="33dp"
+                                android:layout_gravity="center"
+                                android:gravity="center"
+                                android:text=""
+                                android:textSize="15dp"/>
+
+                            <TextView
+                                android:id="@+id/SynLevel_2"
+                                android:layout_width="match_parent"
+                                android:layout_height="33dp"
+                                android:gravity="center"
+                                android:text=""
+                                android:textSize="15dp"/>
+
+                            <TextView
+                                android:id="@+id/SynLevel_3"
+                                android:layout_width="match_parent"
+                                android:layout_height="33dp"
+                                android:gravity="center"
+                                android:text=""
+                                android:textSize="15dp"/>
+
+                            <TextView
+                                android:id="@+id/SynLevel_4"
+                                android:layout_width="match_parent"
+                                android:layout_height="33dp"
+                                android:gravity="center"
+                                android:text=""
+                                android:textSize="15dp"/>
+
+                        </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="240dp"
+                        android:layout_gravity="center"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="105dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/imgThirdSyn2"
+                                android:layout_width="50dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center"
+                                />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/txtThirdSyn2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="20dp"
+                                    android:gravity="center"
+                                    android:text="마법사"/>
+
+                                <TextView
+                                    android:id="@+id/txtSynDes3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="85dp"
+                                    android:gravity="center_vertical"
+                                    android:text="별 수호자는 스킬 사용 시 다른 별 수호자들에게 마나를 부여합니다. (서로 적용)"
+                                    android:textSize="15dp" />
+
+                            </LinearLayout>
+
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+    </LinearLayout>
+</ScrollView>
+</layout>

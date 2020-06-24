@@ -8,8 +8,8 @@
     android:paddingBottom="@dimen/margin_medium"
     android:paddingLeft="@dimen/margin_medium"
     android:paddingRight="@dimen/margin_medium"
-    tools:context=".view.menu.Simulator"
-    android:id="@+id/action_simulator">
+    tools:context=".view.menu.ChampionSynergy"
+    android:id="@+id/action_champion_synergy">
 
 
     <LinearLayout
@@ -19,15 +19,14 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="4"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
 
             <ScrollView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="2">
+                android:layout_weight="0.01">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -35,38 +34,12 @@
                     android:orientation="vertical" />
             </ScrollView>
 
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:layout_weight="8">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="5"
-                    android:orientation="horizontal">
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="5"
-                    android:orientation="horizontal">
-
-                    
-                </LinearLayout>
-            </LinearLayout>
-
         </LinearLayout>
 
         <SearchView
             android:id="@+id/searchView"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_height="wrap_content"
             android:inputType="textNoSuggestions" />
 
         <androidx.recyclerview.widget.RecyclerView
