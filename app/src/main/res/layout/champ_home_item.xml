@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_weight="1"
-    android:paddingTop="@dimen/margin_medium"
-    android:paddingBottom="@dimen/margin_medium"
     android:paddingLeft="@dimen/margin_medium"
+    android:paddingTop="@dimen/margin_medium"
     android:paddingRight="@dimen/margin_medium"
+    android:paddingBottom="@dimen/margin_medium"
     app:cardCornerRadius="5dp"
     app:cardUseCompatPadding="true">
 
@@ -88,6 +88,7 @@
                     <Space
                         android:layout_width="match_parent"
                         android:layout_height="8dp" />
+
                     <TextView
                         android:id="@+id/txtSecondSyn"
                         android:layout_width="match_parent"

@@ -23,7 +23,7 @@ class ChampMainAdapter(private var context : Context, private var items: Mutable
     : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     interface ItemClickListener{
-        fun onClick(view: View, position:Int)
+        fun onClick(view: View, position:Int, champ: Champ)
     }
 
     private var champCnt = 1
@@ -105,7 +105,7 @@ class ChampMainAdapter(private var context : Context, private var items: Mutable
                 holder.txtFirstSyn.text = items[position]?.synergy[0].name
                 holder.txtSecondSyn.text = items[position]?.synergy[1].name
                 holder.itemView.setOnClickListener {
-                    itemClickListener.onClick(it,position)
+                    itemClickListener.onClick(it,position,items[position])
                 }
             }
 
@@ -129,7 +129,7 @@ class ChampMainAdapter(private var context : Context, private var items: Mutable
                 holder.txtSecondSyn.text = items[position]?.synergy[1].name
                 holder.txtThirdSyn.text = items[position]?.synergy[2].name
                 holder.itemView.setOnClickListener {
-                    itemClickListener.onClick(it,position)
+                    itemClickListener.onClick(it,position,items[position])
                 }
             }
         }
