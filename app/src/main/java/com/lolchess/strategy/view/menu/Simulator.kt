@@ -86,7 +86,7 @@ class Simulator:Fragment(){
                             addChamp(simChamp)
                             addSynergy(fisrtSyn)
                             addSynergy(secondSyn)
-                            initSimulation(view)
+                            //initSimulation(view)
                         }
 
                         if(champ?.synergy?.size == 3){
@@ -99,7 +99,7 @@ class Simulator:Fragment(){
                             addSynergy(fisrtSyn)
                             addSynergy(secondSyn)
                             addSynergy(thirdSyn)
-                            initSimulation(view)
+                            //initSimulation(view)
                         }
                     }
 
