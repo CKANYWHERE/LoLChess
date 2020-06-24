@@ -138,30 +138,6 @@ class ChampMainAdapter(private var context : Context, private var items: Mutable
     fun setItemClickListener(itemClickListener: ItemClickListener){
         this.itemClickListener = itemClickListener
     }
-
-    private fun getChampCnt(): Runnable{
-        val simulatorDB = SimulatorDB.getInstance(context)
-        return Runnable{
-            champCnt = simulatorDB?.SimulatorDAO()?.getChampCount()!!
-        }
-    }
-
-    private fun addChamp(name:String, imgPath:Int, firstSynergy: String, secondSynergy:String,thirdSynergy: String) : Runnable{
-        val simulatorDB = SimulatorDB.getInstance(context)
-        return Runnable {
-            val champ = SimulatorChamp(name,imgPath,firstSynergy,secondSynergy,thirdSynergy)
-            simulatorDB?.SimulatorDAO()?.insert(champ)
-            notifyDataSetChanged()
-        }
-    }
-
-    private fun addSynergy(name:String, imgPath:Int) : Runnable{
-        val simulatorDB = SimulatorDB.getInstance(context)
-        return Runnable {
-            val synergy = SimulatorSynergy(name,imgPath)
-            simulatorDB?.SimulatorDAO()?.insert(synergy)
-            notifyDataSetChanged()
-        }
-    }
+    
 
 }
