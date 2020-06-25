@@ -149,25 +149,7 @@ class Simulator:Fragment(){
         var list = listOf<SimulatorChamp>()
         lifecycleScope.launch(Dispatchers.IO) {
             list = simulatorDB?.SimulatorDAO()?.getAllChamp()!!
-            val layoutParams = LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.MATCH_PARENT,1f)
 
-            for(i in 0..list.size - 1){
-                if(i < 5){
-                    list[i]?.imgPath?.let {
-                        val imgView = ImageView(view?.context)
-                        imgView.setImageResource(it)
-                        imgView.layoutParams = layoutParams
-                        layoutTop.addView(imgView)
-                    }
-                }else{
-                    list[i]?.imgPath?.let {
-                        val imgView = ImageView(view?.context)
-                        imgView.setImageResource(it)
-                        imgView.layoutParams = layoutParams
-                        layoutBottom.addView(imgView)
-                    }
-                }
-            }
         }
     }
 }

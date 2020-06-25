@@ -138,6 +138,6 @@ class ChampMainAdapter(private var context : Context, private var items: Mutable
     fun setItemClickListener(itemClickListener: ItemClickListener){
         this.itemClickListener = itemClickListener
     }
-    
+
 
 }
