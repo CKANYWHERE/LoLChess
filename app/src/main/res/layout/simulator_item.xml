@@ -12,11 +12,7 @@
     app:cardUseCompatPadding="true">
 
 
-    <FrameLayout
-        android:id="@+id/costRadius"
-        android:background="@color/cost5"
-        android:layout_width="8dp"
-        android:layout_height="match_parent"/>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -34,6 +30,7 @@
             android:id="@+id/txtName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
             android:textSize="15dp"
             android:text="아우렐리온 솔" />
 
