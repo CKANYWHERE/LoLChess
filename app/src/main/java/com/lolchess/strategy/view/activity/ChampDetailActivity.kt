@@ -52,19 +52,23 @@ import java.time.temporal.ChronoField
 
 class ChampDetailActivity: AppCompatActivity() {
     lateinit var binding: ActivityChampDetailBinding
-    lateinit var three_binding: ActivityChampDetailThreeBinding
+    lateinit var threeBinding: ActivityChampDetailThreeBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_champ_detail)
-        three_binding = DataBindingUtil.setContentView(this, R.layout.activity_champ_detail_three)
+
+        binding = DataBindingUtil . setContentView (this, R.layout.activity_champ_detail) //시너지 2개
+        threeBinding = DataBindingUtil.setContentView(this, R.layout.activity_champ_detail_three) // 시너지 3개
+
+
         //layout 바인딩해서 intent에서 나온 값을 넣어줌(?).
         txtFirstSyn.text = intent.getStringExtra(("SYNERGYNAME"))
         txtSecondSyn.text = intent.getStringExtra(("SYNERGYNAME2"))
-        txtThirdSyn.text = intent.getStringExtra(("SYNERGYNAME3"))
+       // txtThirdSyn.text = intent.getStringExtra(("SYNERGYNAME3"))
 
         txtFirstSyn2.text = intent.getStringExtra(("SYNERGYNAME"))
         txtSecondSyn2.text = intent.getStringExtra(("SYNERGYNAME2"))
-        txtThirdSyn2.text = intent.getStringExtra(("SYNERGYNAME3"))
+      //  txtThirdSyn2.text = intent.getStringExtra(("SYNERGYNAME3"))
 
         txtMain.text = intent.getStringExtra(("CHAMPNAME"))
         imgMain.setImageResource(intent.getStringExtra("CHAMPIMAGE").toInt())
@@ -72,19 +76,18 @@ class ChampDetailActivity: AppCompatActivity() {
 
         imgFirstSyn.setImageResource(intent.getStringExtra("SYNERGYIMAGE").toInt())
         imgSecondSyn.setImageResource(intent.getStringExtra("SYNERGYIMAGE2").toInt())
-        imgThirdSyn.setImageResource(intent.getStringExtra("SYNERGYIMAGE3").toInt())
+//      imgThirdSyn.setImageResource(intent.getStringExtra("SYNERGYIMAGE3").toInt())
 
         imgFirstSyn2.setImageResource(intent.getStringExtra("SYNERGYIMAGE").toInt())
         imgSecondSyn2.setImageResource(intent.getStringExtra("SYNERGYIMAGE2").toInt())
-        imgThirdSyn2.setImageResource(intent.getStringExtra("SYNERGYIMAGE3").toInt())
+//      imgThirdSyn2.setImageResource(intent.getStringExtra("SYNERGYIMAGE3").toInt())
 
 
         txtSynDes.text = intent.getStringExtra(("SYNERGYDES1"))
         txtSynDes2.text = intent.getStringExtra(("SYNERGYDES2"))
-        txtSynDes3.text = intent.getStringExtra(("ThirdSynergy"))
 
-        var option = intent.getStringArrayExtra("SynergyOption").size
-        var option2 = intent.getStringArrayExtra("SynergyOption2").size
+        val option = intent.getStringArrayExtra("SynergyOption").size
+        val option2 = intent.getStringArrayExtra("SynergyOption2").size
         Log.e("SynergyOption", intent.getStringArrayExtra("SynergyOption").size.toString())
         Log.e("SynergyOption2", intent.getStringArrayExtra("SynergyOption2").size.toString())
 
@@ -142,6 +145,7 @@ class ChampDetailActivity: AppCompatActivity() {
         range.text = intent.getStringExtra(("ATTACKRANGE"))
         armor.text = intent.getStringExtra(("SHIELD"))
         magic_resistance.text = intent.getStringExtra(("MAGICSHIELD"))
+
 
     }
 }

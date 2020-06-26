@@ -11,8 +11,8 @@
         android:layout_gravity="center"
         android:text="@string/home"
         tools:layout_conversion_absoluteHeight="19dp"
-        tools:layout_editor_absoluteY="356dp"
+        tools:layout_conversion_absoluteWidth="83dp"
         tools:layout_editor_absoluteX="164dp"
-        tools:layout_conversion_absoluteWidth="83dp" />
+        tools:layout_editor_absoluteY="356dp" />
 
 </FrameLayout>
