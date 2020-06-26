@@ -41,25 +41,13 @@
                 android:orientation="vertical"
                 android:layout_weight="8">
 
-                <LinearLayout
-                    android:id="@+id/layoutTop"
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/simulationView"
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:layout_weight="5"
-                    android:orientation="horizontal">
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/layoutBottom"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="5"
-                    android:orientation="horizontal">
-
-
-                </LinearLayout>
+                    >
+                </androidx.recyclerview.widget.RecyclerView>
             </LinearLayout>
 
         </LinearLayout>

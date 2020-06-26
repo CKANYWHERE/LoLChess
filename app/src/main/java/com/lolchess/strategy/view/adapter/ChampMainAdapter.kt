@@ -23,7 +23,7 @@ class ChampMainAdapter(private var context : Context, private var items: Mutable
     : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     interface ItemClickListener{
-        fun onClick(view: View, position:Int)
+        fun onClick(view: View, position:Int, champ: Champ)
     }
 
     private var champCnt = 1
@@ -105,7 +105,7 @@ class ChampMainAdapter(private var context : Context, private var items: Mutable
                 holder.txtFirstSyn.text = items[position]?.synergy[0].name
                 holder.txtSecondSyn.text = items[position]?.synergy[1].name
                 holder.itemView.setOnClickListener {
-                    itemClickListener.onClick(it,position)
+                    itemClickListener.onClick(it,position,items[position])
                 }
             }
 
@@ -129,7 +129,7 @@ class ChampMainAdapter(private var context : Context, private var items: Mutable
                 holder.txtSecondSyn.text = items[position]?.synergy[1].name
                 holder.txtThirdSyn.text = items[position]?.synergy[2].name
                 holder.itemView.setOnClickListener {
-                    itemClickListener.onClick(it,position)
+                    itemClickListener.onClick(it,position,items[position])
                 }
             }
         }
@@ -139,29 +139,5 @@ class ChampMainAdapter(private var context : Context, private var items: Mutable
         this.itemClickListener = itemClickListener
     }
 
-    private fun getChampCnt(): Runnable{
-        val simulatorDB = SimulatorDB.getInstance(context)
-        return Runnable{
-            champCnt = simulatorDB?.SimulatorDAO()?.getChampCount()!!
-        }
-    }
-
-    private fun addChamp(name:String, imgPath:Int, firstSynergy: String, secondSynergy:String,thirdSynergy: String) : Runnable{
-        val simulatorDB = SimulatorDB.getInstance(context)
-        return Runnable {
-            val champ = SimulatorChamp(name,imgPath,firstSynergy,secondSynergy,thirdSynergy)
-            simulatorDB?.SimulatorDAO()?.insert(champ)
-            notifyDataSetChanged()
-        }
-    }
-
-    private fun addSynergy(name:String, imgPath:Int) : Runnable{
-        val simulatorDB = SimulatorDB.getInstance(context)
-        return Runnable {
-            val synergy = SimulatorSynergy(name,imgPath)
-            simulatorDB?.SimulatorDAO()?.insert(synergy)
-            notifyDataSetChanged()
-        }
-    }
 
 }
