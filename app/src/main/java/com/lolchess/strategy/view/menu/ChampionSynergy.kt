@@ -7,9 +7,11 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.GridLayout
+import android.widget.LinearLayout
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
 import com.lolchess.strategy.R
 import com.lolchess.strategy.controller.database.SimulatorDB
 import com.lolchess.strategy.controller.entity.SimulatorChamp
@@ -49,7 +51,7 @@ class ChampionSynergy: Fragment(){
 
         val mAdapter = ChampDetailAdapter(view.context,champMutableList)
         recyclerView?.adapter = mAdapter
-        recyclerView?.layoutManager = LinearLayoutManager(view.context)
+        recyclerView?.layoutManager = GridLayoutManager(view.context, 3)
 
         var searchManager = activity?.getSystemService(Context.SEARCH_SERVICE) as SearchManager
 
@@ -76,12 +78,12 @@ class ChampionSynergy: Fragment(){
         searchView!!.setOnQueryTextListener(object : SearchView.OnQueryTextListener,
                 android.widget.SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
-                (recyclerView?.adapter as ChampMainAdapter).filter(query)
+                (recyclerView?.adapter as ChampDetailAdapter).filter(query)
                 return false
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                (recyclerView?.adapter as ChampMainAdapter).filter(newText)
+                (recyclerView?.adapter as ChampDetailAdapter).filter(newText)
                 return false
             }
         })

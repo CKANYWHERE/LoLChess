@@ -39,7 +39,6 @@ class ChampDetailViewHolder(var view: View) : RecyclerView.ViewHolder(view){ //c
         intent.putExtra("SKILL", item.skill)
         intent.putExtra("SYNERGYDES1", item.synergy[0].description)
         intent.putExtra("SYNERGYDES2", item.synergy[1].description)
-        intent.putExtra("Champ",item.toString())
 
 
         intent.putExtra("SynergyOption", item.synergy[0].option.toTypedArray())

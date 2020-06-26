@@ -32,11 +32,11 @@ class ChampDetailAdapter(private val context : Context, private var items: Mutab
 
         return when (viewType){
             Champ.TWO_TYPE_SYN ->{
-                view = LayoutInflater.from(parent.context).inflate(R.layout.champ_home_item, parent, false)
+                view = LayoutInflater.from(parent.context).inflate(R.layout.champ_detail, parent, false)
                 ChampDetailViewHolder(view)
             }
             Champ.THREE_TYPE_SYN ->{
-                view = LayoutInflater.from(parent.context).inflate(R.layout.champ_home_item_three, parent, false)
+                view = LayoutInflater.from(parent.context).inflate(R.layout.champ_detail, parent, false)
                 ChampDetailViewHolder3Syn(view)
             }
             else -> throw  RuntimeException("알수 없는 뷰타입 오류")
@@ -90,10 +90,6 @@ class ChampDetailAdapter(private val context : Context, private var items: Mutab
                 }
                 holder.imgMain.setImageResource(items[position]?.imgPath)
                 holder.txtMain.text = items[position]?.name
-                holder.firstImgSyn.setImageResource(items[position]?.synergy[0]?.imgPath)
-                holder.secondImgSyn.setImageResource(items[position]?.synergy[1]?.imgPath)
-                holder.txtFirstSyn.text = items[position]?.synergy[0].name
-                holder.txtSecondSyn.text = items[position]?.synergy[1].name
                 holder.itemView.setOnClickListener {
                     holder.initialize(items.get(position))
                 }
@@ -113,12 +109,6 @@ class ChampDetailAdapter(private val context : Context, private var items: Mutab
                 }
                 holder.imgMain.setImageResource(items[position]?.imgPath)
                 holder.txtMain.text = items[position]?.name
-                holder.firstImgSyn.setImageResource(items[position]?.synergy[0]?.imgPath)
-                holder.secondImgSyn.setImageResource(items[position]?.synergy[1]?.imgPath)
-                holder.thirdImgSyn.setImageResource(items[position]?.synergy[2]?.imgPath)
-                holder.txtFirstSyn.text = items[position]?.synergy[0].name
-                holder.txtSecondSyn.text = items[position]?.synergy[1].name
-                holder.txtThirdSyn.text = items[position]?.synergy[2].name
                 holder.itemView.setOnClickListener {
                     holder.initialize_2(items.get(position))
 

@@ -44,20 +44,21 @@ import kotlinx.android.synthetic.main.activity_champ_detail.txtSynDes2
 import kotlinx.android.synthetic.main.activity_champ_detail_three.*
 
 
-class ChampDetailActivity: AppCompatActivity() {
-    lateinit var binding: ActivityChampDetailBinding
+class ChampDetailActivityThree: AppCompatActivity() {
     lateinit var threeBinding: ActivityChampDetailThreeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_champ_detail)
+        threeBinding = DataBindingUtil.setContentView(this, R.layout.activity_champ_detail_three)
 
         //layout 바인딩해서 intent에서 나온 값을 넣어줌(?).
         txtFirstSyn.text = intent.getStringExtra(("SYNERGYNAME"))
         txtSecondSyn.text = intent.getStringExtra(("SYNERGYNAME2"))
+        txtThirdSyn.text = intent.getStringExtra(("SYNERGYNAME3"))
 
         txtFirstSyn2.text = intent.getStringExtra(("SYNERGYNAME"))
         txtSecondSyn2.text = intent.getStringExtra(("SYNERGYNAME2"))
+        txtThirdSyn2.text = intent.getStringExtra(("SYNERGYNAME3"))
 
         txtMain.text = intent.getStringExtra(("CHAMPNAME"))
         imgMain.setImageResource(intent.getStringExtra("CHAMPIMAGE").toInt())
@@ -65,12 +66,18 @@ class ChampDetailActivity: AppCompatActivity() {
 
         imgFirstSyn.setImageResource(intent.getStringExtra("SYNERGYIMAGE").toInt())
         imgSecondSyn.setImageResource(intent.getStringExtra("SYNERGYIMAGE2").toInt())
+        imgThirdSyn.setImageResource(intent.getStringExtra("SYNERGYIMAGE3").toInt())
+
 
         imgFirstSyn2.setImageResource(intent.getStringExtra("SYNERGYIMAGE").toInt())
         imgSecondSyn2.setImageResource(intent.getStringExtra("SYNERGYIMAGE2").toInt())
+        imgThirdSyn2.setImageResource(intent.getStringExtra("SYNERGYIMAGE3").toInt())
+
 
         txtSynDes.text = intent.getStringExtra(("SYNERGYDES1"))
         txtSynDes2.text = intent.getStringExtra(("SYNERGYDES2"))
+        txtSynDes3.text = intent.getStringExtra(("ThirdSynergy"))
+
 
         val option = intent.getStringArrayExtra("SynergyOption").size
         val option2 = intent.getStringArrayExtra("SynergyOption2").size
