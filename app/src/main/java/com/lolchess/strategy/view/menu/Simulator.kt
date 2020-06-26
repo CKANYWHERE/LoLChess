@@ -16,6 +16,7 @@ import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.whenStarted
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.lolchess.strategy.R
 import com.lolchess.strategy.controller.database.SimulatorDB
@@ -66,7 +67,9 @@ class Simulator:Fragment(){
 
     private fun addChamp(champ: SimulatorChamp){
         lifecycleScope.launch(Dispatchers.IO){
-            simulatorDB?.SimulatorDAO()?.insert(champ)
+            whenStarted {
+                simulatorDB?.SimulatorDAO()?.insert(champ)
+            }
             simulationView?.adapter?.notifyDataSetChanged()
         }
     }
