@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.lolchess.strategy.R
 import com.lolchess.strategy.databinding.ActivityChampDetailBinding
-import com.lolchess.strategy.databinding.ActivityChampDetailThreeBinding
 import kotlinx.android.synthetic.main.activity_champ_detail.SynLevel1
 import kotlinx.android.synthetic.main.activity_champ_detail.SynLevel2
 import kotlinx.android.synthetic.main.activity_champ_detail.SynLevel3
@@ -46,7 +45,6 @@ import kotlinx.android.synthetic.main.activity_champ_detail_three.*
 
 class ChampDetailActivity: AppCompatActivity() {
     lateinit var binding: ActivityChampDetailBinding
-    lateinit var threeBinding: ActivityChampDetailThreeBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
