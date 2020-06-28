@@ -1,5 +1,6 @@
 package com.lolchess.strategy.view.activity
 
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
@@ -52,6 +53,17 @@ class ChampDetailActivityThree: AppCompatActivity() {
         threeBinding = DataBindingUtil.setContentView(this, R.layout.activity_champ_detail_three)
 
         //layout 바인딩해서 intent에서 나온 값을 넣어줌(?).
+
+        var cost = intent.getStringExtra("Cost").toInt()
+
+        when (cost){
+            1->{imgCost.setBackgroundColor(Color.rgb(173,181,189))}
+            2->{imgCost.setBackgroundColor(Color.rgb(81,207,102))}
+            3->{ imgCost.setBackgroundColor(Color.rgb(76,110,245))}
+            4->{imgCost.setBackgroundColor(Color.rgb(204,93,232))}
+            5->{imgCost.setBackgroundColor(Color.rgb(255,255,0))}
+        }
+
         txtFirstSyn.text = intent.getStringExtra(("SYNERGYNAME"))
         txtSecondSyn.text = intent.getStringExtra(("SYNERGYNAME2"))
         txtThirdSyn.text = intent.getStringExtra(("SYNERGYNAME3"))

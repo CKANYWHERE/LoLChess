@@ -1,6 +1,7 @@
 package com.lolchess.strategy.view.viewholder
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Parcel
 import android.os.Parcelable
 import android.util.Log
@@ -24,6 +25,8 @@ class ChampDetailViewHolder(var view: View) : RecyclerView.ViewHolder(view){ //c
 
     fun initialize(item: Champ) {
         val intent = Intent(view.context, ChampDetailActivity::class.java )
+
+        intent.putExtra("Cost", item.cost.toString())
 
         intent.putExtra("CHAMPIMAGE", item.imgPath.toString())
         intent.putExtra("SYNERGYIMAGE", item.synergy[0].imgPath.toString())

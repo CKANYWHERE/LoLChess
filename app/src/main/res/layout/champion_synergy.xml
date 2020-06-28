@@ -4,53 +4,101 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingTop="@dimen/margin_medium"
-    android:paddingBottom="@dimen/margin_medium"
-    android:paddingLeft="@dimen/margin_medium"
-    android:paddingRight="@dimen/margin_medium"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
     tools:context=".view.menu.ChampionSynergy"
     android:id="@+id/action_champion_synergy">
 
-
-    <LinearLayout
+    <SearchView
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textNoSuggestions" />
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_marginTop="50dp">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
 
-            <ScrollView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.01">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:text="1코스트 챔피언"/>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical" />
-            </ScrollView>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/champDetailRecyclerView1"
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:layout_weight="5"
+                app:layoutManager="GridLayoutManager">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:text="2코스트 챔피언"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/champDetailRecyclerView2"
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:layout_weight="5"
+                app:layoutManager="GridLayoutManager">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:text="3코스트 챔피언"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/champDetailRecyclerView3"
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:layout_weight="5"
+                app:layoutManager="GridLayoutManager">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:text="4코스트 챔피언"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/champDetailRecyclerView4"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_weight="5"
+                app:layoutManager="GridLayoutManager">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:text="5코스트 챔피언"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/champDetailRecyclerView5"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_weight="5"
+                app:layoutManager="GridLayoutManager">
+
+            </androidx.recyclerview.widget.RecyclerView>
 
         </LinearLayout>
 
-        <SearchView
-            android:id="@+id/searchView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textNoSuggestions" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="5"
-            app:layoutManager="GridLayoutManager">
-
-        </androidx.recyclerview.widget.RecyclerView>
-
-    </LinearLayout>
+    </ScrollView>
 
 </FrameLayout>
