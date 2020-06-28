@@ -16,6 +16,7 @@ import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.lifecycleScope
+import androidx.lifecycle.whenStarted
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.lolchess.strategy.R
 import com.lolchess.strategy.controller.database.SimulatorDB
@@ -24,6 +25,7 @@ import com.lolchess.strategy.controller.entity.SimulatorSynergy
 import com.lolchess.strategy.model.data.ChampData
 import com.lolchess.strategy.model.Champ
 import com.lolchess.strategy.view.adapter.ChampMainAdapter
+import com.lolchess.strategy.view.adapter.SimulationAdapter
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -49,6 +51,36 @@ class Simulator:Fragment(){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        simulatorDB = SimulatorDB.getInstance(view.context)!!
+        lifecycleScope.launch(Dispatchers.IO){
+            simulatorDB?.SimulatorDAO().deleteAllChamp()
+            simulatorDB?.SimulatorDAO().deleteAllSynergy()
+        }
+        ///=> 챔프랑 시너지 삭제할때만 사용
+
+
+        initChampView()
+        initSimulation(view)
+        initSearchBar()
+
+    }
+
+    private fun addChamp(champ: SimulatorChamp){
+        lifecycleScope.launch(Dispatchers.IO){
+            whenStarted {
+                simulatorDB?.SimulatorDAO()?.insert(champ)
+            }
+            simulationView?.adapter?.notifyDataSetChanged()
+        }
+    }
+
+    private fun addSynergy(synergy: SimulatorSynergy){
+        lifecycleScope.launch(Dispatchers.IO){
+            simulatorDB?.SimulatorDAO()?.insert(synergy)
+        }
+    }
+
+    private fun initChampView(){
         val champData = ChampData()
         val champList : List<Champ> =
             listOf(champData.getGraves(), champData.getNocturne(), champData.getLeona(), champData.getMalphite(), champData.getPoppy(), champData.getIllaoi(),
@@ -63,34 +95,28 @@ class Simulator:Fragment(){
                 champData.getUrgot(), champData.getJanna(),  champData.getXerath())
 
         val champMutableList = champList.toMutableList()
-        val mAdapter = ChampMainAdapter(view.context,champMutableList)
-        simulatorDB = SimulatorDB.getInstance(view.context)!!
-
-        /*lifecycleScope.launch(Dispatchers.IO){
-            simulatorDB?.SimulatorDAO().deleteAllChamp()
-            simulatorDB?.SimulatorDAO().deleteAllSynergy()
-        }*/
-        ///=> 챔프랑 시너지 삭제할때만 사용
+        val mAdapter = ChampMainAdapter(view!!.context,champMutableList)
 
         mAdapter.setItemClickListener(object : ChampMainAdapter.ItemClickListener{
             override fun onClick(view: View, position: Int, champ: Champ) {
                 lifecycleScope.launch(Dispatchers.IO) {
-                   val count = simulatorDB?.SimulatorDAO()?.getChampCount()
+                    val count = simulatorDB?.SimulatorDAO()?.getChampCount()
                     Log.e("count",count.toString())
                     if(count < 10){
                         if(champ?.synergy?.size == 2){
-                            val simChamp = SimulatorChamp(champ?.name,champ?.imgPath,champ?.synergy[0]?.name,champ?.synergy[1].name,"")
+                            val simChamp = SimulatorChamp(champ?.name,champ?.imgPath,champ?.cost ,champ?.synergy[0]?.name,champ?.synergy[1].name,"")
                             val fisrtSyn = SimulatorSynergy(champ?.synergy[0]?.name, champ?.synergy[0]?.imgPath)
                             val secondSyn = SimulatorSynergy(champ?.synergy[1]?.name, champ?.synergy[1]?.imgPath)
 
                             addChamp(simChamp)
                             addSynergy(fisrtSyn)
                             addSynergy(secondSyn)
-                            //initSimulation(view)
+
+
                         }
 
                         if(champ?.synergy?.size == 3){
-                            val simChamp = SimulatorChamp(champ?.name,champ?.imgPath,champ?.synergy[0]?.name,champ?.synergy[1].name,champ?.synergy[2].name)
+                            val simChamp = SimulatorChamp(champ?.name,champ?.imgPath,champ?.cost ,champ?.synergy[0]?.name,champ?.synergy[1].name,champ?.synergy[2].name)
                             val fisrtSyn = SimulatorSynergy(champ?.synergy[0]?.name, champ?.synergy[0]?.imgPath)
                             val secondSyn = SimulatorSynergy(champ?.synergy[1]?.name, champ?.synergy[1]?.imgPath)
                             val thirdSyn = SimulatorSynergy(champ?.synergy[2]?.name, champ?.synergy[2]?.imgPath)
@@ -99,20 +125,20 @@ class Simulator:Fragment(){
                             addSynergy(fisrtSyn)
                             addSynergy(secondSyn)
                             addSynergy(thirdSyn)
-                            //initSimulation(view)
+
+
                         }
                     }
-
-
                 }
             }
 
         })
 
-        recyclerView?.layoutManager = LinearLayoutManager(view.context)
+        recyclerView?.layoutManager = LinearLayoutManager(view!!.context)
         recyclerView?.adapter = mAdapter
+    }
 
-
+    private fun initSearchBar(){
         var searchManager = activity?.getSystemService(Context.SEARCH_SERVICE) as SearchManager
         searchView!!.setSearchableInfo(searchManager.getSearchableInfo(activity?.componentName))
         searchView!!.setOnQueryTextListener(object : SearchView.OnQueryTextListener,
@@ -127,30 +153,18 @@ class Simulator:Fragment(){
                 return false
             }
         })
-
-        initSimulation(view)
-
-
-    }
-
-    private fun addChamp(champ: SimulatorChamp){
-        lifecycleScope.launch(Dispatchers.IO){
-            simulatorDB?.SimulatorDAO()?.insert(champ)
-        }
-    }
-
-    private fun addSynergy(synergy: SimulatorSynergy){
-        lifecycleScope.launch(Dispatchers.IO){
-            simulatorDB?.SimulatorDAO()?.insert(synergy)
-        }
     }
 
     private fun initSimulation(view:View){
-        var list = listOf<SimulatorChamp>()
-        lifecycleScope.launch(Dispatchers.IO) {
-            list = simulatorDB?.SimulatorDAO()?.getAllChamp()!!
 
+        lifecycleScope.launch(Dispatchers.IO){
+            val simulatorChamp =  simulatorDB?.SimulatorDAO()?.getAllChamp()
+            val simulatorChampList = simulatorChamp.toMutableList()
+            val simulatorAdapter = SimulationAdapter(view.context,simulatorChampList)
+            //simulationView?.layoutManager = LinearLayoutManager(view.context)
+            simulationView?.adapter = simulatorAdapter
         }
+
     }
 }
 
