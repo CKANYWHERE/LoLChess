@@ -4,7 +4,7 @@ import com.lolchess.strategy.R
 import com.lolchess.strategy.model.Champ
 import com.lolchess.strategy.model.Synergy
 
-//3.5버전은 본섭으로 넘어오면서 스탯이 바뀔수 있음.
+//10.13패치부터 스탯 변경해야됌
 //3.5버전에서 진의 공속은 1성~3성 (0.85, 0.95, 1.25)로 바뀜. 따로 적용시켜야함.
 
 class ChampData {
