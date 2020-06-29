@@ -24,7 +24,6 @@ interface SimulatorDAO {
     @Insert(onConflict = REPLACE)
     suspend fun insert(simulatorSynergy: SimulatorSynergy)
 
-
     @Insert(onConflict = REPLACE)
     suspend fun insert(simulatorChamp: SimulatorChamp)
 

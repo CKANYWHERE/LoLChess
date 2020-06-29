@@ -53,7 +53,7 @@ class Simulator:Fragment(){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         simulatorDB = SimulatorDB.getInstance(view.context)!!
-        simulatorViewModel = ViewModelProvider(this,ViewModelProvider.NewInstanceFactory()).get(SimualtorViewModel::class.java)
+        simulatorViewModel = ViewModelProvider(this,SimualtorViewModel.Factory(activity!!.application)).get(SimualtorViewModel::class.java)
         /*lifecycleScope.launch(Dispatchers.IO){
             simulatorDB?.SimulatorDAO().deleteAllChamp()
             simulatorDB?.SimulatorDAO().deleteAllSynergy()
@@ -155,7 +155,6 @@ class Simulator:Fragment(){
         simulatorViewModel.getAll().observe(viewLifecycleOwner, Observer { champs ->
             champs?.let { simulatorAdapter.setData(champs)}
         })
-
     }
 }
 

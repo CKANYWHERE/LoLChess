@@ -1,10 +1,7 @@
 package com.lolchess.strategy.controller.viewmodel
 
 import android.app.Application
-import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.lolchess.strategy.controller.database.SimulatorDB
 import com.lolchess.strategy.controller.entity.SimulatorChamp
 import com.lolchess.strategy.controller.entity.SimulatorSynergy
@@ -14,6 +11,13 @@ import kotlinx.coroutines.launch
 class SimualtorViewModel(application: Application):ViewModel() {
     private val simulatorRepository : SimulatorRepository
     val allSimChamp: LiveData<List<SimulatorChamp>>
+
+
+    class Factory(val application: Application) : ViewModelProvider.Factory {
+        override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+            return SimualtorViewModel(application) as T
+        }
+    }
 
     init {
         val simulatorDAO = SimulatorDB.getInstance(application)?.SimulatorDAO()

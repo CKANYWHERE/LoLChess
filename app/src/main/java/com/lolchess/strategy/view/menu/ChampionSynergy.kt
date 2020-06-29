@@ -86,10 +86,10 @@ class ChampionSynergy: Fragment(){
 
         var searchManager = activity?.getSystemService(Context.SEARCH_SERVICE) as SearchManager
 
-        var list = listOf<SimulatorChamp>()
-        var simulatorDB = SimulatorDB.getInstance(view.context)
+       // var list = listOf<SimulatorChamp>()
+       // var simulatorDB = SimulatorDB.getInstance(view.context)
 
-        var r = Runnable {
+        /*var r = Runnable {
             try {
                 list = simulatorDB?.SimulatorDAO()?.getAllChamp()!!
                 for (champ in list){
@@ -99,10 +99,10 @@ class ChampionSynergy: Fragment(){
             }catch (e: Exception){
                 Log.e("err",e.toString() )
             }
-        }
+        }*/
 
-        val thread  = Thread(r)
-        thread.start()
+       // val thread  = Thread(r)
+        //thread.start()
 
         searchView!!.setSearchableInfo(searchManager.getSearchableInfo(activity?.componentName))
 
