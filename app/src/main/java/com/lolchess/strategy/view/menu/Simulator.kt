@@ -10,11 +10,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.Toast
 import androidx.appcompat.widget.SearchView
+import androidx.lifecycle.Observer
+import androidx.lifecycle.SavedStateViewModelFactory
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.whenStarted
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -22,15 +21,14 @@ import com.lolchess.strategy.R
 import com.lolchess.strategy.controller.database.SimulatorDB
 import com.lolchess.strategy.controller.entity.SimulatorChamp
 import com.lolchess.strategy.controller.entity.SimulatorSynergy
+import com.lolchess.strategy.controller.viewmodel.SimualtorViewModel
 import com.lolchess.strategy.model.data.ChampData
 import com.lolchess.strategy.model.Champ
 import com.lolchess.strategy.view.adapter.ChampMainAdapter
 import com.lolchess.strategy.view.adapter.SimulationAdapter
-
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.android.synthetic.main.simulator_fragment.*
-import kotlin.math.log
 
 
 class Simulator:Fragment(){
@@ -41,6 +39,9 @@ class Simulator:Fragment(){
 
 
     private lateinit var simulatorDB:SimulatorDB
+    private lateinit var simulatorViewModel:SimualtorViewModel
+
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         super.onCreateView(inflater, container, savedInstanceState)
 
@@ -52,32 +53,26 @@ class Simulator:Fragment(){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         simulatorDB = SimulatorDB.getInstance(view.context)!!
-        lifecycleScope.launch(Dispatchers.IO){
+        simulatorViewModel = ViewModelProvider(this,ViewModelProvider.NewInstanceFactory()).get(SimualtorViewModel::class.java)
+        /*lifecycleScope.launch(Dispatchers.IO){
             simulatorDB?.SimulatorDAO().deleteAllChamp()
             simulatorDB?.SimulatorDAO().deleteAllSynergy()
-        }
+        }*/
         ///=> 챔프랑 시너지 삭제할때만 사용
 
 
         initChampView()
-        initSimulation(view)
+        setSimulation(view)
         initSearchBar()
 
     }
 
     private fun addChamp(champ: SimulatorChamp){
-        lifecycleScope.launch(Dispatchers.IO){
-            whenStarted {
-                simulatorDB?.SimulatorDAO()?.insert(champ)
-            }
-            simulationView?.adapter?.notifyDataSetChanged()
-        }
+       simulatorViewModel.insert(champ)
     }
 
     private fun addSynergy(synergy: SimulatorSynergy){
-        lifecycleScope.launch(Dispatchers.IO){
-            simulatorDB?.SimulatorDAO()?.insert(synergy)
-        }
+        simulatorViewModel.insert(synergy)
     }
 
     private fun initChampView(){
@@ -99,7 +94,7 @@ class Simulator:Fragment(){
 
         mAdapter.setItemClickListener(object : ChampMainAdapter.ItemClickListener{
             override fun onClick(view: View, position: Int, champ: Champ) {
-                lifecycleScope.launch(Dispatchers.IO) {
+                /*lifecycleScope.launch(Dispatchers.IO) {
                     val count = simulatorDB?.SimulatorDAO()?.getChampCount()
                     Log.e("count",count.toString())
                     if(count < 10){
@@ -129,7 +124,7 @@ class Simulator:Fragment(){
 
                         }
                     }
-                }
+                }*/
             }
 
         })
@@ -155,15 +150,11 @@ class Simulator:Fragment(){
         })
     }
 
-    private fun initSimulation(view:View){
-
-        lifecycleScope.launch(Dispatchers.IO){
-            val simulatorChamp =  simulatorDB?.SimulatorDAO()?.getAllChamp()
-            val simulatorChampList = simulatorChamp.toMutableList()
-            val simulatorAdapter = SimulationAdapter(view.context,simulatorChampList)
-            //simulationView?.layoutManager = LinearLayoutManager(view.context)
-            simulationView?.adapter = simulatorAdapter
-        }
+    private fun setSimulation(view:View){
+        val simulatorAdapter = SimulationAdapter(view.context)
+        simulatorViewModel.getAll().observe(viewLifecycleOwner, Observer { champs ->
+            champs?.let { simulatorAdapter.setData(champs)}
+        })
 
     }
 }

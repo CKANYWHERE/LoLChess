@@ -12,8 +12,11 @@ import com.lolchess.strategy.view.viewholder.ChampMainViewHolder
 import com.lolchess.strategy.view.viewholder.SimulationViewHolder
 import kotlinx.android.synthetic.main.simulator_item.view.*
 
-class SimulationAdapter(private var context : Context, private var items: MutableList<SimulatorChamp>)// recycler view binding 해주는 클래스
+class SimulationAdapter(private var context : Context)// recycler view binding 해주는 클래스
     : RecyclerView.Adapter<RecyclerView.ViewHolder>()  {
+
+    private var items = emptyList<SimulatorChamp>()
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val view : View?
         view = LayoutInflater.from(parent.context).inflate(R.layout.simulator_item, parent, false)
@@ -29,5 +32,10 @@ class SimulationAdapter(private var context : Context, private var items: Mutabl
         holder.imgView.setImageResource(champ?.imgPath!!)
         holder.txtCost.text = champ?.cost.toString() + "cost"
         holder.txtName.text = champ?.name
+    }
+
+    fun setData(champ: List<SimulatorChamp>){
+        this.items = champ
+        notifyDataSetChanged()
     }
 }
