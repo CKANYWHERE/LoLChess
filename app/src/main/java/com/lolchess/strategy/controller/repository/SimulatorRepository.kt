@@ -18,6 +18,10 @@ class SimulatorRepository(private val simulatorDAO :SimulatorDAO) {
     suspend fun insert(simulatorSynergy: SimulatorSynergy){
         simulatorDAO.insert(simulatorSynergy)
     }
+
+    suspend fun deleteChampByName(name:String) {
+        return simulatorDAO.deleteChamp(name)
+    }
 }
 
 

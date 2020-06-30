@@ -12,7 +12,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.Observer
-import androidx.lifecycle.SavedStateViewModelFactory
+//import androidx.lifecycle.SavedStateViewModelFactory
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.whenStarted
@@ -31,18 +31,23 @@ import kotlinx.coroutines.launch
 import kotlinx.android.synthetic.main.simulator_fragment.*
 
 
-class Simulator:Fragment(){
+class Simulator : Fragment() {
 
-    companion object{
+    companion object {
         fun newInstance() = Simulator()
     }
 
 
-    private lateinit var simulatorDB:SimulatorDB
-    private lateinit var simulatorViewModel:SimualtorViewModel
+    private lateinit var simulatorDB: SimulatorDB
+    private lateinit var simulatorViewModel: SimualtorViewModel
+    private lateinit var simulationAdapter: SimulationAdapter
 
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         super.onCreateView(inflater, container, savedInstanceState)
 
         val view = inflater.inflate(R.layout.simulator_fragment, container, false)
@@ -53,7 +58,11 @@ class Simulator:Fragment(){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         simulatorDB = SimulatorDB.getInstance(view.context)!!
-        simulatorViewModel = ViewModelProvider(this,SimualtorViewModel.Factory(activity!!.application)).get(SimualtorViewModel::class.java)
+        simulatorViewModel =
+            ViewModelProvider(this, SimualtorViewModel.Factory(activity!!.application)).get(
+                SimualtorViewModel::class.java
+            )
+        simulationAdapter = SimulationAdapter(view.context)
         /*lifecycleScope.launch(Dispatchers.IO){
             simulatorDB?.SimulatorDAO().deleteAllChamp()
             simulatorDB?.SimulatorDAO().deleteAllSynergy()
@@ -62,69 +71,129 @@ class Simulator:Fragment(){
 
 
         initChampView()
-        setSimulation(view)
+        initSimulation(view)
         initSearchBar()
 
     }
 
-    private fun addChamp(champ: SimulatorChamp){
-       simulatorViewModel.insert(champ)
+    private fun addChamp(champ: SimulatorChamp) {
+        simulatorViewModel.insert(champ)
     }
 
-    private fun addSynergy(synergy: SimulatorSynergy){
+    private fun addSynergy(synergy: SimulatorSynergy) {
         simulatorViewModel.insert(synergy)
     }
 
-    private fun initChampView(){
+    private fun initChampView() {
         val champData = ChampData()
-        val champList : List<Champ> =
-            listOf(champData.getGraves(), champData.getNocturne(), champData.getLeona(), champData.getMalphite(), champData.getPoppy(), champData.getIllaoi(),
-                champData.getJarvanIV(), champData.getXayah(), champData.getZoe(), champData.getZiggs(), champData.getCaitlyn(), champData.getTwistedFate(),
-                champData.getFiora(), champData.getNautilus(), champData.getDarius(), champData.getRakan(), champData.getLucian(), champData.getMordekaiser(),
-                champData.getBlitzcrank(), champData.getShen(), champData.getXinZhao(),champData.getAhri(), champData.getAnnie(), champData.getYasuo(),
-                champData.getZed(), champData.getKogMaw(), champData.getNeeko(), champData.getRumble(), champData.getMasterYi(), champData.getBard(),
-                champData.getVi(), champData.getVayne(), champData.getShaco(), champData.getSyndra(), champData.getAshe(), champData.getEzreal(),
-                champData.getJayce(), champData.getKarma(), champData.getCassiopeia(), champData.getGnar(), champData.getRiven(), champData.getViktor(),
-                champData.getSoraka(), champData.getWukong(), champData.getIrelia(), champData.getJhin(), champData.getJinx(), champData.getTeemo(),
-                champData.getFizz(), champData.getGangplank(), champData.getLulu(), champData.getThresh(), champData.getAurelionSol(), champData.getEkko(),
-                champData.getUrgot(), champData.getJanna(),  champData.getXerath())
+        val champList: List<Champ> =
+            listOf(
+                champData.getGraves(),
+                champData.getNocturne(),
+                champData.getLeona(),
+                champData.getMalphite(),
+                champData.getPoppy(),
+                champData.getIllaoi(),
+                champData.getJarvanIV(),
+                champData.getXayah(),
+                champData.getZoe(),
+                champData.getZiggs(),
+                champData.getCaitlyn(),
+                champData.getTwistedFate(),
+                champData.getFiora(),
+                champData.getNautilus(),
+                champData.getDarius(),
+                champData.getRakan(),
+                champData.getLucian(),
+                champData.getMordekaiser(),
+                champData.getBlitzcrank(),
+                champData.getShen(),
+                champData.getXinZhao(),
+                champData.getAhri(),
+                champData.getAnnie(),
+                champData.getYasuo(),
+                champData.getZed(),
+                champData.getKogMaw(),
+                champData.getNeeko(),
+                champData.getRumble(),
+                champData.getMasterYi(),
+                champData.getBard(),
+                champData.getVi(),
+                champData.getVayne(),
+                champData.getShaco(),
+                champData.getSyndra(),
+                champData.getAshe(),
+                champData.getEzreal(),
+                champData.getJayce(),
+                champData.getKarma(),
+                champData.getCassiopeia(),
+                champData.getGnar(),
+                champData.getRiven(),
+                champData.getViktor(),
+                champData.getSoraka(),
+                champData.getWukong(),
+                champData.getIrelia(),
+                champData.getJhin(),
+                champData.getJinx(),
+                champData.getTeemo(),
+                champData.getFizz(),
+                champData.getGangplank(),
+                champData.getLulu(),
+                champData.getThresh(),
+                champData.getAurelionSol(),
+                champData.getEkko(),
+                champData.getUrgot(),
+                champData.getJanna(),
+                champData.getXerath()
+            )
 
         val champMutableList = champList.toMutableList()
-        val mAdapter = ChampMainAdapter(view!!.context,champMutableList)
+        val mAdapter = ChampMainAdapter(view!!.context, champMutableList)
 
-        mAdapter.setItemClickListener(object : ChampMainAdapter.ItemClickListener{
+        mAdapter.setItemClickListener(object : ChampMainAdapter.ItemClickListener {
             override fun onClick(view: View, position: Int, champ: Champ) {
-                /*lifecycleScope.launch(Dispatchers.IO) {
-                    val count = simulatorDB?.SimulatorDAO()?.getChampCount()
-                    Log.e("count",count.toString())
-                    if(count < 10){
-                        if(champ?.synergy?.size == 2){
-                            val simChamp = SimulatorChamp(champ?.name,champ?.imgPath,champ?.cost ,champ?.synergy[0]?.name,champ?.synergy[1].name,"")
-                            val fisrtSyn = SimulatorSynergy(champ?.synergy[0]?.name, champ?.synergy[0]?.imgPath)
-                            val secondSyn = SimulatorSynergy(champ?.synergy[1]?.name, champ?.synergy[1]?.imgPath)
-
-                            addChamp(simChamp)
-                            addSynergy(fisrtSyn)
-                            addSynergy(secondSyn)
-
-
-                        }
-
-                        if(champ?.synergy?.size == 3){
-                            val simChamp = SimulatorChamp(champ?.name,champ?.imgPath,champ?.cost ,champ?.synergy[0]?.name,champ?.synergy[1].name,champ?.synergy[2].name)
-                            val fisrtSyn = SimulatorSynergy(champ?.synergy[0]?.name, champ?.synergy[0]?.imgPath)
-                            val secondSyn = SimulatorSynergy(champ?.synergy[1]?.name, champ?.synergy[1]?.imgPath)
-                            val thirdSyn = SimulatorSynergy(champ?.synergy[2]?.name, champ?.synergy[2]?.imgPath)
-
-                            addChamp(simChamp)
-                            addSynergy(fisrtSyn)
-                            addSynergy(secondSyn)
-                            addSynergy(thirdSyn)
-
-
-                        }
+                if (simulationAdapter.itemCount < 10) {
+                    if (champ?.synergy?.size == 2) {
+                        val simChamp = SimulatorChamp(
+                            champ?.name,
+                            champ?.imgPath,
+                            champ?.cost,
+                            champ?.synergy[0]?.name,
+                            champ?.synergy[1].name,
+                            ""
+                        )
+                        val fisrtSyn =
+                            SimulatorSynergy(champ?.synergy[0]?.name, champ?.synergy[0]?.imgPath)
+                        val secondSyn =
+                            SimulatorSynergy(champ?.synergy[1]?.name, champ?.synergy[1]?.imgPath)
+                        addChamp(simChamp)
+                        addSynergy(fisrtSyn)
+                        addSynergy(secondSyn)
+                        setSimulation(view)
                     }
-                }*/
+
+                    if (champ?.synergy?.size == 3) {
+                        val simChamp = SimulatorChamp(
+                            champ?.name,
+                            champ?.imgPath,
+                            champ?.cost,
+                            champ?.synergy[0]?.name,
+                            champ?.synergy[1]?.name,
+                            champ?.synergy[2]?.name
+                        )
+                        val fisrtSyn =
+                            SimulatorSynergy(champ?.synergy[0]?.name, champ?.synergy[0]?.imgPath)
+                        val secondSyn =
+                            SimulatorSynergy(champ?.synergy[1]?.name, champ?.synergy[1]?.imgPath)
+                        val thirdSyn =
+                            SimulatorSynergy(champ?.synergy[2]?.name, champ?.synergy[2]?.imgPath)
+                        addChamp(simChamp)
+                        addSynergy(fisrtSyn)
+                        addSynergy(secondSyn)
+                        addSynergy(thirdSyn)
+                        setSimulation(view)
+                    }
+                }
             }
 
         })
@@ -133,7 +202,7 @@ class Simulator:Fragment(){
         recyclerView?.adapter = mAdapter
     }
 
-    private fun initSearchBar(){
+    private fun initSearchBar() {
         var searchManager = activity?.getSystemService(Context.SEARCH_SERVICE) as SearchManager
         searchView!!.setSearchableInfo(searchManager.getSearchableInfo(activity?.componentName))
         searchView!!.setOnQueryTextListener(object : SearchView.OnQueryTextListener,
@@ -150,10 +219,24 @@ class Simulator:Fragment(){
         })
     }
 
-    private fun setSimulation(view:View){
-        val simulatorAdapter = SimulationAdapter(view.context)
+    private fun initSimulation(view:View){
+        simulationAdapter.setItemClickListener(object : SimulationAdapter.ItemClickListener{
+            override fun onClick(view: View, position: Int, champ: SimulatorChamp) {
+                simulatorViewModel?.deleteChampByName(champ?.name)
+                setSimulation(view)
+            }
+        })
+        simulationView?.adapter = simulationAdapter
         simulatorViewModel.getAll().observe(viewLifecycleOwner, Observer { champs ->
-            champs?.let { simulatorAdapter.setData(champs)}
+            champs?.let { simulationAdapter.setData(champs) }
+        })
+    }
+
+
+    private fun setSimulation(view: View) {
+        simulationView?.adapter = simulationAdapter
+        simulatorViewModel.getAll().observe(viewLifecycleOwner, Observer { champs ->
+            champs?.let { simulationAdapter.setData(champs) }
         })
     }
 }

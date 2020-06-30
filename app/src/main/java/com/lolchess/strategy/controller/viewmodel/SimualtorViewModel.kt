@@ -36,4 +36,9 @@ class SimualtorViewModel(application: Application):ViewModel() {
     fun getAll(): LiveData<List<SimulatorChamp>> {
         return this.allSimChamp
     }
+
+    fun deleteChampByName(name:String)  = viewModelScope.launch{
+        simulatorRepository.deleteChampByName(name)
+    }
+
 }
