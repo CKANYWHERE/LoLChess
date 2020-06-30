@@ -11,6 +11,7 @@ import kotlinx.coroutines.launch
 class SimualtorViewModel(application: Application):ViewModel() {
     private val simulatorRepository : SimulatorRepository
     val allSimChamp: LiveData<List<SimulatorChamp>>
+    val allSimSyn: LiveData<List<SimulatorSynergy>>
 
 
     class Factory(val application: Application) : ViewModelProvider.Factory {
@@ -23,6 +24,7 @@ class SimualtorViewModel(application: Application):ViewModel() {
         val simulatorDAO = SimulatorDB.getInstance(application)?.SimulatorDAO()
         simulatorRepository = simulatorDAO?.let { SimulatorRepository(it) }!!
         allSimChamp = simulatorRepository.allSimulatorChamp
+        allSimSyn = simulatorRepository.allSimulatorSynergy
     }
 
     fun insert(simulatorChamp: SimulatorChamp) = viewModelScope.launch{
@@ -33,8 +35,12 @@ class SimualtorViewModel(application: Application):ViewModel() {
         simulatorRepository.insert(simulatorSynergy)
     }
 
-    fun getAll(): LiveData<List<SimulatorChamp>> {
+    fun getAllChamp(): LiveData<List<SimulatorChamp>> {
         return this.allSimChamp
+    }
+
+    fun getAllSynergy():LiveData<List<SimulatorSynergy>>{
+        return this.allSimSyn
     }
 
     fun deleteChampByName(name:String)  = viewModelScope.launch{

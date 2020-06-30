@@ -6,6 +6,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy.REPLACE
 import androidx.room.Query
+import androidx.room.Update
 import com.lolchess.strategy.controller.entity.SimulatorChamp
 import com.lolchess.strategy.controller.entity.SimulatorSynergy
 
@@ -26,6 +27,9 @@ interface SimulatorDAO {
 
     @Insert(onConflict = REPLACE)
     suspend fun insert(simulatorChamp: SimulatorChamp)
+
+    @Update
+    suspend fun updateSynCount(simulatorSynergy:SimulatorSynergy)
 
     @Query("Delete From SimulatorChamp")
     suspend fun deleteAllChamp()

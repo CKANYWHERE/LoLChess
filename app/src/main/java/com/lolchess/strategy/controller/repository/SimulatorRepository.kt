@@ -10,6 +10,7 @@ import com.lolchess.strategy.controller.entity.SimulatorSynergy
 class SimulatorRepository(private val simulatorDAO :SimulatorDAO) {
 
     val allSimulatorChamp : LiveData<List<SimulatorChamp>> = simulatorDAO.getAllChamp()
+    val allSimulatorSynergy : LiveData<List<SimulatorSynergy>> = simulatorDAO.getAllSynergy()
 
     suspend fun insert(simulatorChamp: SimulatorChamp){
         simulatorDAO.insert(simulatorChamp)
