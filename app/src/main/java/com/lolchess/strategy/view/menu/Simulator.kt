@@ -103,7 +103,7 @@ class Simulator : Fragment() {
                 if(champ.thirdSynergy == ""){
                     simulatorViewModel?.getSynergyByName(champ?.firstSynergy!!,champ?.secondSynergy!!,champ?.thirdSynergy!!)
                         .observe(viewLifecycleOwner, Observer {synergys ->
-                            
+
                         })
                 }
                 else{
