@@ -5,17 +5,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import kotlinx.android.synthetic.main.activity_main.*
-import java.lang.ClassCastException
 import androidx.fragment.app.Fragment
 import com.lolchess.strategy.R
 import com.google.android.material.navigation.NavigationView
 import com.lolchess.strategy.view.menu.*
 import kotlinx.android.synthetic.main.app_bar_main.*
-import java.lang.reflect.Array.newInstance
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -37,8 +34,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         drawerToggle.syncState()
 
         val fragment = Home.newInstance()
-        replacementFragment(fragment)
-
+        replaceFragment(fragment)
         navigationView.setCheckedItem(R.id.action_home)
     }
 
@@ -60,55 +56,35 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
     }
 
-    private fun selectDrawerItem(item:MenuItem) {
-        var fragment:Fragment? = null
-        val fragmentClass = when (item.itemId) {
-            R.id.action_home -> Home::class.java
-            R.id.action_champion_synergy -> ChampionSynergy::class.java
-            R.id.action_items -> Items::class.java
-            R.id.action_arrangement -> Arrangement::class.java
-            R.id.action_simulator -> Simulator::class.java
-
-            else -> Simulator::class.java
-        }
-        try {
-            fragment = fragmentClass.newInstance() as Fragment
-        }catch (e: ClassCastException){
-            e.printStackTrace()
-        }
-        replacementFragment(fragment)
-        drawer_layout.closeDrawer(GravityCompat.START)
-    }
-
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when(item.itemId) {
             R.id.action_home -> {
                 val fragment = Home.newInstance()
-                replacementFragment(fragment)
+                replaceFragment(fragment)
 
                 true
             }
 
             R.id.action_champion_synergy -> {
                 val fragment = ChampionSynergy.newInstance()
-                replacementFragment(fragment)
+                replaceFragment(fragment)
                 true
             }
 
             R.id.action_items -> {
                 val fragment = Items.newInstance()
-                replacementFragment(fragment)
+                replaceFragment(fragment)
                 true
             }
 
             R.id.action_arrangement -> {
                 val fragment = Arrangement.newInstance()
-                replacementFragment(fragment)
+                replaceFragment(fragment)
                 true
             }
             R.id.action_simulator -> {
                 val fragment = Simulator.newInstance()
-                replacementFragment(fragment)
+                replaceFragment(fragment)
 
                 true
             }
@@ -118,10 +94,13 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         return true
     }
 
-    private fun replacementFragment(fragment: Fragment?){
-        val fragmentTransaction = supportFragmentManager.beginTransaction()
-        fragmentTransaction.replace(R.id.fragmentContainer, fragment!!)
-        fragmentTransaction.commit()
-    }
 
+}
+
+fun AppCompatActivity.replaceFragment(fragment:Fragment){
+    val fragmentManager = supportFragmentManager
+    val transaction = fragmentManager.beginTransaction()
+    transaction.replace(R.id.fragmentContainer,fragment)
+    transaction.addToBackStack(null)
+    transaction.commit()
 }

@@ -8,4 +8,7 @@
     <string name="drawer_open">Open Navigation Drawer</string>
     <string name="drawer_close">Close Navigation Drawer</string>
     <string name="action_settings">setting</string>
+    <string name="champion">챔피언</string>
+    <string name="synergy">시너지</string>
+    <string name="cost">코스트</string>
 </resources>
