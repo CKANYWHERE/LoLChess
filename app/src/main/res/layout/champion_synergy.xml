@@ -11,11 +11,27 @@
     tools:context=".view.menu.ChampionSynergy"
     android:id="@+id/action_champion_synergy">
 
+    <Button
+        android:layout_width="55dp"
+        android:layout_height="40dp"
+        android:text="@string/cost"
+        android:textSize="10dp"
+        android:layout_marginLeft="230dp"/>
+
+    <Button
+        android:id="@+id/synergybtn"
+        android:layout_width="55dp"
+        android:layout_height="40dp"
+        android:text="@string/synergy"
+        android:textSize="10dp"
+        android:layout_marginLeft="290dp"/>
+
     <SearchView
         android:id="@+id/searchView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textNoSuggestions" />
+        android:inputType="textNoSuggestions"/>
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -35,7 +51,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/champDetailRecyclerView1"
                 android:layout_width="match_parent"
-                android:layout_height="500dp"
+                android:layout_height="400dp"
                 android:layout_weight="5"
                 app:layoutManager="GridLayoutManager">
 
@@ -49,7 +65,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/champDetailRecyclerView2"
                 android:layout_width="match_parent"
-                android:layout_height="500dp"
+                android:layout_height="400dp"
                 android:layout_weight="5"
                 app:layoutManager="GridLayoutManager">
 
@@ -63,7 +79,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/champDetailRecyclerView3"
                 android:layout_width="match_parent"
-                android:layout_height="500dp"
+                android:layout_height="400dp"
                 android:layout_weight="5"
                 app:layoutManager="GridLayoutManager">
 
@@ -77,7 +93,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/champDetailRecyclerView4"
                 android:layout_width="match_parent"
-                android:layout_height="400dp"
+                android:layout_height="330dp"
                 android:layout_weight="5"
                 app:layoutManager="GridLayoutManager">
 
@@ -91,7 +107,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/champDetailRecyclerView5"
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_height="250dp"
                 android:layout_weight="5"
                 app:layoutManager="GridLayoutManager">
 
