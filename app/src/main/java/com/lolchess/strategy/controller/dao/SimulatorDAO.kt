@@ -22,6 +22,9 @@ interface SimulatorDAO {
     @Query("Select(Count(*)) From SimulatorChamp")
     fun getChampCount():LiveData<Int>
 
+    @Query("Select * From SimulatorSynergy Where name in(:name1,:name2,:name3)")
+    fun getSynergyByName(name1: String ,name2: String ,name3: String): LiveData<List<SimulatorSynergy>>
+
     @Insert(onConflict = REPLACE)
     suspend fun insert(simulatorSynergy: SimulatorSynergy)
 

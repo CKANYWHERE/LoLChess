@@ -12,6 +12,10 @@ class SimulatorRepository(private val simulatorDAO :SimulatorDAO) {
     val allSimulatorChamp : LiveData<List<SimulatorChamp>> = simulatorDAO.getAllChamp()
     val allSimulatorSynergy : LiveData<List<SimulatorSynergy>> = simulatorDAO.getAllSynergy()
 
+    fun getSynergyByName(name1: String ,name2: String ,name3: String): LiveData<List<SimulatorSynergy>>{
+        return simulatorDAO.getSynergyByName(name1,name2,name3)
+    }
+
     suspend fun insert(simulatorChamp: SimulatorChamp){
         simulatorDAO.insert(simulatorChamp)
     }
