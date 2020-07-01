@@ -104,6 +104,10 @@ class Simulator : Fragment() {
                     simulatorViewModel?.getSynergyByName(champ?.firstSynergy!!,champ?.secondSynergy!!,champ?.thirdSynergy!!)
                         .observe(viewLifecycleOwner, Observer {synergys ->
 
+                            for(synergy in synergys){
+                                Log.e("synergy",synergy?.name)
+                            }
+
                         })
                 }
                 else{
