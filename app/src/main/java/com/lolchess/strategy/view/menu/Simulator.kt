@@ -30,6 +30,7 @@ import com.lolchess.strategy.view.adapter.SimulationSynergyAdapter
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.android.synthetic.main.simulator_fragment.*
+import kotlin.math.log
 
 
 class Simulator : Fragment() {
@@ -42,6 +43,7 @@ class Simulator : Fragment() {
     private lateinit var simulatorDB: SimulatorDB
     private lateinit var simulatorViewModel: SimualtorViewModel
     private lateinit var simulationAdapter: SimulationAdapter
+    private lateinit var simAdapter: SimulationSynergyAdapter
 
 
     override fun onCreateView(
@@ -64,7 +66,7 @@ class Simulator : Fragment() {
                 SimualtorViewModel::class.java
             )
         simulationAdapter = SimulationAdapter(view.context)
-
+        simAdapter = SimulationSynergyAdapter(view?.context!!)
         lifecycleScope.launch(Dispatchers.IO) {
             simulatorDB?.SimulatorDAO().deleteAllChamp()
             simulatorDB?.SimulatorDAO().deleteAllSynergy()
@@ -88,7 +90,7 @@ class Simulator : Fragment() {
     }
 
     private fun initSimulationSynergy() {
-        val simAdapter = SimulationSynergyAdapter(view?.context!!)
+
         sinergyView?.adapter = simAdapter
         simulatorViewModel.getAllSynergy().observe(viewLifecycleOwner, Observer { synergy ->
             synergy?.let { simAdapter.setData(synergy) }
@@ -100,20 +102,26 @@ class Simulator : Fragment() {
         simulationAdapter.setItemClickListener(object : SimulationAdapter.ItemClickListener {
             override fun onClick(view: View, position: Int, champ: SimulatorChamp) {
                 simulatorViewModel?.deleteChampByName(champ?.name)
-                if(champ.thirdSynergy == ""){
-                    simulatorViewModel?.getSynergyByName(champ?.firstSynergy!!,champ?.secondSynergy!!,champ?.thirdSynergy!!)
-                        .observe(viewLifecycleOwner, Observer {synergys ->
-
-                            for(synergy in synergys){
-                                Log.e("synergy",synergy?.name)
+                var synArr =
+                    arrayOf(champ?.firstSynergy!!, champ?.secondSynergy!!, champ?.thirdSynergy!!)
+                if(champ?.thirdSynergy == null){
+                    Log.e("123","asdf")
+                }
+                simulatorViewModel?.getSynergyByName(synArr)
+                    .observe(viewLifecycleOwner, Observer { synergys ->
+                        for (synergy in synergys) {
+                            Log.e("currsyn", synergy.name)
+                            if (synergy.count == 1) {
+                                // Log.e("syn",synergy.name + " " + synergy.count.toString())
+                                simulatorViewModel?.deleteSynergyByName(synergy?.name)
+                            } else {
+                                //Log.e("syn",synergy.name + " " + synergy.count.toString())
+                                synergy.count = synergy?.count!!.minus(1)
+                                simulatorViewModel?.insert(synergy)
                             }
-
-                        })
-                }
-                else{
-
-                }
-                setSimulation(view)
+                        }
+                    })
+                setSynergy(view)
             }
         })
         simulationView?.adapter = simulationAdapter
@@ -192,6 +200,11 @@ class Simulator : Fragment() {
             override fun onClick(view: View, position: Int, champ: Champ) {
                 var flag = false
                 simulatorViewModel.getAllChamp().observe(viewLifecycleOwner, Observer { champs ->
+
+                    if (champs.count() > 10) {
+                        flag = true
+                    }
+
                     for (chkChamp in champs) {
                         if (chkChamp.name == champ.name) {
                             flag = true
@@ -201,103 +214,103 @@ class Simulator : Fragment() {
                 if (flag) {
                     return
                 } else {
-                    if (simulationAdapter.itemCount < 10) {
-                        if (champ?.synergy?.size == 2) {
-                            val simChamp = SimulatorChamp(
-                                champ?.name,
-                                champ?.imgPath,
-                                champ?.cost,
+
+                    if (champ?.synergy?.size == 2) {
+                        val simChamp = SimulatorChamp(
+                            champ?.name,
+                            champ?.imgPath,
+                            champ?.cost,
+                            champ?.synergy[0]?.name,
+                            champ?.synergy[1].name,
+                            ""
+                        )
+
+                        var fisrtSyn =
+                            SimulatorSynergy(
                                 champ?.synergy[0]?.name,
-                                champ?.synergy[1].name,
-                                ""
+                                champ?.synergy[0]?.imgPath,
+                                1
                             )
-
-                            var fisrtSyn =
-                                SimulatorSynergy(
-                                    champ?.synergy[0]?.name,
-                                    champ?.synergy[0]?.imgPath,
-                                    1
-                                )
-                            var secondSyn =
-                                SimulatorSynergy(
-                                    champ?.synergy[1]?.name,
-                                    champ?.synergy[1]?.imgPath,
-                                    1
-                                )
-
-                            simulatorViewModel.getAllSynergy()
-                                .observe(viewLifecycleOwner, Observer { synergy ->
-                                    synergy?.let { synergy ->
-                                        for (syn in synergy) {
-
-                                            if (fisrtSyn.name.equals(syn.name)) {
-                                                fisrtSyn.count = syn.count?.plus(1)
-                                            }
-
-                                            if (secondSyn.name.equals(syn.name)) {
-                                                secondSyn.count = syn.count?.plus(1)
-                                            }
-
-                                        }
-                                    }
-                                })
-
-                            addChamp(simChamp)
-                            addSynergy(fisrtSyn)
-                            addSynergy(secondSyn)
-
-                        }
-
-                        if (champ?.synergy?.size == 3) {
-                            val simChamp = SimulatorChamp(
-                                champ?.name,
-                                champ?.imgPath,
-                                champ?.cost,
-                                champ?.synergy[0]?.name,
+                        var secondSyn =
+                            SimulatorSynergy(
                                 champ?.synergy[1]?.name,
-                                champ?.synergy[2]?.name
+                                champ?.synergy[1]?.imgPath,
+                                1
                             )
-                            val fisrtSyn =
-                                SimulatorSynergy(
-                                    champ?.synergy[0]?.name,
-                                    champ?.synergy[0]?.imgPath,
-                                    1
-                                )
-                            val secondSyn =
-                                SimulatorSynergy(
-                                    champ?.synergy[1]?.name,
-                                    champ?.synergy[1]?.imgPath,
-                                    1
-                                )
-                            val thirdSyn =
-                                SimulatorSynergy(
-                                    champ?.synergy[2]?.name,
-                                    champ?.synergy[2]?.imgPath,
-                                    1
-                                )
-                            simulatorViewModel.getAllSynergy()
-                                .observe(viewLifecycleOwner, Observer { synergy ->
-                                    synergy?.let { synergy ->
-                                        for (syn in synergy) {
 
-                                            if (fisrtSyn.name.equals(syn.name)) {
-                                                fisrtSyn.count = syn.count?.plus(1)
-                                            }
+                        simulatorViewModel.getAllSynergy()
+                            .observe(viewLifecycleOwner, Observer { synergy ->
+                                synergy?.let { synergy ->
+                                    for (syn in synergy) {
 
-                                            if (secondSyn.name.equals(syn.name)) {
-                                                secondSyn.count = syn.count?.plus(1)
-                                            }
-
+                                        if (fisrtSyn.name.equals(syn.name)) {
+                                            fisrtSyn.count = syn.count?.plus(1)
                                         }
-                                    }
-                                })
-                            addChamp(simChamp)
-                            addSynergy(fisrtSyn)
-                            addSynergy(secondSyn)
-                            addSynergy(thirdSyn)
 
-                        }
+                                        if (secondSyn.name.equals(syn.name)) {
+                                            secondSyn.count = syn.count?.plus(1)
+                                        }
+
+                                    }
+                                }
+                            })
+
+                        addChamp(simChamp)
+                        addSynergy(fisrtSyn)
+                        addSynergy(secondSyn)
+
                     }
+
+                    if (champ?.synergy?.size == 3) {
+                        val simChamp = SimulatorChamp(
+                            champ?.name,
+                            champ?.imgPath,
+                            champ?.cost,
+                            champ?.synergy[0]?.name,
+                            champ?.synergy[1]?.name,
+                            champ?.synergy[2]?.name
+                        )
+                        val fisrtSyn =
+                            SimulatorSynergy(
+                                champ?.synergy[0]?.name,
+                                champ?.synergy[0]?.imgPath,
+                                1
+                            )
+                        val secondSyn =
+                            SimulatorSynergy(
+                                champ?.synergy[1]?.name,
+                                champ?.synergy[1]?.imgPath,
+                                1
+                            )
+                        val thirdSyn =
+                            SimulatorSynergy(
+                                champ?.synergy[2]?.name,
+                                champ?.synergy[2]?.imgPath,
+                                1
+                            )
+                        simulatorViewModel.getAllSynergy()
+                            .observe(viewLifecycleOwner, Observer { synergy ->
+                                synergy?.let { synergy ->
+                                    for (syn in synergy) {
+
+                                        if (fisrtSyn.name.equals(syn.name)) {
+                                            fisrtSyn.count = syn.count?.plus(1)
+                                        }
+
+                                        if (secondSyn.name.equals(syn.name)) {
+                                            secondSyn.count = syn.count?.plus(1)
+                                        }
+
+                                    }
+                                }
+                            })
+                        addChamp(simChamp)
+                        addSynergy(fisrtSyn)
+                        addSynergy(secondSyn)
+                        addSynergy(thirdSyn)
+
+                    }
+
                 }
 
             }
@@ -330,6 +343,13 @@ class Simulator : Fragment() {
         simulationView?.adapter = simulationAdapter
         simulatorViewModel.getAllChamp().observe(viewLifecycleOwner, Observer { champs ->
             champs?.let { simulationAdapter.setData(champs) }
+        })
+    }
+
+    private fun setSynergy(view: View) {
+        simulationView?.adapter = simulationAdapter
+        simulatorViewModel.getAllSynergy().observe(viewLifecycleOwner, Observer { champs ->
+            champs?.let { simAdapter.setData(champs) }
         })
     }
 }

@@ -16,14 +16,14 @@ interface SimulatorDAO {
     @Query("Select * From SimulatorChamp")
     fun getAllChamp(): LiveData<List<SimulatorChamp>>
 
-    @Query("Select * From SimulatorSynergy")
+    @Query("Select * From SimulatorSynergy order by count desc")
     fun getAllSynergy(): LiveData<List<SimulatorSynergy>>
 
     @Query("Select(Count(*)) From SimulatorChamp")
     fun getChampCount():LiveData<Int>
 
-    @Query("Select * From SimulatorSynergy Where name in(:name1,:name2,:name3)")
-    fun getSynergyByName(name1: String ,name2: String ,name3: String): LiveData<List<SimulatorSynergy>>
+    @Query("Select * From SimulatorSynergy Where name in(:name)")
+    fun getSynergyByName(name:Array<String>): LiveData<List<SimulatorSynergy>>
 
     @Insert(onConflict = REPLACE)
     suspend fun insert(simulatorSynergy: SimulatorSynergy)

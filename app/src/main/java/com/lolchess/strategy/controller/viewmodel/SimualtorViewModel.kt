@@ -43,12 +43,15 @@ class SimualtorViewModel(application: Application):ViewModel() {
         return this.allSimSyn
     }
 
-    fun getSynergyByName(name1: String ,name2: String ,name3: String): LiveData<List<SimulatorSynergy>>{
-        return this.getSynergyByName(name1,name2,name3)
+    fun getSynergyByName(name:Array<String>): LiveData<List<SimulatorSynergy>>{
+        return simulatorRepository.getSynergyByName(name)
     }
 
     fun deleteChampByName(name:String)  = viewModelScope.launch{
         simulatorRepository.deleteChampByName(name)
     }
 
+    fun deleteSynergyByName(name: String) = viewModelScope.launch{
+        simulatorRepository.deleteSynergyByName(name)
+    }
 }
