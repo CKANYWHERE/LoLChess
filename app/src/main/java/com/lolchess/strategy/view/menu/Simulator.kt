@@ -29,6 +29,7 @@ import com.lolchess.strategy.view.adapter.SimulationSynergyAdapter
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.android.synthetic.main.simulator_fragment.*
+import kotlinx.coroutines.GlobalScope
 
 
 class Simulator : Fragment() {
@@ -79,7 +80,7 @@ class Simulator : Fragment() {
 
     }
 
-    inner class RemoveSyn() : AsyncTask<Array<String>, Void, String>() {
+   /* inner class RemoveSyn() : AsyncTask<String, Void, String>() {
         override fun onPreExecute() {
             super.onPreExecute()
             // ...
@@ -91,6 +92,22 @@ class Simulator : Fragment() {
         }
 
         override fun doInBackground(vararg params: Array<String>): String {
+            var simulatorSyn = simulatorViewModel?.getSynergyByName()
+            for(syn in simulatorSyn){
+                if (syn.count!! < 2) {
+                    Log.e("syn1",syn.name + " " + syn.count.toString())
+                    simulatorViewModel?.deleteSynergyByName(syn?.name)
+                } else {
+                    Log.e("syn2",syn.name + " " + syn.count.toString())
+                    syn.count = syn?.count!!.minus(1)
+                    simulatorViewModel?.insert(syn)
+                }
+            }
+
+            return "good"
+        }
+
+        override fun doInBackground(vararg params: String?): String {
             var simulatorSyn = simulatorViewModel?.getSynergyByName(params)
             for(syn in simulatorSyn){
                 if (syn.count!! < 2) {
@@ -107,7 +124,7 @@ class Simulator : Fragment() {
         }
 
 
-    }
+    }*/
 
 
     private fun addChamp(champ: SimulatorChamp) {
@@ -140,8 +157,21 @@ class Simulator : Fragment() {
                     synArr =
                         arrayOf(champ?.firstSynergy!!, champ?.secondSynergy!!, champ?.thirdSynergy!!)
                 }
-                var remove = RemoveSyn()
-                remove.execute(synArr)
+                //var remove = RemoveSyn()
+                //remove.execute(synArr)
+                GlobalScope.launch(Dispatchers.Default) {
+                    var simulatorSyn = simulatorViewModel?.getSynergyByName(synArr)
+                    for(syn in simulatorSyn){
+                        if (syn.count!! < 2) {
+                            Log.e("syn1",syn.name + " " + syn.count.toString())
+                            simulatorViewModel?.deleteSynergyByName(syn?.name)
+                        } else {
+                            Log.e("syn2",syn.name + " " + syn.count.toString())
+                            syn.count = syn?.count!!.minus(1)
+                            simulatorViewModel?.insert(syn)
+                        }
+                    }
+                }
                 /*lifecycleScope.launch(Dispatchers.IO) {
                     var simulatorSyn = simulatorViewModel?.getSynergyByName(synArr)
                     for(syn in simulatorSyn){
