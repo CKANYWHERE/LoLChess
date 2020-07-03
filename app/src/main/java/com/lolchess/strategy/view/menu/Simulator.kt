@@ -66,10 +66,12 @@ class Simulator : Fragment() {
             )
         simulationAdapter = SimulationAdapter(view.context)
         simAdapter = SimulationSynergyAdapter(view?.context!!)
-        lifecycleScope.launch(Dispatchers.IO) {
+        /*lifecycleScope.launch(Dispatchers.IO) {
             simulatorDB?.SimulatorDAO().deleteAllChamp()
             simulatorDB?.SimulatorDAO().deleteAllSynergy()
         }
+        */
+         
         ///=> 챔프랑 시너지 삭제할때만 사용
 
 
@@ -80,51 +82,6 @@ class Simulator : Fragment() {
 
     }
 
-   /* inner class RemoveSyn() : AsyncTask<String, Void, String>() {
-        override fun onPreExecute() {
-            super.onPreExecute()
-            // ...
-        }
-
-        override fun onPostExecute(result: String?) {
-            super.onPostExecute(result)
-            setSynergy(view!!)
-        }
-
-        override fun doInBackground(vararg params: Array<String>): String {
-            var simulatorSyn = simulatorViewModel?.getSynergyByName()
-            for(syn in simulatorSyn){
-                if (syn.count!! < 2) {
-                    Log.e("syn1",syn.name + " " + syn.count.toString())
-                    simulatorViewModel?.deleteSynergyByName(syn?.name)
-                } else {
-                    Log.e("syn2",syn.name + " " + syn.count.toString())
-                    syn.count = syn?.count!!.minus(1)
-                    simulatorViewModel?.insert(syn)
-                }
-            }
-
-            return "good"
-        }
-
-        override fun doInBackground(vararg params: String?): String {
-            var simulatorSyn = simulatorViewModel?.getSynergyByName(params)
-            for(syn in simulatorSyn){
-                if (syn.count!! < 2) {
-                    Log.e("syn1",syn.name + " " + syn.count.toString())
-                    simulatorViewModel?.deleteSynergyByName(syn?.name)
-                } else {
-                    Log.e("syn2",syn.name + " " + syn.count.toString())
-                    syn.count = syn?.count!!.minus(1)
-                    simulatorViewModel?.insert(syn)
-                }
-            }
-
-            return "good"
-        }
-
-
-    }*/
 
 
     private fun addChamp(champ: SimulatorChamp) {
@@ -157,8 +114,6 @@ class Simulator : Fragment() {
                     synArr =
                         arrayOf(champ?.firstSynergy!!, champ?.secondSynergy!!, champ?.thirdSynergy!!)
                 }
-                //var remove = RemoveSyn()
-                //remove.execute(synArr)
                 GlobalScope.launch(Dispatchers.Default) {
                     var simulatorSyn = simulatorViewModel?.getSynergyByName(synArr)
                     for(syn in simulatorSyn){
@@ -172,34 +127,6 @@ class Simulator : Fragment() {
                         }
                     }
                 }
-                /*lifecycleScope.launch(Dispatchers.IO) {
-                    var simulatorSyn = simulatorViewModel?.getSynergyByName(synArr)
-                    for(syn in simulatorSyn){
-                        if (syn.count!! < 2) {
-                            Log.e("syn1",syn.name + " " + syn.count.toString())
-                            simulatorViewModel?.deleteSynergyByName(syn?.name)
-                        } else {
-                            Log.e("syn2",syn.name + " " + syn.count.toString())
-                            syn.count = syn?.count!!.minus(1)
-                            simulatorViewModel?.insert(syn)
-                        }
-                    }
-                    setSynergy(view)
-                }*/
-
-                       /* Log.e("count",synergys.count().toString())
-                        for (synergy in synergys) {
-                            if (synergy.count!! < 2) {
-                                Log.e("syn1",synergy.name + " " + synergy.count.toString())
-                                simulatorViewModel?.deleteSynergyByName(synergy?.name)
-                            } else {
-                                Log.e("syn2",synergy.name + " " + synergy.count.toString())
-                                synergy.count = synergy?.count!!.minus(1)
-                                simulatorViewModel?.insert(synergy)
-                            }
-                        }
-                    })
-                setSynergy(view)*/
             }
 
         })
