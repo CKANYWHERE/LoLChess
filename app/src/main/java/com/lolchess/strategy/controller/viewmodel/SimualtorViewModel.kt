@@ -43,7 +43,7 @@ class SimualtorViewModel(application: Application):ViewModel() {
         return this.allSimSyn
     }
 
-    fun getSynergyByName(name:Array<String>): LiveData<List<SimulatorSynergy>>{
+    fun getSynergyByName(name: Array<String>): List<SimulatorSynergy>{
         return simulatorRepository.getSynergyByName(name)
     }
 
