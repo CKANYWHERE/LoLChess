@@ -16,6 +16,8 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.MobileAds
 import com.lolchess.strategy.R
 import com.lolchess.strategy.controller.database.SimulatorDB
 import com.lolchess.strategy.controller.entity.SimulatorChamp
@@ -66,15 +68,16 @@ class Simulator : Fragment() {
             )
         simulationAdapter = SimulationAdapter(view.context)
         simAdapter = SimulationSynergyAdapter(view?.context!!)
+
         /*lifecycleScope.launch(Dispatchers.IO) {
             simulatorDB?.SimulatorDAO().deleteAllChamp()
             simulatorDB?.SimulatorDAO().deleteAllSynergy()
         }
         */
-         
+
         ///=> 챔프랑 시너지 삭제할때만 사용
 
-
+        initAd()
         initChampView()
         initSimulation(view)
         initSimulationSynergy()
@@ -90,6 +93,12 @@ class Simulator : Fragment() {
 
     private fun addSynergy(synergy: SimulatorSynergy) {
         simulatorViewModel.insert(synergy)
+    }
+
+    private fun initAd(){
+        MobileAds.initialize(view?.context)
+        val adRequest = AdRequest.Builder().build()
+        adView.loadAd(adRequest)
     }
 
     private fun initSimulationSynergy() {
