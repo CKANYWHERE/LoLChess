@@ -17,6 +17,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.InterstitialAd
 import com.google.android.gms.ads.MobileAds
 import com.lolchess.strategy.R
 import com.lolchess.strategy.controller.database.SimulatorDB
@@ -45,7 +46,7 @@ class Simulator : Fragment() {
     private lateinit var simulatorViewModel: SimualtorViewModel
     private lateinit var simulationAdapter: SimulationAdapter
     private lateinit var simAdapter: SimulationSynergyAdapter
-
+    private lateinit var interstitialAd: InterstitialAd
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -68,7 +69,7 @@ class Simulator : Fragment() {
             )
         simulationAdapter = SimulationAdapter(view.context)
         simAdapter = SimulationSynergyAdapter(view?.context!!)
-
+        MobileAds.initialize(view?.context)
         /*lifecycleScope.launch(Dispatchers.IO) {
             simulatorDB?.SimulatorDAO().deleteAllChamp()
             simulatorDB?.SimulatorDAO().deleteAllSynergy()
@@ -76,7 +77,7 @@ class Simulator : Fragment() {
         */
 
         ///=> 챔프랑 시너지 삭제할때만 사용
-
+        createFrontAd()
         initAd()
         initChampView()
         initSimulation(view)
@@ -85,7 +86,16 @@ class Simulator : Fragment() {
 
     }
 
-
+    private fun createFrontAd(){
+        Log.e("asdf","Asdf")
+        interstitialAd = InterstitialAd(view?.context);
+        interstitialAd.adUnitId = "ca-app-pub-3940256099942544/1033173712"
+        interstitialAd.loadAd(AdRequest.Builder().build())
+        if(interstitialAd.isLoaded)
+            interstitialAd.show()
+        else
+            Log.e("asdf","sdf")
+    }
 
     private fun addChamp(champ: SimulatorChamp) {
         simulatorViewModel.insert(champ)
@@ -96,7 +106,7 @@ class Simulator : Fragment() {
     }
 
     private fun initAd(){
-        MobileAds.initialize(view?.context)
+
         val adRequest = AdRequest.Builder().build()
         adView.loadAd(adRequest)
     }
