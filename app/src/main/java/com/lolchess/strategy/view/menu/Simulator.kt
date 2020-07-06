@@ -46,7 +46,7 @@ class Simulator : Fragment() {
     private lateinit var simulatorViewModel: SimualtorViewModel
     private lateinit var simulationAdapter: SimulationAdapter
     private lateinit var simAdapter: SimulationSynergyAdapter
-    private lateinit var interstitialAd: InterstitialAd
+   // private lateinit var mInterstitialAd: InterstitialAd
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -56,7 +56,8 @@ class Simulator : Fragment() {
         super.onCreateView(inflater, container, savedInstanceState)
 
         val view = inflater.inflate(R.layout.simulator_fragment, container, false)
-
+        MobileAds.initialize(context)
+        //createFrontAd()
         return view
     }
 
@@ -67,9 +68,10 @@ class Simulator : Fragment() {
             ViewModelProvider(this, SimualtorViewModel.Factory(activity!!.application)).get(
                 SimualtorViewModel::class.java
             )
+
         simulationAdapter = SimulationAdapter(view.context)
         simAdapter = SimulationSynergyAdapter(view?.context!!)
-        MobileAds.initialize(view?.context)
+
         /*lifecycleScope.launch(Dispatchers.IO) {
             simulatorDB?.SimulatorDAO().deleteAllChamp()
             simulatorDB?.SimulatorDAO().deleteAllSynergy()
@@ -77,25 +79,34 @@ class Simulator : Fragment() {
         */
 
         ///=> 챔프랑 시너지 삭제할때만 사용
-        createFrontAd()
         initAd()
         initChampView()
-        initSimulation(view)
+        initSimulation()
         initSimulationSynergy()
         initSearchBar()
 
     }
 
-    private fun createFrontAd(){
-        Log.e("asdf","Asdf")
-        interstitialAd = InterstitialAd(view?.context);
-        interstitialAd.adUnitId = "ca-app-pub-3940256099942544/1033173712"
-        interstitialAd.loadAd(AdRequest.Builder().build())
-        if(interstitialAd.isLoaded)
-            interstitialAd.show()
-        else
-            Log.e("asdf","sdf")
+    override fun onDestroy() {
+        //createFrontAd()
+        super.onDestroy()
     }
+
+
+
+   /* private fun createFrontAd() {
+
+        mInterstitialAd = InterstitialAd(context)
+        mInterstitialAd.adUnitId = "ca-app-pub-3940256099942544/1033173712"
+        mInterstitialAd.loadAd(AdRequest.Builder().build())
+
+        if (mInterstitialAd.isLoaded) {
+            mInterstitialAd.show()
+        } else {
+            Log.e("TAG", "The interstitial wasn't loaded yet.")
+        }
+
+    }*/
 
     private fun addChamp(champ: SimulatorChamp) {
         simulatorViewModel.insert(champ)
@@ -105,10 +116,9 @@ class Simulator : Fragment() {
         simulatorViewModel.insert(synergy)
     }
 
-    private fun initAd(){
-
-        val adRequest = AdRequest.Builder().build()
-        adView.loadAd(adRequest)
+    private fun initAd() {
+        val adBuilder = AdRequest.Builder().build()
+        adView.loadAd(adBuilder)
     }
 
     private fun initSimulationSynergy() {
@@ -120,27 +130,31 @@ class Simulator : Fragment() {
 
     }
 
-    private fun initSimulation(view: View) {
+    private fun initSimulation() {
         simulationAdapter.setItemClickListener(object : SimulationAdapter.ItemClickListener {
             override fun onClick(view: View, position: Int, champ: SimulatorChamp) {
                 simulatorViewModel?.deleteChampByName(champ?.name)
-                var synArr :Array<String>?
+                var synArr: Array<String>?
 
-                if(champ?.thirdSynergy == ""){
+                if (champ?.thirdSynergy == "") {
                     synArr =
                         arrayOf(champ?.firstSynergy!!, champ?.secondSynergy!!)
-                }else{
+                } else {
                     synArr =
-                        arrayOf(champ?.firstSynergy!!, champ?.secondSynergy!!, champ?.thirdSynergy!!)
+                        arrayOf(
+                            champ?.firstSynergy!!,
+                            champ?.secondSynergy!!,
+                            champ?.thirdSynergy!!
+                        )
                 }
                 GlobalScope.launch(Dispatchers.Default) {
                     var simulatorSyn = simulatorViewModel?.getSynergyByName(synArr)
-                    for(syn in simulatorSyn){
+                    for (syn in simulatorSyn) {
                         if (syn.count!! < 2) {
-                            Log.e("syn1",syn.name + " " + syn.count.toString())
+                            Log.e("syn1", syn.name + " " + syn.count.toString())
                             simulatorViewModel?.deleteSynergyByName(syn?.name)
                         } else {
-                            Log.e("syn2",syn.name + " " + syn.count.toString())
+                            Log.e("syn2", syn.name + " " + syn.count.toString())
                             syn.count = syn?.count!!.minus(1)
                             simulatorViewModel?.insert(syn)
                         }
@@ -363,20 +377,6 @@ class Simulator : Fragment() {
         })
     }
 
-
-    private fun setSimulation(view: View) {
-        simulationView?.adapter = simulationAdapter
-        simulatorViewModel.getAllChamp().observe(viewLifecycleOwner, Observer { champs ->
-            champs?.let { simulationAdapter.setData(champs) }
-        })
-    }
-
-    private fun setSynergy(view: View) {
-        simulationView?.adapter = simulationAdapter
-        simulatorViewModel.getAllSynergy().observe(viewLifecycleOwner, Observer { champs ->
-            champs?.let { simAdapter.setData(champs) }
-        })
-    }
 }
 
 
