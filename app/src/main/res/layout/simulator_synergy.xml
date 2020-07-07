@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="80dp"
     android:layout_height="wrap_content"
     android:layout_weight="1"
     android:paddingLeft="@dimen/margin_medium"
@@ -13,16 +13,19 @@
     app:cardUseCompatPadding="true">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="70dp"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
             android:layout_weight="1"
-            app:srcCompat="@drawable/blademaster" />
+            android:layout_gravity="center"
+            android:scaleType="centerInside"
+            app:srcCompat="@drawable/blademaster"
+        />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -36,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
-                android:textSize="11dp"
+                android:textSize="8dp"
                 tools:text="메카 파일럿" />
 
             <TextView

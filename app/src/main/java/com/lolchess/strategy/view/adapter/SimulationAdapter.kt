@@ -35,7 +35,7 @@ class SimulationAdapter(private var context : Context)// recycler view binding í
         (holder as SimulationViewHolder)
 
         holder.imgView.setImageResource(champ?.imgPath!!)
-        holder.txtCost.text = champ?.cost.toString() + "cost"
+       // holder.txtCost.text = champ?.cost.toString() + "cost"
         holder.txtName.text = champ?.name
         holder.itemView.setOnClickListener {
             itemClickListener.onClick(it,position,champ)

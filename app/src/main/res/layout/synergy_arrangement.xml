@@ -56,8 +56,10 @@
                 <ImageView
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    app:srcCompat = "@drawable/mechpilot"/>
+                    app:srcCompat = "@drawable/mechpilot"
+                    />
                 <TextView
+                    android:layout_marginLeft="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
                     android:text="메카 파일럿"/>
@@ -83,6 +85,7 @@
                     android:layout_height="20dp"
                     app:srcCompat = "@drawable/rebel"/>
                 <TextView
+                    android:layout_marginLeft="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
                     android:text="반군"/>
@@ -108,6 +111,7 @@
                     android:layout_height="20dp"
                     app:srcCompat = "@drawable/starguardian"/>
                 <TextView
+                    android:layout_marginLeft="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
                     android:text="별 수호자"/>
@@ -133,6 +137,7 @@
                     android:layout_height="20dp"
                     app:srcCompat = "@drawable/cybernetic"/>
                 <TextView
+                    android:layout_marginLeft="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
                     android:text="사이버네틱"/>
@@ -158,6 +163,7 @@
                     android:layout_height="20dp"
                     app:srcCompat = "@drawable/chrono"/>
                 <TextView
+                    android:layout_marginLeft="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
                     android:text="시공간"/>
@@ -183,6 +189,7 @@
                     android:layout_height="20dp"
                     app:srcCompat = "@drawable/darkstar"/>
                 <TextView
+                    android:layout_marginLeft="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
                     android:text="암흑의 별"/>
@@ -208,6 +215,7 @@
                     android:layout_height="20dp"
                     app:srcCompat = "@drawable/spacepirate"/>
                 <TextView
+                    android:layout_marginLeft="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
                     android:text="우주해적"/>
@@ -233,6 +241,7 @@
                     android:layout_height="20dp"
                     app:srcCompat = "@drawable/astro"/>
                 <TextView
+                    android:layout_marginLeft="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
                     android:text="우주 비행사"/>
@@ -258,6 +267,7 @@
                     android:layout_height="20dp"
                     app:srcCompat = "@drawable/battlecast"/>
                 <TextView
+                    android:layout_marginLeft="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
                     android:text="전투 기계"/>
@@ -283,6 +293,7 @@
                     android:layout_height="20dp"
                     app:srcCompat = "@drawable/celestial"/>
                 <TextView
+                    android:layout_marginLeft="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
                     android:text="천상"/>
@@ -316,6 +327,7 @@
                     android:layout_height="20dp"
                     app:srcCompat = "@drawable/blademaster"/>
                 <TextView
+                    android:layout_marginLeft="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
                     android:text="검사"/>
@@ -341,6 +353,7 @@
                     android:layout_height="20dp"
                     app:srcCompat = "@drawable/manareaver"/>
                 <TextView
+                    android:layout_marginLeft="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
                     android:text="마나 약탈자"/>
@@ -365,6 +378,7 @@
                     android:layout_height="20dp"
                     app:srcCompat = "@drawable/sorcerer"/>
                 <TextView
+                    android:layout_marginLeft="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
                     android:text="마법사"/>
@@ -389,6 +403,7 @@
                     android:layout_height="20dp"
                     app:srcCompat = "@drawable/vanguard"/>
                 <TextView
+                    android:layout_marginLeft="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
                     android:text="선봉대"/>
@@ -413,6 +428,7 @@
                     android:layout_height="20dp"
                     app:srcCompat = "@drawable/protector"/>
                 <TextView
+                    android:layout_marginLeft="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
                     android:text="수호자"/>
@@ -437,6 +453,7 @@
                     android:layout_height="20dp"
                     app:srcCompat = "@drawable/mystic"/>
                 <TextView
+                    android:layout_marginLeft="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
                     android:text="신비술사"/>
@@ -461,6 +478,7 @@
                     android:layout_height="20dp"
                     app:srcCompat = "@drawable/brawler"/>
                 <TextView
+                    android:layout_marginLeft="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
                     android:text="싸움꾼"/>
@@ -485,6 +503,7 @@
                     android:layout_height="20dp"
                     app:srcCompat = "@drawable/mercenary"/>
                 <TextView
+                    android:layout_marginLeft="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
                     android:text="용병"/>
@@ -509,6 +528,7 @@
                     android:layout_height="20dp"
                     app:srcCompat = "@drawable/starship"/>
                 <TextView
+                    android:layout_marginLeft="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
                     android:text="우주선"/>
@@ -533,6 +553,7 @@
                     android:layout_height="20dp"
                     app:srcCompat = "@drawable/paragon"/>
                 <TextView
+                    android:layout_marginLeft="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
                     android:text="인도자"/>
@@ -557,6 +578,7 @@
                     android:layout_height="20dp"
                     app:srcCompat = "@drawable/infiltrator"/>
                 <TextView
+                    android:layout_marginLeft="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
                     android:text="잠입자"/>
@@ -581,6 +603,7 @@
                     android:layout_height="20dp"
                     app:srcCompat = "@drawable/sniper"/>
                 <TextView
+                    android:layout_marginLeft="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
                     android:text="저격수"/>
@@ -605,6 +628,7 @@
                     android:layout_height="20dp"
                     app:srcCompat = "@drawable/blaster"/>
                 <TextView
+                    android:layout_marginLeft="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
                     android:text="총잡이"/>
@@ -629,6 +653,7 @@
                     android:layout_height="20dp"
                     app:srcCompat = "@drawable/demolitionist"/>
                 <TextView
+                    android:layout_marginLeft="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
                     android:text="폭파광"/>
