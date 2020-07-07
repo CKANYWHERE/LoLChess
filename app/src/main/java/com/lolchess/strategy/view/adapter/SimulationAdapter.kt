@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.lolchess.strategy.R
 import com.lolchess.strategy.controller.entity.SimulatorChamp
+import com.lolchess.strategy.controller.entity.SimulatorSynergy
 import com.lolchess.strategy.model.Champ
 import com.lolchess.strategy.view.viewholder.ChampMainViewHolder
 import com.lolchess.strategy.view.viewholder.SimulationViewHolder
@@ -50,4 +51,6 @@ class SimulationAdapter(private var context : Context)// recycler view binding í
     fun setItemClickListener(itemClickListener: ItemClickListener){
         this.itemClickListener = itemClickListener
     }
+
+    fun getItems():List<SimulatorChamp> = items
 }
