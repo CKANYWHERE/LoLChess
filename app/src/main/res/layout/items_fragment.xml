@@ -5,16 +5,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <Button
+        android:layout_width="70dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="5dp"
+        android:text="아이템조합"
+        android:textSize="8dp" />
+
+    <Button
+        android:id="@+id/combinedbtn"
+        android:layout_width="70dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="75dp"
+        android:text="완성아이템"
+        android:textSize="8dp" />
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="182dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_marginLeft="5dp">
 
         <ImageButton
             android:id="@+id/based_item1"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:layout_gravity="center"
             />
         <TextView
@@ -24,10 +40,11 @@
             android:text="+"
             android:textSize="50dp"
             android:gravity="center"/>
+
         <ImageButton
             android:id="@+id/based_item2"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:layout_gravity="center"
             />
 
@@ -41,8 +58,8 @@
 
         <ImageButton
             android:id="@+id/combined_item"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
             android:layout_gravity="center"
             android:src="@drawable/deathblade"/>
 
@@ -83,7 +100,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="B.F대검"/>
+                android:text="B.F대검"
+                android:textSize="10dp"/>
 
         </LinearLayout><LinearLayout
         android:layout_width="wrap_content"
@@ -104,7 +122,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="B.F대검"/>
+            android:text="곡궁"
+            android:textSize="10dp"/>
 
     </LinearLayout>
         <LinearLayout
@@ -126,7 +145,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="B.F대검"/>
+                android:text="쇠사슬 조끼"
+                android:textSize="10dp"/>
 
         </LinearLayout>
         <LinearLayout
@@ -148,7 +168,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="B.F대검"/>
+                android:text="음전자 망토"
+                android:textSize="10dp"/>
 
         </LinearLayout>
 
@@ -171,7 +192,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="B.F대검"/>
+                android:text="쓸데없이 큰 지팡이"
+                android:textSize="10dp"/>
 
         </LinearLayout>
 
@@ -194,7 +216,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="B.F대검"/>
+                android:text="여신의 눈물"/>
 
         </LinearLayout>
         <LinearLayout
@@ -216,7 +238,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="B.F대검"/>
+                android:text="거인의 허리띠"/>
 
         </LinearLayout>
 
@@ -239,7 +261,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="B.F대검"/>
+                android:text="뒤집개"/>
 
         </LinearLayout>
         <LinearLayout
@@ -261,7 +283,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="B.F대검"/>
+                android:text="연습용 장갑"/>
 
         </LinearLayout>
 

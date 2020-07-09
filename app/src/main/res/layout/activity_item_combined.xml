@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="73dp"
+            android:paddingLeft="@dimen/margin_medium"
+            android:paddingTop="@dimen/margin_medium"
+            android:paddingRight="@dimen/margin_medium"
+            android:paddingBottom="@dimen/margin_medium"
+            app:cardCornerRadius="5dp"
+            app:cardUseCompatPadding="true">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:id="@+id/itemImgMain"
+                        android:layout_width="90dp"
+                        android:layout_height="47dp"
+                        android:layout_gravity="left"
+                        app:srcCompat="@drawable/deathblade" />
+
+                    <TextView
+                        android:id="@+id/itemTextMain"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="죽음의 검"
+                        android:textSize="20dp"
+                        android:textStyle="bold"/>
+
+
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp" />
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginRight="7dp"
+            android:layout_marginLeft="7dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/itemDescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:text="적 처치 또는 처치 관여 시 전투가 끝날 때까지 공격력이 +25 증가합니다. (무제한 중첩 가능)"
+                    android:textSize="15dp"
+                    android:gravity="center_vertical"
+                    />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:text="조합 아이템"
+                        android:textSize="20dp"
+                        android:textStyle="bold"/>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/itemImgBased1"
+                            android:layout_width="70dp"
+                            android:layout_height="47dp"
+                            android:layout_gravity="left"
+                            app:srcCompat="@drawable/sword" />
+
+                        <ImageView
+                            android:id="@+id/itemImgBased2"
+                            android:layout_width="70dp"
+                            android:layout_height="47dp"
+                            android:layout_gravity="left"
+                            app:srcCompat="@drawable/sword" />
+
+
+                    </LinearLayout>
+
+
+
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+
+
+    </LinearLayout>
+
+</layout>

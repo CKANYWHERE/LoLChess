@@ -106,7 +106,7 @@ class Combined_Data {
 
     fun Sword_Breaker(): Combined_items{
         return Combined_items("파쇄검", "기본 공격 시 25% 확률로 대상을 무장 해제하여 3초 동안 기본 공격 차단"
-                , "방어력 +25, 마법 저항력 +25", R.drawable.runaan, R.drawable.vest, R.drawable.negatroncloak)
+                , "방어력 +25, 마법 저항력 +25", R.drawable.swordbreaker, R.drawable.vest, R.drawable.negatroncloak)
     }
 
     fun Guinsoo_Rageblade(): Combined_items{
