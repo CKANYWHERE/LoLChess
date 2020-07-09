@@ -212,11 +212,20 @@ class Items : Fragment() {
         }
 
         based_item1?.setOnClickListener {
-            if(curItem.size >= 1){
+            if(curItem.size == 1){
                 curItem.removeAt(0)
                 based_item1.setImageDrawable(null)
                 isFull = false
+                Log.e("sizetest",curItem.size.toString())
             }
+            if(curItem.size == 2){
+                curItem.removeAt(0)
+                based_item1.setImageResource(curItem[0])
+                based_item2.setImageDrawable(null)
+                Log.e("sizetest",curItem.size.toString())
+            }
+
+
             Log.e("size",curItem.size.toString())
             Log.e("item",curItem.toString())
 
@@ -271,21 +280,32 @@ class Items : Fragment() {
     private fun setItem(curItem :MutableList<Int>) {
         if(curItem.size == 2){
             var tmpList : MutableList<Combined_items> = emptyList<Combined_items>().toMutableList()
-            for(items in combinedItems){
-                if (items.based_item1 == curItem[0] || items.based_item2 == curItem[0]){
-                    tmpList.add(items)
+
+            if(curItem[0] == curItem[1]){
+                for(items in combinedItems){
+                    if(items.based_item1 == curItem[0] && items.based_item2 == curItem[1]){
+                        combined_item.setImageResource(items.imgPath)
+                    }
+                }
+            }else{
+                for(items in combinedItems){
+                    if ((items.based_item1 == curItem[0] || items.based_item1 == curItem[1])){
+                        tmpList.add(items)
+                    }
+                }
+
+                Log.e("tmpList",tmpList.toString())
+
+                for(items in tmpList){
+                    if(items.based_item2 == curItem[0] || items.based_item2 == curItem[1]){
+                        if(items.based_item1 != items.based_item2){
+                            Log.e("item",items.toString())
+                            combined_item.setImageResource(items.imgPath)
+                        }
+                    }
                 }
             }
 
-            Log.e("tmpList",tmpList.toString())
-
-            for(items in tmpList){
-                if(items.based_item1 == curItem[1] || items.based_item2 == curItem[1]){
-                    Log.e("item",items.toString())
-                    combined_item.setImageResource(items.imgPath)
-                    break
-                }
-            }
 
         }else{
             return
