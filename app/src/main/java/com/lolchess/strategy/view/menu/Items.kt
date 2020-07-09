@@ -20,6 +20,7 @@ import com.lolchess.strategy.model.data.Based_Data
 import com.lolchess.strategy.model.data.Combined_Data
 import com.lolchess.strategy.view.activity.replaceFragment
 import kotlinx.android.synthetic.main.items_fragment.*
+import kotlinx.android.synthetic.main.simulator_item.view.*
 
 class Items : Fragment() {
 
@@ -55,8 +56,10 @@ class Items : Fragment() {
                 combinedData.Spear_of_Shojin(), combinedData.Star_Guardian_Charm(), combinedData.Statikk_Shiv(), combinedData.Sword_Breaker(), combinedData.Thief_Gloves(), combinedData.Titan_Resolve(),
                 combinedData.Trap_Claw(), combinedData.Warmog_Armor(), combinedData.Zeke_Herald(), combinedData.Zephar(), combinedData.ZzRot_Portal())
 
+        var curItem : MutableList<Int> = emptyList<Int>().toMutableList()
 
         item1.setOnClickListener {
+
             if (!isFull) {
                 based_item1.setImageResource(basedItems[0].imgPath)
 
@@ -64,30 +67,63 @@ class Items : Fragment() {
             } else {
                 based_item2.setImageResource(basedItems[0].imgPath)
             }
+
+            if(curItem.size < 2){
+                curItem.add(basedItems[0].imgPath)
+            }else{
+                curItem[1] = basedItems[0].imgPath
+            }
+            Log.e("size",curItem.size.toString())
+            Log.e("item",curItem.toString())
         }
         item2.setOnClickListener {
+
             if (!isFull) {
                 based_item1.setImageResource(basedItems[1].imgPath)
                 isFull = true
             } else {
                 based_item2.setImageResource(basedItems[1].imgPath)
             }
+
+            if(curItem.size < 2){
+                curItem.add(basedItems[1].imgPath)
+            }else{
+                curItem[1] = basedItems[1].imgPath
+            }
+            Log.e("size",curItem.size.toString())
+            Log.e("item",curItem.toString())
         }
         item3.setOnClickListener {
+
             if (!isFull) {
                 based_item1.setImageResource(basedItems[2].imgPath)
                 isFull = true
             } else {
                 based_item2.setImageResource(basedItems[2].imgPath)
             }
+            if(curItem.size < 2){
+                curItem.add(basedItems[2].imgPath)
+            }else{
+                curItem[1] = basedItems[2].imgPath
+            }
+            Log.e("size",curItem.size.toString())
+            Log.e("item",curItem.toString())
         }
         item4.setOnClickListener {
+
             if (!isFull) {
                 based_item1.setImageResource(basedItems[3].imgPath)
                 isFull = true
             } else {
                 based_item2.setImageResource(basedItems[3].imgPath)
             }
+            if(curItem.size < 2){
+                curItem.add(basedItems[3].imgPath)
+            }else{
+                curItem[1] = basedItems[3].imgPath
+            }
+            Log.e("size",curItem.size.toString())
+            Log.e("item",curItem.toString())
         }
         item5.setOnClickListener {
             if (!isFull) {
@@ -95,6 +131,11 @@ class Items : Fragment() {
                 isFull = true
             } else {
                 based_item2.setImageResource(basedItems[4].imgPath)
+            }
+            if(curItem.size < 2){
+                curItem.add(basedItems[4].imgPath)
+            }else{
+                curItem[1] = basedItems[4].imgPath
             }
         }
         item6.setOnClickListener {
@@ -104,6 +145,11 @@ class Items : Fragment() {
             } else {
                 based_item2.setImageResource(basedItems[5].imgPath)
             }
+            if(curItem.size < 2){
+                curItem.add(basedItems[5].imgPath)
+            }else{
+                curItem[1] = basedItems[5].imgPath
+            }
         }
         item7.setOnClickListener {
             if (!isFull) {
@@ -111,6 +157,11 @@ class Items : Fragment() {
                 isFull = true
             } else {
                 based_item2.setImageResource(basedItems[6].imgPath)
+            }
+            if(curItem.size < 2){
+                curItem.add(basedItems[6].imgPath)
+            }else{
+                curItem[1] = basedItems[6].imgPath
             }
         }
         item8.setOnClickListener {
@@ -120,6 +171,11 @@ class Items : Fragment() {
             } else {
                 based_item2.setImageResource(basedItems[7].imgPath)
             }
+            if(curItem.size < 2){
+                curItem.add(basedItems[7].imgPath)
+            }else{
+                curItem[1] = basedItems[7].imgPath
+            }
         }
         item9.setOnClickListener {
             if (!isFull) {
@@ -128,13 +184,32 @@ class Items : Fragment() {
             } else {
                 based_item2.setImageResource(basedItems[8].imgPath)
             }
+            if(curItem.size < 2){
+                curItem.add(basedItems[8].imgPath)
+            }else{
+                curItem[1] = basedItems[8].imgPath
+            }
         }
+
         based_item1?.setOnClickListener {
-            based_item1.setImageDrawable(null)
-            isFull = false
+            Log.e("asdf",curItem.toString())
+            Log.e("image",based_item2.imageView.drawable.toString())
+            if(curItem.size >= 1){
+                curItem.removeAt(0)
+                based_item1.setImageDrawable(null)
+                isFull = false
+            }
+
         }
+
+
         based_item2?.setOnClickListener {
-            based_item2.setImageDrawable(null)
+            Log.e("asdf",curItem.toString())
+            Log.e("image",based_item2.imageView.drawable.toString())
+            if(curItem.size >= 2) {
+                curItem.removeAt(1)
+                based_item2.setImageDrawable(null)
+            }
         }
 
 
@@ -146,7 +221,6 @@ class Items : Fragment() {
         combinedbtn.setOnClickListener {
             context.replaceFragment(Items_combined())
         }
-
 
         return v
         }
@@ -167,5 +241,13 @@ class Items : Fragment() {
         item7.setImageResource(basedItems[6].imgPath)
         item8.setImageResource(basedItems[7].imgPath)
         item9.setImageResource(basedItems[8].imgPath)
+    }
+
+    private fun setItem(curItem :MutableList<Int>){
+        if(curItem.size == 2){
+
+        }else{
+            return
+        }
     }
 }
