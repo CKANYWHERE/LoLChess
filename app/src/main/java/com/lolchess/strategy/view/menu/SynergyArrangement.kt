@@ -290,9 +290,5 @@ class SynergyArrangement: Fragment() {
                 return false
             }
         })
-
-
-
-
     }
 }

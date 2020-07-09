@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="100dp"
+    android:layout_height="80dp"
+    android:layout_weight="1"
+    android:paddingLeft="@dimen/margin_medium"
+    android:paddingTop="@dimen/margin_medium"
+    android:paddingRight="@dimen/margin_medium"
+    android:paddingBottom="@dimen/margin_medium"
+    app:cardCornerRadius="5dp"
+    app:cardUseCompatPadding="true">
+
+
+    <LinearLayout
+        android:layout_width="95dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="8dp" />
+
+
+
+            <LinearLayout
+                android:layout_width="93dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <ImageView
+                    android:id="@+id/itemImgMain"
+                    android:layout_width="90dp"
+                    android:layout_height="47dp"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/deathblade" />
+
+                <TextView
+                    android:id="@+id/itemTextMainRe"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text = "죽음의 검"
+                    android:gravity="center"
+                    android:textSize="9dp"
+                    />
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="8dp" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

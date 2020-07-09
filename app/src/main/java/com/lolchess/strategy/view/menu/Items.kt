@@ -7,7 +7,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageButton
+import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.graphics.drawable.toBitmap
 import androidx.recyclerview.widget.GridLayoutManager
 import com.lolchess.strategy.R
@@ -15,6 +18,7 @@ import com.lolchess.strategy.model.Based_items
 import com.lolchess.strategy.model.Combined_items
 import com.lolchess.strategy.model.data.Based_Data
 import com.lolchess.strategy.model.data.Combined_Data
+import com.lolchess.strategy.view.activity.replaceFragment
 import kotlinx.android.synthetic.main.items_fragment.*
 
 class Items : Fragment() {
@@ -55,6 +59,7 @@ class Items : Fragment() {
         item1.setOnClickListener {
             if (!isFull) {
                 based_item1.setImageResource(basedItems[0].imgPath)
+
                 isFull = true
             } else {
                 based_item2.setImageResource(basedItems[0].imgPath)
@@ -130,6 +135,16 @@ class Items : Fragment() {
         }
         based_item2?.setOnClickListener {
             based_item2.setImageDrawable(null)
+        }
+
+
+        // 완성아이템 가는 버튼
+        val context = activity as AppCompatActivity
+        val combinedbtn: Button = v.findViewById(R.id.combinedbtn)
+
+        // Replace fragment
+        combinedbtn.setOnClickListener {
+            context.replaceFragment(Items_combined())
         }
 
 
