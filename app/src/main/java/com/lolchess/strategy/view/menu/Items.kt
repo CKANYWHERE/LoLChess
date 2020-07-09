@@ -24,6 +24,7 @@ class Items : Fragment() {
         fun newInstance() = Items()
     }
 
+    private lateinit var combinedItems: MutableList<Combined_items>
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val v = inflater.inflate(R.layout.items_fragment, container, false)
         val item1: ImageButton = v.findViewById(R.id.item1)
@@ -43,14 +44,14 @@ class Items : Fragment() {
         var basedItems: List<Based_items> = listOf(baseItemData.B_F_Sword(), baseItemData.Recurve_Bow(), baseItemData.Chain_Vest(), baseItemData.Negatron_Cloak()
                 , baseItemData.Needlessly_Large_Rod(), baseItemData.Tear_of_the_Goddess(), baseItemData.Giant_Belt(), baseItemData.Spatula(), baseItemData.Sparring_Gloves())
         val combinedData = Combined_Data()
-        var combinedItems: List<Combined_items> = listOf(combinedData.Battlecast_Plating(), combinedData.Blade_of_the_Ruined_King(), combinedData.Bloodthirster(), combinedData.Blue_Buff(),
+        combinedItems = listOf(combinedData.Battlecast_Plating(), combinedData.Blade_of_the_Ruined_King(), combinedData.Bloodthirster(), combinedData.Blue_Buff(),
                 combinedData.Bramble_Vest(), combinedData.Celestial_Orb(), combinedData.Chalice_of_Power(), combinedData.Dark_Star_Heart(), combinedData.Deathblade(), combinedData.Dragon_Claw(),
                 combinedData.Force_of_Nature(), combinedData.Frozen_Heart(), combinedData.Giant_Slayer(), combinedData.Guardian_Angel(), combinedData.Guinsoo_Rageblade(), combinedData.Hand_of_Justice(),
                 combinedData.Hextech_Gunblade(), combinedData.Infiltrator_Talons(), combinedData.Infinity_Edge(), combinedData.Ionic_Spark(), combinedData.Jeweled_Gauntlet(), combinedData.Last_Whisper(),
                 combinedData.Locket_of_the_Iron_Solari(), combinedData.Luden_Echo(), combinedData.Morellonomicon(), combinedData.Protector_Chestguard(), combinedData.Quicksilver(), combinedData.Rabadon_Deathcap(),
                 combinedData.Rapid_Firecannon(), combinedData.Rebel_Medal(), combinedData.Red_Buff(), combinedData.Redemption(), combinedData.Runaan_Hurricane(), combinedData.Shroud_of_Stillness(),
                 combinedData.Spear_of_Shojin(), combinedData.Star_Guardian_Charm(), combinedData.Statikk_Shiv(), combinedData.Sword_Breaker(), combinedData.Thief_Gloves(), combinedData.Titan_Resolve(),
-                combinedData.Trap_Claw(), combinedData.Warmog_Armor(), combinedData.Zeke_Herald(), combinedData.Zephar(), combinedData.ZzRot_Portal())
+                combinedData.Trap_Claw(), combinedData.Warmog_Armor(), combinedData.Zeke_Herald(), combinedData.Zephar(), combinedData.ZzRot_Portal()).toMutableList()
 
         var curItem : MutableList<Int> = emptyList<Int>().toMutableList()
 
@@ -71,6 +72,7 @@ class Items : Fragment() {
             }
             Log.e("size",curItem.size.toString())
             Log.e("item",curItem.toString())
+            setItem(curItem)
         }
         item2.setOnClickListener {
 
@@ -88,6 +90,7 @@ class Items : Fragment() {
             }
             Log.e("size",curItem.size.toString())
             Log.e("item",curItem.toString())
+            setItem(curItem)
         }
         item3.setOnClickListener {
 
@@ -104,6 +107,7 @@ class Items : Fragment() {
             }
             Log.e("size",curItem.size.toString())
             Log.e("item",curItem.toString())
+            setItem(curItem)
         }
         item4.setOnClickListener {
 
@@ -120,6 +124,7 @@ class Items : Fragment() {
             }
             Log.e("size",curItem.size.toString())
             Log.e("item",curItem.toString())
+            setItem(curItem)
         }
         item5.setOnClickListener {
             if (!isFull) {
@@ -133,6 +138,9 @@ class Items : Fragment() {
             }else{
                 curItem[1] = basedItems[4].imgPath
             }
+            Log.e("size",curItem.size.toString())
+            Log.e("item",curItem.toString())
+            setItem(curItem)
         }
         item6.setOnClickListener {
             if (!isFull) {
@@ -146,6 +154,9 @@ class Items : Fragment() {
             }else{
                 curItem[1] = basedItems[5].imgPath
             }
+            Log.e("size",curItem.size.toString())
+            Log.e("item",curItem.toString())
+            setItem(curItem)
         }
         item7.setOnClickListener {
             if (!isFull) {
@@ -159,6 +170,9 @@ class Items : Fragment() {
             }else{
                 curItem[1] = basedItems[6].imgPath
             }
+            Log.e("size",curItem.size.toString())
+            Log.e("item",curItem.toString())
+            setItem(curItem)
         }
         item8.setOnClickListener {
             if (!isFull) {
@@ -172,6 +186,9 @@ class Items : Fragment() {
             }else{
                 curItem[1] = basedItems[7].imgPath
             }
+            Log.e("size",curItem.size.toString())
+            Log.e("item",curItem.toString())
+            setItem(curItem)
         }
         item9.setOnClickListener {
             if (!isFull) {
@@ -185,27 +202,35 @@ class Items : Fragment() {
             }else{
                 curItem[1] = basedItems[8].imgPath
             }
+            Log.e("size",curItem.size.toString())
+            Log.e("item",curItem.toString())
+            setItem(curItem)
         }
 
         based_item1?.setOnClickListener {
-            Log.e("asdf",curItem.toString())
-            Log.e("image",based_item2.imageView.drawable.toString())
             if(curItem.size >= 1){
                 curItem.removeAt(0)
                 based_item1.setImageDrawable(null)
                 isFull = false
             }
+            Log.e("size",curItem.size.toString())
+            Log.e("item",curItem.toString())
 
         }
 
 
         based_item2?.setOnClickListener {
-            Log.e("asdf",curItem.toString())
-            Log.e("image",based_item2.imageView.drawable.toString())
-            if(curItem.size >= 2) {
-                curItem.removeAt(1)
-                based_item2.setImageDrawable(null)
+            if(curItem.size >= 1) {
+                if (isFull) {
+                    curItem.removeAt(1)
+                    based_item2.setImageDrawable(null)
+                } else {
+                    curItem.removeAt(0)
+                    based_item2.setImageDrawable(null)
+                }
             }
+            Log.e("size",curItem.size.toString())
+            Log.e("item",curItem.toString())
         }
 
         return v
@@ -229,8 +254,24 @@ class Items : Fragment() {
         item9.setImageResource(basedItems[8].imgPath)
     }
 
-    private fun setItem(curItem :MutableList<Int>){
+    private fun setItem(curItem :MutableList<Int>) {
         if(curItem.size == 2){
+            var tmpList : MutableList<Combined_items> = emptyList<Combined_items>().toMutableList()
+            for(items in combinedItems){
+                if (items.based_item1 == curItem[0] || items.based_item2 == curItem[0]){
+                    tmpList.add(items)
+                }
+            }
+
+            Log.e("tmpList",tmpList.toString())
+
+            for(items in tmpList){
+                if(items.based_item1 == curItem[1] || items.based_item2 == curItem[1]){
+                    Log.e("item",items.toString())
+                    combined_item.setImageResource(items.imgPath)
+                    break
+                }
+            }
 
         }else{
             return
