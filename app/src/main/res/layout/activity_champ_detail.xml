@@ -164,6 +164,20 @@
                     android:paddingLeft="5dp"
                     android:paddingRight="5dp"
                     android:paddingBottom="5dp">
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:text="능력치"
+                        android:textSize="20dp"
+                        android:textColor="#7BD173"/>
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"/>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -343,13 +357,19 @@
                         </LinearLayout>
 
                     </LinearLayout>
-
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"/>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="242dp"
                         android:layout_gravity="center"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:background="@drawable/border">
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="5dp"/>
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -358,7 +378,7 @@
 
                             <ImageView
                                 android:id="@+id/imgSkill"
-                                android:layout_width="100dp"
+                                android:layout_width="70dp"
                                 android:layout_height="60dp"
                                 android:layout_gravity="center"
                                 app:srcCompat="@drawable/ahri_skill" />
@@ -374,7 +394,8 @@
                                     android:layout_height="30dp"
                                     android:gravity="center"
                                     android:text="현혹의 구슬"
-                                    android:textSize="20dp" />
+                                    android:textSize="20dp"
+                                    android:textStyle="bold"/>
 
                                 <TextView
                                     android:id="@+id/txtMana"
@@ -396,6 +417,8 @@
                             android:layout_height="103dp"
                             android:layout_gravity="center"
                             android:gravity="center_vertical"
+                            android:layout_marginStart="5dp"
+                            android:layout_marginEnd="5dp"
                             android:text="아리가 일직선으로 구슬을 던집니다. 구슬은 닿는 모든 적에게 마법 피해를 입힙니다. 구슬은 아리에게 되돌아오며 이때 닿는 모든 적에게 고정 피해를 입힙니다." />
 
                         <TextView
@@ -403,15 +426,32 @@
                             android:layout_width="match_parent"
                             android:layout_height="68dp"
                             android:gravity="center"
-                            android:text="피해량 : 175 / 250 / 375" />
+                            android:text="피해량 : 175 / 250 / 375"
+                            android:textColor="#CA9372"/>
 
                     </LinearLayout>
 
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="25dp"
+                        android:text="시너지"
+                        android:textStyle="bold"
+                        android:textSize="20dp"
+                        android:textColor="#CA4567"/>
+
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"/>
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="240dp"
                         android:layout_gravity="center"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:background="@drawable/border">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -435,15 +475,19 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="20dp"
                                     android:gravity="center"
-                                    android:text="별 수호자" />
+                                    android:text="별 수호자"
+                                    android:textSize="17dp"
+                                    android:textStyle="bold"/>
 
                                 <TextView
                                     android:id="@+id/txtSynDes"
                                     android:layout_width="match_parent"
                                     android:layout_height="85dp"
                                     android:gravity="center_vertical"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="5dp"
                                     android:text="별 수호자는 스킬 사용 시 다른 별 수호자들에게 마나를 부여합니다. (서로 적용)"
-                                    android:textSize="15dp" />
+                                    android:textSize="13dp" />
 
                             </LinearLayout>
 
@@ -457,7 +501,7 @@
                             android:layout_gravity="center"
                             android:gravity="center"
                             android:text=""
-                            android:textSize="15dp"/>
+                            android:textSize="12dp"/>
 
                         <TextView
                             android:id="@+id/SynLevel2"
@@ -465,7 +509,7 @@
                             android:layout_height="33dp"
                             android:gravity="center"
                             android:text=""
-                            android:textSize="15dp"/>
+                            android:textSize="12dp"/>
 
                         <TextView
                             android:id="@+id/SynLevel3"
@@ -473,7 +517,7 @@
                             android:layout_height="33dp"
                             android:gravity="center"
                             android:text=""
-                            android:textSize="15dp"/>
+                            android:textSize="12dp"/>
 
                         <TextView
                             android:id="@+id/SynLevel4"
@@ -481,18 +525,21 @@
                             android:layout_height="33dp"
                             android:gravity="center"
                             android:text=""
-                            android:textSize="15dp"/>
+                            android:textSize="12dp"/>
 
 
 
                         </LinearLayout>
 
-
+                        <Space
+                            android:layout_width="match_parent"
+                            android:layout_height="5dp"/>
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="240dp"
                             android:layout_gravity="center"
-                            android:orientation="vertical">
+                            android:orientation="vertical"
+                            android:background="@drawable/border">
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -516,15 +563,19 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="20dp"
                                         android:gravity="center"
-                                        android:text="마법사"/>
+                                        android:text="마법사"
+                                        android:textSize="17dp"
+                                        android:textStyle="bold"/>
 
                                     <TextView
                                         android:id="@+id/txtSynDes2"
                                         android:layout_width="match_parent"
                                         android:layout_height="85dp"
                                         android:gravity="center_vertical"
+                                        android:layout_marginStart="5dp"
+                                        android:layout_marginEnd="5dp"
                                         android:text="별 수호자는 스킬 사용 시 다른 별 수호자들에게 마나를 부여합니다. (서로 적용)"
-                                        android:textSize="15dp" />
+                                        android:textSize="13dp" />
 
                                 </LinearLayout>
 
@@ -538,7 +589,7 @@
                                 android:layout_gravity="center"
                                 android:gravity="center"
                                 android:text=""
-                                android:textSize="15dp"/>
+                                android:textSize="12dp"/>
 
                             <TextView
                                 android:id="@+id/SynLevel_2"
@@ -546,7 +597,7 @@
                                 android:layout_height="33dp"
                                 android:gravity="center"
                                 android:text=""
-                                android:textSize="15dp"/>
+                                android:textSize="12dp"/>
 
                             <TextView
                                 android:id="@+id/SynLevel_3"
@@ -554,7 +605,7 @@
                                 android:layout_height="33dp"
                                 android:gravity="center"
                                 android:text=""
-                                android:textSize="15dp"/>
+                                android:textSize="12dp"/>
 
                             <TextView
                                 android:id="@+id/SynLevel_4"
@@ -562,7 +613,7 @@
                                 android:layout_height="33dp"
                                 android:gravity="center"
                                 android:text=""
-                                android:textSize="15dp"/>
+                                android:textSize="12dp"/>
 
                         </LinearLayout>
                     </LinearLayout>

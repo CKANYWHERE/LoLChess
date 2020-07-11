@@ -57,11 +57,11 @@ class ChampDetailActivity: AppCompatActivity() {
         var cost = intent.getStringExtra("Cost").toInt()
 
         when (cost){
-            1->{imgCost.setBackgroundColor(Color.rgb(173,181,189))}
-            2->{imgCost.setBackgroundColor(Color.rgb(81,207,102))}
-            3->{ imgCost.setBackgroundColor(Color.rgb(76,110,245))}
-            4->{imgCost.setBackgroundColor(Color.rgb(204,93,232))}
-            5->{imgCost.setBackgroundColor(Color.rgb(255,255,0))}
+            1->{imgCost.setBackgroundColor(Color.rgb(128,128,128))}
+            2->{imgCost.setBackgroundColor(Color.rgb(17,178,136))}
+            3->{imgCost.setBackgroundColor(Color.rgb(32,122,199))}
+            4->{imgCost.setBackgroundColor(Color.rgb(196,64,218))}
+            5->{imgCost.setBackgroundColor(Color.rgb(255,185,59))}
         }
 
 
