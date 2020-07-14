@@ -21,6 +21,7 @@
                 android:layout_height="200dp"
                 android:background="@drawable/background"
                 app:videoId="WGtoUBjugTs"
+                app:fragment="com.lolchess.strategy.view.menu.Home"
                 >
 
             </kr.co.prnd.YouTubePlayerView>

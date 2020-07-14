@@ -20,7 +20,7 @@
 
         <activity android:name=".view.activity.ChampDetailActivity"></activity>
         <activity android:name=".view.activity.ChampDetailActivityThree"></activity>
-        <activity android:name=".view.activity.MainActivity">
+        <activity android:name=".view.activity.MainActivity" android:configChanges="keyboardHidden|orientation|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
