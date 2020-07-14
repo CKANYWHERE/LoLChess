@@ -15,14 +15,16 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <com.google.android.exoplayer2.ui.PlayerView
-                android:id="@+id/exo_player_view"
+            <kr.co.prnd.YouTubePlayerView
+                android:id="@+id/you_tube_player_view"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:background="@drawable/background"
-                >
+                app:videoId="WGtoUBjugTs"
+                app:fragment="com.lolchess.strategy.view.menu.Home">
 
-            </com.google.android.exoplayer2.ui.PlayerView>
+
+            </kr.co.prnd.YouTubePlayerView>
 
             <Space
                 android:layout_width="match_parent"
