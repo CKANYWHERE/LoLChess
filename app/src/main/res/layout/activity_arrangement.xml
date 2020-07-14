@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity ="center">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <androidx.cardview.widget.CardView
+
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingLeft="@dimen/margin_medium"
+                android:paddingTop="@dimen/margin_medium"
+                android:paddingRight="@dimen/margin_medium"
+                android:paddingBottom="@dimen/margin_medium"
+                app:cardCornerRadius="5dp"
+                app:cardUseCompatPadding="true">
+
+                <TextView
+                    android:id="@+id/tipCardIn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text=""
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:textSize="20dp"/>
+
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/tipTxtIn1"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:textSize="15dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"/>
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp"/>
+
+            <ImageView
+                android:id="@+id/tipImgIn1"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:gravity="center"/>
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp"/>
+            <TextView
+                android:id="@+id/tipTxtIn2"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:textSize="15dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"/>
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp"/>
+            <ImageView
+                android:id="@+id/tipImgIn2"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:gravity="center"/>
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp"/>
+            <TextView
+                android:id="@+id/tipTxtIn3"
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:textSize="15dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+</layout>

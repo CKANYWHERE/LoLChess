@@ -33,7 +33,7 @@
         android:layout_marginTop="50dp">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/champDetailRecyclerView1"
+            android:id="@+id/combinedRecycler"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layoutManager="GridLayoutManager">

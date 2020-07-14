@@ -2,18 +2,15 @@ package com.lolchess.strategy.view.adapter
 
 
 import android.content.Context
-import android.content.res.Resources
-import android.graphics.drawable.Drawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
-import androidx.core.content.res.ResourcesCompat
-import androidx.core.graphics.drawable.toDrawable
 import androidx.recyclerview.widget.RecyclerView
 import com.lolchess.strategy.R
 import com.lolchess.strategy.model.RecommandMeta
+import com.lolchess.strategy.view.viewholder.ChampDetailViewHolder
 import com.lolchess.strategy.view.viewholder.RecommendMetaViewHolder
 
 class RecommendMetaAdapter(private var items : MutableList<RecommandMeta>, var context:Context)
@@ -38,7 +35,9 @@ class RecommendMetaAdapter(private var items : MutableList<RecommandMeta>, var c
 
             imageChamp.setImageResource(champ.imgPath)
             imageChamp.layoutParams = paramChamp
-
+            imageChamp.setOnClickListener {
+                holder.initialize(champ)
+            }
             holder.lytChamp.addView(imageChamp)
         }
 
@@ -52,5 +51,6 @@ class RecommendMetaAdapter(private var items : MutableList<RecommandMeta>, var c
         holder.name.text = item.name
 
     }
+
 
 }

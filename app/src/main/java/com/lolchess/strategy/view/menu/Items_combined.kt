@@ -1,8 +1,6 @@
 package com.lolchess.strategy.view.menu
 
 import android.os.Bundle
-import android.os.Parcel
-import android.os.Parcelable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -15,7 +13,7 @@ import com.lolchess.strategy.model.Combined_items
 import com.lolchess.strategy.model.data.Combined_Data
 import com.lolchess.strategy.view.activity.replaceFragment
 import com.lolchess.strategy.view.adapter.ItemCombinedAdapter
-import kotlinx.android.synthetic.main.champion_synergy.champDetailRecyclerView1
+import kotlinx.android.synthetic.main.combined_fragment.*
 
 class Items_combined() : Fragment() {
 
@@ -57,7 +55,7 @@ class Items_combined() : Fragment() {
         val combined = combinedItems.toMutableList()
 
         val mAdapter = ItemCombinedAdapter(combined)
-        champDetailRecyclerView1?.adapter = mAdapter
-        champDetailRecyclerView1?.layoutManager = GridLayoutManager(view.context, 3)
+        combinedRecycler?.adapter = mAdapter
+        combinedRecycler?.layoutManager = GridLayoutManager(view.context, 3)
     }
 }
