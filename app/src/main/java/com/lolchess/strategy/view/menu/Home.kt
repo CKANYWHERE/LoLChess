@@ -1,33 +1,25 @@
 package com.lolchess.strategy.view.menu
 
-import android.content.Context
-import android.content.pm.ActivityInfo
+import android.annotation.TargetApi
+import android.content.Intent
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.provider.Settings
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.android.exoplayer2.ExoPlayerFactory
-import com.google.android.exoplayer2.SimpleExoPlayer
-import com.google.android.exoplayer2.source.ExtractorMediaSource
-import com.google.android.exoplayer2.source.MediaSource
-import com.google.android.exoplayer2.source.ProgressiveMediaSource
-import com.google.android.exoplayer2.source.hls.HlsMediaSource
-import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
-import com.google.android.exoplayer2.upstream.DefaultHttpDataSourceFactory
-import com.google.android.exoplayer2.util.Util
-import com.google.android.gms.ads.MobileAds
-import com.google.android.youtube.player.YouTubePlayerView
 import com.lolchess.strategy.R
 import com.lolchess.strategy.model.data.RecommandMetaData
-import com.lolchess.strategy.view.activity.MainActivity
 import com.lolchess.strategy.view.adapter.RecommendMetaAdapter
+import com.lolchess.strategy.view.service.Overlay
 import kotlinx.android.synthetic.main.home_fragment.*
 
-class Home:Fragment(){
 
+class Home:Fragment(){
+    private val ACTION_MANAGE_OVERLAY_PERMISSION_REQUEST_CODE = 1
 
     companion object {
         fun newInstance() = Home()
@@ -50,6 +42,40 @@ class Home:Fragment(){
         recommendMetaView?.layoutManager = LinearLayoutManager(view.context)
         recommendMetaView?.adapter = recommandAdapter
 
+        btnOverlay.setOnClickListener {
+            checkPermission()
+        }
 
+    }
+    fun checkPermission() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {   // 마시멜로우 이상일 경우
+            if (!Settings.canDrawOverlays(view?.context)) {              // 체크
+                val intent = Intent(
+                    Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
+                    Uri.parse("package:" + activity!!.packageName)
+                )
+                startActivityForResult(intent, ACTION_MANAGE_OVERLAY_PERMISSION_REQUEST_CODE)
+            } else {
+                activity!!.startService(Intent(activity!!.applicationContext, Overlay::class.java))
+            }
+        } else {
+            activity!!.startService(Intent(activity!!.applicationContext, Overlay::class.java))
+        }
+    }
+
+    @TargetApi(Build.VERSION_CODES.M)
+    override fun onActivityResult(
+        requestCode: Int,
+        resultCode: Int,
+        data: Intent?
+    ) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == ACTION_MANAGE_OVERLAY_PERMISSION_REQUEST_CODE) {
+            if (!Settings.canDrawOverlays(view?.context)) {
+                // TODO 동의를 얻지 못했을 경우의 처리
+            } else {
+                activity!!.startService(Intent(activity!!.applicationContext, Overlay::class.java))
+            }
+        }
     }
 }
