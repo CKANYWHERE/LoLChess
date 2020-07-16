@@ -12,14 +12,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.activity.ItemCombinedActivity"></activity>
+        <activity android:name=".view.activity.ArrangementActivity"/>
+        <activity android:name=".view.activity.ItemCombinedActivity" />
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="@string/admob_app_id" />
 
-        <activity android:name=".view.activity.ChampDetailActivity"></activity>
-        <activity android:name=".view.activity.ChampDetailActivityThree"></activity>
+
+        <activity android:name=".view.activity.ChampDetailActivity">
+
+        </activity>
+        <activity android:name=".view.activity.ChampDetailActivityThree">
+
+        </activity>
         <activity android:name=".view.activity.MainActivity" android:configChanges="keyboardHidden|orientation|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

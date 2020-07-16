@@ -1,15 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    tools:context=".view.menu.ChampionSynergy"
+    android:id="@+id/action_champion_synergy">
 
-    <TextView
-        android:text="@string/arrangement"
-        android:id="@+id/action_arrangement"
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="0dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/tipsRecycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layoutManager="GridLayoutManager">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+
+
+    </ScrollView>
 
 </FrameLayout>

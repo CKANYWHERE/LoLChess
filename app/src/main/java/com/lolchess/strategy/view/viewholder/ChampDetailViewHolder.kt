@@ -1,15 +1,11 @@
 package com.lolchess.strategy.view.viewholder
 
+import android.content.Context
 import android.content.Intent
-import android.graphics.Color
-import android.os.Parcel
-import android.os.Parcelable
-import android.util.Log
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.lolchess.strategy.model.Champ
 import com.lolchess.strategy.view.activity.ChampDetailActivity
-import kotlinx.android.synthetic.main.activity_champ_detail.*
 import kotlinx.android.synthetic.main.champ_home_item.view.*
 import org.json.JSONStringer
 
