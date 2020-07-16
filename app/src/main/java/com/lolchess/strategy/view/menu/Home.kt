@@ -38,7 +38,7 @@ class Home:Fragment(){
         //val youTubePlayerView:YouTubePlayerView = view.findViewById(R.id.you_tube_player_view)
 
 
-        activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE
+        //activity?.requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_SENSOR_LANDSCAPE
 
         return view
     }

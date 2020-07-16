@@ -3,6 +3,7 @@ package com.lolchess.strategy.view.menu
 
 import android.app.SearchManager
 import android.content.Context
+import android.graphics.Color
 import android.os.AsyncTask
 import android.os.Bundle
 import android.util.Log
@@ -32,6 +33,7 @@ import com.lolchess.strategy.view.adapter.SimulationSynergyAdapter
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.android.synthetic.main.simulator_fragment.*
+import kotlinx.android.synthetic.main.simulator_synergy.*
 import kotlinx.coroutines.GlobalScope
 
 
@@ -191,6 +193,8 @@ class Simulator : Fragment() {
         mAdapter.setItemClickListener(object : ChampMainAdapter.ItemClickListener {
             override fun onClick(view: View, position: Int, champ: Champ) {
                 var flag = false
+
+
                 simulatorViewModel.getAllChamp().observe(viewLifecycleOwner, Observer { champs ->
 
                     if (champs.count() > 10) {
@@ -217,7 +221,7 @@ class Simulator : Fragment() {
                             ""
                         )
 
-                        var fisrtSyn =
+                        var firstSyn =
                             SimulatorSynergy(
                                 champ?.synergy[0]?.name,
                                 champ?.synergy[0]?.imgPath,
@@ -230,25 +234,29 @@ class Simulator : Fragment() {
                                 1
                             )
 
+
                         simulatorViewModel.getAllSynergy()
                             .observe(viewLifecycleOwner, Observer { synergy ->
                                 synergy?.let { synergy ->
                                     for (syn in synergy) {
 
-                                        if (fisrtSyn.name.equals(syn.name)) {
-                                            fisrtSyn.count = syn.count?.plus(1)
+                                        if (firstSyn.name.equals(syn.name)) {
+                                            firstSyn.count = syn.count?.plus(1)
+                                        }
+                                        if (syn.count == 2){
+                                            imageView.setBackgroundColor(Color.rgb(206, 143, 125))
+
                                         }
 
                                         if (secondSyn.name.equals(syn.name)) {
                                             secondSyn.count = syn.count?.plus(1)
                                         }
-
                                     }
                                 }
                             })
 
                         addChamp(simChamp)
-                        addSynergy(fisrtSyn)
+                        addSynergy(firstSyn)
                         addSynergy(secondSyn)
 
                     }
@@ -262,7 +270,7 @@ class Simulator : Fragment() {
                             champ?.synergy[1]?.name,
                             champ?.synergy[2]?.name
                         )
-                        val fisrtSyn =
+                        val firstSyn =
                             SimulatorSynergy(
                                 champ?.synergy[0]?.name,
                                 champ?.synergy[0]?.imgPath,
@@ -285,8 +293,8 @@ class Simulator : Fragment() {
                                 synergy?.let { synergy ->
                                     for (syn in synergy) {
 
-                                        if (fisrtSyn.name.equals(syn.name)) {
-                                            fisrtSyn.count = syn.count?.plus(1)
+                                        if (firstSyn.name.equals(syn.name)) {
+                                            firstSyn.count = syn.count?.plus(1)
                                         }
 
                                         if (secondSyn.name.equals(syn.name)) {
@@ -297,7 +305,7 @@ class Simulator : Fragment() {
                                 }
                             })
                         addChamp(simChamp)
-                        addSynergy(fisrtSyn)
+                        addSynergy(firstSyn)
                         addSynergy(secondSyn)
                         addSynergy(thirdSyn)
 
