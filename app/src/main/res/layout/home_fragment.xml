@@ -36,6 +36,16 @@
                 android:layout_height="wrap_content"
                 android:text="패치노트 더 보러 가기" />
 
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="30dp" />
+            <Button
+                android:id="@+id/btnOverlay"
+                android:background="@drawable/background"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="추천덱 오버레이 띄우기" />
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="30dp" />
