@@ -20,7 +20,7 @@ import kotlinx.android.synthetic.main.home_fragment.*
 
 class Home:Fragment(){
     private val ACTION_MANAGE_OVERLAY_PERMISSION_REQUEST_CODE = 1
-
+    private var isClicked = false
     companion object {
         fun newInstance() = Home()
     }
@@ -43,11 +43,15 @@ class Home:Fragment(){
         recommendMetaView?.adapter = recommandAdapter
 
         btnOverlay.setOnClickListener {
-            checkPermission()
+            if(!isClicked){
+                checkPermission()
+                isClicked = true
+            }
+
         }
 
     }
-    fun checkPermission() {
+    private fun checkPermission() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {   // 마시멜로우 이상일 경우
             if (!Settings.canDrawOverlays(view?.context)) {              // 체크
                 val intent = Intent(
@@ -56,10 +60,10 @@ class Home:Fragment(){
                 )
                 startActivityForResult(intent, ACTION_MANAGE_OVERLAY_PERMISSION_REQUEST_CODE)
             } else {
-                activity!!.startService(Intent(activity!!.applicationContext, Overlay::class.java))
+                activity!!.startService(Intent(context, Overlay::class.java))
             }
         } else {
-            activity!!.startService(Intent(activity!!.applicationContext, Overlay::class.java))
+            activity!!.startService(Intent(context, Overlay::class.java))
         }
     }
 
@@ -74,7 +78,7 @@ class Home:Fragment(){
             if (!Settings.canDrawOverlays(view?.context)) {
                 // TODO 동의를 얻지 못했을 경우의 처리
             } else {
-                activity!!.startService(Intent(activity!!.applicationContext, Overlay::class.java))
+                activity!!.startService(Intent(context, Overlay::class.java))
             }
         }
     }

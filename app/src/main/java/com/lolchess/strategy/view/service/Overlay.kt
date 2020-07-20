@@ -5,74 +5,119 @@ import android.app.Service
 import android.content.Context
 import android.content.Intent
 import android.graphics.PixelFormat
+import android.graphics.Point
 import android.os.Build
-import android.os.Bundle
 import android.os.IBinder
 import android.util.Log
 import android.view.*
 import android.widget.ImageButton
-import android.widget.ImageView
-import android.widget.TextView
 import com.lolchess.strategy.R
 
+import kotlin.math.roundToInt
 
 class Overlay : Service() {
 
-    var wm: WindowManager? = null
-    var mView: View? = null
+    /**Solution for handle layout flag because that devices whom Build version is
+     * greater then Oreo that don't support WindowManager.LayoutParams.TYPE_PHONE
+     * in that case we use WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY*/
 
-    final lateinit var btnOverlay: ImageButton
+    var LAYOUT_FLAG: Int = 0
 
+    lateinit var floatingView: View
+    lateinit var manager: WindowManager
+    lateinit var params: WindowManager.LayoutParams
     override fun onBind(intent: Intent?): IBinder? {
-        return null
+        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
-    override fun onCreate() {
-        super.onCreate()
-        val inflate =
-            getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-        wm = getSystemService(Context.WINDOW_SERVICE) as WindowManager
-        var mParams : WindowManager.LayoutParams
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.O) {
-            mParams = WindowManager.LayoutParams(
-                WindowManager.LayoutParams.MATCH_PARENT,
-                WindowManager.LayoutParams.MATCH_PARENT,
-                WindowManager.LayoutParams.TYPE_SYSTEM_ALERT,
-                WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL,
-                PixelFormat.TRANSLUCENT)
+    override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
+        LAYOUT_FLAG = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY
         } else {
-            mParams = WindowManager.LayoutParams(
-                WindowManager.LayoutParams.MATCH_PARENT,
-                WindowManager.LayoutParams.MATCH_PARENT,
-                WindowManager.LayoutParams.TYPE_APPLICATION_OVERLAY,
-                WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL,
-                PixelFormat.TRANSLUCENT)
+            WindowManager.LayoutParams.TYPE_PHONE
+        }
+        val params = WindowManager.LayoutParams(
+            WindowManager.LayoutParams.WRAP_CONTENT,
+            WindowManager.LayoutParams.WRAP_CONTENT,
+            LAYOUT_FLAG,
+            WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
+            PixelFormat.TRANSLUCENT
+        )
+
+        this.params = params
+        //Specify the view position
+        params.gravity =
+            Gravity.TOP or Gravity.LEFT //Initially view will be added to top-left corner
+        params.x = 0
+        params.y = 100
+
+        manager = getSystemService(Context.WINDOW_SERVICE) as WindowManager
+        floatingView = LayoutInflater.from(this).inflate(R.layout.overlay, null)
+        manager.addView(floatingView, params)
+
+        floatingView.findViewById<View>(R.id.btnService)?.setOnClickListener {
+            Log.e("onClick","asdf")
         }
 
+        floatingView.findViewById<View>(R.id.btnService)?.setOnTouchListener(object :
+            View.OnTouchListener {
 
-        mParams.gravity = Gravity.LEFT or Gravity.TOP
-        mView = inflate.inflate(R.layout.overlay, null,false)
+            var initialX: Int? = null
+            var initialY: Int? = null
+            var initialTouchX: Float? = null
+            var initialTouchY: Float? = null
 
-        btnOverlay = mView!!.findViewById(R.id.btnService)
-        btnOverlay.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(v: View?) {
-                Log.e("ssss","asdf")
+            @SuppressLint("ClickableViewAccessibility")
+            override fun onTouch(view: View?, motionEvent: MotionEvent?): Boolean {
+                when (motionEvent!!.action) {
+                    MotionEvent.ACTION_DOWN -> {
+                        //remember the initial position.
+                        initialX = params.x
+                        initialY = params.y
+
+                        //get the touch location
+                        initialTouchX = motionEvent!!.getRawX()
+                        initialTouchY = motionEvent!!.getRawY()
+                        return false
+                    }
+                    MotionEvent.ACTION_UP -> {
+                        val Xdiff = (motionEvent.getRawX() - initialTouchX!!)
+                        val Ydiff = (motionEvent.getRawY() - initialTouchY!!)
+                        return false
+                    }
+                    MotionEvent.ACTION_MOVE -> {
+                        //Calculate the X and Y coordinates of the view.
+                        params.x = initialX!!.plus((motionEvent.getRawX() - initialTouchX!!)).roundToInt()
+                        params.y = initialY!!.plus((motionEvent.getRawY() - initialTouchY!!).roundToInt())
+                        manager.updateViewLayout(floatingView, params)
+                        return false
+
+                    }
+
+                    MotionEvent.ACTION_BUTTON_PRESS ->{
+                        return false
+                    }
+
+                    MotionEvent.ACTION_POINTER_DOWN ->{
+                        return false
+                    }
+
+                    MotionEvent.ACTION_POINTER_UP->{
+                        return false
+                    }
+
+                    MotionEvent.ACTION_BUTTON_RELEASE ->{
+                        return false
+                    }
+                }
+                return false
             }
         })
-
-        wm!!.addView(mView, mParams)
+        return START_NOT_STICKY
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        if (wm != null) {
-            if (mView != null) {
-                wm!!.removeView(mView)
-                mView = null
-            }
-            wm = null
-        }
+        manager.removeView(floatingView)
     }
-
-
 }
