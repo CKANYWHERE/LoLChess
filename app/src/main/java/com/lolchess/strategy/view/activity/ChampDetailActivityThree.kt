@@ -1,9 +1,12 @@
 package com.lolchess.strategy.view.activity
 
+import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
+import android.view.LayoutInflater
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.getSystemService
 import androidx.databinding.DataBindingUtil
 import com.lolchess.strategy.R
 import com.lolchess.strategy.databinding.ActivityChampDetailBinding
@@ -53,7 +56,6 @@ class ChampDetailActivityThree: AppCompatActivity() {
         threeBinding = DataBindingUtil.setContentView(this, R.layout.activity_champ_detail_three)
 
         //layout 바인딩해서 intent에서 나온 값을 넣어줌(?).
-
         var cost = intent.getStringExtra("Cost").toInt()
 
         when (cost){

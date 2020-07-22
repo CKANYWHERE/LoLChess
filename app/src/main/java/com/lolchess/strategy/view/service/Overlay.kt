@@ -53,6 +53,7 @@ class Overlay : Service() {
             WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
             PixelFormat.TRANSLUCENT
         )
+
         this.params = params
         //Specify the view position
         params.gravity =
@@ -91,7 +92,7 @@ class Overlay : Service() {
                         val pressDuration = System.currentTimeMillis() - pressStartTime;
 
                         if (pressDuration < MAX_CLICK_DURATION) {
-                            Log.e("onClick", "asdf")
+                            createSynergyView()
                         }
 
                         val Xdiff = (motionEvent.getRawX() - initialTouchX!!)
@@ -113,6 +114,12 @@ class Overlay : Service() {
             }
         })
         return START_NOT_STICKY
+    }
+
+    private fun createSynergyView(){
+        val inflater :LayoutInflater = baseContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
+        inflater.inflate(R.layout.overlay_synergy,null)
+        Log.e("onClick", "asdf")
     }
 
     private fun createNotificationChannel(context: Context, importance: Int, showBadge: Boolean,
