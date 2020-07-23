@@ -23,6 +23,7 @@ class Overlay : Service() {
 
     var LAYOUT_FLAG: Int = 0
 
+    var flag = false
     lateinit var floatingView: View
     lateinit var manager: WindowManager
     lateinit var params: WindowManager.LayoutParams
@@ -80,11 +81,11 @@ class Overlay : Service() {
                         pressStartTime = System.currentTimeMillis()
 
                         //remember the initial position.
-                        initialX = params.x
+
                         initialY = params.y
 
                         //get the touch location
-                        initialTouchX = motionEvent!!.rawX
+
                         initialTouchY = motionEvent!!.rawY
                         return false
                     }
@@ -92,16 +93,22 @@ class Overlay : Service() {
                         val pressDuration = System.currentTimeMillis() - pressStartTime;
 
                         if (pressDuration < MAX_CLICK_DURATION) {
-                            createSynergyView()
+                            if(!flag){
+                                createSynergyView()
+                                flag = true
+                            }else{
+                                closeSynergyView()
+                                flag = false
+                            }
+
                         }
 
-                        val Xdiff = (motionEvent.getRawX() - initialTouchX!!)
+
                         val Ydiff = (motionEvent.rawY - initialTouchY!!)
                         return false
                     }
                     MotionEvent.ACTION_MOVE -> {
-                        params.x =
-                            initialX!!.plus((motionEvent.getRawX() - initialTouchX!!)).roundToInt()
+
                         params.y =
                             initialY!!.plus((motionEvent.getRawY() - initialTouchY!!).roundToInt())
                         manager.updateViewLayout(floatingView, params)
@@ -117,9 +124,15 @@ class Overlay : Service() {
     }
 
     private fun createSynergyView(){
-        val inflater :LayoutInflater = baseContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-        inflater.inflate(R.layout.overlay_synergy,null)
-        Log.e("onClick", "asdf")
+        val intent = Intent(baseContext, OverlaySynergy::class.java)
+        intent.putExtra("x",params.x)
+        intent.putExtra("y",params.y)
+        application.startService(intent)
+    }
+
+    private fun closeSynergyView(){
+        Log.e("asdf","x" + params.x + "y" + params.y)
+        stopService(Intent(applicationContext,OverlaySynergy::class.java))
     }
 
     private fun createNotificationChannel(context: Context, importance: Int, showBadge: Boolean,
