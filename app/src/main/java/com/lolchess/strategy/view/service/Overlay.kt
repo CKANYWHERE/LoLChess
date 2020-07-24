@@ -31,7 +31,7 @@ class Overlay : Service() {
     val CHANNEL_NAME = "TFT_APP"
 
     // 클릭으로 볼 최대시간
-    val MAX_CLICK_DURATION = 1000
+    val MAX_CLICK_DURATION = 500
     var pressStartTime: Long = 0
 
     override fun onBind(intent: Intent?): IBinder? {

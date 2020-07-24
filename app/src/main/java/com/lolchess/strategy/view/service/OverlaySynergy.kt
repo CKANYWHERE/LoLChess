@@ -11,7 +11,13 @@ import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.WindowManager
+import android.widget.LinearLayout
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.lolchess.strategy.R
+import com.lolchess.strategy.model.data.RecommandMetaData
+import com.lolchess.strategy.view.adapter.RecommendMetaAdapter
+import kotlinx.android.synthetic.main.home_fragment.*
 
 class OverlaySynergy : Service(){
 
@@ -19,6 +25,8 @@ class OverlaySynergy : Service(){
     lateinit var floatingView: View
     lateinit var manager: WindowManager
     lateinit var params: WindowManager.LayoutParams
+    lateinit var synergyLinearLayout:LinearLayout
+    lateinit var synergyView : RecyclerView
     val CHANNEL_ID = 1002
     val CHANNEL_NAME = "TFT_APP"
 
@@ -41,18 +49,28 @@ class OverlaySynergy : Service(){
             PixelFormat.TRANSLUCENT
         )
 
-        Log.e("asdf", intent?.extras?.getInt("x").toString())
-
         this.params = params
         //Specify the view position
         params.x = intent?.extras?.getInt("x")!!.plus(1)
         params.y = intent?.extras?.getInt("y")!!.minus(1000)
 
         manager = getSystemService(Context.WINDOW_SERVICE) as WindowManager
+
         floatingView = LayoutInflater.from(this).inflate(R.layout.overlay_synergy, null)
+
+
+        val recommendData = RecommandMetaData().getAllMetaData()
+        val recommandAdapter = RecommendMetaAdapter(recommendData, baseContext)
+
+        synergyView = floatingView.findViewById<RecyclerView>(R.id.recommendMetaView2)
+        synergyView?.layoutManager = LinearLayoutManager(baseContext)
+        synergyView?.adapter = recommandAdapter
+        synergyLinearLayout = floatingView.findViewById<LinearLayout>(R.id.container)
+
+
         manager.addView(floatingView, params)
 
-        return START_STICKY
+        return START_NOT_STICKY
     }
 
     override fun onDestroy() {
