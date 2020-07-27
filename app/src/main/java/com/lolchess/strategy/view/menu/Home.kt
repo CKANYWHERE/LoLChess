@@ -9,6 +9,8 @@ import android.provider.Settings
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.lolchess.strategy.R
@@ -38,10 +40,8 @@ class Home:Fragment(){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?){
         val recommendData = RecommandMetaData().getAllMetaData()
         val recommandAdapter = RecommendMetaAdapter(recommendData, view.context)
-
-        recommendMetaView?.layoutManager = LinearLayoutManager(view.context)
+       // createRecommandView()
         recommendMetaView?.adapter = recommandAdapter
-
         btnOverlay.setOnClickListener {
             if(!isClicked){
                 checkPermission()
@@ -51,6 +51,30 @@ class Home:Fragment(){
         }
 
     }
+
+    private fun createRecommandView(){
+        val items = RecommandMetaData().getAllMetaData()
+        val paramChamp = LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,100,1f)
+        val paramSyn = LinearLayout.LayoutParams(70,70,1f)
+
+        for(item in items){
+            for(champ in item.champ){
+                val imageChamp = ImageView(context)
+                imageChamp.setImageResource(champ.imgPath)
+                imageChamp.layoutParams = paramChamp
+                recommendMetaView.addView(imageChamp)
+            }
+
+            for(syn in item.synergy){
+                val imageSyn = ImageView(context)
+                imageSyn.setImageResource(syn.imgPath)
+                imageSyn.layoutParams = paramSyn
+                recommendMetaView.addView(imageSyn)
+            }
+        }
+
+    }
+
     private fun checkPermission() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {   // 마시멜로우 이상일 경우
             if (!Settings.canDrawOverlays(view?.context)) {              // 체크

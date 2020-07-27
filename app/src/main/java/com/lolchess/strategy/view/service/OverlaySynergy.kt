@@ -12,6 +12,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.WindowManager
 import android.widget.LinearLayout
+import android.widget.ListView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.lolchess.strategy.R
@@ -26,7 +27,7 @@ class OverlaySynergy : Service(){
     lateinit var manager: WindowManager
     lateinit var params: WindowManager.LayoutParams
     lateinit var synergyLinearLayout:LinearLayout
-    lateinit var synergyView : RecyclerView
+    lateinit var synergyView : ListView
     val CHANNEL_ID = 1002
     val CHANNEL_NAME = "TFT_APP"
 
@@ -62,8 +63,9 @@ class OverlaySynergy : Service(){
         val recommendData = RecommandMetaData().getAllMetaData()
         val recommandAdapter = RecommendMetaAdapter(recommendData, baseContext)
 
-        synergyView = floatingView.findViewById<RecyclerView>(R.id.recommendMetaView2)
-        synergyView?.layoutManager = LinearLayoutManager(baseContext)
+
+        synergyView = floatingView.findViewById<ListView>(R.id.recommendMetaView2)
+        //synergyView?.layoutManager = LinearLayoutManager(baseContext)
         synergyView?.adapter = recommandAdapter
         synergyLinearLayout = floatingView.findViewById<LinearLayout>(R.id.container)
 
