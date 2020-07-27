@@ -242,9 +242,10 @@ class Items : Fragment() {
                 if (isFull) {
                     curItem.removeAt(1)
                     based_item2.setImageDrawable(null)
+                    isFull = false
                 } else {
                     curItem.removeAt(0)
-                    based_item2.setImageDrawable(null)
+                    based_item1.setImageDrawable(null)
                 }
             }
             Log.e("size",curItem.size.toString())
