@@ -18,7 +18,7 @@
             <kr.co.prnd.YouTubePlayerView
                 android:id="@+id/you_tube_player_view"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="170dp"
                 android:background="@drawable/background"
                 app:videoId="WGtoUBjugTs"
                 app:fragment="com.lolchess.strategy.view.menu.Home">
@@ -48,14 +48,14 @@
                 android:text="추천덱 오버레이 띄우기" />
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="30dp" />
+                android:layout_height="10dp" />
 
             <TextView
                 android:id="@+id/textView"
                 android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="20dp"
+                android:textSize="15dp"
                 android:text="상위 0.1%의 개발자 추천 덱" />
             <Space
                 android:layout_width="match_parent"

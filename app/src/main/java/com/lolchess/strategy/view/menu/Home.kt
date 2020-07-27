@@ -6,6 +6,7 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,8 +14,12 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.gms.ads.AdListener
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.InterstitialAd
 import com.lolchess.strategy.R
 import com.lolchess.strategy.model.data.RecommandMetaData
+import com.lolchess.strategy.view.activity.PatchNoteActivity
 import com.lolchess.strategy.view.adapter.RecommendMetaAdapter
 import com.lolchess.strategy.view.service.Overlay
 import kotlinx.android.synthetic.main.home_fragment.*
@@ -23,12 +28,16 @@ import kotlinx.android.synthetic.main.home_fragment.*
 class Home:Fragment(){
     private val ACTION_MANAGE_OVERLAY_PERMISSION_REQUEST_CODE = 1
     private var isClicked = false
+    private lateinit var mInterstitialAd: InterstitialAd
     companion object {
         fun newInstance() = Home()
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.home_fragment, container, false)
+        mInterstitialAd = InterstitialAd(context!!.applicationContext)
+        mInterstitialAd.adUnitId = "ca-app-pub-3940256099942544/1033173712"
+        mInterstitialAd.loadAd(AdRequest.Builder().build())
         //val youTubePlayerView:YouTubePlayerView = view.findViewById(R.id.you_tube_player_view)
 
 
@@ -43,6 +52,7 @@ class Home:Fragment(){
        // createRecommandView()
         recommendMetaView?.adapter = recommandAdapter
         btnOverlay.setOnClickListener {
+            createFrontAd()
             if(!isClicked){
                 checkPermission()
                 isClicked = true
@@ -50,29 +60,23 @@ class Home:Fragment(){
 
         }
 
-    }
-
-    private fun createRecommandView(){
-        val items = RecommandMetaData().getAllMetaData()
-        val paramChamp = LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,100,1f)
-        val paramSyn = LinearLayout.LayoutParams(70,70,1f)
-
-        for(item in items){
-            for(champ in item.champ){
-                val imageChamp = ImageView(context)
-                imageChamp.setImageResource(champ.imgPath)
-                imageChamp.layoutParams = paramChamp
-                recommendMetaView.addView(imageChamp)
-            }
-
-            for(syn in item.synergy){
-                val imageSyn = ImageView(context)
-                imageSyn.setImageResource(syn.imgPath)
-                imageSyn.layoutParams = paramSyn
-                recommendMetaView.addView(imageSyn)
-            }
+        btnPatch.setOnClickListener {
+            val intent = Intent(context, PatchNoteActivity::class.java)
+            startActivity(intent)
         }
+    }
+    private fun createFrontAd() {
 
+        if (mInterstitialAd.isLoaded) {
+            mInterstitialAd.show()
+            mInterstitialAd.adListener = object : AdListener(){
+                override fun onAdClosed() {
+                    mInterstitialAd.loadAd(AdRequest.Builder().build())
+                }
+            }
+        } else {
+            Log.e("TAG", "The interstitial wasn't loaded yet.")
+        }
     }
 
     private fun checkPermission() {

@@ -12,6 +12,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.MobileAds
 import com.lolchess.strategy.R
 import com.lolchess.strategy.model.Champ
 import com.lolchess.strategy.model.data.ChampData
@@ -47,7 +49,7 @@ class SynergyArrangement: Fragment() {
         costbtn.setOnClickListener {
             context.replaceFragment(ChampionSynergy())
         }
-
+        MobileAds.initialize(context)
         return v
     }
 
@@ -290,5 +292,12 @@ class SynergyArrangement: Fragment() {
                 return false
             }
         })
+        initAd()
     }
+
+    private fun initAd() {
+        val adBuilder = AdRequest.Builder().build()
+        adViewSynergyArrangement.loadAd(adBuilder)
+    }
+
 }

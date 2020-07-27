@@ -12,21 +12,40 @@
     android:id="@+id/action_champion_synergy">
 
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="0dp">
+        android:orientation="vertical">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/tipsRecycler"
+       <com.google.android.gms.ads.AdView
+
+           android:id="@+id/adViewArrangement"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_alignParentBottom="true"
+           android:layout_centerHorizontal="true"
+           app:adSize="BANNER"
+           app:adUnitId="@string/banner_ad_unit_id_test"></com.google.android.gms.ads.AdView>
+
+
+
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:layoutManager="GridLayoutManager">
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp">
 
-        </androidx.recyclerview.widget.RecyclerView>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/tipsRecycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="GridLayoutManager">
+
+            </androidx.recyclerview.widget.RecyclerView>
 
 
+        </ScrollView>
+    </LinearLayout>
 
-    </ScrollView>
+
 
 </FrameLayout>
