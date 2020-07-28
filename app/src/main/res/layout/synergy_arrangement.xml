@@ -35,6 +35,17 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+            <com.google.android.gms.ads.AdView
+
+                xmlns:ads="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/adViewSynergyArrangement"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                ads:adSize="BANNER"
+                ads:adUnitId="@string/banner_ad_unit_id_test">
+            </com.google.android.gms.ads.AdView>
 
             <TextView
                 android:layout_width="match_parent"

@@ -26,6 +26,12 @@
         <activity android:name=".view.activity.ChampDetailActivityThree">
 
         </activity>
+        <activity android:name=".view.activity.CloseSystemActivity">
+
+        </activity>
+        <activity android:name=".view.activity.PatchNoteActivity">
+
+        </activity>
         <activity android:name=".view.activity.MainActivity" android:configChanges="keyboardHidden|orientation|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -35,6 +41,10 @@
         </activity>
 
         <service android:name=".view.service.Overlay"
+            android:enabled="true"
+            android:permission="android.permission.SYSTEM_ALERT_WINDOW"/>
+
+        <service android:name=".view.service.OverlaySynergy"
             android:enabled="true"
             android:permission="android.permission.SYSTEM_ALERT_WINDOW"/>
     </application>

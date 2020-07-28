@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <ScrollView
+    <FrameLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
@@ -18,7 +18,7 @@
             <kr.co.prnd.YouTubePlayerView
                 android:id="@+id/you_tube_player_view"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="170dp"
                 android:background="@drawable/background"
                 app:videoId="WGtoUBjugTs"
                 app:fragment="com.lolchess.strategy.view.menu.Home">
@@ -33,41 +33,42 @@
                 android:id="@+id/btnPatch"
                 android:background="@drawable/background"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
                 android:text="패치노트 더 보러 가기" />
 
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="30dp" />
+                android:layout_height="10dp" />
             <Button
                 android:id="@+id/btnOverlay"
                 android:background="@drawable/background"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="30dp"
                 android:text="추천덱 오버레이 띄우기" />
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="30dp" />
+                android:layout_height="10dp" />
 
             <TextView
                 android:id="@+id/textView"
                 android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="20dp"
+                android:textSize="15dp"
                 android:text="상위 0.1%의 개발자 추천 덱" />
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="10dp" />
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recommendMetaView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:listitem="@layout/recommend_meta_item" />
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:orientation="vertical"
+        android:id="@+id/recommendMetaView">
+    </ListView>
 
 
         </LinearLayout>
 
-    </ScrollView>
+    </FrameLayout>
 

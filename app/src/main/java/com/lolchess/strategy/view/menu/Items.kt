@@ -13,6 +13,8 @@ import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.graphics.drawable.toBitmap
 import androidx.recyclerview.widget.GridLayoutManager
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.MobileAds
 import com.lolchess.strategy.R
 import com.lolchess.strategy.model.Based_items
 import com.lolchess.strategy.model.Combined_items
@@ -20,6 +22,8 @@ import com.lolchess.strategy.model.data.Based_Data
 import com.lolchess.strategy.model.data.Combined_Data
 import com.lolchess.strategy.view.activity.replaceFragment
 import kotlinx.android.synthetic.main.items_fragment.*
+import kotlinx.android.synthetic.main.items_fragment.adView
+import kotlinx.android.synthetic.main.simulator_fragment.*
 import kotlinx.android.synthetic.main.simulator_item.view.*
 
 class Items : Fragment() {
@@ -43,6 +47,7 @@ class Items : Fragment() {
         val based_item1: ImageButton = v.findViewById(R.id.based_item1)
         val based_item2: ImageButton = v.findViewById(R.id.based_item2)
         var isFull = false
+        MobileAds.initialize(context)
 
         val baseItemData = Based_Data()
         var basedItems: List<Based_items> = listOf(baseItemData.B_F_Sword(), baseItemData.Recurve_Bow(), baseItemData.Chain_Vest(), baseItemData.Negatron_Cloak()
@@ -237,9 +242,10 @@ class Items : Fragment() {
                 if (isFull) {
                     curItem.removeAt(1)
                     based_item2.setImageDrawable(null)
+                    isFull = false
                 } else {
                     curItem.removeAt(0)
-                    based_item2.setImageDrawable(null)
+                    based_item1.setImageDrawable(null)
                 }
             }
             Log.e("size",curItem.size.toString())
@@ -275,6 +281,7 @@ class Items : Fragment() {
         item7.setImageResource(basedItems[6].imgPath)
         item8.setImageResource(basedItems[7].imgPath)
         item9.setImageResource(basedItems[8].imgPath)
+        initAd()
     }
 
     private fun setItem(curItem :MutableList<Int>) {
@@ -310,5 +317,9 @@ class Items : Fragment() {
         }else{
             return
         }
+    }
+    private fun initAd() {
+        val adBuilder = AdRequest.Builder().build()
+        adView.loadAd(adBuilder)
     }
 }

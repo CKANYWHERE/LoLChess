@@ -6,7 +6,8 @@ import com.lolchess.strategy.model.RecommandMeta
 class RecommandMetaData {
 
     fun getAllMetaData() : MutableList<RecommandMeta>{
-        return listOf(getMagicStarGuardian(), getTest()).toMutableList()
+        return listOf(getMagicStarGuardian(), getTest(),getMagicStarGuardian(),getMagicStarGuardian(),getMagicStarGuardian(),getMagicStarGuardian()
+        ,getMagicStarGuardian(),getMagicStarGuardian(),getMagicStarGuardian(),getMagicStarGuardian()).toMutableList()
     }
 
     fun getMagicStarGuardian() : RecommandMeta {

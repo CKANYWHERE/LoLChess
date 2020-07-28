@@ -8,6 +8,7 @@
     android:paddingTop="@dimen/margin_medium"
     android:paddingRight="@dimen/margin_medium"
     android:paddingBottom="@dimen/margin_medium"
+    app:cardBackgroundColor="@color/colorPrimary"
     app:cardCornerRadius="8dp"
     app:cardUseCompatPadding="true"
     >
@@ -24,18 +25,20 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:layout_gravity="center"
-            android:textSize="20dp"
+            android:textSize="15dp"
+            android:textColor="@color/colorTxt"
             android:text="마법사 별수호자" />
 
         <Space
             android:layout_width="match_parent"
             android:layout_height="10dp" />
         <LinearLayout
-            android:id="@+id/lytSyn"
+            android:id="@+id/lytChamp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:orientation="horizontal">
+
 
         </LinearLayout>
 
@@ -44,7 +47,7 @@
             android:layout_height="10dp" />
 
         <LinearLayout
-            android:id="@+id/lytChamp"
+            android:id="@+id/lytSyn"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"

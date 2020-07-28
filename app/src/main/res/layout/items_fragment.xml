@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingTop="10dp"
@@ -7,294 +7,328 @@
     android:paddingLeft="10dp"
     android:paddingRight="10dp">
 
-    <Button
-        android:layout_width="70dp"
-        android:layout_height="40dp"
-        android:layout_marginLeft="5dp"
-        android:text="아이템조합"
-        android:textSize="8dp" />
 
-    <Button
-        android:id="@+id/combinedbtn"
-        android:layout_width="70dp"
-        android:layout_height="40dp"
-        android:layout_marginLeft="75dp"
-        android:text="완성아이템"
-        android:textSize="8dp" />
 
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="182dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
-        android:orientation="horizontal"
         android:background="@drawable/customborder"
-        >
+        android:orientation="horizontal">
+            <Button
+                android:layout_width="70dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="5dp"
+                android:text="아이템조합"
+                android:textSize="8dp" />
 
-        <ImageButton
-            android:id="@+id/based_item1"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_gravity="center"
-            android:scaleType="fitXY"/>
+            <Button
+                android:id="@+id/combinedbtn"
+                android:layout_width="70dp"
+                android:layout_height="40dp"
+                android:text="완성아이템"
+                android:textSize="8dp" />
+        </LinearLayout>
+        <com.google.android.gms.ads.AdView
 
-        <TextView
-            android:layout_width="50dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="+"
-            android:textSize="35dp" />
+            xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/adView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            ads:adSize="BANNER"
+            ads:adUnitId="@string/banner_ad_unit_id_test">
+        </com.google.android.gms.ads.AdView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/customborder"
+            android:orientation="horizontal">
 
-        <ImageButton
-            android:id="@+id/based_item2"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_gravity="center"
-            android:scaleType="fitXY"/>
 
-        <TextView
-            android:layout_width="50dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="="
-            android:textSize="35dp" />
+            <ImageButton
+                android:id="@+id/based_item1"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center"
+                android:scaleType="fitXY" />
 
-        <ImageButton
-            android:id="@+id/combined_item"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_gravity="center"
-            android:scaleType="fitXY"/>
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="+"
+                android:textSize="35dp" />
+
+            <ImageButton
+                android:id="@+id/based_item2"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center"
+                android:scaleType="fitXY" />
+
+            <TextView
+                android:layout_width="50dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="="
+                android:textSize="35dp" />
+
+            <ImageButton
+                android:id="@+id/combined_item"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_gravity="center"
+                android:scaleType="fitXY" />
+
+
+        </LinearLayout>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="5dp"/>
+
+        <GridLayout
+            android:id="@+id/action_items"
+            android:layout_width="300dp"
+            android:layout_height="357dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="5dp"
+            android:columnCount="3"
+            android:orientation="horizontal"
+            android:rowCount="3">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:background="#101010"
+                android:orientation="vertical"
+                android:layout_gravity="center">
+
+                <ImageButton
+                    android:id="@+id/item1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:src="@drawable/sword" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="B.F대검"
+                    android:textSize="11dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#101010"
+                android:orientation="vertical"
+                android:layout_gravity="center">
+
+                <ImageButton
+                    android:id="@+id/item2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:src="@drawable/sword" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="곡궁"
+                    android:textSize="11dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#101010"
+                android:orientation="vertical"
+                android:layout_gravity="center">
+
+                <ImageButton
+                    android:id="@+id/item3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:src="@drawable/sword" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="쇠사슬 조끼"
+                    android:textSize="11dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:background="#101010"
+                android:orientation="vertical"
+                android:layout_gravity="center">
+
+                <ImageButton
+                    android:id="@+id/item4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:src="@drawable/sword" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="음전자 망토"
+                    android:textSize="11dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#101010"
+                android:orientation="vertical"
+                android:layout_gravity="center">
+
+                <ImageButton
+                    android:id="@+id/item5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:src="@drawable/sword" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="쓸데없이 큰 지팡이"
+                    android:textSize="11dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#101010"
+                android:orientation="vertical"
+                android:layout_gravity="center">
+
+                <ImageButton
+                    android:id="@+id/item6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:src="@drawable/sword" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="여신의 눈물"
+                    android:textSize="11dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:background="#101010"
+                android:orientation="vertical"
+                android:layout_gravity="center">
+
+                <ImageButton
+                    android:id="@+id/item7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:src="@drawable/sword" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="거인의 허리띠"
+                    android:textSize="11dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#101010"
+                android:orientation="vertical"
+                android:layout_gravity="center">
+
+                <ImageButton
+                    android:id="@+id/item8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:src="@drawable/sword" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="뒤집개"
+                    android:textSize="11dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#101010"
+                android:orientation="vertical">
+
+                <ImageButton
+                    android:id="@+id/item9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:src="@drawable/sword" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="연습용 장갑"
+                    android:textSize="11dp" />
+
+            </LinearLayout>
+
+        </GridLayout>
 
 
     </LinearLayout>
 
-    <GridLayout
-        android:id="@+id/action_items"
-        android:layout_width="391dp"
-        android:layout_height="357dp"
-        android:layout_gravity="bottom"
-        android:layout_marginStart="5dp"
-        android:columnCount="3"
-        android:orientation="horizontal"
-        android:rowCount="3"
-       >
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#101010"
-            android:orientation="vertical"
-            android:layout_marginStart="5dp">
-
-            <ImageButton
-                android:id="@+id/item1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:src="@drawable/sword"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="B.F대검"
-                android:textSize="10dp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#101010"
-            android:orientation="vertical">
-
-            <ImageButton
-                android:id="@+id/item2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:src="@drawable/sword" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="곡궁"
-                android:textSize="10dp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#101010"
-            android:orientation="vertical">
-
-            <ImageButton
-                android:id="@+id/item3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:src="@drawable/sword" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="쇠사슬 조끼"
-                android:textSize="10dp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#101010"
-            android:orientation="vertical"
-            android:layout_marginStart="5dp">
-
-            <ImageButton
-                android:id="@+id/item4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:src="@drawable/sword"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="음전자 망토"
-                android:textSize="10dp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#101010"
-            android:orientation="vertical">
-
-            <ImageButton
-                android:id="@+id/item5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:src="@drawable/sword" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="쓸데없이 큰 지팡이"
-                android:textSize="10dp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#101010"
-            android:orientation="vertical">
-
-            <ImageButton
-                android:id="@+id/item6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:src="@drawable/sword" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="여신의 눈물"
-                android:textSize="10dp"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#101010"
-            android:orientation="vertical"
-            android:layout_marginStart="5dp">
-
-            <ImageButton
-                android:id="@+id/item7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:src="@drawable/sword"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="거인의 허리띠"
-                android:textSize="10dp"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#101010"
-            android:orientation="vertical">
-
-            <ImageButton
-                android:id="@+id/item8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:src="@drawable/sword" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="뒤집개"
-                android:textSize="10dp"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="#101010"
-            android:orientation="vertical">
-
-            <ImageButton
-                android:id="@+id/item9"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_rowWeight="1"
-                android:layout_columnWeight="1"
-                android:src="@drawable/sword" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="연습용 장갑"
-                android:textSize="10dp"/>
-
-        </LinearLayout>
-
-    </GridLayout>
-
-</FrameLayout>
+</ScrollView>

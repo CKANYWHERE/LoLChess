@@ -12,6 +12,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.MobileAds
 import com.lolchess.strategy.R
 import com.lolchess.strategy.model.Champ
 import com.lolchess.strategy.model.data.ChampData
@@ -48,7 +50,7 @@ class SynergyArrangement: Fragment() {
         costbtn.setOnClickListener {
             context.replaceFragment(ChampionSynergy())
         }
-
+        MobileAds.initialize(context)
         return v
     }
 
@@ -275,5 +277,28 @@ class SynergyArrangement: Fragment() {
         champDetailRecyclerView_14?.adapter = demolitionistAdapter
         champDetailRecyclerView_14?.layoutManager = GridLayoutManager(view.context, 3)
 
+        var searchManager = activity?.getSystemService(Context.SEARCH_SERVICE) as SearchManager
+
+        searchView!!.setSearchableInfo(searchManager.getSearchableInfo(activity?.componentName))
+
+        searchView!!.setOnQueryTextListener(object : SearchView.OnQueryTextListener,
+                android.widget.SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                (recyclerView?.adapter as ChampDetailAdapter).filter(query)
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                (recyclerView?.adapter as ChampDetailAdapter).filter(newText)
+                return false
+            }
+        })
+        initAd()
     }
+
+    private fun initAd() {
+        val adBuilder = AdRequest.Builder().build()
+        adViewSynergyArrangement.loadAd(adBuilder)
+    }
+
 }
