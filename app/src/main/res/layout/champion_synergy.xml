@@ -16,7 +16,7 @@
         android:layout_height="40dp"
         android:text="@string/cost"
         android:textSize="10dp"
-        android:layout_marginLeft="230dp"/>
+        />
 
     <Button
         android:id="@+id/synergybtn"
@@ -24,15 +24,11 @@
         android:layout_height="40dp"
         android:text="@string/synergy"
         android:textSize="10dp"
-        android:layout_marginLeft="290dp"/>
+        android:layout_marginLeft="60dp"/>
 
-    <SearchView
-        android:id="@+id/searchView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textNoSuggestions"/>
 
     <ScrollView
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="50dp">
@@ -41,7 +37,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
-
 
             <TextView
                 android:layout_width="match_parent"

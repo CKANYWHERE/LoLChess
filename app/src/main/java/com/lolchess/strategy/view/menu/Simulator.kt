@@ -3,8 +3,6 @@ package com.lolchess.strategy.view.menu
 
 import android.app.SearchManager
 import android.content.Context
-import android.graphics.Color
-import android.os.AsyncTask
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -15,10 +13,8 @@ import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.Observer
 //import androidx.lifecycle.SavedStateViewModelFactory
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.InterstitialAd
 import com.google.android.gms.ads.MobileAds
 import com.lolchess.strategy.R
 import com.lolchess.strategy.controller.database.SimulatorDB
@@ -33,7 +29,6 @@ import com.lolchess.strategy.view.adapter.SimulationSynergyAdapter
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.android.synthetic.main.simulator_fragment.*
-import kotlinx.android.synthetic.main.simulator_synergy.*
 import kotlinx.coroutines.GlobalScope
 
 
@@ -70,7 +65,6 @@ class Simulator : Fragment() {
             ViewModelProvider(this, SimualtorViewModel.Factory(activity!!.application)).get(
                 SimualtorViewModel::class.java
             )
-
         simulationAdapter = SimulationAdapter(view.context)
         simAdapter = SimulationSynergyAdapter(view?.context!!)
 
@@ -225,13 +219,13 @@ class Simulator : Fragment() {
                             SimulatorSynergy(
                                 champ?.synergy[0]?.name,
                                 champ?.synergy[0]?.imgPath,
-                                1
+                                1,4
                             )
                         var secondSyn =
                             SimulatorSynergy(
                                 champ?.synergy[1]?.name,
                                 champ?.synergy[1]?.imgPath,
-                                1
+                                1,4
                             )
 
 
@@ -243,10 +237,7 @@ class Simulator : Fragment() {
                                         if (firstSyn.name.equals(syn.name)) {
                                             firstSyn.count = syn.count?.plus(1)
                                         }
-                                        if (syn.count == 2){
-                                            imageView.setBackgroundColor(Color.rgb(206, 143, 125))
 
-                                        }
 
                                         if (secondSyn.name.equals(syn.name)) {
                                             secondSyn.count = syn.count?.plus(1)
@@ -274,19 +265,19 @@ class Simulator : Fragment() {
                             SimulatorSynergy(
                                 champ?.synergy[0]?.name,
                                 champ?.synergy[0]?.imgPath,
-                                1
+                                1, 4
                             )
                         val secondSyn =
                             SimulatorSynergy(
                                 champ?.synergy[1]?.name,
                                 champ?.synergy[1]?.imgPath,
-                                1
+                                1, 4
                             )
                         val thirdSyn =
                             SimulatorSynergy(
                                 champ?.synergy[2]?.name,
                                 champ?.synergy[2]?.imgPath,
-                                1
+                                1, 4
                             )
                         simulatorViewModel.getAllSynergy()
                             .observe(viewLifecycleOwner, Observer { synergy ->

@@ -8,5 +8,6 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "SimulatorSynergy")
 class SimulatorSynergy (@PrimaryKey var name:String,
                         @ColumnInfo(name = "imgPath") var imgPath:Int?,
-                        @ColumnInfo(name = "count") var count:Int?){
+                        @ColumnInfo(name = "count") var count:Int?,
+                        @ColumnInfo(name = "color") var color:Int?){
 }
