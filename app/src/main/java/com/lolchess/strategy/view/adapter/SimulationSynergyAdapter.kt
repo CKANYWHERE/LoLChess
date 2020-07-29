@@ -6,10 +6,12 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.lolchess.strategy.R
 import com.lolchess.strategy.controller.entity.SimulatorChamp
 import com.lolchess.strategy.controller.entity.SimulatorSynergy
+import com.lolchess.strategy.controller.viewmodel.SimualtorViewModel
 import com.lolchess.strategy.model.data.SynergyData
 import com.lolchess.strategy.view.viewholder.SimulationSynergyViewHoler
 import com.lolchess.strategy.view.viewholder.SimulationViewHolder
@@ -33,7 +35,6 @@ class SimulationSynergyAdapter(private var context : Context)// recycler view bi
         holder.imgView.setImageResource(synergy?.imgPath!!)
         holder.txtSynergy.text = synergy?.name
         holder.txtSynergyNum.text = synergy?.count.toString()
-
 
         /*
          시너지 색깔
