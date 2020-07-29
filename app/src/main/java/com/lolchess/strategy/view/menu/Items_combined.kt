@@ -8,11 +8,14 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.MobileAds
 import com.lolchess.strategy.R
 import com.lolchess.strategy.model.Combined_items
 import com.lolchess.strategy.model.data.Combined_Data
 import com.lolchess.strategy.view.activity.replaceFragment
 import com.lolchess.strategy.view.adapter.ItemCombinedAdapter
+import kotlinx.android.synthetic.main.champion_synergy.*
 import kotlinx.android.synthetic.main.combined_fragment.*
 
 class Items_combined() : Fragment() {
@@ -36,12 +39,13 @@ class Items_combined() : Fragment() {
         basedbtn.setOnClickListener {
             context.replaceFragment(Items())
         }
-
+        MobileAds.initialize(context)
         return v
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initAd()
         val combinedData = Combined_Data()
         var combinedItems: List<Combined_items> = listOf(combinedData.Locket_of_the_Iron_Solari(), combinedData.Titan_Resolve(), combinedData.Giant_Slayer(), combinedData.Rapid_Firecannon(), combinedData.Guinsoo_Rageblade(),
                 combinedData.Redemption(), combinedData.Bramble_Vest(),  combinedData.Trap_Claw(), combinedData.Thief_Gloves(), combinedData.Force_of_Nature(), combinedData.Rabadon_Deathcap(),  combinedData.Runaan_Hurricane(),
@@ -57,5 +61,9 @@ class Items_combined() : Fragment() {
         val mAdapter = ItemCombinedAdapter(combined)
         combinedRecycler?.adapter = mAdapter
         combinedRecycler?.layoutManager = GridLayoutManager(view.context, 3)
+    }
+    private fun initAd() {
+        val adBuilder = AdRequest.Builder().build()
+        adViewCominedItem.loadAd(adBuilder)
     }
 }

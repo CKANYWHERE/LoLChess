@@ -9,5 +9,5 @@ import androidx.room.PrimaryKey
 class SimulatorSynergy (@PrimaryKey var name:String,
                         @ColumnInfo(name = "imgPath") var imgPath:Int?,
                         @ColumnInfo(name = "count") var count:Int?,
-                        @ColumnInfo(name = "synPower") var synPower:Int?){
-}
+                        @ColumnInfo(name = "synPower") var synPower:Int?)
+

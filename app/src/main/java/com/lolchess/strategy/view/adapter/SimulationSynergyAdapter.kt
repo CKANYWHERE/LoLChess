@@ -9,16 +9,15 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.lolchess.strategy.R
-import com.lolchess.strategy.controller.entity.SimulatorChamp
 import com.lolchess.strategy.controller.entity.SimulatorSynergy
 import com.lolchess.strategy.controller.viewmodel.SimualtorViewModel
 import com.lolchess.strategy.model.data.SynergyData
 import com.lolchess.strategy.view.viewholder.SimulationSynergyViewHoler
-import com.lolchess.strategy.view.viewholder.SimulationViewHolder
 
 class SimulationSynergyAdapter(private var context : Context)// recycler view binding 해주는 클래스
     : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private var items = emptyList<SimulatorSynergy>()
+    private lateinit var simulatorViewModel: SimualtorViewModel
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val view : View?
@@ -31,6 +30,7 @@ class SimulationSynergyAdapter(private var context : Context)// recycler view bi
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val synergy = items[position]
         val synergymain: SynergyData = SynergyData()
+
         (holder as SimulationSynergyViewHoler)
         holder.imgView.setImageResource(synergy?.imgPath!!)
         holder.txtSynergy.text = synergy?.name
@@ -42,11 +42,6 @@ class SimulationSynergyAdapter(private var context : Context)// recycler view bi
         은 holder.imgView.setBackgroundColor(Color.rgb(150, 182, 193))
         금 holder.imgView.setBackgroundColor(Color.rgb(232, 181, 64))
         */
-
-
-
-
-
         if (((synergy.count == 2 || synergy.count == 3) && synergy.imgPath == synergymain.getBattlecast().imgPath)
                 || ((synergy.count == 2 || synergy.count == 3)  && synergy.imgPath == synergymain.getChrono().imgPath)
                 || ((synergy.count == 2 || synergy.count == 3)  && synergy.imgPath == synergymain.getSorcerer().imgPath)
@@ -60,12 +55,15 @@ class SimulationSynergyAdapter(private var context : Context)// recycler view bi
                 || ((synergy.count == 2 || synergy.count == 3)  && synergy.imgPath == synergymain.getProtector().imgPath)
                 || ((synergy.count == 2 || synergy.count == 3)  && synergy.imgPath == synergymain.getSniper().imgPath)
                 || ((synergy.count == 2 || synergy.count == 3)  && synergy.imgPath == synergymain.getBlaster().imgPath)){
+
             holder.imgView.setBackgroundColor(Color.rgb(206, 143, 125))
+
         }else holder.imgView.setBackgroundColor(0)
 
         if ((synergy.count == 2 && synergy.imgPath == synergymain.getManaReaver().imgPath)
                 || (synergy.count == 2 && synergy.imgPath == synergymain.getDemolitionist().imgPath)){
             holder.imgView.setBackgroundColor(Color.rgb(232, 181, 64))
+
         }
         if ((synergy.count == 3 && synergy.imgPath == synergymain.getMechPilot().imgPath)
                 || (synergy.count == 3 && synergy.imgPath == synergymain.getAstro().imgPath)){
@@ -87,6 +85,7 @@ class SimulationSynergyAdapter(private var context : Context)// recycler view bi
                 || (synergy.count == 4 && synergy.imgPath == synergymain.getBlaster().imgPath)
                 || (synergy.count == 4 && synergy.imgPath == synergymain.getInfiltrator().imgPath)
                 || (synergy.count == 4 && synergy.imgPath == synergymain.getProtector().imgPath)) {
+            
             holder.imgView.setBackgroundColor(Color.rgb(232, 181, 64))
         }
         if (synergy.count == 6 && synergy.imgPath == synergymain.getStarGuardian().imgPath
@@ -100,6 +99,7 @@ class SimulationSynergyAdapter(private var context : Context)// recycler view bi
                 || (synergy.count == 6 && synergy.imgPath == synergymain.getSorcerer().imgPath)
                 || (synergy.count == 6 && synergy.imgPath == synergymain.getVanguard().imgPath)){
             holder.imgView.setBackgroundColor(Color.rgb(232, 181, 64))
+
         }
 
         if (((synergy.count == 4 || synergy.count == 5) && synergy.imgPath == synergymain.getBattlecast().imgPath)
@@ -125,7 +125,6 @@ class SimulationSynergyAdapter(private var context : Context)// recycler view bi
 
 
     }
-
     fun setData(synergy: List<SimulatorSynergy>){
         this.items = synergy
         notifyDataSetChanged()

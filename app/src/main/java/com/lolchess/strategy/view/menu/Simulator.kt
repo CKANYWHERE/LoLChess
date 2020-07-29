@@ -3,8 +3,6 @@ package com.lolchess.strategy.view.menu
 
 import android.app.SearchManager
 import android.content.Context
-import android.graphics.Color
-import android.os.AsyncTask
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -15,10 +13,8 @@ import androidx.appcompat.widget.SearchView
 import androidx.lifecycle.Observer
 //import androidx.lifecycle.SavedStateViewModelFactory
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.InterstitialAd
 import com.google.android.gms.ads.MobileAds
 import com.lolchess.strategy.R
 import com.lolchess.strategy.controller.database.SimulatorDB
@@ -34,7 +30,6 @@ import com.lolchess.strategy.view.adapter.SimulationSynergyAdapter
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.android.synthetic.main.simulator_fragment.*
-import kotlinx.android.synthetic.main.simulator_synergy.*
 import kotlinx.coroutines.GlobalScope
 
 
@@ -71,7 +66,6 @@ class Simulator : Fragment() {
             ViewModelProvider(this, SimualtorViewModel.Factory(activity!!.application)).get(
                 SimualtorViewModel::class.java
             )
-
         simulationAdapter = SimulationAdapter(view.context)
         simAdapter = SimulationSynergyAdapter(view?.context!!)
 
@@ -237,6 +231,7 @@ class Simulator : Fragment() {
                                 champ?.synergy[1]?.imgPath,
                                 1
                             ,0
+
                             )
 
 
@@ -250,10 +245,7 @@ class Simulator : Fragment() {
                                             firstSyn.count = syn.count?.plus(1)
                                             firstSyn.synPower = power
                                         }
-                                        if (syn.count == 2){
-                                            imageView.setBackgroundColor(Color.rgb(206, 143, 125))
 
-                                        }
 
                                         if (secondSyn.name.equals(syn.name)) {
                                             var power = getSynPower(syn)
@@ -297,8 +289,10 @@ class Simulator : Fragment() {
                             SimulatorSynergy(
                                 champ?.synergy[2]?.name,
                                 champ?.synergy[2]?.imgPath,
+
                                 1
                             ,0
+
                             )
 
                         simulatorViewModel.getAllSynergy()

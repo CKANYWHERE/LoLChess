@@ -11,11 +11,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.MobileAds
 import com.lolchess.strategy.R
 import com.lolchess.strategy.model.Champ
 import com.lolchess.strategy.model.data.ChampData
 import com.lolchess.strategy.view.activity.replaceFragment
 import com.lolchess.strategy.view.adapter.ChampDetailAdapter
+import com.lolchess.strategy.view.adapter.ChampMainAdapter
 import kotlinx.android.synthetic.main.champion_synergy.*
 import kotlinx.android.synthetic.main.simulator_fragment.*
 import kotlinx.android.synthetic.main.simulator_fragment.searchView
@@ -38,12 +41,13 @@ class ChampionSynergy: Fragment() {
         synergybtn.setOnClickListener {
             context.replaceFragment(SynergyArrangement())
         }
-
+        MobileAds.initialize(context)
         return v
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initAd()
         val champData = ChampData()
         val champList1Cost: List<Champ> =
                 listOf(champData.getGraves(), champData.getNocturne(), champData.getLeona(), champData.getMalphite(), champData.getPoppy(), champData.getIllaoi(),
@@ -94,25 +98,12 @@ class ChampionSynergy: Fragment() {
         val mAdapter5 = ChampDetailAdapter(champMutableList5)
         champDetailRecyclerView5?.adapter = mAdapter5
         champDetailRecyclerView5?.layoutManager = GridLayoutManager(view.context, 3)
-
-        var searchManager = activity?.getSystemService(Context.SEARCH_SERVICE) as SearchManager
-
-        searchView!!.setSearchableInfo(searchManager.getSearchableInfo(activity?.componentName))
-
-        searchView!!.setOnQueryTextListener(object : SearchView.OnQueryTextListener,
-                android.widget.SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                (recyclerView?.adapter as ChampDetailAdapter).filter(query)
-                return false
-            }
-
-            override fun onQueryTextChange(newText: String?): Boolean {
-                (recyclerView?.adapter as ChampDetailAdapter).filter(newText)
-                return false
-            }
-        })
-
     }
+    private fun initAd() {
+        val adBuilder = AdRequest.Builder().build()
+        adViewChamp.loadAd(adBuilder)
+    }
+
 }
 
 
