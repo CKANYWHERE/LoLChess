@@ -52,8 +52,8 @@
             <ImageView
                 android:id="@+id/tipImgIn1"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:gravity="center"/>
+                android:layout_height="250dp"
+                android:gravity="center" />
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="5dp"/>
@@ -70,7 +70,7 @@
             <ImageView
                 android:id="@+id/tipImgIn2"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="250dp"
                 android:gravity="center"/>
             <Space
                 android:layout_width="match_parent"

@@ -56,7 +56,7 @@ class SynergyData {
 
     }
 
-    fun getBladmaster(): Synergy{
+    fun getBlademaster(): Synergy{
         val description : String = "검사는 기본 공격 시 일정 확률로 대상에게 두 번의 추가 공격을 가합니다. 추가 공격은 기본 공격 시의 피해를 입히며 적중 시 효과가 적용됩니다."
         val option : List<String> = listOf("③ 추가 공격 확률 30%", "⑥ 추가 공격 확률 70%", "⑨ 추가 공격 확률 100%")
         val level: List<Int> = listOf(3, 6, 9)

@@ -37,10 +37,12 @@
             android:layout_marginBottom="10dp" />
 
         <TextView
+            android:id="@+id/tipText"
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:gravity="center"
-            android:text="테스트 입니다." />
+            android:text="테스트 입니다."
+            android:textSize="11dp"/>
 
 
     </LinearLayout>

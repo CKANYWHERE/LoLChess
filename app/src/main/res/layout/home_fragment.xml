@@ -60,12 +60,14 @@
             <Space
                 android:layout_width="match_parent"
                 android:layout_height="10dp" />
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:orientation="vertical"
-        android:id="@+id/recommendMetaView">
-    </ListView>
+
+            <ListView
+                android:id="@+id/recommendMetaView"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:orientation="vertical">
+
+            </ListView>
 
 
         </LinearLayout>

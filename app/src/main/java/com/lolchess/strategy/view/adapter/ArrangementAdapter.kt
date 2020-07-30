@@ -29,6 +29,7 @@ class ArrangementAdapter(private var items: MutableList<Tips>)// recycler view b
         (holder as ArrangementViewHolder)
         holder.tipImg.setImageResource(items[position]?.imgPath1)
         holder.tipCard.text =  items[position]?.name
+        holder.tipText.text = items[position]?.subText
         holder.itemView.setOnClickListener {
             holder.initialize(items.get(position))
         }

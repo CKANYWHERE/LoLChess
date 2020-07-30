@@ -82,7 +82,7 @@ class RecommendMetaAdapter(private var items : MutableList<RecommandMeta>, var c
             imageSyn.layoutParams = paramSyn
             viewHolder.lytSyn.addView(imageSyn)
         }
-
+        viewHolder.name.text = item.name
 
         return view
     }

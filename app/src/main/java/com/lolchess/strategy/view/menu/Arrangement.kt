@@ -32,7 +32,7 @@ class Arrangement:Fragment(){
 
         initAd()
         val tips_Data = Tips_Data()
-        var tipsData: List<Tips> = listOf(tips_Data.tips_7_11(), tips_Data.tips_7_12())
+        var tipsData: List<Tips> = listOf(tips_Data.tips_basic(), tips_Data.tips_zephyr(), tips_Data.tips_gnar(), tips_Data.tips_infiltrator())
 
 
         val tips = tipsData.toMutableList()

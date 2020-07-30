@@ -59,6 +59,7 @@
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_gravity="center"
+                android:layout_marginStart="5dp"
                 android:scaleType="fitXY" />
 
             <TextView
@@ -99,8 +100,8 @@
 
         <GridLayout
             android:id="@+id/action_items"
-            android:layout_width="300dp"
-            android:layout_height="357dp"
+            android:layout_width="317dp"
+            android:layout_height="318dp"
             android:layout_gravity="center_vertical"
             android:layout_marginStart="5dp"
             android:columnCount="3"
@@ -111,10 +112,10 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginStart="5dp"
                 android:background="#101010"
-                android:orientation="vertical"
-                android:layout_gravity="center">
+                android:orientation="vertical">
 
                 <ImageButton
                     android:id="@+id/item1"
@@ -129,16 +130,16 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="B.F대검"
-                    android:textSize="11dp" />
+                    android:textSize="10.5dp" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:background="#101010"
-                android:orientation="vertical"
-                android:layout_gravity="center">
+                android:orientation="vertical">
 
                 <ImageButton
                     android:id="@+id/item2"
@@ -153,16 +154,16 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="곡궁"
-                    android:textSize="11dp" />
+                    android:textSize="10.5dp" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:background="#101010"
-                android:orientation="vertical"
-                android:layout_gravity="center">
+                android:orientation="vertical">
 
                 <ImageButton
                     android:id="@+id/item3"
@@ -177,17 +178,17 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="쇠사슬 조끼"
-                    android:textSize="11dp" />
+                    android:textSize="10.5dp" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginStart="5dp"
                 android:background="#101010"
-                android:orientation="vertical"
-                android:layout_gravity="center">
+                android:orientation="vertical">
 
                 <ImageButton
                     android:id="@+id/item4"
@@ -202,16 +203,16 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="음전자 망토"
-                    android:textSize="11dp" />
+                    android:textSize="10.5dp" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:background="#101010"
-                android:orientation="vertical"
-                android:layout_gravity="center">
+                android:orientation="vertical">
 
                 <ImageButton
                     android:id="@+id/item5"
@@ -226,16 +227,16 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="쓸데없이 큰 지팡이"
-                    android:textSize="11dp" />
+                    android:textSize="10.5dp" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:background="#101010"
-                android:orientation="vertical"
-                android:layout_gravity="center">
+                android:orientation="vertical">
 
                 <ImageButton
                     android:id="@+id/item6"
@@ -250,17 +251,17 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="여신의 눈물"
-                    android:textSize="11dp" />
+                    android:textSize="10.5dp" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:layout_marginStart="5dp"
                 android:background="#101010"
-                android:orientation="vertical"
-                android:layout_gravity="center">
+                android:orientation="vertical">
 
                 <ImageButton
                     android:id="@+id/item7"
@@ -275,16 +276,16 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="거인의 허리띠"
-                    android:textSize="11dp" />
+                    android:textSize="10.5dp" />
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:background="#101010"
-                android:orientation="vertical"
-                android:layout_gravity="center">
+                android:orientation="vertical">
 
                 <ImageButton
                     android:id="@+id/item8"
@@ -299,7 +300,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="뒤집개"
-                    android:textSize="11dp" />
+                    android:textSize="10.5dp" />
 
             </LinearLayout>
 
@@ -322,7 +323,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="연습용 장갑"
-                    android:textSize="11dp" />
+                    android:textSize="10.5dp" />
 
             </LinearLayout>
 

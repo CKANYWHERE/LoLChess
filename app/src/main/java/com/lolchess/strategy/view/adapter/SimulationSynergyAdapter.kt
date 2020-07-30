@@ -75,7 +75,7 @@ class SimulationSynergyAdapter(private var context : Context)// recycler view bi
         Log.e("synergycount", synergy.count.toString())
 
         if ( ((synergy.count == 3 || synergy.count == 4 || synergy.count == 5) && synergy.imgPath == synergymain.getCybernetic().imgPath)
-                || ((synergy.count == 3 || synergy.count == 4 || synergy.count == 5) && synergy.imgPath == synergymain.getBladmaster().imgPath)
+                || ((synergy.count == 3 || synergy.count == 4 || synergy.count == 5) && synergy.imgPath == synergymain.getBlademaster().imgPath)
                 || ((synergy.count == 3 || synergy.count == 4 || synergy.count == 5) && synergy.imgPath == synergymain.getRebel().imgPath)
                 || ((synergy.count == 3 || synergy.count == 4 || synergy.count == 5) && synergy.imgPath == synergymain.getStarGuardian().imgPath)){
             synergy.color = 3
@@ -100,7 +100,7 @@ class SimulationSynergyAdapter(private var context : Context)// recycler view bi
                 || (synergy.count == 6 && synergy.imgPath == synergymain.getRebel().imgPath)
                 || (synergy.count == 6 && synergy.imgPath == synergymain.getBattlecast().imgPath)
                 || (synergy.count == 6 && synergy.imgPath == synergymain.getCelestial().imgPath)
-                || (synergy.count == 6 && synergy.imgPath == synergymain.getBladmaster().imgPath)
+                || (synergy.count == 6 && synergy.imgPath == synergymain.getBlademaster().imgPath)
                 || (synergy.count == 6 && synergy.imgPath == synergymain.getSorcerer().imgPath)
                 || (synergy.count == 6 && synergy.imgPath == synergymain.getVanguard().imgPath)){
             synergy.color = 1

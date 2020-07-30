@@ -16,6 +16,7 @@ import kotlinx.android.synthetic.main.item_combined_detail.view.*
 class ArrangementViewHolder(var view: View) : RecyclerView.ViewHolder(view){ //cardview binding 해주는 클래스
     var tipCard = view.tipCard
     var tipImg = view.tipImg
+    var tipText = view.tipText
 
     fun initialize(item: Tips) {
         val intent = Intent(view.context, ArrangementActivity::class.java )

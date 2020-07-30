@@ -39,7 +39,7 @@ class ChampData {
     }
 
     fun getFiora(): Champ {
-        val synergy: List<Synergy> = listOf(SynergyData().getCybernetic(), SynergyData().getBladmaster())
+        val synergy: List<Synergy> = listOf(SynergyData().getCybernetic(), SynergyData().getBlademaster())
         val hp: List<Int> = listOf(450, 810, 1458)
         val attack: List<Double> = listOf(45.0, 81.0, 145.8)
 
@@ -87,7 +87,7 @@ class ChampData {
     }
 
     fun getXayah(): Champ {
-        val synergy: List<Synergy> = listOf(SynergyData().getCelestial(), SynergyData().getBladmaster())
+        val synergy: List<Synergy> = listOf(SynergyData().getCelestial(), SynergyData().getBlademaster())
         val hp: List<Int> = listOf(500, 900, 1620)
         val attack: List<Double> = listOf(50.0, 90.0, 162.0)
 
@@ -145,7 +145,7 @@ class ChampData {
     }
 
     fun getYasuo(): Champ {
-        val synergy: List<Synergy> = listOf(SynergyData().getRebel(), SynergyData().getBladmaster())
+        val synergy: List<Synergy> = listOf(SynergyData().getRebel(), SynergyData().getBlademaster())
         val hp: List<Int> = listOf(700, 1260, 2268)
         val attack: List<Double> = listOf(50.0, 90.0, 162.0)
 
@@ -154,7 +154,7 @@ class ChampData {
     }
 
     fun getShen(): Champ {
-        val synergy: List<Synergy> = listOf(SynergyData().getChrono(), SynergyData().getBladmaster())
+        val synergy: List<Synergy> = listOf(SynergyData().getChrono(), SynergyData().getBlademaster())
         val hp: List<Int> = listOf(800, 1440, 2592)
         val attack: List<Double> = listOf(60.0, 108.0, 194.4)
 
@@ -311,7 +311,7 @@ class ChampData {
     }
 
     fun getMasterYi(): Champ {
-        val synergy: List<Synergy> = listOf(SynergyData().getRebel(), SynergyData().getBladmaster())
+        val synergy: List<Synergy> = listOf(SynergyData().getRebel(), SynergyData().getBlademaster())
         val hp: List<Int> = listOf(750, 1350, 2430)
         val attack: List<Double> = listOf(50.0, 90.0, 162.0)
 
@@ -433,7 +433,7 @@ class ChampData {
     }
 
     fun getIrelia() : Champ{
-        val synergy : List<Synergy> = listOf(SynergyData().getCybernetic(),SynergyData().getBladmaster(),SynergyData().getManaReaver())
+        val synergy : List<Synergy> = listOf(SynergyData().getCybernetic(),SynergyData().getBlademaster(),SynergyData().getManaReaver())
         val hp : List<Int> = listOf(800, 1440, 2592)
         val attack : List<Double> = listOf(70.0, 126.0, 226.8)
 
@@ -474,7 +474,7 @@ class ChampData {
     }
 
     fun getRiven() : Champ{
-        val synergy : List<Synergy> = listOf(SynergyData().getChrono(),SynergyData().getBladmaster())
+        val synergy : List<Synergy> = listOf(SynergyData().getChrono(),SynergyData().getBlademaster())
         val hp : List<Int> = listOf(800, 1440, 2592)
         val attack : List<Double> = listOf(70.0, 126.0, 226.8)
 
