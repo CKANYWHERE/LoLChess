@@ -16,7 +16,10 @@ interface SimulatorDAO {
     @Query("Select * From SimulatorChamp")
     fun getAllChamp(): LiveData<List<SimulatorChamp>>
 
-    @Query("Select * From SimulatorSynergy order by color, count desc")
+
+    @Query("Select * From SimulatorSynergy order by synPower desc")
+
+
     fun getAllSynergy(): LiveData<List<SimulatorSynergy>>
 
     @Query("Select(Count(*)) From SimulatorChamp")

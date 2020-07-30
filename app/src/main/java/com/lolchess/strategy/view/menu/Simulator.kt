@@ -23,6 +23,7 @@ import com.lolchess.strategy.controller.entity.SimulatorSynergy
 import com.lolchess.strategy.controller.viewmodel.SimualtorViewModel
 import com.lolchess.strategy.model.data.ChampData
 import com.lolchess.strategy.model.Champ
+import com.lolchess.strategy.model.data.SynergyData
 import com.lolchess.strategy.view.adapter.ChampMainAdapter
 import com.lolchess.strategy.view.adapter.SimulationAdapter
 import com.lolchess.strategy.view.adapter.SimulationSynergyAdapter
@@ -122,6 +123,8 @@ class Simulator : Fragment() {
         sinergyView?.adapter = simAdapter
         simulatorViewModel.getAllSynergy().observe(viewLifecycleOwner, Observer { synergy ->
             synergy?.let { simAdapter.setData(synergy) }
+            for(syn in synergy)
+                Log.e("Synergy",syn.name + " " + syn.synPower.toString() )
         })
 
     }
@@ -219,13 +222,16 @@ class Simulator : Fragment() {
                             SimulatorSynergy(
                                 champ?.synergy[0]?.name,
                                 champ?.synergy[0]?.imgPath,
-                                1,4
+                                1
+                            ,0
                             )
                         var secondSyn =
                             SimulatorSynergy(
                                 champ?.synergy[1]?.name,
                                 champ?.synergy[1]?.imgPath,
-                                1,4
+                                1
+                            ,0
+
                             )
 
 
@@ -233,14 +239,18 @@ class Simulator : Fragment() {
                             .observe(viewLifecycleOwner, Observer { synergy ->
                                 synergy?.let { synergy ->
                                     for (syn in synergy) {
-
+                                        var power = getSynPower(syn)
                                         if (firstSyn.name.equals(syn.name)) {
+                                            var power = getSynPower(syn)
                                             firstSyn.count = syn.count?.plus(1)
+                                            firstSyn.synPower = power
                                         }
 
 
                                         if (secondSyn.name.equals(syn.name)) {
+                                            var power = getSynPower(syn)
                                             secondSyn.count = syn.count?.plus(1)
+                                            secondSyn.synPower = power
                                         }
                                     }
                                 }
@@ -265,31 +275,47 @@ class Simulator : Fragment() {
                             SimulatorSynergy(
                                 champ?.synergy[0]?.name,
                                 champ?.synergy[0]?.imgPath,
-                                1, 4
+                                1,
+                                0
                             )
                         val secondSyn =
                             SimulatorSynergy(
                                 champ?.synergy[1]?.name,
                                 champ?.synergy[1]?.imgPath,
-                                1, 4
+                                1
+                            ,0
                             )
                         val thirdSyn =
                             SimulatorSynergy(
                                 champ?.synergy[2]?.name,
                                 champ?.synergy[2]?.imgPath,
-                                1, 4
+
+                                1
+                            ,0
+
                             )
+
                         simulatorViewModel.getAllSynergy()
                             .observe(viewLifecycleOwner, Observer { synergy ->
                                 synergy?.let { synergy ->
                                     for (syn in synergy) {
 
                                         if (firstSyn.name.equals(syn.name)) {
+                                            var power = getSynPower(syn)
                                             firstSyn.count = syn.count?.plus(1)
+                                            firstSyn.synPower = power
                                         }
 
                                         if (secondSyn.name.equals(syn.name)) {
+                                            var power = getSynPower(syn)
                                             secondSyn.count = syn.count?.plus(1)
+                                            secondSyn.synPower = power
+                                        }
+
+                                        if (thirdSyn.name.equals(syn.name)) {
+                                            var power = getSynPower(syn)
+                                            thirdSyn.count = syn.count?.plus(1)
+                                            thirdSyn.synPower = power
                                         }
 
                                     }
@@ -310,6 +336,78 @@ class Simulator : Fragment() {
 
         recyclerView?.layoutManager = LinearLayoutManager(view!!.context)
         recyclerView?.adapter = mAdapter
+    }
+
+    private fun getSynPower(synergy: SimulatorSynergy) : Int{
+        val synergymain: SynergyData = SynergyData()
+        var power : Int = 0
+        if (((synergy.count == 2 || synergy.count == 3) && synergy.imgPath == synergymain.getBattlecast().imgPath)
+            || ((synergy.count == 2 || synergy.count == 3)  && synergy.imgPath == synergymain.getChrono().imgPath)
+            || ((synergy.count == 2 || synergy.count == 3)  && synergy.imgPath == synergymain.getSorcerer().imgPath)
+            || ((synergy.count == 2 || synergy.count == 3)  && synergy.imgPath == synergymain.getBrawler().imgPath)
+            || ((synergy.count == 2 || synergy.count == 3)  && synergy.imgPath == synergymain.getMystic().imgPath)
+            || ((synergy.count == 2 || synergy.count == 3)  && synergy.imgPath == synergymain.getVanguard().imgPath)
+            || ((synergy.count == 2 || synergy.count == 3)  && synergy.imgPath == synergymain.getInfiltrator().imgPath)
+            || ((synergy.count == 2 || synergy.count == 3)  && synergy.imgPath == synergymain.getDarkStar().imgPath)
+            || ((synergy.count == 2 || synergy.count == 3)  && synergy.imgPath == synergymain.getCelestial().imgPath)
+            || ((synergy.count == 2 || synergy.count == 3)  && synergy.imgPath == synergymain.getSpacePirate().imgPath)
+            || ((synergy.count == 2 || synergy.count == 3)  && synergy.imgPath == synergymain.getProtector().imgPath)
+            || ((synergy.count == 2 || synergy.count == 3)  && synergy.imgPath == synergymain.getSniper().imgPath)
+            || ((synergy.count == 2 || synergy.count == 3)  && synergy.imgPath == synergymain.getBlaster().imgPath))
+                power = 1
+
+
+        if ( ((synergy.count == 3 || synergy.count == 4 || synergy.count == 5) && synergy.imgPath == synergymain.getCybernetic().imgPath)
+            || ((synergy.count == 3 || synergy.count == 4 || synergy.count == 5) && synergy.imgPath == synergymain.getBladmaster().imgPath)
+            || ((synergy.count == 3 || synergy.count == 4 || synergy.count == 5) && synergy.imgPath == synergymain.getRebel().imgPath)
+            || ((synergy.count == 3 || synergy.count == 4 || synergy.count == 5) && synergy.imgPath == synergymain.getStarGuardian().imgPath))
+                power = 1
+
+        if (((synergy.count == 4 || synergy.count == 5) && synergy.imgPath == synergymain.getBattlecast().imgPath)
+            ||((synergy.count == 4 || synergy.count == 5)&& synergy.imgPath == synergymain.getSorcerer().imgPath)
+            ||((synergy.count == 4 || synergy.count == 5)&& synergy.imgPath == synergymain.getVanguard().imgPath)
+            ||((synergy.count == 4 || synergy.count == 5)&& synergy.imgPath == synergymain.getDarkStar().imgPath)
+            ||((synergy.count == 4 || synergy.count == 5)&& synergy.imgPath == synergymain.getCelestial().imgPath)
+            ||((synergy.count == 4 || synergy.count == 5)&& synergy.imgPath == synergymain.getChrono().imgPath))
+                power = 2
+        if ((synergy.count == 2 && synergy.imgPath == synergymain.getManaReaver().imgPath)
+            || (synergy.count == 2 && synergy.imgPath == synergymain.getDemolitionist().imgPath))
+                power = 3
+
+        if ((synergy.count == 3 && synergy.imgPath == synergymain.getMechPilot().imgPath)
+            || (synergy.count == 3 && synergy.imgPath == synergymain.getAstro().imgPath))
+                power = 3
+
+
+        if ((synergy.count == 4 && synergy.imgPath == synergymain.getBrawler().imgPath)
+            || (synergy.count == 4 && synergy.imgPath == synergymain.getMystic().imgPath)
+            || (synergy.count == 4 && synergy.imgPath == synergymain.getSpacePirate().imgPath)
+            || (synergy.count == 4 && synergy.imgPath == synergymain.getSniper().imgPath)
+            || (synergy.count == 4 && synergy.imgPath == synergymain.getBlaster().imgPath)
+            || (synergy.count == 4 && synergy.imgPath == synergymain.getInfiltrator().imgPath)
+            || (synergy.count == 4 && synergy.imgPath == synergymain.getProtector().imgPath))
+                power = 3
+
+        if (synergy.count == 6 && synergy.imgPath == synergymain.getStarGuardian().imgPath
+            || (synergy.count == 6 && synergy.imgPath == synergymain.getChrono().imgPath)
+            || (synergy.count == 6 && synergy.imgPath == synergymain.getCybernetic().imgPath)
+            || (synergy.count == 6 && synergy.imgPath == synergymain.getDarkStar().imgPath)
+            || (synergy.count == 6 && synergy.imgPath == synergymain.getRebel().imgPath)
+            || (synergy.count == 6 && synergy.imgPath == synergymain.getBattlecast().imgPath)
+            || (synergy.count == 6 && synergy.imgPath == synergymain.getCelestial().imgPath)
+            || (synergy.count == 6 && synergy.imgPath == synergymain.getBladmaster().imgPath)
+            || (synergy.count == 6 && synergy.imgPath == synergymain.getSorcerer().imgPath)
+            || (synergy.count == 6 && synergy.imgPath == synergymain.getVanguard().imgPath))
+                power = 3
+        if (synergy.count == 1 && synergy.imgPath == synergymain.getMercenary().imgPath
+            || synergy.imgPath == synergymain.getParagon().imgPath
+            || synergy.imgPath == synergymain.getStarship().imgPath)
+                power = 3
+
+
+        Log.e("synPower",synergy.name + "  " + power.toString())
+
+        return  power
     }
 
     private fun initSearchBar() {

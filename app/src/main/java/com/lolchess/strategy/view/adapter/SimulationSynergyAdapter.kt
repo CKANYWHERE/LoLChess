@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.lolchess.strategy.R
 import com.lolchess.strategy.controller.entity.SimulatorSynergy
@@ -35,7 +36,6 @@ class SimulationSynergyAdapter(private var context : Context)// recycler view bi
         holder.txtSynergy.text = synergy?.name
         holder.txtSynergyNum.text = synergy?.count.toString()
 
-
         /*
          시너지 색깔
         동 holder.imgView.setBackgroundColor(Color.rgb(206, 143, 125))
@@ -55,7 +55,6 @@ class SimulationSynergyAdapter(private var context : Context)// recycler view bi
                 || ((synergy.count == 2 || synergy.count == 3)  && synergy.imgPath == synergymain.getProtector().imgPath)
                 || ((synergy.count == 2 || synergy.count == 3)  && synergy.imgPath == synergymain.getSniper().imgPath)
                 || ((synergy.count == 2 || synergy.count == 3)  && synergy.imgPath == synergymain.getBlaster().imgPath)){
-            synergy.color = 3
 
             holder.imgView.setBackgroundColor(Color.rgb(206, 143, 125))
 
@@ -63,13 +62,11 @@ class SimulationSynergyAdapter(private var context : Context)// recycler view bi
 
         if ((synergy.count == 2 && synergy.imgPath == synergymain.getManaReaver().imgPath)
                 || (synergy.count == 2 && synergy.imgPath == synergymain.getDemolitionist().imgPath)){
-            synergy.color = 1
             holder.imgView.setBackgroundColor(Color.rgb(232, 181, 64))
 
         }
         if ((synergy.count == 3 && synergy.imgPath == synergymain.getMechPilot().imgPath)
                 || (synergy.count == 3 && synergy.imgPath == synergymain.getAstro().imgPath)){
-            synergy.color = 1
             holder.imgView.setBackgroundColor(Color.rgb(232, 181, 64))
         }
         Log.e("synergycount", synergy.count.toString())
@@ -78,7 +75,6 @@ class SimulationSynergyAdapter(private var context : Context)// recycler view bi
                 || ((synergy.count == 3 || synergy.count == 4 || synergy.count == 5) && synergy.imgPath == synergymain.getBlademaster().imgPath)
                 || ((synergy.count == 3 || synergy.count == 4 || synergy.count == 5) && synergy.imgPath == synergymain.getRebel().imgPath)
                 || ((synergy.count == 3 || synergy.count == 4 || synergy.count == 5) && synergy.imgPath == synergymain.getStarGuardian().imgPath)){
-            synergy.color = 3
             holder.imgView.setBackgroundColor(Color.rgb(206, 143, 125))
         }
 
@@ -89,7 +85,6 @@ class SimulationSynergyAdapter(private var context : Context)// recycler view bi
                 || (synergy.count == 4 && synergy.imgPath == synergymain.getBlaster().imgPath)
                 || (synergy.count == 4 && synergy.imgPath == synergymain.getInfiltrator().imgPath)
                 || (synergy.count == 4 && synergy.imgPath == synergymain.getProtector().imgPath)) {
-            synergy.color = 1
             
             holder.imgView.setBackgroundColor(Color.rgb(232, 181, 64))
         }
@@ -103,7 +98,6 @@ class SimulationSynergyAdapter(private var context : Context)// recycler view bi
                 || (synergy.count == 6 && synergy.imgPath == synergymain.getBlademaster().imgPath)
                 || (synergy.count == 6 && synergy.imgPath == synergymain.getSorcerer().imgPath)
                 || (synergy.count == 6 && synergy.imgPath == synergymain.getVanguard().imgPath)){
-            synergy.color = 1
             holder.imgView.setBackgroundColor(Color.rgb(232, 181, 64))
 
         }
@@ -114,7 +108,6 @@ class SimulationSynergyAdapter(private var context : Context)// recycler view bi
                 ||((synergy.count == 4 || synergy.count == 5)&& synergy.imgPath == synergymain.getDarkStar().imgPath)
                 ||((synergy.count == 4 || synergy.count == 5)&& synergy.imgPath == synergymain.getCelestial().imgPath)
                 ||((synergy.count == 4 || synergy.count == 5)&& synergy.imgPath == synergymain.getChrono().imgPath)) {
-            synergy.color = 2
             holder.imgView.setBackgroundColor(Color.rgb(150, 182, 193))
         }
 
@@ -127,8 +120,6 @@ class SimulationSynergyAdapter(private var context : Context)// recycler view bi
         if (synergy.count == 1 && synergy.imgPath == synergymain.getMercenary().imgPath
                 || synergy.imgPath == synergymain.getParagon().imgPath
                 || synergy.imgPath == synergymain.getStarship().imgPath){
-            synergy.color = 1
-
             holder.imgView.setBackgroundColor(Color.rgb(232, 181, 64))
         }
 
