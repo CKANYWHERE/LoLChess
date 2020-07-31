@@ -190,7 +190,7 @@ class Simulator : Fragment() {
         mAdapter.setItemClickListener(object : ChampMainAdapter.ItemClickListener {
             override fun onClick(view: View, position: Int, champ: Champ) {
                 var flag = false
-
+                val synergymain: SynergyData = SynergyData()
 
                 simulatorViewModel.getAllChamp().observe(viewLifecycleOwner, Observer { champs ->
 
@@ -239,26 +239,35 @@ class Simulator : Fragment() {
                             .observe(viewLifecycleOwner, Observer { synergy ->
                                 synergy?.let { synergy ->
                                     for (syn in synergy) {
-                                        var power = getSynPower(syn)
                                         if (firstSyn.name.equals(syn.name)) {
                                             var power = getSynPower(syn)
+                                            syn.synPower = power
+                                            firstSyn.synPower = syn.synPower
                                             firstSyn.count = syn.count?.plus(1)
-                                            firstSyn.synPower = power
-                                        }
 
+                                            Log.e("power1",  firstSyn.synPower.toString())
+                                        }
 
                                         if (secondSyn.name.equals(syn.name)) {
                                             var power = getSynPower(syn)
                                             secondSyn.count = syn.count?.plus(1)
                                             secondSyn.synPower = power
+
+
+                                            Log.e("power2",  secondSyn.synPower.toString())
                                         }
                                     }
                                 }
                             })
+                        if (secondSyn.name.equals(synergymain.getStarship().name)|| secondSyn.name.equals(synergymain.getParagon().name)){
+                            secondSyn.synPower = 3
+                        }
 
                         addChamp(simChamp)
                         addSynergy(firstSyn)
                         addSynergy(secondSyn)
+
+
 
                     }
 
@@ -304,12 +313,14 @@ class Simulator : Fragment() {
                                             var power = getSynPower(syn)
                                             firstSyn.count = syn.count?.plus(1)
                                             firstSyn.synPower = power
+                                            Log.e("power",  firstSyn.synPower.toString())
                                         }
 
                                         if (secondSyn.name.equals(syn.name)) {
                                             var power = getSynPower(syn)
                                             secondSyn.count = syn.count?.plus(1)
                                             secondSyn.synPower = power
+                                            Log.e("power",  secondSyn.synPower.toString())
                                         }
 
                                         if (thirdSyn.name.equals(syn.name)) {
@@ -321,6 +332,10 @@ class Simulator : Fragment() {
                                     }
                                 }
                             })
+
+                        if (thirdSyn.name.equals(synergymain.getMercenary().name)){
+                            thirdSyn.synPower = 3
+                        }
                         addChamp(simChamp)
                         addSynergy(firstSyn)
                         addSynergy(secondSyn)
@@ -341,67 +356,63 @@ class Simulator : Fragment() {
     private fun getSynPower(synergy: SimulatorSynergy) : Int{
         val synergymain: SynergyData = SynergyData()
         var power : Int = 0
-        if (((synergy.count == 2 || synergy.count == 3) && synergy.imgPath == synergymain.getBattlecast().imgPath)
-            || ((synergy.count == 2 || synergy.count == 3)  && synergy.imgPath == synergymain.getChrono().imgPath)
-            || ((synergy.count == 2 || synergy.count == 3)  && synergy.imgPath == synergymain.getSorcerer().imgPath)
-            || ((synergy.count == 2 || synergy.count == 3)  && synergy.imgPath == synergymain.getBrawler().imgPath)
-            || ((synergy.count == 2 || synergy.count == 3)  && synergy.imgPath == synergymain.getMystic().imgPath)
-            || ((synergy.count == 2 || synergy.count == 3)  && synergy.imgPath == synergymain.getVanguard().imgPath)
-            || ((synergy.count == 2 || synergy.count == 3)  && synergy.imgPath == synergymain.getInfiltrator().imgPath)
-            || ((synergy.count == 2 || synergy.count == 3)  && synergy.imgPath == synergymain.getDarkStar().imgPath)
-            || ((synergy.count == 2 || synergy.count == 3)  && synergy.imgPath == synergymain.getCelestial().imgPath)
-            || ((synergy.count == 2 || synergy.count == 3)  && synergy.imgPath == synergymain.getSpacePirate().imgPath)
-            || ((synergy.count == 2 || synergy.count == 3)  && synergy.imgPath == synergymain.getProtector().imgPath)
-            || ((synergy.count == 2 || synergy.count == 3)  && synergy.imgPath == synergymain.getSniper().imgPath)
-            || ((synergy.count == 2 || synergy.count == 3)  && synergy.imgPath == synergymain.getBlaster().imgPath))
+        if (((synergy.count == 1 || synergy.count == 2) && synergy.imgPath == synergymain.getBattlecast().imgPath)
+            || ((synergy.count == 1 || synergy.count == 2)  && synergy.imgPath == synergymain.getChrono().imgPath)
+            || ((synergy.count == 1 || synergy.count == 2)  && synergy.imgPath == synergymain.getSorcerer().imgPath)
+            || ((synergy.count == 1 || synergy.count == 2)  && synergy.imgPath == synergymain.getBrawler().imgPath)
+            || ((synergy.count == 1 || synergy.count == 2)  && synergy.imgPath == synergymain.getMystic().imgPath)
+            || ((synergy.count == 1 || synergy.count == 2)  && synergy.imgPath == synergymain.getVanguard().imgPath)
+            || ((synergy.count == 1 || synergy.count == 2)  && synergy.imgPath == synergymain.getInfiltrator().imgPath)
+            || ((synergy.count == 1 || synergy.count == 2)  && synergy.imgPath == synergymain.getDarkStar().imgPath)
+            || ((synergy.count == 1 || synergy.count == 2)  && synergy.imgPath == synergymain.getCelestial().imgPath)
+            || ((synergy.count == 1 || synergy.count == 2)  && synergy.imgPath == synergymain.getSpacePirate().imgPath)
+            || ((synergy.count == 1 || synergy.count == 2)  && synergy.imgPath == synergymain.getProtector().imgPath)
+            || ((synergy.count == 1 || synergy.count == 2)  && synergy.imgPath == synergymain.getSniper().imgPath)
+            || ((synergy.count == 1 || synergy.count == 2)  && synergy.imgPath == synergymain.getBlaster().imgPath))
                 power = 1
 
 
-        if ( ((synergy.count == 3 || synergy.count == 4 || synergy.count == 5) && synergy.imgPath == synergymain.getCybernetic().imgPath)
-            || ((synergy.count == 3 || synergy.count == 4 || synergy.count == 5) && synergy.imgPath == synergymain.getBladmaster().imgPath)
-            || ((synergy.count == 3 || synergy.count == 4 || synergy.count == 5) && synergy.imgPath == synergymain.getRebel().imgPath)
-            || ((synergy.count == 3 || synergy.count == 4 || synergy.count == 5) && synergy.imgPath == synergymain.getStarGuardian().imgPath))
+        if ( ((synergy.count == 2 || synergy.count == 3 || synergy.count == 4) && synergy.imgPath == synergymain.getCybernetic().imgPath)
+            || ((synergy.count == 2 || synergy.count == 3 || synergy.count == 4) && synergy.imgPath == synergymain.getBlademaster().imgPath)
+            || ((synergy.count == 2 || synergy.count == 3 || synergy.count == 4) && synergy.imgPath == synergymain.getRebel().imgPath)
+            || ((synergy.count == 2 || synergy.count == 3 || synergy.count == 4) && synergy.imgPath == synergymain.getStarGuardian().imgPath))
                 power = 1
 
-        if (((synergy.count == 4 || synergy.count == 5) && synergy.imgPath == synergymain.getBattlecast().imgPath)
-            ||((synergy.count == 4 || synergy.count == 5)&& synergy.imgPath == synergymain.getSorcerer().imgPath)
-            ||((synergy.count == 4 || synergy.count == 5)&& synergy.imgPath == synergymain.getVanguard().imgPath)
-            ||((synergy.count == 4 || synergy.count == 5)&& synergy.imgPath == synergymain.getDarkStar().imgPath)
-            ||((synergy.count == 4 || synergy.count == 5)&& synergy.imgPath == synergymain.getCelestial().imgPath)
-            ||((synergy.count == 4 || synergy.count == 5)&& synergy.imgPath == synergymain.getChrono().imgPath))
+        if (((synergy.count == 3 || synergy.count == 4) && synergy.imgPath == synergymain.getBattlecast().imgPath)
+            ||((synergy.count == 3 || synergy.count == 4)&& synergy.imgPath == synergymain.getSorcerer().imgPath)
+            ||((synergy.count == 3 || synergy.count == 4)&& synergy.imgPath == synergymain.getVanguard().imgPath)
+            ||((synergy.count == 3 || synergy.count == 4)&& synergy.imgPath == synergymain.getDarkStar().imgPath)
+            ||((synergy.count == 3 || synergy.count == 4)&& synergy.imgPath == synergymain.getCelestial().imgPath)
+            ||((synergy.count == 3 || synergy.count == 4)&& synergy.imgPath == synergymain.getChrono().imgPath))
                 power = 2
-        if ((synergy.count == 2 && synergy.imgPath == synergymain.getManaReaver().imgPath)
-            || (synergy.count == 2 && synergy.imgPath == synergymain.getDemolitionist().imgPath))
+        if ((synergy.count == 1 && synergy.imgPath == synergymain.getManaReaver().imgPath)
+            || (synergy.count == 1 && synergy.imgPath == synergymain.getDemolitionist().imgPath))
                 power = 3
 
-        if ((synergy.count == 3 && synergy.imgPath == synergymain.getMechPilot().imgPath)
-            || (synergy.count == 3 && synergy.imgPath == synergymain.getAstro().imgPath))
+        if ((synergy.count == 2 && synergy.imgPath == synergymain.getMechPilot().imgPath)
+            || (synergy.count == 2 && synergy.imgPath == synergymain.getAstro().imgPath))
                 power = 3
 
 
-        if ((synergy.count == 4 && synergy.imgPath == synergymain.getBrawler().imgPath)
-            || (synergy.count == 4 && synergy.imgPath == synergymain.getMystic().imgPath)
-            || (synergy.count == 4 && synergy.imgPath == synergymain.getSpacePirate().imgPath)
-            || (synergy.count == 4 && synergy.imgPath == synergymain.getSniper().imgPath)
-            || (synergy.count == 4 && synergy.imgPath == synergymain.getBlaster().imgPath)
-            || (synergy.count == 4 && synergy.imgPath == synergymain.getInfiltrator().imgPath)
-            || (synergy.count == 4 && synergy.imgPath == synergymain.getProtector().imgPath))
+        if (((synergy.count == 3 || synergy.count == 4 || synergy.count == 5) && synergy.imgPath == synergymain.getBrawler().imgPath)
+            || ((synergy.count == 3 || synergy.count == 4 || synergy.count == 5) && synergy.imgPath == synergymain.getMystic().imgPath)
+            || ((synergy.count == 3 || synergy.count == 4 || synergy.count == 5) && synergy.imgPath == synergymain.getSpacePirate().imgPath)
+            || ((synergy.count == 3 || synergy.count == 4 || synergy.count == 5) && synergy.imgPath == synergymain.getSniper().imgPath)
+            || ((synergy.count == 3 || synergy.count == 4 || synergy.count == 5) && synergy.imgPath == synergymain.getBlaster().imgPath)
+            || ((synergy.count == 3 || synergy.count == 4 || synergy.count == 5) && synergy.imgPath == synergymain.getInfiltrator().imgPath)
+            || ((synergy.count == 3 || synergy.count == 4 || synergy.count == 5) && synergy.imgPath == synergymain.getProtector().imgPath))
                 power = 3
 
-        if (synergy.count == 6 && synergy.imgPath == synergymain.getStarGuardian().imgPath
-            || (synergy.count == 6 && synergy.imgPath == synergymain.getChrono().imgPath)
-            || (synergy.count == 6 && synergy.imgPath == synergymain.getCybernetic().imgPath)
-            || (synergy.count == 6 && synergy.imgPath == synergymain.getDarkStar().imgPath)
-            || (synergy.count == 6 && synergy.imgPath == synergymain.getRebel().imgPath)
-            || (synergy.count == 6 && synergy.imgPath == synergymain.getBattlecast().imgPath)
-            || (synergy.count == 6 && synergy.imgPath == synergymain.getCelestial().imgPath)
-            || (synergy.count == 6 && synergy.imgPath == synergymain.getBladmaster().imgPath)
-            || (synergy.count == 6 && synergy.imgPath == synergymain.getSorcerer().imgPath)
-            || (synergy.count == 6 && synergy.imgPath == synergymain.getVanguard().imgPath))
-                power = 3
-        if (synergy.count == 1 && synergy.imgPath == synergymain.getMercenary().imgPath
-            || synergy.imgPath == synergymain.getParagon().imgPath
-            || synergy.imgPath == synergymain.getStarship().imgPath)
+        if (synergy.count == 5&& synergy.imgPath == synergymain.getStarGuardian().imgPath
+            || (synergy.count == 5 && synergy.imgPath == synergymain.getChrono().imgPath)
+            || (synergy.count == 5 && synergy.imgPath == synergymain.getCybernetic().imgPath)
+            || (synergy.count == 5 && synergy.imgPath == synergymain.getDarkStar().imgPath)
+            || (synergy.count == 5 && synergy.imgPath == synergymain.getRebel().imgPath)
+            || (synergy.count == 5 && synergy.imgPath == synergymain.getBattlecast().imgPath)
+            || (synergy.count == 5 && synergy.imgPath == synergymain.getCelestial().imgPath)
+            || (synergy.count == 5 && synergy.imgPath == synergymain.getBlademaster().imgPath)
+            || (synergy.count == 5 && synergy.imgPath == synergymain.getSorcerer().imgPath)
+            || (synergy.count == 5 && synergy.imgPath == synergymain.getVanguard().imgPath))
                 power = 3
 
 
@@ -426,6 +437,7 @@ class Simulator : Fragment() {
             }
         })
     }
+
 
 }
 
