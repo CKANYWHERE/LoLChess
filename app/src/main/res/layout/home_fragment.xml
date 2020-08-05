@@ -20,7 +20,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="170dp"
                 android:background="@drawable/background"
-                app:videoId="WGtoUBjugTs"
+                app:videoId="ucqKvvgm6nE"
                 app:fragment="com.lolchess.strategy.view.menu.Home">
 
 
@@ -64,7 +64,7 @@
             <ListView
                 android:id="@+id/recommendMetaView"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="250dp"
                 android:orientation="vertical">
 
             </ListView>

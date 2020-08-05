@@ -30,7 +30,7 @@ class Combined_Data {
     }
 
     fun Ionic_Spark(): Combined_items{
-        return Combined_items("이온 충격기", "2칸 내에 있는 모든 적의 마법 저항력이 50% 감소 (중첩 불가). 해당 적이 스킬 사용 시 대상 최대 마나의 225%에 해당하는 마법 피해"
+        return Combined_items("이온 충격기", "2칸 내에 있는 모든 적의 마법 저항력이 40% 감소 (중첩 불가). 해당 적이 스킬 사용 시 대상 최대 마나의 225%에 해당하는 마법 피해"
                 , "주문력 +20%, 마법 저항력 +25", R.drawable.ionicspark, R.drawable.needlesslyrod, R.drawable.negatroncloak)
     }
 

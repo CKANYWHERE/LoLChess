@@ -36,7 +36,7 @@ class Home:Fragment(){
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.home_fragment, container, false)
         mInterstitialAd = InterstitialAd(context!!.applicationContext)
-        mInterstitialAd.adUnitId = "ca-app-pub-3940256099942544/1033173712"
+        mInterstitialAd.adUnitId = "ca-app-pub-9396361569793554/2382658247"
         mInterstitialAd.loadAd(AdRequest.Builder().build())
         //val youTubePlayerView:YouTubePlayerView = view.findViewById(R.id.you_tube_player_view)
 
