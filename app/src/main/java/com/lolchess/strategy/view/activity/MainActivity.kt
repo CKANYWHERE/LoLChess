@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         MobileAds.initialize(this)
 
         mInterstitialAd = InterstitialAd(applicationContext)
-        mInterstitialAd.adUnitId = "ca-app-pub-3940256099942544/1033173712"
+        mInterstitialAd.adUnitId = "ca-app-pub-9396361569793554/2382658247"
         mInterstitialAd.loadAd(AdRequest.Builder().build())
 
         val fragment = Home.newInstance()
