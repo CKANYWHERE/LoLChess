@@ -20,7 +20,7 @@ class Combined_Data {
     }
 
     fun Hextech_Gunblade(): Combined_items{
-        return Combined_items("마법공학 총검", "스킬로 입힌 피해량의 45%만큼 체력 회복"
+        return Combined_items("마법공학 총검", "스킬로 입힌 피해량의 45%만큼 체력 회복, 체력 회복 초과분이 보호막으로 전환됩니다. (최대 보호막 흡수량 400)"
                 , "공격력 +15, 주문력 +20%", R.drawable.gunblade, R.drawable.sword, R.drawable.needlesslyrod)
     }
 
@@ -40,12 +40,12 @@ class Combined_Data {
     }
 
     fun Runaan_Hurricane(): Combined_items{
-        return Combined_items("루난의 허리케인", "기본 공격 시 주변 다른 적 하나에게 탄환을 발사하여 공격력의 70%만큼 피해를 입히고 적중 시 효과 적용"
+        return Combined_items("루난의 허리케인", "기본 공격 시 주변 다른 적 하나에게 탄환을 발사하여 공격력의 75%만큼 피해를 입히고 적중 시 효과 적용"
                 , "공격속도 +15%, 마법 저항력 +25", R.drawable.runaan, R.drawable.bow, R.drawable.negatroncloak)
     }
 
     fun Hand_of_Justice(): Combined_items{
-        return Combined_items("정의의 손길", "준비 단계에서 '피해량 50% 증가 효과' 또는 '기본 공격 적중 시 50의 체력 회복 효과' 중 하나를 라운드 종료까지 획득합니다."
+        return Combined_items("정의의 손길", "준비 단계에서 '피해량 50% 증가 효과' 또는 '기본 공격 및 스킬로 입힌 피해량의 50% 회복' 중 하나를 라운드 종료까지 획득합니다."
                 , "시작 마나 +15, 치명타 확률 20%", R.drawable.justice, R.drawable.tear, R.drawable.glove)
     }
 
@@ -87,7 +87,7 @@ class Combined_Data {
 
 
     fun Statikk_Shiv(): Combined_items{
-        return Combined_items("스태틱의 단검", "세 번째 기본 공격마다 3/4/5 명의 적에게 90의 마법 피해"
+        return Combined_items("스태틱의 단검", "세 번째 기본 공격마다 3/4/5 명의 적에게 85의 마법 피해, 보호막을 가진 적이나 군중 제어 효과에 적중된 적에게 고정 피해 85를 추가로 입힙니다."
                 , "시작 마나 +15, 공격속도 +15%",R.drawable.statikk,  R.drawable.tear, R.drawable.bow)
     }
 
@@ -105,7 +105,7 @@ class Combined_Data {
 
 
     fun Sword_Breaker(): Combined_items{
-        return Combined_items("파쇄검", "기본 공격 시 25% 확률로 대상을 무장 해제하여 3초 동안 기본 공격 차단"
+        return Combined_items("파쇄검", "기본 공격 시 33% 확률로 대상을 무장 해제하여 3초 동안 기본 공격 차단"
                 , "방어력 +25, 마법 저항력 +25", R.drawable.swordbreaker, R.drawable.vest, R.drawable.negatroncloak)
     }
 
@@ -115,7 +115,7 @@ class Combined_Data {
     }
 
     fun Locket_of_the_Iron_Solari(): Combined_items{
-        return Combined_items("강철의 솔라리 펜던트", "전투 시작 시 장착한 유닛과 가로로 2칸 이내에 있는 모든 아군이 8초 동안 250 / 275 / 350의 피해를 흡수하는 보호막 획득"
+        return Combined_items("강철의 솔라리 펜던트", "전투 시작 시 장착한 유닛과 가로로 2칸 이내에 있는 모든 아군이 8초 동안 250 /300 /375의 피해를 흡수하는 보호막 획득"
                 , "방어력 +25, 주문력 +20%", R.drawable.solari, R.drawable.needlesslyrod, R.drawable.vest)
     }
 

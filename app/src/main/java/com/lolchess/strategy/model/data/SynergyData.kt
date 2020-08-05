@@ -14,7 +14,7 @@ class SynergyData {
 
     fun getSpacePirate() : Synergy{
         val description : String = "우주 해적 챔피언이 마무리 일격 시 일정 확률로 아이템이 추가로 떨어집니다."
-        val option : List<String> = listOf("② 50% 확률로 1골드 획득", "④ 25% 확률로 기본 아이템 획득")
+        val option : List<String> = listOf("② 50% 확률로 1골드 획득", "④ 50% 확률로 1골드 획득, 33% 확률로 기본 아이템 획득")
         val level : List<Int> = listOf(2,4)
 
         return Synergy("우주해적",R.drawable.spacepirate,description, option, level)
@@ -23,7 +23,7 @@ class SynergyData {
 
     fun getDarkStar(): Synergy{
         val description : String = "아군 챔피언이 죽으면 모든 아군 암흑의 별 챔피언의 공격력 및 주문력이 증가합니다."
-        val option : List<String> = listOf("② 공격력 및 주문력 +8", "④ 공격력 및 주문력 +18", "⑥ 공격력 및 주문력 +28", "⑧ 공격력 및 주문력 +38")
+        val option : List<String> = listOf("② 공격력 및 주문력 +8", "④ 공격력 및 주문력 +18", "⑥ 공격력 및 주문력 +28", "⑧ 공격력 및 주문력 +48")
         val level: List<Int> = listOf(2, 4, 6, 8)
 
         return Synergy("암흑의 별", R.drawable.darkstar,description, option, level)
@@ -42,7 +42,7 @@ class SynergyData {
 
     fun getStarGuardian(): Synergy{
         val description : String = "별 수호자는 스킬 사용 시 다른 별 수호자들에게 마나를 부여합니다. (서로 적용)"
-        val option : List<String> = listOf("③ 총 마나 15", "⑥ 총 마나 25", "⑨ 총 마나 45")
+        val option : List<String> = listOf("③ 총 마나 15", "⑥ 총 마나 25", "⑨ 총 마나 60")
         val level: List<Int> = listOf(3, 6, 9)
         return Synergy("별 수호자", R.drawable.starguardian,description, option, level)
 
@@ -50,7 +50,7 @@ class SynergyData {
 
     fun getVanguard(): Synergy{
         val description : String = "선봉대 챔피언은 추가 방어력을 얻습니다."
-        val option : List<String> = listOf("② 방어력 125", "④ 방어력 300", "⑥ 방어력 1000")
+        val option : List<String> = listOf("② 방어력 125", "④ 방어력 300", "⑥ 방어력 900")
         val level: List<Int> = listOf(2, 4, 6)
         return Synergy("선봉대", R.drawable.vanguard,description, option, level)
 
@@ -77,7 +77,7 @@ class SynergyData {
     fun getChrono(): Synergy{
         val description : String = "모든 아군의 공격 속도가 수 초마다 15% 증가합니다."
 
-        val option : List<String> = listOf("② 8초", "④ 3.5초", "⑥ 1.5초", "⑧ 0,75초")
+        val option : List<String> = listOf("② 8초", "④ 3초", "⑥ 1초", "⑧ 0.5초")
         val level: List<Int> = listOf(2, 4, 6, 8)
         return Synergy("시공간", R.drawable.chrono,description, option, level)
 
@@ -120,7 +120,7 @@ class SynergyData {
 
     fun getRebel(): Synergy{
         val description : String = "전투 시작 시 반군은 주변에 있는 반군의 수에 따라 보호막을 얻고 입히는 피해량이 증가합니다."
-        val option : List<String> = listOf("③ 보호막 150 및 피해량 10%", "⑥ 보호막 210 및 피해량 12%",  "⑨ 보호막 330 및 피해량 15%")
+        val option : List<String> = listOf("③ 보호막 150 및 피해량 10%", "⑥ 보호막 225 및 피해량 12%",  "⑨ 보호막 400 및 피해량 20%")
         val level: List<Int> = listOf(3, 6, 9)
 
         return Synergy("반군", R.drawable.rebel ,description, option, level)
@@ -129,7 +129,7 @@ class SynergyData {
 
     fun getBattlecast(): Synergy{
         val description : String = "전투 기계 챔피언은 피해를 10회 입히거나 입으면 현재 체력에 따라 추가 효과를 적용받습니다. 체력이 절반 이상인 경우 가장 가까운 적에게 마법 피해를 입힙니다. 체력이 절반 이하인 경우 체력을 회복합니다."
-        val option : List<String> = listOf("② 회복량 80/ 피해량 80", "④ 회복량 180/ 피해량 180",  "⑥ 회복량 480 / 피해량 480", "⑧ 회복량 880 / 피해량 880")
+        val option : List<String> = listOf("② 회복량 80/ 피해량 80", "④ 회복량 180/ 피해량 180",  "⑥ 회복량 480 / 피해량 480", "⑧ 회복량 1000 / 피해량 1000")
         val level: List<Int> = listOf(2, 4, 6, 8)
         return Synergy("전투기계", R.drawable.battlecast,description, option, level)
 
@@ -146,7 +146,7 @@ class SynergyData {
 
     fun getInfiltrator(): Synergy{
         val description : String = "고유: 전투 시작 시 잠입자는 적의 후방으로 이동합니다. 전투 시작 시 잠입자의 공격 속도가 6초 동안 증가하며 처치 관여 시 초기화됩니다."
-        val option : List<String> = listOf("② 추가 공격 속도 40%", "④ 추가 공격 속도 80%", "⑥ 추가 공격 속도 120%")
+        val option : List<String> = listOf("② 추가 공격 속도 40%", "④ 추가 공격 속도 80%", "⑥ 추가 공격 속도 150%")
         val level: List<Int> = listOf(2, 4, 6)
 
         return Synergy("잠입자", R.drawable.infiltrator,description, option, level)
@@ -154,7 +154,7 @@ class SynergyData {
     }
 
     fun getManaReaver(): Synergy{
-        val description : String = "② 마나 약탈자의 공격이 대상의 다음 스킬 마나 소모량을 40% 증가시킵니다."
+        val description : String = "② 마나 약탈자의 공격이 대상의 다음 스킬 마나 소모량을 30% 증가시킵니다."
         val option : List<String> = listOf("")
         val level: List<Int> = listOf(2)
 

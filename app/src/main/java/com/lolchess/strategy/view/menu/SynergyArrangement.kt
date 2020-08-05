@@ -40,7 +40,7 @@ class SynergyArrangement: Fragment() {
             savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val v =  inflater.inflate(R.layout.synergy_arrangement, container, false)
+        val v = inflater.inflate(R.layout.synergy_arrangement, container, false)
 
         // Get the activity and widget
         val context = activity as AppCompatActivity
@@ -57,7 +57,7 @@ class SynergyArrangement: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val champData = ChampData()
-
+        initAd()
         //계열 클래스
         val mechPilot: List<Champ> =
                 listOf(champData.getAnnie(), champData.getRumble(), champData.getFizz())
@@ -68,7 +68,7 @@ class SynergyArrangement: Fragment() {
                         champData.getJinx(), champData.getAurelionSol())
 
         val starGuardian: List<Champ> =
-                listOf(champData.getZoe(),  champData.getPoppy(),champData.getAhri(), champData.getNeeko(), champData.getSyndra(), champData.getSoraka(),
+                listOf(champData.getZoe(), champData.getPoppy(), champData.getAhri(), champData.getNeeko(), champData.getSyndra(), champData.getSoraka(),
                         champData.getJanna())
 
 
@@ -97,13 +97,13 @@ class SynergyArrangement: Fragment() {
                         champData.getUrgot())
 
         val celestial: List<Champ> =
-                listOf(champData.getXayah(),  champData.getRakan(), champData.getXinZhao(), champData.getAshe(), champData.getLulu())
+                listOf(champData.getXayah(), champData.getRakan(), champData.getXinZhao(), champData.getAshe(), champData.getLulu())
 
 
         //직업 시너지
 
         val blademaster: List<Champ> =
-                listOf( champData.getXayah(), champData.getFiora(), champData.getShen(), champData.getYasuo(),
+                listOf(champData.getXayah(), champData.getFiora(), champData.getShen(), champData.getYasuo(),
                         champData.getMasterYi(), champData.getRiven(), champData.getIrelia())
 
         val manaReaver: List<Champ> =
@@ -277,25 +277,7 @@ class SynergyArrangement: Fragment() {
         champDetailRecyclerView_14?.adapter = demolitionistAdapter
         champDetailRecyclerView_14?.layoutManager = GridLayoutManager(view.context, 3)
 
-        var searchManager = activity?.getSystemService(Context.SEARCH_SERVICE) as SearchManager
-
-        searchView!!.setSearchableInfo(searchManager.getSearchableInfo(activity?.componentName))
-
-        searchView!!.setOnQueryTextListener(object : SearchView.OnQueryTextListener,
-                android.widget.SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                (recyclerView?.adapter as ChampDetailAdapter).filter(query)
-                return false
-            }
-
-            override fun onQueryTextChange(newText: String?): Boolean {
-                (recyclerView?.adapter as ChampDetailAdapter).filter(newText)
-                return false
-            }
-        })
-        initAd()
     }
-
     private fun initAd() {
         val adBuilder = AdRequest.Builder().build()
         adViewSynergyArrangement.loadAd(adBuilder)
