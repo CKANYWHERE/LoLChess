@@ -78,25 +78,24 @@ class SimulationSynergyAdapter(private var context : Context)// recycler view bi
             holder.imgView.setBackgroundColor(Color.rgb(206, 143, 125))
         }
 
-        if ((synergy.count == 4 && synergy.imgPath == synergymain.getBrawler().imgPath)
-                || (synergy.count == 4 && synergy.imgPath == synergymain.getMystic().imgPath)
+        if (((synergy.count == 4 ||synergy.count ==5) && synergy.imgPath == synergymain.getBrawler().imgPath)
+                || ((synergy.count == 4 ||synergy.count ==5) && synergy.imgPath == synergymain.getMystic().imgPath)
                 || (synergy.count == 4 && synergy.imgPath == synergymain.getSpacePirate().imgPath)
-                || (synergy.count == 4 && synergy.imgPath == synergymain.getSniper().imgPath)
-                || (synergy.count == 4 && synergy.imgPath == synergymain.getBlaster().imgPath)
-                || (synergy.count == 4 && synergy.imgPath == synergymain.getInfiltrator().imgPath)
-                || (synergy.count == 4 && synergy.imgPath == synergymain.getProtector().imgPath)) {
+                || ((synergy.count == 4 ||synergy.count ==5) && synergy.imgPath == synergymain.getSniper().imgPath)
+                || ((synergy.count == 4 ||synergy.count ==5) && synergy.imgPath == synergymain.getBlaster().imgPath)
+                || ((synergy.count == 4 ||synergy.count ==5) && synergy.imgPath == synergymain.getInfiltrator().imgPath)
+                || ((synergy.count == 4 ||synergy.count ==5) && synergy.imgPath == synergymain.getProtector().imgPath)) {
             
             holder.imgView.setBackgroundColor(Color.rgb(232, 181, 64))
         }
-        if (synergy.count == 6 && synergy.imgPath == synergymain.getStarGuardian().imgPath
-                || (synergy.count == 6 && synergy.imgPath == synergymain.getChrono().imgPath)
-                || (synergy.count == 6 && synergy.imgPath == synergymain.getCybernetic().imgPath)
+        if ((synergy.count == 6 || synergy.count == 7) && synergy.imgPath == synergymain.getStarGuardian().imgPath
+                || ((synergy.count == 6 || synergy.count == 7 || synergy.count == 8) && synergy.imgPath == synergymain.getChrono().imgPath)
+                || ((synergy.count == 6 || synergy.count == 7) && synergy.imgPath == synergymain.getCybernetic().imgPath)
                 || (synergy.count == 6 && synergy.imgPath == synergymain.getDarkStar().imgPath)
-                || (synergy.count == 6 && synergy.imgPath == synergymain.getRebel().imgPath)
+                || ((synergy.count == 6 || synergy.count == 7) && synergy.imgPath == synergymain.getRebel().imgPath)
                 || (synergy.count == 6 && synergy.imgPath == synergymain.getBattlecast().imgPath)
-                || (synergy.count == 6 && synergy.imgPath == synergymain.getCelestial().imgPath)
-                || (synergy.count == 6 && synergy.imgPath == synergymain.getBlademaster().imgPath)
-                || (synergy.count == 6 && synergy.imgPath == synergymain.getSorcerer().imgPath)
+                || ((synergy.count == 6 || synergy.count == 7) && synergy.imgPath == synergymain.getBlademaster().imgPath)
+                || ((synergy.count == 6 || synergy.count == 7) && synergy.imgPath == synergymain.getSorcerer().imgPath)
                 || (synergy.count == 6 && synergy.imgPath == synergymain.getVanguard().imgPath)){
             holder.imgView.setBackgroundColor(Color.rgb(232, 181, 64))
 
