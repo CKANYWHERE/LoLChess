@@ -20,7 +20,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="170dp"
                 android:background="@drawable/background"
-                app:videoId="ucqKvvgm6nE"
+                app:videoId="QS_Wcx8c9Hs"
                 app:fragment="com.lolchess.strategy.view.menu.Home">
 
 
