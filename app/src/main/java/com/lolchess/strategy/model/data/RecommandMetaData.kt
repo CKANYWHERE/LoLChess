@@ -506,7 +506,7 @@ class RecommandMetaData {
             itemData.Rabadon_Deathcap(),itemData.Red_Buff(),itemData.Statikk_Shiv() //9번째 챔피언
         )
 
-        return RecommandMeta("4우주해적 신비", champ, syn, item)
+        return RecommandMeta("6시공 3사이버 에코", champ, syn, item)
     }
 
     fun getChronoCyberLucian() : RecommandMeta {
@@ -532,6 +532,6 @@ class RecommandMetaData {
             itemData.blank(),itemData.blank(),itemData.blank() //9번째 챔피언
         )
 
-        return RecommandMeta("4우주해적 신비", champ, syn, item)
+        return RecommandMeta("6시공 3사이버 루시안", champ, syn, item)
     }
 }
