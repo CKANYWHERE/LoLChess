@@ -70,7 +70,7 @@ android:layout_height="match_parent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="15dp"
-            android:text="- 신규 은하계: 재활용의 세계 - 챔피언을 판매하면 해당 \n  챔피언이 가지고 있던 완성 아이템이 기본 아이템으로 \n  분해됩니다."
+            android:text="- 신규 은하계: 바다사자의 선물 - 모든 플레이어가 황금 \n  뒤집개를 가지고 게임을 시작합니다."
             />
 
         <Space
@@ -81,85 +81,8 @@ android:layout_height="match_parent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="15dp"
-            android:text="- 삭제된 은하계: 성단"
+            android:text="- 삭제된 은하계: 두 개의 별"
             />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="30dp"
-                android:textStyle="bold"
-                android:text="편" />
-
-            <TextView
-                android:id="@+id/textView7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:text="의성 개선"
-                />
-
-
-
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:paddingTop="@dimen/margin_medium"
-            android:paddingBottom="@dimen/margin_medium"
-            android:paddingLeft="@dimen/margin_medium"
-            android:paddingRight="@dimen/margin_medium">
-
-            <TextView
-                android:id="@+id/textView8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="15dp"
-                android:text="- 이제 게임 내에서 아이템 조합을 확인할 수 있습니다!"
-                />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="10dp" />
-
-            <TextView
-                android:id="@+id/textView9"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="15dp"
-                android:text="- 기본 아이템을 마우스 오른쪽으로 클릭하여 조합할 수\n  있는 완성 아이템을 확인하세요.\n  (모바일 버전에서는 아이템을 누르면 됩니다.)"
-                />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="10dp" />
-            <TextView
-                android:id="@+id/textView10"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="15dp"
-                android:text="- 현재 조합할 수 있는 완성 아이템은 밝게 표시됩니다."
-                />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="10dp" />
-            <TextView
-                android:id="@+id/textView11"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="15dp"
-                android:text="- 이제 완성 아이템의 툴팁에 아이템 조합이 표시됩니다."
-                />
-
         </LinearLayout>
 
         <LinearLayout
@@ -199,7 +122,7 @@ android:layout_height="match_parent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="15dp"
-                android:text="- 정의의 손길: 기본 공격 적중 시 체력 50 회복 ⇒ 기본 공\n  격 및 스킬로 입힌 피해량의 50% 회복"
+                android:text="- 거인의 결의 최대 중첩: 50 ⇒ 25"
                 />
 
             <Space
@@ -211,63 +134,10 @@ android:layout_height="match_parent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="15dp"
-                android:text="- 마법공학 총검: 체력 회복 초과분이 보호막으로 전환됩\n  니다. (최대 보호막 흡수량 400)"
+                android:text="- 정의의 손길 피해량 및 회복량: 50% ⇒ 45%"
                 />
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="10dp" />
-            <TextView
-                android:id="@+id/textView16"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="15dp"
-                android:text="- 강철의 솔라리 펜던트 보호막 흡수량: 250/275/350 ⇒ \n  250/300/375"
-                />
 
-            <Space
-            android:layout_width="match_parent"
-            android:layout_height="10dp" />
-            <TextView
-                android:id="@+id/textView17"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="15dp"
-                android:text="- 루난의 허리케인 공격력 계수: 70% ⇒ 75%"
-                />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="10dp" />
-            <TextView
-                android:id="@+id/textView18"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="15dp"
-                android:text="- 스태틱의 단검 주 대상 피해량: 90 ⇒ 85"
-                />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="10dp" />
-            <TextView
-                android:id="@+id/textView19"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="15dp"
-                android:text="- 이제 스태틱의 단검이 보호막을 가진 적이나 군중 제어 \n  효과에 적중된 적에게 고정 피해 85를 추가로 입힙니다."
-                />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="10dp" />
-            <TextView
-                android:id="@+id/textView20"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="15dp"
-                android:text="- 파쇄검 무장 해제 확률: 25% ⇒ 33%"
-                />
 
         </LinearLayout>
 
@@ -309,75 +179,10 @@ android:layout_height="match_parent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="15dp"
-                android:text="- 마나 약탈자 특성, 이즈리얼의 스킬, 침묵의 장막에 있\n  는 마나 약탈 효과(대상의 다음 스킬 마나 소모량 증가)\n  가 40%에서 30%로 감소합니다."
+                android:text="- 저격수 피해량 증가 (칸당): 10/18% ⇒ 9/16%"
                 />
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="10dp" />
 
-            <TextView
-                android:id="@+id/textView24"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="15dp"
-                android:text="- 시공간 공격 속도 증가 주기: 8/3.5/1.5/0.75초 ⇒ \n  8/3/1/0.5초"
-                />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="10dp" />
-            <TextView
-                android:id="@+id/textView25"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="15dp"
-                android:text="- 이제 잠입자의 도약 시간이 0.6초로 고정됩니다. 이제 잠\n  입자를 선봉에 배치해도 더 빠르게 적의 후방으로 도약\n  하지 않습니다."
-                />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="10dp" />
-            <TextView
-                android:id="@+id/textView26"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="15dp"
-                android:text="- 메카 파일럿 메카의 응징 피해량: \n  700/750/800/850/900/1200/5000 ⇒ \n  650/700/750/850/900/1200/5000"
-                />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="10dp" />
-            <TextView
-                android:id="@+id/textView27"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="15dp"
-                android:text="- 반군 보호막 흡수량: 150/210/330 ⇒ 150/225/400"
-                />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="10dp" />
-            <TextView
-                android:id="@+id/textView28"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="15dp"
-                android:text="- 우주 해적 아이템 획득 확률: 25% ⇒ 33%"
-                />
-
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="10dp" />
-            <TextView
-                android:id="@+id/textView29"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="15dp"
-                android:text="- 선봉대 추가 방어력: 125/300/1000 ⇒ 125/300/900"
-                />
 
         </LinearLayout>
 
@@ -434,7 +239,17 @@ android:layout_height="match_parent"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="15dp"
-                    android:text="- 피오라 체력: 450 ⇒ 500"
+                    android:text="- 자르반 4세 방어력: 45 ⇒ 40"
+                    />
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp" />
+                <TextView
+                    android:id="@+id/textView00"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:text="- 뽀삐 마법 방어력: 30 ⇒ 35"
                     />
 
 
@@ -463,7 +278,7 @@ android:layout_height="match_parent"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="15dp"
-                    android:text="- 제드 공격력 강탈: 20/25/40% ⇒ 20/33/50%"
+                    android:text="- 블리츠크랭크 방어력: 45 ⇒ 60"
                     />
 
             </LinearLayout>
@@ -489,7 +304,7 @@ android:layout_height="match_parent"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="15dp"
-                    android:text="- 바드 기본 지속 효과 마나: 8/20/90 ⇒ 5/20/90"
+                    android:text="- 카시오페아 맹독 폭발 피해량: 700/1500/3000 ⇒ 700/1500/3500"
                     />
 
                 <Space
@@ -501,8 +316,35 @@ android:layout_height="match_parent"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="15dp"
-                    android:text="- 마스터 이 선택받은 자 추가 고정 피해량: \n  75/100/175 ⇒ 75/100/150"
+                    android:text="- 마스터 이 선택받은 자 피해량: 75/100/150 ⇒ 70/95/145"
                     />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp" />
+
+                <TextView
+                    android:id="@+id/textView001"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:text="- 니코 만개 피해량: 150/250/500 ⇒ 150/250/450"
+                    />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp" />
+
+                <TextView
+                    android:id="@+id/textView002"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:text="- 샤코 방어력: 25 ⇒ 20"
+                    />
+
+
+
             </LinearLayout>
 
             <TextView
@@ -527,42 +369,10 @@ android:layout_height="match_parent"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="15dp"
-                    android:text="- 피즈 미끼 뿌리기 피해량: 400/550/4000 ⇒ \n  350/550/4000"
+                    android:text="- 리븐 체력: 800 ⇒ 850 \n  리븐 마법 저항력: 20 ⇒ 30 \n  리븐의 공격 속도 계수 관련 버그를 수정했습니다."
                     />
 
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp" />
 
-                <TextView
-                    android:id="@+id/textView41"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="15dp"
-                    android:text="- 진 공격 속도: 0.9/0.95/1.2 ⇒ 0.85/0.9/1.2"
-                    />
-
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp" />
-                <TextView
-                    android:id="@+id/textView42"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="15dp"
-                    android:text="- 징크스 공격력: 70 ⇒ 75"
-                    />
-
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp" />
-                <TextView
-                    android:id="@+id/textView43"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="15dp"
-                    android:text="- 티모 공격 속도: 1.0 ⇒ 0.95"
-                    />
             </LinearLayout>
             <TextView
                 android:id="@+id/textView44"
@@ -586,151 +396,7 @@ android:layout_height="match_parent"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="15dp"
-                    android:text="- 갱플랭크 궤도 포격 피해량: 450/600/9001 ⇒ \n  550/700/9001"
-                    />
-
-            </LinearLayout>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/textView46"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="30dp"
-                android:textStyle="bold"
-                android:text="뒤" />
-
-            <TextView
-                android:id="@+id/textView47"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:text="집개 특성"
-                />
-        </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:paddingTop="@dimen/margin_medium"
-        android:paddingBottom="@dimen/margin_medium"
-        android:paddingLeft="@dimen/margin_medium"
-        android:paddingRight="@dimen/margin_medium">
-
-        <TextView
-            android:id="@+id/textView48"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="15dp"
-            android:text="- 반군 보호막 및 피해량 증가 (9): 330 및 15% ⇒ \n  400 및 20%"
-            />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="10dp" />
-
-        <TextView
-            android:id="@+id/textView49"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="15dp"
-            android:text="- 별 수호자 마나 (9): 45 ⇒ 60"
-            />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="10dp" />
-        <TextView
-            android:id="@+id/textView50"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="15dp"
-            android:text="- 전투 기계 피해량 및 회복량 (8): 880 ⇒ 1000"
-            />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="10dp" />
-        <TextView
-            android:id="@+id/textView51"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="15dp"
-            android:text="- 암흑의 별 공격력 및 주문력 (8): 38 ⇒ 48"
-            />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="10dp" />
-        <TextView
-            android:id="@+id/textView52"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="15dp"
-            android:text="- 잠입자 추가 공격 속도 (6): 120% ⇒ 150%"
-            />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/textView53"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="30dp"
-                android:textStyle="bold"
-                android:text="3성" />
-
-            <TextView
-                android:id="@+id/textView54"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:text=" 챔피언 밸런스"
-                />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:paddingTop="@dimen/margin_medium"
-            android:paddingBottom="@dimen/margin_medium"
-            android:paddingLeft="@dimen/margin_medium"
-            android:paddingRight="@dimen/margin_medium">
-
-            <TextView
-                android:id="@+id/textView55"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="15dp"
-                android:text="1코스트 챔피언"
-                android:textStyle="bold"
-                />
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:paddingTop="@dimen/margin_medium"
-                android:paddingBottom="@dimen/margin_medium"
-                android:paddingLeft="@dimen/margin_medium"
-                android:paddingRight="@dimen/margin_medium">
-
-                <TextView
-                    android:id="@+id/textView56"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="15dp"
-                    android:text="- 레오나 전자 방어막 피해량 감소: 200 ⇒ 400"
+                    android:text="- 갱플랭크 궤도 포격 피해량: 550/700/9001 ⇒ \n  525/675/9001"
                     />
 
                 <Space
@@ -738,11 +404,11 @@ android:layout_height="match_parent"
                     android:layout_height="10dp" />
 
                 <TextView
-                    android:id="@+id/textView57"
+                    android:id="@+id/textView125"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="15dp"
-                    android:text="- 말파이트 에너지 방패 보호막 흡수량: 60% ⇒ 70%"
+                    android:text="- 제라스 심연 폭격 피해량: 300/400/2500 ⇒ \n  320/440/2500"
                     />
 
                 <Space
@@ -750,322 +416,12 @@ android:layout_height="match_parent"
                     android:layout_height="10dp" />
 
                 <TextView
-                    android:id="@+id/textView58"
+                    android:id="@+id/textView105"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textSize="15dp"
-                    android:text="- 뽀삐 방패 던지기 피해량: 200 ⇒ 225"
+                    android:text="- 제라스 심연 폭격 광역 피해량: 75/100/2500 ⇒ \n  80/110/625"
                     />
-
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp" />
-
-                <TextView
-                    android:id="@+id/textView59"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="15dp"
-                    android:text="- 뽀삐 방패 던지기 보호막 흡수량: 400 ⇒ 450"
-                    />
-
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp" />
-
-                <TextView
-                    android:id="@+id/textView60"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="15dp"
-                    android:text="- 직스 펑! 피해량: 550 ⇒ 600"
-                    />
-
-
-            </LinearLayout>
-
-            <TextView
-                android:id="@+id/textView61"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="15dp"
-                android:text="2코스트 챔피언"
-                android:textStyle="bold"
-                />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:paddingTop="@dimen/margin_medium"
-                android:paddingBottom="@dimen/margin_medium"
-                android:paddingLeft="@dimen/margin_medium"
-                android:paddingRight="@dimen/margin_medium">
-
-                <TextView
-                    android:id="@+id/textView62"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="15dp"
-                    android:text="- 아리 현혹의 구슬 피해량: 375 ⇒ 425"
-                    />
-
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp" />
-
-                <TextView
-                    android:id="@+id/textView63"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="15dp"
-                    android:text="- 애니 은하 방패-폭발 피해량: 600 ⇒ 700"
-                    />
-
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp" />
-
-                <TextView
-                    android:id="@+id/textView64"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="15dp"
-                    android:text="- 애니 은하 방패-폭발 보호막 흡수량: 700 ⇒ 800"
-                    />
-
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp" />
-
-                <TextView
-                    android:id="@+id/textView65"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="15dp"
-                    android:text="- 블리츠크랭크 로켓 손 피해량: 850 ⇒ 1337"
-                    />
-
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp" />
-
-                <TextView
-                    android:id="@+id/textView66"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="15dp"
-                    android:text="- 다리우스 행성 파괴자의 단두대 피해량: 800 ⇒ \n  888"
-                    />
-
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp" />
-
-                <TextView
-                    android:id="@+id/textView67"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="15dp"
-                    android:text="- 루시안 끈질긴 추격 피해량: 550 ⇒ 600"
-                    />
-
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp" />
-
-                <TextView
-                    android:id="@+id/textView68"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="15dp"
-                    android:text="- 모데카이저 불멸 보호막 흡수량: 800 ⇒ 850"
-                    />
-
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp" />
-
-                <TextView
-                    android:id="@+id/textView69"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="15dp"
-                    android:text="- 노틸러스 충격 분화구 피해량: 400 ⇒ 500"
-                    />
-
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp" />
-
-                <TextView
-                    android:id="@+id/textView70"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="15dp"
-                    android:text="- 노틸러스 기절 지속시간: 5초 ⇒ 6초"
-                    />
-
-            </LinearLayout>
-            <TextView
-                android:id="@+id/textView71"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="15dp"
-                android:text="3코스트 챔피언"
-                android:textStyle="bold"
-                />
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:paddingTop="@dimen/margin_medium"
-                android:paddingBottom="@dimen/margin_medium"
-                android:paddingLeft="@dimen/margin_medium"
-                android:paddingRight="@dimen/margin_medium">
-
-                <TextView
-                    android:id="@+id/textView72"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="15dp"
-                    android:text="- 이즈리얼 전자기 펄스 피해량: 400 ⇒ 800"
-                    />
-
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp" />
-
-                <TextView
-                    android:id="@+id/textView73"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="15dp"
-                    android:text="- 럼블 화염방사기 피해량: 1500 ⇒ 1650"
-                    />
-
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp" />
-
-                <TextView
-                    android:id="@+id/textView74"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="15dp"
-                    android:text="- 바이 기동타격 1차 피해량: 1100 ⇒ 1350"
-                    />
-
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp" />
-
-                <TextView
-                    android:id="@+id/textView75"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="15dp"
-                    android:text="- 바이 기동타격 2차 피해량: 500 ⇒ 600"
-                    />
-
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp" />
-
-                <TextView
-                    android:id="@+id/textView76"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="15dp"
-                    android:text="- 베인 결전의 시간 공격력: 225% ⇒ 275%"
-                    />
-            </LinearLayout>
-
-            <TextView
-                android:id="@+id/textView77"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="15dp"
-                android:text="4코스트 챔피언"
-                android:textStyle="bold"
-                />
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:paddingTop="@dimen/margin_medium"
-                android:paddingBottom="@dimen/margin_medium"
-                android:paddingLeft="@dimen/margin_medium"
-                android:paddingRight="@dimen/margin_medium">
-
-                <TextView
-                    android:id="@+id/textView78"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="15dp"
-                    android:text="- 나르 변신 체력: 4000 ⇒ 5000"
-                    />
-
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp" />
-
-                <TextView
-                    android:id="@+id/textView79"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="15dp"
-                    android:text="- 리븐 기본 에너지 가르기 피해량: 450 ⇒ 600"
-                    />
-
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp" />
-                <TextView
-                    android:id="@+id/textView80"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="15dp"
-                    android:text="- 리븐 에너지 가르기 보호막 흡수량: 1000 ⇒ 1200"
-                    />
-
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="10dp" />
-                <TextView
-                    android:id="@+id/textView81"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="15dp"
-                    android:text="- 리븐 에너지 파동 피해량: 1000 ⇒ 1500
-"
-                    />
-            </LinearLayout>
-            <TextView
-                android:id="@+id/textView82"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="15dp"
-                android:text="5코스트 챔피언"
-                android:textStyle="bold"
-                />
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:paddingTop="@dimen/margin_medium"
-                android:paddingBottom="@dimen/margin_medium"
-                android:paddingLeft="@dimen/margin_medium"
-                android:paddingRight="@dimen/margin_medium">
-
-                <TextView
-                    android:id="@+id/textView83"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textSize="15dp"
-                    android:text="- 잔나 울부짖는 돌풍 기절 지속시간: 1.5초 ⇒ 8초"
-                    />
-
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

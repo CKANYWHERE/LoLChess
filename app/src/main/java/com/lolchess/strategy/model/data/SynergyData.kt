@@ -93,7 +93,7 @@ class SynergyData {
 
     fun getSniper(): Synergy{
         val description : String = "저격수와 대상 사이에 놓인 칸 하나당 해당 저격수가 입히는 피해량이 증가합니다."
-        val option : List<String> = listOf("② 한 칸당 피해량 10% 증가", "④ 한 칸당 피해량 18% 증가")
+        val option : List<String> = listOf("② 한 칸당 피해량 9% 증가", "④ 한 칸당 피해량 16% 증가")
         val level: List<Int> = listOf(2, 4)
 
         return Synergy("저격수", R.drawable.sniper,description, option, level)

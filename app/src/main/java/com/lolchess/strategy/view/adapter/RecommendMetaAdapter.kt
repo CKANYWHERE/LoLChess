@@ -8,11 +8,8 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.LinearLayout
-import androidx.recyclerview.widget.RecyclerView
 import com.lolchess.strategy.R
 import com.lolchess.strategy.model.RecommandMeta
-import com.lolchess.strategy.view.viewholder.ChampDetailViewHolder
-import com.lolchess.strategy.view.viewholder.RecommendMetaViewHolder
 import kotlinx.android.synthetic.main.recommend_meta_item.view.*
 
 class RecommendMetaAdapter(private var items : MutableList<RecommandMeta>, var context:Context)
@@ -66,6 +63,7 @@ class RecommendMetaAdapter(private var items : MutableList<RecommandMeta>, var c
         val item = items[position]
         val paramChamp = LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,100,1f)
         val paramSyn = LinearLayout.LayoutParams(70,70,1f)
+        val paramItem = LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,30, 1f)
 
         for(champ in item.champ){
             val imageChamp = ImageView(context)
@@ -82,6 +80,14 @@ class RecommendMetaAdapter(private var items : MutableList<RecommandMeta>, var c
             imageSyn.layoutParams = paramSyn
             viewHolder.lytSyn.addView(imageSyn)
         }
+
+        for(items in item.item){
+            val imageItem = ImageView(context)
+
+            imageItem.setImageResource(items.imgPath)
+            imageItem.layoutParams = paramItem
+            viewHolder.lytItem.addView(imageItem)
+        }
         viewHolder.name.text = item.name
 
         return view
@@ -97,5 +103,6 @@ class RecommendMetaAdapter(private var items : MutableList<RecommandMeta>, var c
         var name = view.txtMetaName
         var lytChamp = view.lytChamp
         var lytSyn = view.lytSyn
+        var lytItem = view.lytItem
     }
 }

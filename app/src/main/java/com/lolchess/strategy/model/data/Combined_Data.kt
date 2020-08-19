@@ -45,7 +45,7 @@ class Combined_Data {
     }
 
     fun Hand_of_Justice(): Combined_items{
-        return Combined_items("정의의 손길", "준비 단계에서 '피해량 50% 증가 효과' 또는 '기본 공격 및 스킬로 입힌 피해량의 50% 회복' 중 하나를 라운드 종료까지 획득합니다."
+        return Combined_items("정의의 손길", "준비 단계에서 '피해량 50% 증가 효과' 또는 '기본 공격 및 스킬로 입힌 피해량의 45% 회복' 중 하나를 라운드 종료까지 획득합니다."
                 , "시작 마나 +15, 치명타 확률 20%", R.drawable.justice, R.drawable.tear, R.drawable.glove)
     }
 
@@ -135,7 +135,7 @@ class Combined_Data {
     }
 
     fun Titan_Resolve(): Combined_items{
-        return Combined_items("거인의 결의", "피해를 입거나 치명타 피해를 입힐 때마다 추가 피해량이 2%씩 증가합니다. 이 효과는 최대 100%까지 중첩됩니다. 효과가 50회 중첩되면 방어력과 마법 저항력이 25 증가하며 몸집이 커집니다. 효과는 매 라운드 초기화됩니다."
+        return Combined_items("거인의 결의", "피해를 입거나 치명타 피해를 입힐 때마다 추가 피해량이 2%씩 증가합니다. 이 효과는 최대 50%까지 중첩됩니다. 효과가 25회 중첩되면 방어력과 마법 저항력이 25 증가하며 몸집이 커집니다. 효과는 매 라운드 초기화됩니다."
                 , "공격속도 +15%, 방어력 +25", R.drawable.titan, R.drawable.bow, R.drawable.vest)
     }
 
@@ -239,7 +239,10 @@ class Combined_Data {
                 , "공격력 +15", R.drawable.ruined, R.drawable.spatula, R.drawable.sword)
     }
 
-
+    fun blank(): Combined_items{
+        return Combined_items("", ""
+            , "", R.drawable.blank,0,0)
+    }
 
 
 

@@ -72,7 +72,7 @@ class ChampData {
         val attack: List<Double> = listOf(55.0, 99.0, 178.2)
 
         return Champ("자르반 4세", R.drawable.jarvanix, "영겁의 깃발", "마나: 60/100","자르반 4세가 근처에 깃발을 던져 6초 동안 주변 모든 아군의 공격 속도를 상승시킵니다."
-                , "추가 공격 속도 : 50% / 60% / 75%", 1, synergy, hp, attack, 0.6, 1, 45, 30, R.drawable.jarvanix_skill,synergy.size)
+                , "추가 공격 속도 : 50% / 60% / 75%", 1, synergy, hp, attack, 0.6, 1, 40, 30, R.drawable.jarvanix_skill,synergy.size)
 
     }
 
@@ -169,7 +169,7 @@ class ChampData {
         val attack: List<Double> = listOf(55.0, 99.0, 178.2)
 
         return Champ("블리츠크랭크", R.drawable.blitzcrank, "로켓 손", "마나: 125/125","블리츠크랭크가 가장 멀리 있는 적을 당겨 마법 피해를 입히고 2.5초 동안 기절시킵니다. 당긴 후 다음 공격은 적을 1초 동안 공중으로 띄워 올립니다. 아군은 블리츠크랭크가 당긴 적이 사거리 안에 있을 경우 우선적으로 공격합니다."
-                , "피해량 : 200 / 350 / 1337", 2, synergy, hp, attack, 0.5, 1, 45, 35, R.drawable.blitzcrank_skill,synergy.size)
+                , "피해량 : 200 / 350 / 1337", 2, synergy, hp, attack, 0.5, 1, 60, 35, R.drawable.blitzcrank_skill,synergy.size)
 
     }
 
@@ -268,7 +268,7 @@ class ChampData {
         val attack: List<Double> = listOf(50.0, 90.0, 162.0)
 
         return Champ("니코", R.drawable.neeko, "만개", "마나: 35/110","니코가 공중으로 도약한 후 지면을 강타하며 주변 모든 적에게 마법 피해를 입히고 기절시킵니다."
-                , "피해량 : 150 / 250 / 500\n" + "기절 지속시간 : 1.5 / 2 / 2.5", 3, synergy, hp, attack, 0.65, 2, 50, 40, R.drawable.neeko_skill,synergy.size)
+                , "피해량 : 150 / 250 / 450\n" + "기절 지속시간 : 1.5 / 2 / 2.5", 3, synergy, hp, attack, 0.65, 2, 50, 40, R.drawable.neeko_skill,synergy.size)
 
     }
 
@@ -288,7 +288,7 @@ class ChampData {
         val attack: List<Double> = listOf(75.0, 126.0, 226.8)
 
         return Champ("샤코", R.drawable.shaco,  "속임수","마나: 30/70", "샤코가 순간이동해 대상을 암습합니다. 이 공격에는 항상 치명타가 적용되며, 공격력에 비례하는 피해를 입힙니다."
-                , "공격력 : 250% / 275% / 300%", 3, synergy, hp, attack, 0.8, 1, 25, 20, R.drawable.shaco_skill,synergy.size)
+                , "공격력 : 250% / 275% / 300%", 3, synergy, hp, attack, 0.8, 1, 20, 20, R.drawable.shaco_skill,synergy.size)
     }
 
     fun getVi(): Champ {
@@ -316,7 +316,7 @@ class ChampData {
         val attack: List<Double> = listOf(50.0, 90.0, 162.0)
 
         return Champ("마스터 이", R.drawable.masteryi, "선택받은 자", "마나: 0/55","5초 동안 마스터 이의 이동 속도가 대폭 증가하고 매초 최대 체력에 비례하여 회복합니다. 또한 기본 공격 시 추가 고정 피해를 입힙니다."
-                , "추가 고정 피해 : 75 / 100 / 150\n" +
+                , "추가 고정 피해 : 75 / 95 / 145\n" +
                 "회복량 : 12%", 3, synergy, hp, attack, 0.85, 1, 50, 35, R.drawable.masteryi_skill,synergy.size)
     }
 
@@ -375,7 +375,7 @@ class ChampData {
         val attack : List<Double> = listOf(40.0, 72.0, 129.6)
 
         return Champ("카시오페아",R.drawable.cassiopeia, "맹독 폭발","마나: 0/25","카시오페아가 맹독 폴발의 영향을 받지 않은 가장 가까운 적에게 독을 발사해 14초간 피해를 입힙니다. 해당 적에게 적용된 보호막 효과를 50% 감소시킵니다."
-                ,"피해량 : 700 / 1500 / 3000",3,synergy,hp,attack,0.75,2,30,20, R.drawable.cassiopeia_skill,synergy.size)
+                ,"피해량 : 700 / 1500 / 3500",3,synergy,hp,attack,0.75,2,30,20, R.drawable.cassiopeia_skill,synergy.size)
 
     }
 
@@ -475,13 +475,13 @@ class ChampData {
 
     fun getRiven() : Champ{
         val synergy : List<Synergy> = listOf(SynergyData().getChrono(),SynergyData().getBlademaster())
-        val hp : List<Int> = listOf(800, 1440, 2592)
+        val hp : List<Int> = listOf(850, 1530, 2754)
         val attack : List<Double> = listOf(70.0, 126.0, 226.8)
 
         return Champ("리븐",R.drawable.riven, "에너지 가르기","마나: 0/25","리븐이 돌진하며 피해를 흡수하는 보호막을 얻은 후 전방을 베어 근처 적에게 마법 피해를 입힙니다. 리븐은 세 번째 공격마다 공중으로 도약한 후 앞으로 커다란 에너지 파를 발사하여 마법 피해를 입힙니다.",
                 "보호막 흡수량 : 200 / 350 / 1200\n" +
                         "피해량 : 100 / 150 /600\n" +
-                        "파동 피해량 : 300 / 500 / 1500",4,synergy,hp,attack,0.85,1,35,20, R.drawable.riven_skill,synergy.size)
+                        "파동 피해량 : 300 / 500 / 1500",4,synergy,hp,attack,0.85,1,35,30, R.drawable.riven_skill,synergy.size)
 
     }
 
@@ -503,8 +503,8 @@ class ChampData {
         val hp : List<Int> = listOf(700, 1260, 2268)
         val attack : List<Double> = listOf(60.0, 108.0, 194.4)
 
-        return Champ("제라스",R.drawable.xerath, "심연 포격","마나: 20/80","제라스가 변신해 6초 동안 기본 공격 대신 무작위 적에게 유성을 소환해 떨어뜨립니다. 유성은 적중 시 300의 마법 피해를 입히며, 대상이 사망하면 주변 모든 적이 25%(기본 피해량에 비례)의 마법 피해를 입고 1.5초 동안 기절합니다.",
-                "피해량 : 300 / 400 / 2500\n" +
+        return Champ("제라스",R.drawable.xerath, "심연 포격","마나: 20/80","제라스가 변신해 6초 동안 기본 공격 대신 무작위 적에게 유성을 소환해 떨어뜨립니다. 유성은 적중 시 320의 마법 피해를 입히며, 대상이 사망하면 주변 모든 적이 25%(기본 피해량에 비례)의 마법 피해를 입고 1.5초 동안 기절합니다.",
+                "피해량 : 320 / 440 / 2500\n" +"광역 피해량: 80/110/625\n"+
                         "변신 지속시간 : 6 / 8 / 45",5,synergy,hp,attack,0.9,5,20,20, R.drawable.xerath_skill,synergy.size)
     }
 
@@ -535,7 +535,7 @@ class ChampData {
         val hp : List<Int> = listOf(1000, 1800, 3240)
         val attack : List<Double> = listOf(60.0, 108.0, 194.4)
         return Champ("갱플랭크",R.drawable.gangplank, "궤도 포격","마나: 70/160","갱플랭크가 대상 주변 넓은 지역으로 궤도 포격을 요청합니다. 범위 내의 모든 적은 2초 후 피해를 입습니다.",
-                "피해량 : 550 / 700 / 9001",5,synergy,hp,attack,1.0,1,30,20, R.drawable.gangplank_skill,synergy.size)
+                "피해량 : 525 / 675 / 9001",5,synergy,hp,attack,1.0,1,30,20, R.drawable.gangplank_skill,synergy.size)
 
     }
 
