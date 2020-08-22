@@ -120,7 +120,7 @@ class Overlay : Service() {
                 return false
             }
         })
-        return START_NOT_STICKY
+        return START_STICKY
     }
 
     private fun createSynergyView(){
@@ -144,6 +144,7 @@ class Overlay : Service() {
             channel.setShowBadge(showBadge)
 
             val notificationManager = context.getSystemService(NotificationManager::class.java)
+
             notificationManager.createNotificationChannel(channel)
         }
     }
@@ -163,8 +164,8 @@ class Overlay : Service() {
         val pendingIntent = PendingIntent.getActivity(baseContext, 0,
             intent, PendingIntent.FLAG_UPDATE_CURRENT)
 
-        val builder = NotificationCompat.Builder(this, channelId)
-        builder.setSmallIcon(R.drawable.overlay)
+        val builder = NotificationCompat.Builder(this, channelId).setOngoing(true)
+        builder.setSmallIcon(R.mipmap.ic_tftmain)
         builder.setContentTitle(title)
         builder.setContentText(content)
         builder.priority = NotificationCompat.PRIORITY_DEFAULT

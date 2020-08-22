@@ -61,13 +61,12 @@ class RecommendMetaAdapter(private var items : MutableList<RecommandMeta>, var c
         view = LayoutInflater.from(parent!!.context).inflate(R.layout.recommend_meta_item, parent, false)
         val viewHolder = ViewHolder(view)
         val item = items[position]
-        val paramChamp = LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,100,1f)
+        val paramChamp = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,100,1f)
         val paramSyn = LinearLayout.LayoutParams(70,70,1f)
-        val paramItem = LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT,30, 1f)
+        val paramItem = LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,30, 1f)
 
         for(champ in item.champ){
             val imageChamp = ImageView(context)
-
             imageChamp.setImageResource(champ.imgPath)
             imageChamp.layoutParams = paramChamp
             viewHolder.lytChamp.addView(imageChamp)
@@ -83,7 +82,6 @@ class RecommendMetaAdapter(private var items : MutableList<RecommandMeta>, var c
 
         for(items in item.item){
             val imageItem = ImageView(context)
-
             imageItem.setImageResource(items.imgPath)
             imageItem.layoutParams = paramItem
             viewHolder.lytItem.addView(imageItem)
