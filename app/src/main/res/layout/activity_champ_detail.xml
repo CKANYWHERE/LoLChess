@@ -74,7 +74,7 @@
                                 android:id="@+id/imgFirstSyn"
                                 android:layout_width="wrap_content"
                                 android:layout_height="22dp"
-                                app:srcCompat="@drawable/trait_icon_starguardian" />
+                                app:srcCompat="@drawable/spirit" />
 
                             <Space
                                 android:layout_width="match_parent"
@@ -84,7 +84,7 @@
                                 android:id="@+id/imgSecondSyn"
                                 android:layout_width="wrap_content"
                                 android:layout_height="22dp"
-                                app:srcCompat="@drawable/trait_icon_sorcerer" />
+                                app:srcCompat="@drawable/mage" />
 
 
                         </LinearLayout>
