@@ -16,7 +16,7 @@ import android.widget.ListView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.lolchess.strategy.R
-import com.lolchess.strategy.model.data.RecommandMetaData
+import com.lolchess.strategy.model.data.RecommendMetaData
 import com.lolchess.strategy.view.adapter.RecommendMetaAdapter
 import kotlinx.android.synthetic.main.home_fragment.*
 
@@ -60,13 +60,13 @@ class OverlaySynergy : Service(){
         floatingView = LayoutInflater.from(this).inflate(R.layout.overlay_synergy, null)
 
 
-        val recommendData = RecommandMetaData().getAllMetaData()
-        val recommandAdapter = RecommendMetaAdapter(recommendData, baseContext)
+        val recommendData = RecommendMetaData().getAllMetaData()
+        val recommendAdapter = RecommendMetaAdapter(recommendData, baseContext)
 
 
         synergyView = floatingView.findViewById<ListView>(R.id.recommendMetaView2)
         //synergyView?.layoutManager = LinearLayoutManager(baseContext)
-        synergyView?.adapter = recommandAdapter
+        synergyView?.adapter = recommendAdapter
         synergyLinearLayout = floatingView.findViewById<LinearLayout>(R.id.container)
 
 

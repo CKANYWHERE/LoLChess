@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: kr.co.prnd:youtube-player-view:1.3.0@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6fc897988b40944473257cba80563d79/jetified-youtube-player-view-1.3.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6fc897988b40944473257cba80563d79/jetified-youtube-player-view-1.3.0/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6fc897988b40944473257cba80563d79/jetified-youtube-player-view-1.3.0/jars/libs/YouTubeAndroidPlayerApi.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/51071291d4ac0f6e84e4f254dc104e7f/jetified-youtube-player-view-1.3.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/51071291d4ac0f6e84e4f254dc104e7f/jetified-youtube-player-view-1.3.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/51071291d4ac0f6e84e4f254dc104e7f/jetified-youtube-player-view-1.3.0/jars/libs/YouTubeAndroidPlayerApi.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/kr.co.prnd/youtube-player-view/1.3.0/197467d6cada9f95661e6ee5bd7c1cd0a3d34919/youtube-player-view-1.3.0-javadoc.jar!/" />

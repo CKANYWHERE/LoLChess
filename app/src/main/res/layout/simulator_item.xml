@@ -26,7 +26,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
-            app:srcCompat="@drawable/aurelionsol" />
+            app:srcCompat="@drawable/aphelios" />
 
         <TextView
             android:id="@+id/txtName"

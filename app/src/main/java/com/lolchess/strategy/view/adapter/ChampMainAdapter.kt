@@ -55,16 +55,16 @@ class ChampMainAdapter(private var context : Context, private var items: Mutable
     fun filter(query : String?){
 
         val champData = ChampData()
-        val allChamp : MutableList<Champ> =  listOf(champData.getGraves(), champData.getNocturne(), champData.getLeona(), champData.getMalphite(), champData.getPoppy(), champData.getIllaoi(),
-            champData.getJarvanIV(), champData.getXayah(), champData.getZoe(), champData.getZiggs(), champData.getCaitlyn(), champData.getTwistedFate(),
-            champData.getFiora(), champData.getNautilus(), champData.getDarius(), champData.getRakan(), champData.getLucian(), champData.getMordekaiser(),
-            champData.getBlitzcrank(), champData.getShen(), champData.getXinZhao(),champData.getAhri(), champData.getAnnie(), champData.getYasuo(),
-            champData.getZed(), champData.getKogMaw(), champData.getNeeko(), champData.getRumble(), champData.getMasterYi(), champData.getBard(),
-            champData.getVi(), champData.getVayne(), champData.getShaco(), champData.getSyndra(), champData.getAshe(), champData.getEzreal(),
-            champData.getJayce(), champData.getKarma(), champData.getCassiopeia(), champData.getGnar(), champData.getRiven(), champData.getViktor(),
-            champData.getSoraka(), champData.getWukong(), champData.getIrelia(), champData.getJhin(), champData.getJinx(), champData.getTeemo(),
-            champData.getFizz(), champData.getGangplank(), champData.getLulu(), champData.getThresh(), champData.getAurelionSol(), champData.getEkko(),
-            champData.getUrgot(), champData.getJanna(),  champData.getXerath()).toMutableList()
+        val allChamp : MutableList<Champ> =  listOf(champData.getGaren(), champData.getNami(), champData.getNidalee(), champData.getDiana(), champData.getLissandra(), champData.getMaokai(),
+                champData.getVayne(), champData.getYasuo(), champData.getElise(), champData.getWukong(), champData.getTahmKench(), champData.getTwistedFate(),
+                champData.getFiora(), champData.getLulu(), champData.getVi(), champData.getSylas(), champData.getThresh(), champData.getAphelios(),
+                champData.getAnnie(), champData.getJarvanIV(), champData.getJanna(),champData.getJax(), champData.getZed(), champData.getTeemo(),
+                champData.getPyke(), champData.getHecarim(), champData.getNunu(), champData.getLux(), champData.getVeigar(), champData.getXinZhao(),
+                champData.getAkali(), champData.getYuumi(), champData.getIrelia(), champData.getEvelynn(), champData.getJinx(), champData.getKatarina(),
+                champData.getKalista(), champData.getKennen(), champData.getKindred(), champData.getRiven(), champData.getMorgana(), champData.getSejuani(),
+                champData.getShen(), champData.getAhri(), champData.getAatrox(), champData.getAshe(), champData.getWarwick(), champData.getJhin(),
+                champData.getCassiopeia(), champData.getTalon(), champData.getLeeSin(), champData.getLillia(), champData.getSett(), champData.getAzir(),
+                champData.getYone(), champData.getEzreal(),  champData.getZilean(), champData.getKayn()).toMutableList()
 
         if(query?.isEmpty()!!){
             Log.e("filterChamp",allChamp.toString())

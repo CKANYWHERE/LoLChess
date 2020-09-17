@@ -59,223 +59,234 @@ class SynergyArrangement: Fragment() {
         val champData = ChampData()
         initAd()
         //계열 클래스
-        val mechPilot: List<Champ> =
-                listOf(champData.getAnnie(), champData.getRumble(), champData.getFizz())
+        val Cultist: List<Champ> =
+                listOf(champData.getTwistedFate(), champData.getElise(), champData.getPyke(), champData.getKalista(), champData.getAatrox(), champData.getJhin(), champData.getZilean())
 
 
-        val rebel: List<Champ> =
-                listOf(champData.getMalphite(), champData.getZiggs(), champData.getYasuo(), champData.getZed(), champData.getMasterYi(),
-                        champData.getJinx(), champData.getAurelionSol())
+        val ElderWood: List<Champ> =
+                listOf(champData.getMaokai(), champData.getLulu(), champData.getHecarim(), champData.getNunu(), champData.getVeigar(),
+                        champData.getAshe(), champData.getEzreal())
 
-        val starGuardian: List<Champ> =
-                listOf(champData.getZoe(), champData.getPoppy(), champData.getAhri(), champData.getNeeko(), champData.getSyndra(), champData.getSoraka(),
-                        champData.getJanna())
-
-
-        val cybernetic: List<Champ> =
-                listOf(champData.getLeona(), champData.getFiora(), champData.getLucian(), champData.getVi(), champData.getVayne(),
-                        champData.getIrelia(), champData.getEkko())
+        val Ninja: List<Champ> =
+                listOf(champData.getZed(), champData.getAkali(), champData.getKennen(), champData.getShen())
 
 
-        val chrono: List<Champ> =
-                listOf(champData.getCaitlyn(), champData.getTwistedFate(), champData.getBlitzcrank(), champData.getShen(), champData.getEzreal(),
-                        champData.getRiven(), champData.getWukong(), champData.getThresh())
+        val MoonLight: List<Champ> =
+                listOf(champData.getDiana(), champData.getLissandra(), champData.getSylas(), champData.getAphelios())
 
 
-        val darkStar: List<Champ> =
-                listOf(champData.getJarvanIV(), champData.getMordekaiser(), champData.getShaco(), champData.getKarma(), champData.getJhin(), champData.getXerath())
-
-        val spacePirate: List<Champ> =
-                listOf(champData.getGraves(), champData.getDarius(), champData.getJayce(), champData.getGangplank())
+        val WarLord: List<Champ> =
+                listOf(champData.getGaren(), champData.getNidalee(), champData.getVi(), champData.getJarvanIV(), champData.getXinZhao(),
+                        champData.getKatarina(), champData.getAzir())
 
 
-        val astro: List<Champ> =
-                listOf(champData.getNautilus(), champData.getBard(), champData.getGnar(), champData.getTeemo())
+        val Tormented: List<Champ> =
+                listOf(champData.getKayn())
 
-        val battleCast: List<Champ> =
-                listOf(champData.getNocturne(), champData.getIllaoi(), champData.getKogMaw(), champData.getCassiopeia(), champData.getViktor(),
-                        champData.getUrgot())
+        val Enlightened: List<Champ> =
+                listOf(champData.getNami(), champData.getFiora(), champData.getJanna(), champData.getIrelia(), champData.getMorgana(), champData.getTalon())
 
-        val celestial: List<Champ> =
-                listOf(champData.getXayah(), champData.getRakan(), champData.getXinZhao(), champData.getAshe(), champData.getLulu())
+        val Divine: List<Champ> =
+                listOf(champData.getWukong(), champData.getJax(), champData.getLux(), champData.getIrelia(), champData.getWarwick(), champData.getLeeSin())
+
+        val Spirit: List<Champ> =
+                listOf(champData.getTeemo(), champData.getKindred(), champData.getYuumi(), champData.getAhri())
+
+        val TheBoss: List<Champ> =
+                listOf(champData.getSett())
+
+        val Exile: List<Champ> =
+                listOf(champData.getYasuo(), champData.getYone())
+
+        val Fortune: List<Champ> =
+                listOf(champData.getTahmKench(), champData.getAnnie(), champData.getJinx(), champData.getKatarina(), champData.getSejuani())
+
+        val Dusk: List<Champ> =
+                listOf(champData.getVayne(), champData.getThresh(), champData.getRiven(), champData.getCassiopeia(), champData.getLillia())
 
 
         //직업 시너지
 
-        val blademaster: List<Champ> =
-                listOf(champData.getXayah(), champData.getFiora(), champData.getShen(), champData.getYasuo(),
-                        champData.getMasterYi(), champData.getRiven(), champData.getIrelia())
+        val Duelist: List<Champ> =
+                listOf(champData.getYasuo(), champData.getFiora(), champData.getJax(), champData.getXinZhao(),
+                        champData.getKalista(), champData.getLeeSin())
 
-        val manaReaver: List<Champ> =
-                listOf(champData.getDarius(), champData.getIrelia(), champData.getThresh())
-
-
-        val sorcerer: List<Champ> =
-                listOf(champData.getZoe(), champData.getTwistedFate(), champData.getAhri(), champData.getAnnie(), champData.getSyndra(), champData.getViktor(), champData.getXerath())
+        val Keeper: List<Champ> =
+                listOf(champData.getElise(), champData.getJarvanIV(), champData.getKennen(), champData.getRiven(), champData.getAzir())
 
 
-        val vanguard: List<Champ> =
-                listOf(champData.getLeona(), champData.getPoppy(), champData.getNautilus(), champData.getMordekaiser(), champData.getJayce(), champData.getWukong())
+        val Shade: List<Champ> =
+                listOf(champData.getZed(), champData.getEvelynn(), champData.getKayn())
 
-        val protector: List<Champ> =
-                listOf(champData.getJarvanIV(), champData.getXinZhao(), champData.getRakan(), champData.getNeeko(), champData.getUrgot())
 
-        val mystic: List<Champ> =
-                listOf(champData.getBard(), champData.getKarma(), champData.getCassiopeia(), champData.getSoraka(), champData.getLulu())
+        val SharpShooter: List<Champ> =
+                listOf(champData.getNidalee(), champData.getVayne(), champData.getTeemo(), champData.getJinx(), champData.getJhin())
 
-        val brawler: List<Champ> =
-                listOf(champData.getMalphite(), champData.getIllaoi(), champData.getBlitzcrank(), champData.getVi(), champData.getGnar())
+        val Hunter: List<Champ> =
+                listOf(champData.getAphelios(), champData.getKindred(), champData.getAshe(), champData.getWarwick())
 
-        val mercenary: List<Champ> =
-                listOf(champData.getGangplank())
+        val Vanguard: List<Champ> =
+                listOf(champData.getGaren(), champData.getWukong(), champData.getThresh(), champData.getHecarim(), champData.getSejuani(), champData.getAatrox())
 
-        val starship: List<Champ> =
-                listOf(champData.getAurelionSol())
+        val Mystic: List<Champ> =
+                listOf(champData.getJanna(), champData.getYuumi(), champData.getShen(), champData.getCassiopeia(), champData.getZilean())
 
-        val paragon: List<Champ> =
-                listOf(champData.getJanna())
+        val Brawler: List<Champ> =
+                listOf(champData.getTahmKench(), champData.getMaokai(), champData.getVi(), champData.getSylas(), champData.getNunu(), champData.getWarwick(), champData.getSett())
 
-        val infiltrator: List<Champ> =
-                listOf(champData.getNocturne(), champData.getZed(), champData.getShaco(), champData.getFizz(), champData.getEkko())
+        val Assassin: List<Champ> =
+                listOf(champData.getDiana(), champData.getPyke(), champData.getAkali(), champData.getKatarina(), champData.getTalon())
 
-        val sniper: List<Champ> =
-                listOf(champData.getCaitlyn(), champData.getVayne(), champData.getAshe(), champData.getJhin(), champData.getTeemo())
+        val Mage: List<Champ> =
+                listOf(champData.getTwistedFate(), champData.getNami(), champData.getLulu(), champData.getAnnie(), champData.getVeigar(), champData.getAhri(), champData.getLillia())
 
-        val blaster: List<Champ> =
-                listOf(champData.getGraves(), champData.getLucian(), champData.getKogMaw(), champData.getEzreal(), champData.getJinx())
+        val Adept: List<Champ> =
+                listOf(champData.getIrelia(), champData.getShen(), champData.getYone())
 
-        val demolitionist: List<Champ> =
-                listOf(champData.getZiggs(), champData.getRumble(), champData.getGangplank())
+        val Dazzler: List<Champ> =
+                listOf(champData.getLissandra(), champData.getLux(), champData.getMorgana(), champData.getEzreal())
+
+        val Emperor: List<Champ> =
+                listOf(champData.getAzir())
 
 
         //계열 시너지
-        val mechPilotList = mechPilot.toMutableList()
-        val rebelList = rebel.toMutableList()
-        val starGuardianList = starGuardian.toMutableList()
-        val cyberneticList = cybernetic.toMutableList()
-        val chronoList = chrono.toMutableList()
-        val darkStarList = darkStar.toMutableList()
-        val spacePirateList = spacePirate.toMutableList()
-        val astroList = astro.toMutableList()
-        val battleCastList = battleCast.toMutableList()
-        val celestialList = celestial.toMutableList()
+        val CultistList = Cultist.toMutableList()
+        val ElderWoodList = ElderWood.toMutableList()
+        val NinjaList = Ninja.toMutableList()
+        val MoonLightList = MoonLight.toMutableList()
+        val WarLordList = WarLord.toMutableList()
+        val TormentedList = Tormented.toMutableList()
+        val EnlightenedList = Enlightened.toMutableList()
+        val DivineList = Divine.toMutableList()
+        val SpiritList = Spirit.toMutableList()
+        val TheBossList = TheBoss.toMutableList()
+        val ExileList = Exile.toMutableList()
+        val FortuneList = Fortune.toMutableList()
+        val DuskList = Dusk.toMutableList()
 
 
         //직업 시너지
-        val blademasterList = blademaster.toMutableList()
-        val manaReaverList = manaReaver.toMutableList()
-        val sorcererList = sorcerer.toMutableList()
-        val vanguardList = vanguard.toMutableList()
-        val protectorList = protector.toMutableList()
-        val mysticList = mystic.toMutableList()
-        val brawlerList = brawler.toMutableList()
-        val mercenaryList = mercenary.toMutableList()
-        val starshipList = starship.toMutableList()
-        val paragonList = paragon.toMutableList()
-        val infiltratorList = infiltrator.toMutableList()
-        val sniperList = sniper.toMutableList()
-        val blasterList = blaster.toMutableList()
-        val demolitionisList = demolitionist.toMutableList()
+        val DuelistList = Duelist.toMutableList()
+        val KeeperList = Keeper.toMutableList()
+        val ShadeList = Shade.toMutableList()
+        val SharpShooterList = SharpShooter.toMutableList()
+        val HunterList = Hunter.toMutableList()
+        val VanguardList = Vanguard.toMutableList()
+        val MysticList = Mystic.toMutableList()
+        val BrawlerList = Brawler.toMutableList()
+        val AssassinList = Assassin.toMutableList()
+        val MageList = Mage.toMutableList()
+        val AdeptList = Adept.toMutableList()
+        val DazzlerList = Dazzler.toMutableList()
+        val EmperorList = Emperor.toMutableList()
 
         //계열 시너지 어댑터
-        val mechAdapter = ChampDetailAdapter(mechPilotList)
+        val mechAdapter = ChampDetailAdapter(CultistList)
         champDetailRecyclerView1?.adapter = mechAdapter
         champDetailRecyclerView1?.layoutManager = GridLayoutManager(view.context, 3)
 
-        val rebelAdapter = ChampDetailAdapter(rebelList)
-        champDetailRecyclerView2?.adapter = rebelAdapter
+        val ElderWoodAdapter = ChampDetailAdapter(ElderWoodList)
+        champDetailRecyclerView2?.adapter = ElderWoodAdapter
         champDetailRecyclerView2?.layoutManager = GridLayoutManager(view.context, 3)
 
-        val starGuardianAdapter = ChampDetailAdapter(starGuardianList)
-        champDetailRecyclerView3?.adapter = starGuardianAdapter
+        val NinjaAdapter = ChampDetailAdapter(NinjaList)
+        champDetailRecyclerView3?.adapter = NinjaAdapter
         champDetailRecyclerView3?.layoutManager = GridLayoutManager(view.context, 3)
 
-        val cyberneticAdapter = ChampDetailAdapter(cyberneticList)
-        champDetailRecyclerView4?.adapter = cyberneticAdapter
+        val MoonLightAdapter = ChampDetailAdapter(MoonLightList)
+        champDetailRecyclerView4?.adapter = MoonLightAdapter
         champDetailRecyclerView4?.layoutManager = GridLayoutManager(view.context, 3)
 
-        val chronoAdapter = ChampDetailAdapter(chronoList)
-        champDetailRecyclerView5?.adapter = chronoAdapter
+        val WarLordAdapter = ChampDetailAdapter(WarLordList)
+        champDetailRecyclerView5?.adapter = WarLordAdapter
         champDetailRecyclerView5?.layoutManager = GridLayoutManager(view.context, 3)
 
-        val darkStarAdapter = ChampDetailAdapter(darkStarList)
-        champDetailRecyclerView6?.adapter = darkStarAdapter
+        val TormentedAdapter = ChampDetailAdapter(TormentedList)
+        champDetailRecyclerView6?.adapter = TormentedAdapter
         champDetailRecyclerView6?.layoutManager = GridLayoutManager(view.context, 3)
 
-        val spacePirateAdapter = ChampDetailAdapter(spacePirateList)
-        champDetailRecyclerView7?.adapter = spacePirateAdapter
+        val EnlightenedAdapter = ChampDetailAdapter(EnlightenedList)
+        champDetailRecyclerView7?.adapter = EnlightenedAdapter
         champDetailRecyclerView7?.layoutManager = GridLayoutManager(view.context, 3)
 
-        val astroAdapter = ChampDetailAdapter(astroList)
-        champDetailRecyclerView8?.adapter = astroAdapter
+        val DivineAdapter = ChampDetailAdapter(DivineList)
+        champDetailRecyclerView8?.adapter = DivineAdapter
         champDetailRecyclerView8?.layoutManager = GridLayoutManager(view.context, 3)
 
-        val battlecastAdapter = ChampDetailAdapter(battleCastList)
-        champDetailRecyclerView9?.adapter = battlecastAdapter
+        val SpiritAdapter = ChampDetailAdapter(SpiritList)
+        champDetailRecyclerView9?.adapter = SpiritAdapter
         champDetailRecyclerView9?.layoutManager = GridLayoutManager(view.context, 3)
 
-        val celestialAdapter = ChampDetailAdapter(celestialList)
-        champDetailRecyclerView10?.adapter = celestialAdapter
+        val TheBossAdapter = ChampDetailAdapter(TheBossList)
+        champDetailRecyclerView10?.adapter = TheBossAdapter
         champDetailRecyclerView10?.layoutManager = GridLayoutManager(view.context, 3)
 
+        val ExileAdapter = ChampDetailAdapter(ExileList)
+        champDetailRecyclerView10_1?.adapter = ExileAdapter
+        champDetailRecyclerView10_1?.layoutManager = GridLayoutManager(view.context, 3)
+
+        val FortuneAdapter = ChampDetailAdapter(FortuneList)
+        champDetailRecyclerView10_2?.adapter = FortuneAdapter
+        champDetailRecyclerView10_2?.layoutManager = GridLayoutManager(view.context, 3)
+
+        val DuskAdapter = ChampDetailAdapter(DuskList)
+        champDetailRecyclerView10_3?.adapter = DuskAdapter
+        champDetailRecyclerView10_3?.layoutManager = GridLayoutManager(view.context, 3)
 
         //직업 시너지 어댑터
 
-        val blademasterAdapter = ChampDetailAdapter(blademasterList)
-        champDetailRecyclerView_1?.adapter = blademasterAdapter
+        val DuelistAdapter = ChampDetailAdapter(DuelistList)
+        champDetailRecyclerView_1?.adapter = DuelistAdapter
         champDetailRecyclerView_1?.layoutManager = GridLayoutManager(view.context, 3)
 
-        val manaReaverAdapter = ChampDetailAdapter(manaReaverList)
-        champDetailRecyclerView_2?.adapter = manaReaverAdapter
+        val KeeperAdapter = ChampDetailAdapter(KeeperList)
+        champDetailRecyclerView_2?.adapter = KeeperAdapter
         champDetailRecyclerView_2?.layoutManager = GridLayoutManager(view.context, 3)
 
-        val sorcererAdapter = ChampDetailAdapter(sorcererList)
-        champDetailRecyclerView_3?.adapter = sorcererAdapter
+        val ShadeAdapter = ChampDetailAdapter(ShadeList)
+        champDetailRecyclerView_3?.adapter = ShadeAdapter
         champDetailRecyclerView_3?.layoutManager = GridLayoutManager(view.context, 3)
 
-        val vanguardAdapter = ChampDetailAdapter(vanguardList)
-        champDetailRecyclerView_4?.adapter = vanguardAdapter
+        val SharpShooterAdapter = ChampDetailAdapter(SharpShooterList)
+        champDetailRecyclerView_4?.adapter = SharpShooterAdapter
         champDetailRecyclerView_4?.layoutManager = GridLayoutManager(view.context, 3)
 
-        val protectorAdapter = ChampDetailAdapter(protectorList)
-        champDetailRecyclerView_5?.adapter = protectorAdapter
+        val HunterAdapter = ChampDetailAdapter(HunterList)
+        champDetailRecyclerView_5?.adapter = HunterAdapter
         champDetailRecyclerView_5?.layoutManager = GridLayoutManager(view.context, 3)
 
-        val mysticAdapter = ChampDetailAdapter(mysticList)
-        champDetailRecyclerView_6?.adapter = mysticAdapter
+        val VanguardAdapter = ChampDetailAdapter(VanguardList)
+        champDetailRecyclerView_6?.adapter = VanguardAdapter
         champDetailRecyclerView_6?.layoutManager = GridLayoutManager(view.context, 3)
 
-        val brawlerAdapter = ChampDetailAdapter(brawlerList)
-        champDetailRecyclerView_7?.adapter = brawlerAdapter
+        val MysticAdapter = ChampDetailAdapter(MysticList)
+        champDetailRecyclerView_7?.adapter = MysticAdapter
         champDetailRecyclerView_7?.layoutManager = GridLayoutManager(view.context, 3)
 
-        val mercenaryAdapter = ChampDetailAdapter(mercenaryList)
-        champDetailRecyclerView_8?.adapter = mercenaryAdapter
+        val BrawlerAdapter = ChampDetailAdapter(BrawlerList)
+        champDetailRecyclerView_8?.adapter = BrawlerAdapter
         champDetailRecyclerView_8?.layoutManager = GridLayoutManager(view.context, 3)
 
-        val starshipAdapter = ChampDetailAdapter(starshipList)
-        champDetailRecyclerView_9?.adapter = starshipAdapter
+        val AssassinAdapter = ChampDetailAdapter(AssassinList)
+        champDetailRecyclerView_9?.adapter = AssassinAdapter
         champDetailRecyclerView_9?.layoutManager = GridLayoutManager(view.context, 3)
 
-        val paragonAdapter = ChampDetailAdapter(paragonList)
-        champDetailRecyclerView_10?.adapter = paragonAdapter
+        val MageAdapter = ChampDetailAdapter(MageList)
+        champDetailRecyclerView_10?.adapter = MageAdapter
         champDetailRecyclerView_10?.layoutManager = GridLayoutManager(view.context, 3)
 
-        val infiltratorAdapter = ChampDetailAdapter(infiltratorList)
-        champDetailRecyclerView_11?.adapter = infiltratorAdapter
+        val AdeptAdapter = ChampDetailAdapter(AdeptList)
+        champDetailRecyclerView_11?.adapter = AdeptAdapter
         champDetailRecyclerView_11?.layoutManager = GridLayoutManager(view.context, 3)
 
-        val sniperAdapter = ChampDetailAdapter(sniperList)
-        champDetailRecyclerView_12?.adapter = sniperAdapter
+        val DazzlerAdapter = ChampDetailAdapter(DazzlerList)
+        champDetailRecyclerView_12?.adapter = DazzlerAdapter
         champDetailRecyclerView_12?.layoutManager = GridLayoutManager(view.context, 3)
 
-        val blasterAdapter = ChampDetailAdapter(blasterList)
-        champDetailRecyclerView_13?.adapter = blasterAdapter
+        val EmperorAdapter = ChampDetailAdapter(EmperorList)
+        champDetailRecyclerView_13?.adapter = EmperorAdapter
         champDetailRecyclerView_13?.layoutManager = GridLayoutManager(view.context, 3)
-
-        val demolitionistAdapter = ChampDetailAdapter(demolitionisList)
-        champDetailRecyclerView_14?.adapter = demolitionistAdapter
-        champDetailRecyclerView_14?.layoutManager = GridLayoutManager(view.context, 3)
 
     }
     private fun initAd() {

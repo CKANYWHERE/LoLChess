@@ -10,19 +10,22 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.InterstitialAd
 import com.lolchess.strategy.R
-import com.lolchess.strategy.model.data.RecommandMetaData
+import com.lolchess.strategy.model.data.RecommendMetaData
 import com.lolchess.strategy.view.activity.PatchNoteActivity
 import com.lolchess.strategy.view.adapter.RecommendMetaAdapter
 import com.lolchess.strategy.view.service.Overlay
 import kotlinx.android.synthetic.main.home_fragment.*
+import kotlinx.android.synthetic.main.overlay_synergy.*
 
 
 class Home:Fragment(){
@@ -47,10 +50,10 @@ class Home:Fragment(){
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?){
-        val recommendData = RecommandMetaData().getAllMetaData()
-        val recommandAdapter = RecommendMetaAdapter(recommendData, view.context)
+        val recommendData = RecommendMetaData().getAllMetaData()
+        val recommendAdapter = RecommendMetaAdapter(recommendData, view.context)
        // createRecommandView()
-        recommendMetaView?.adapter = recommandAdapter
+        recommendMetaView?.adapter = recommendAdapter
         btnOverlay.setOnClickListener {
             createFrontAd()
             if(!isClicked){
@@ -64,6 +67,8 @@ class Home:Fragment(){
             val intent = Intent(context, PatchNoteActivity::class.java)
             startActivity(intent)
         }
+
+        recommendMetaView2
     }
     private fun createFrontAd() {
 

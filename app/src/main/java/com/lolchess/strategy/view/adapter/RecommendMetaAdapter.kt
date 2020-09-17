@@ -2,6 +2,7 @@ package com.lolchess.strategy.view.adapter
 
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,10 +10,12 @@ import android.widget.BaseAdapter
 import android.widget.ImageView
 import android.widget.LinearLayout
 import com.lolchess.strategy.R
-import com.lolchess.strategy.model.RecommandMeta
+import com.lolchess.strategy.model.RecommendMeta
+import com.lolchess.strategy.view.activity.ItemCombinedActivity
+import com.lolchess.strategy.view.menu.Home
 import kotlinx.android.synthetic.main.recommend_meta_item.view.*
 
-class RecommendMetaAdapter(private var items : MutableList<RecommandMeta>, var context:Context)
+class RecommendMetaAdapter(private var items : MutableList<RecommendMeta>, var context:Context)
     : BaseAdapter(){
     /*override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val view: View?
@@ -99,10 +102,11 @@ class RecommendMetaAdapter(private var items : MutableList<RecommandMeta>, var c
 
     override fun getCount(): Int = items.size
 
-    inner class ViewHolder(view: View){
+    inner class ViewHolder(val view: View){
         var name = view.txtMetaName
         var lytChamp = view.lytChamp
         var lytSyn = view.lytSyn
         var lytItem = view.lytItem
+
     }
 }

@@ -60,20 +60,20 @@
                 <ImageView
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    app:srcCompat = "@drawable/mechpilot"
+                    app:srcCompat = "@drawable/cultist"
                     />
                 <TextView
                     android:layout_marginLeft="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
-                    android:text="메카 파일럿"/>
+                    android:text="광신도"/>
 
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/champDetailRecyclerView1"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="260dp"
                 android:layout_weight="5"
                 app:layoutManager="GridLayoutManager">
 
@@ -87,12 +87,12 @@
                 <ImageView
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    app:srcCompat = "@drawable/rebel"/>
+                    app:srcCompat = "@drawable/elderwood"/>
                 <TextView
                     android:layout_marginLeft="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
-                    android:text="반군"/>
+                    android:text="나무정령"/>
 
             </LinearLayout>
 
@@ -113,19 +113,19 @@
                 <ImageView
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    app:srcCompat = "@drawable/starguardian"/>
+                    app:srcCompat = "@drawable/ninja"/>
                 <TextView
                     android:layout_marginLeft="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
-                    android:text="별 수호자"/>
+                    android:text="닌자"/>
 
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/champDetailRecyclerView3"
                 android:layout_width="match_parent"
-                android:layout_height="260dp"
+                android:layout_height="180dp"
                 android:layout_weight="5"
                 app:layoutManager="GridLayoutManager">
 
@@ -139,19 +139,19 @@
                 <ImageView
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    app:srcCompat = "@drawable/cybernetic"/>
+                    app:srcCompat = "@drawable/moonlight"/>
                 <TextView
                     android:layout_marginLeft="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
-                    android:text="사이버네틱"/>
+                    android:text="달빛"/>
 
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/champDetailRecyclerView4"
                 android:layout_width="match_parent"
-                android:layout_height="260dp"
+                android:layout_height="180dp"
                 android:layout_weight="5"
                 app:layoutManager="GridLayoutManager">
 
@@ -165,12 +165,12 @@
                 <ImageView
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    app:srcCompat = "@drawable/chrono"/>
+                    app:srcCompat = "@drawable/warlord"/>
                 <TextView
                     android:layout_marginLeft="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
-                    android:text="시공간"/>
+                    android:text="대장군"/>
 
             </LinearLayout>
 
@@ -191,19 +191,19 @@
                 <ImageView
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    app:srcCompat = "@drawable/darkstar"/>
+                    app:srcCompat = "@drawable/tormented"/>
                 <TextView
                     android:layout_marginLeft="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
-                    android:text="암흑의 별"/>
+                    android:text="번뇌"/>
 
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/champDetailRecyclerView6"
                 android:layout_width="match_parent"
-                android:layout_height="180dp"
+                android:layout_height="90dp"
                 android:layout_weight="5"
                 app:layoutManager="GridLayoutManager">
 
@@ -217,12 +217,12 @@
                 <ImageView
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    app:srcCompat = "@drawable/spacepirate"/>
+                    app:srcCompat = "@drawable/enlightened"/>
                 <TextView
                     android:layout_marginLeft="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
-                    android:text="우주해적"/>
+                    android:text="선지자"/>
 
             </LinearLayout>
 
@@ -243,12 +243,12 @@
                 <ImageView
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    app:srcCompat = "@drawable/astro"/>
+                    app:srcCompat = "@drawable/divine"/>
                 <TextView
                     android:layout_marginLeft="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
-                    android:text="우주 비행사"/>
+                    android:text="신성"/>
 
             </LinearLayout>
 
@@ -269,12 +269,12 @@
                 <ImageView
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    app:srcCompat = "@drawable/battlecast"/>
+                    app:srcCompat = "@drawable/spirit"/>
                 <TextView
                     android:layout_marginLeft="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
-                    android:text="전투 기계"/>
+                    android:text="영혼"/>
 
             </LinearLayout>
 
@@ -295,17 +295,95 @@
                 <ImageView
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    app:srcCompat = "@drawable/celestial"/>
+                    app:srcCompat = "@drawable/theboss"/>
                 <TextView
                     android:layout_marginLeft="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
-                    android:text="천상"/>
+                    android:text="우두머리"/>
 
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/champDetailRecyclerView10"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:layout_weight="5"
+                app:layoutManager="GridLayoutManager">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    app:srcCompat = "@drawable/exile"/>
+                <TextView
+                    android:layout_marginLeft="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:text="추방자"/>
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/champDetailRecyclerView10_1"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:layout_weight="5"
+                app:layoutManager="GridLayoutManager">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    app:srcCompat = "@drawable/fortune"/>
+                <TextView
+                    android:layout_marginLeft="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:text="행운"/>
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/champDetailRecyclerView10_2"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_weight="5"
+                app:layoutManager="GridLayoutManager">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    app:srcCompat = "@drawable/dusk"/>
+                <TextView
+                    android:layout_marginLeft="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:text="황혼"/>
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/champDetailRecyclerView10_3"
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
                 android:layout_weight="5"
@@ -329,19 +407,19 @@
                 <ImageView
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    app:srcCompat = "@drawable/blademaster"/>
+                    app:srcCompat = "@drawable/duelist"/>
                 <TextView
                     android:layout_marginLeft="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
-                    android:text="검사"/>
+                    android:text="결투가"/>
 
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/champDetailRecyclerView_1"
                 android:layout_width="match_parent"
-                android:layout_height="260dp"
+                android:layout_height="180dp"
                 android:layout_weight="5"
                 app:layoutManager="GridLayoutManager">
 
@@ -355,19 +433,19 @@
                 <ImageView
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    app:srcCompat = "@drawable/manareaver"/>
+                    app:srcCompat = "@drawable/keeper"/>
                 <TextView
                     android:layout_marginLeft="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
-                    android:text="마나 약탈자"/>
+                    android:text="귀감"/>
 
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/champDetailRecyclerView_2"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="180dp"
                 android:layout_weight="5"
                 app:layoutManager="GridLayoutManager">
 
@@ -380,19 +458,69 @@
                 <ImageView
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    app:srcCompat = "@drawable/sorcerer"/>
+                    app:srcCompat = "@drawable/shade"/>
                 <TextView
                     android:layout_marginLeft="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
-                    android:text="마법사"/>
+                    android:text="그림자"/>
 
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/champDetailRecyclerView_3"
                 android:layout_width="match_parent"
-                android:layout_height="260dp"
+                android:layout_height="90dp"
+                android:layout_weight="5"
+                app:layoutManager="GridLayoutManager">
+
+            </androidx.recyclerview.widget.RecyclerView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    app:srcCompat = "@drawable/sharpshooter"/>
+                <TextView
+                    android:layout_marginLeft="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:text="명사수"/>
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/champDetailRecyclerView_4"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:layout_weight="5"
+                app:layoutManager="GridLayoutManager">
+
+            </androidx.recyclerview.widget.RecyclerView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    app:srcCompat = "@drawable/hunter"/>
+                <TextView
+                    android:layout_marginLeft="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:text="사냥꾼"/>
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/champDetailRecyclerView_5"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
                 android:layout_weight="5"
                 app:layoutManager="GridLayoutManager">
 
@@ -415,32 +543,7 @@
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/champDetailRecyclerView_4"
-                android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:layout_weight="5"
-                app:layoutManager="GridLayoutManager">
-
-            </androidx.recyclerview.widget.RecyclerView>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    app:srcCompat = "@drawable/protector"/>
-                <TextView
-                    android:layout_marginLeft="5dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="20dp"
-                    android:text="수호자"/>
-
-            </LinearLayout>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/champDetailRecyclerView_5"
+                android:id="@+id/champDetailRecyclerView_6"
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
                 android:layout_weight="5"
@@ -465,7 +568,7 @@
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/champDetailRecyclerView_6"
+                android:id="@+id/champDetailRecyclerView_7"
                 android:layout_width="match_parent"
                 android:layout_height="180dp"
                 android:layout_weight="5"
@@ -490,34 +593,9 @@
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/champDetailRecyclerView_7"
-                android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:layout_weight="5"
-                app:layoutManager="GridLayoutManager">
-
-            </androidx.recyclerview.widget.RecyclerView>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    app:srcCompat = "@drawable/mercenary"/>
-                <TextView
-                    android:layout_marginLeft="5dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="20dp"
-                    android:text="용병"/>
-
-            </LinearLayout>
-
-            <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/champDetailRecyclerView_8"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="260dp"
                 android:layout_weight="5"
                 app:layoutManager="GridLayoutManager">
 
@@ -530,68 +608,18 @@
                 <ImageView
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    app:srcCompat = "@drawable/starship"/>
+                    app:srcCompat = "@drawable/assassin"/>
                 <TextView
                     android:layout_marginLeft="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
-                    android:text="우주선"/>
+                    android:text="암살자"/>
 
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/champDetailRecyclerView_9"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_weight="5"
-                app:layoutManager="GridLayoutManager">
-
-            </androidx.recyclerview.widget.RecyclerView>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    app:srcCompat = "@drawable/paragon"/>
-                <TextView
-                    android:layout_marginLeft="5dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="20dp"
-                    android:text="인도자"/>
-
-            </LinearLayout>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/champDetailRecyclerView_10"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_weight="5"
-                app:layoutManager="GridLayoutManager">
-
-            </androidx.recyclerview.widget.RecyclerView>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    app:srcCompat = "@drawable/infiltrator"/>
-                <TextView
-                    android:layout_marginLeft="5dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="20dp"
-                    android:text="잠입자"/>
-
-            </LinearLayout>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/champDetailRecyclerView_11"
-                android:layout_width="match_parent"
                 android:layout_height="180dp"
                 android:layout_weight="5"
                 app:layoutManager="GridLayoutManager">
@@ -605,12 +633,62 @@
                 <ImageView
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    app:srcCompat = "@drawable/sniper"/>
+                    app:srcCompat = "@drawable/mage"/>
                 <TextView
                     android:layout_marginLeft="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
-                    android:text="저격수"/>
+                    android:text="요술사"/>
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/champDetailRecyclerView_10"
+                android:layout_width="match_parent"
+                android:layout_height="260dp"
+                android:layout_weight="5"
+                app:layoutManager="GridLayoutManager">
+
+            </androidx.recyclerview.widget.RecyclerView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    app:srcCompat = "@drawable/adept"/>
+                <TextView
+                    android:layout_marginLeft="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:text="조율자"/>
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/champDetailRecyclerView_11"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:layout_weight="5"
+                app:layoutManager="GridLayoutManager">
+
+            </androidx.recyclerview.widget.RecyclerView>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    app:srcCompat = "@drawable/dazzler"/>
+                <TextView
+                    android:layout_marginLeft="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:text="현혹술사"/>
 
             </LinearLayout>
 
@@ -630,49 +708,23 @@
                 <ImageView
                     android:layout_width="20dp"
                     android:layout_height="20dp"
-                    app:srcCompat = "@drawable/blaster"/>
+                    app:srcCompat = "@drawable/emperor"/>
                 <TextView
                     android:layout_marginLeft="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="20dp"
-                    android:text="총잡이"/>
+                    android:text="황제"/>
 
             </LinearLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/champDetailRecyclerView_13"
                 android:layout_width="match_parent"
-                android:layout_height="180dp"
+                android:layout_height="90dp"
                 android:layout_weight="5"
                 app:layoutManager="GridLayoutManager">
 
             </androidx.recyclerview.widget.RecyclerView>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    app:srcCompat = "@drawable/demolitionist"/>
-                <TextView
-                    android:layout_marginLeft="5dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="20dp"
-                    android:text="폭파광"/>
-
-            </LinearLayout>
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/champDetailRecyclerView_14"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_weight="5"
-                app:layoutManager="GridLayoutManager">
-
-            </androidx.recyclerview.widget.RecyclerView>
-
 
         </LinearLayout>
 

@@ -78,7 +78,7 @@
                         android:id="@+id/imgThirdSyn"
                         android:layout_width="wrap_content"
                         android:layout_height="22dp"
-                        app:srcCompat="@drawable/demolitionist" />
+                        app:srcCompat="@drawable/assassin" />
                 </LinearLayout>
 
                 <LinearLayout

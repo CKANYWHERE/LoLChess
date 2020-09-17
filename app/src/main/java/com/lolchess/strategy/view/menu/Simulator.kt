@@ -158,58 +158,63 @@ class Simulator : Fragment() {
                         } else {
                             Log.e("syn2", syn.name + " " + syn.count.toString())
                             syn.count = syn?.count!!.minus(1)
-                            if ((syn.name.equals(synergymain.getBattlecast().name) && (syn.count!! >= 4 && syn.count!!< 6))
-                                    ||(syn.name.equals(synergymain.getCelestial().name) && (syn.count!! >= 4 && syn.count!!< 6))
-                                    ||(syn.name.equals(synergymain.getChrono().name) && (syn.count!! >= 4 && syn.count!!< 6))
-                                    ||(syn.name.equals(synergymain.getDarkStar().name) && (syn.count!! >= 4 && syn.count!!< 6))
-                                    ||(syn.name.equals(synergymain.getSorcerer().name) && (syn.count!! >= 4 && syn.count!!< 6))
+                            if ((syn.name.equals(synergymain.getHunter().name) && syn.count == 3)
+                                    ||(syn.name.equals(synergymain.getBrawler().name) && (syn.count!! >= 4 && syn.count!!< 6))
+                                    ||(syn.name.equals(synergymain.getEnlightened().name) && (syn.count!! >= 4 && syn.count!!< 6))
+                                    ||(syn.name.equals(synergymain.getDuelist().name) && (syn.count!! >= 4 && syn.count!!< 6))
+                                    ||(syn.name.equals(synergymain.getDivine().name) && (syn.count!! >= 4 && syn.count!!< 6))
                                     ||(syn.name.equals(synergymain.getVanguard().name) && (syn.count!! >= 4 && syn.count!!< 6))){
-                                syn.synPower = 2
+                                syn.synPower = 2 //은
                             }
 
 
-                            if ((syn.name.equals(synergymain.getSpacePirate().name) && (syn.count!! >= 2 && syn.count!!< 4))
-                                    ||(syn.name.equals(synergymain.getBlaster().name) && (syn.count!! >= 2 && syn.count!!< 4))
+
+                            if ((syn.name.equals(synergymain.getDivine().name) && (syn.count!! >= 2 && syn.count!!< 4))
+                                    ||(syn.name.equals(synergymain.getDusk().name) && (syn.count!! >= 2 && syn.count!!< 4))
+                                    ||(syn.name.equals(synergymain.getEnlightened().name) && (syn.count!! >= 2 && syn.count!!< 4))
+                                    ||(syn.name.equals(synergymain.getSharpShooter().name) && (syn.count!! >= 2 && syn.count!!< 4))
                                     ||(syn.name.equals(synergymain.getBrawler().name) && (syn.count!! >= 2 && syn.count!!< 4))
-                                    ||(syn.name.equals(synergymain.getBattlecast().name) && (syn.count!! >= 2 && syn.count!!< 4))
-                                    ||(syn.name.equals(synergymain.getBlademaster().name) && (syn.count!! >= 3 && syn.count!!< 6))
-                                    ||(syn.name.equals(synergymain.getCybernetic().name) && (syn.count!! >= 3 && syn.count!!< 6))
-                                    ||(syn.name.equals(synergymain.getCelestial().name) && (syn.count!! >= 2 && syn.count!!< 4))
-                                    ||(syn.name.equals(synergymain.getChrono().name) && (syn.count!! >= 2 && syn.count!!< 4))
-                                    ||(syn.name.equals(synergymain.getDarkStar().name) && (syn.count!! >= 2 && syn.count!!< 4))
-                                    ||(syn.name.equals(synergymain.getInfiltrator().name) && (syn.count!! >= 2 && syn.count!!< 4))
                                     ||(syn.name.equals(synergymain.getMystic().name) && (syn.count!! >= 2 && syn.count!!< 4))
-                                    ||(syn.name.equals(synergymain.getProtector().name) && (syn.count!! >= 2 && syn.count!!< 4))
-                                    ||(syn.name.equals(synergymain.getRebel().name) && (syn.count!! >= 3 && syn.count!!< 6))
-                                    ||(syn.name.equals(synergymain.getSorcerer().name) && (syn.count!! >= 2 && syn.count!!< 4))
-                                    ||(syn.name.equals(synergymain.getStarGuardian().name) && (syn.count!! >= 3 && syn.count!!< 6))
-                                    ||(syn.name.equals(synergymain.getSniper().name) && (syn.count!! >= 2 && syn.count!!< 4))
-                                    ||(syn.name.equals(synergymain.getVanguard().name) && (syn.count!! >= 2 && syn.count!!< 4))){
-                                syn.synPower = 1
+                                    ||(syn.name.equals(synergymain.getVanguard().name) && (syn.count!! >= 2 && syn.count!!< 4))
+                                    ||(syn.name.equals(synergymain.getDuelist().name) && (syn.count!! >= 2 && syn.count!!< 4))
+                                    ||(syn.name.equals(synergymain.getSpirit().name) && (syn.count!! >= 2 && syn.count!!< 4))
+                                    ||(syn.name.equals(synergymain.getKeeper().name) && (syn.count!! >= 2 && syn.count!!< 4))
+                                    ||(syn.name.equals(synergymain.getDazzler().name) && (syn.count!! >= 2 && syn.count!!< 4))
+                                    ||(syn.name.equals(synergymain.getAssassin().name) && (syn.count!! >= 2 && syn.count!!< 4))
+                                    ||(syn.name.equals(synergymain.getSpirit().name) && (syn.count!! == 2))
+                                    ||(syn.name.equals(synergymain.getDazzler().name) && (syn.count!! == 2))
+                                    ||(syn.name.equals(synergymain.getAdept().name) && (syn.count!! == 2))
+                                    ||(syn.name.equals(synergymain.getShade().name) && (syn.count!! == 2))
+                                    ||(syn.name.equals(synergymain.getHunter().name) && (syn.count!! == 2))
+                                    ||(syn.name.equals(synergymain.getCultist().name) && (syn.count!! >= 3 && syn.count!!< 6))
+                                    ||(syn.name.equals(synergymain.getElderwood().name) && (syn.count!! >= 3 && syn.count!!< 6))
+                                    ||(syn.name.equals(synergymain.getWarlord().name) && (syn.count!! >= 3 && syn.count!!< 6))
+                                    ||(syn.name.equals(synergymain.getMage().name) && (syn.count!! >= 3 && syn.count!!< 6))
+                                    ||(syn.name.equals(synergymain.getNinja().name) && (syn.count!! < 2))
+                                    ||(syn.name.equals(synergymain.getExile().name) && (syn.count!! < 2))){
+                                syn.synPower = 1 //동
                             }
-
-                            if ((syn.name.equals(synergymain.getMechPilot().name) && (syn.count!!< 3))
-                                    ||(syn.name.equals(synergymain.getAstro().name) && (syn.count!!< 3))
-                                    ||(syn.name.equals(synergymain.getSpacePirate().name) && (syn.count!! <2))
-                                    ||(syn.name.equals(synergymain.getBlaster().name) && (syn.count!! <2))
-                                    ||(syn.name.equals(synergymain.getBrawler().name) && (syn.count!! <2))
-                                    ||(syn.name.equals(synergymain.getBattlecast().name) && (syn.count!! <2))
-                                    ||(syn.name.equals(synergymain.getBlademaster().name) && (syn.count!! < 3))
-                                    ||(syn.name.equals(synergymain.getCybernetic().name) && (syn.count!! < 3))
-                                    ||(syn.name.equals(synergymain.getCelestial().name) && (syn.count!! < 2))
-                                    ||(syn.name.equals(synergymain.getChrono().name) && (syn.count!! < 2))
-                                    ||(syn.name.equals(synergymain.getDarkStar().name) && (syn.count!!< 2))
-                                    ||(syn.name.equals(synergymain.getInfiltrator().name) && (syn.count!! <2))
+                            if ((syn.name.equals(synergymain.getCultist().name) && (syn.count!!< 3))
+                                    ||(syn.name.equals(synergymain.getElderwood().name) && (syn.count!!< 3))
+                                    ||(syn.name.equals(synergymain.getWarlord().name) && (syn.count!! < 3))
+                                    ||(syn.name.equals(synergymain.getMage().name) && (syn.count!! < 3))
+                                    ||(syn.name.equals(synergymain.getDivine().name) && (syn.count!! <2))
+                                    ||(syn.name.equals(synergymain.getDusk().name) && (syn.count!! <2))
+                                    ||(syn.name.equals(synergymain.getEnlightened().name) && (syn.count!! <2))
+                                    ||(syn.name.equals(synergymain.getSharpShooter().name) && (syn.count!! <2))
+                                    ||(syn.name.equals(synergymain.getBrawler().name) && (syn.count!! < 2))
                                     ||(syn.name.equals(synergymain.getMystic().name) && (syn.count!! < 2))
-                                    ||(syn.name.equals(synergymain.getProtector().name) && (syn.count!!<2))
-                                    ||(syn.name.equals(synergymain.getRebel().name) && (syn.count!! < 3))
-                                    ||(syn.name.equals(synergymain.getSorcerer().name) && (syn.count!! <2))
-                                    ||(syn.name.equals(synergymain.getStarGuardian().name) && (syn.count!! < 3))
-                                    ||(syn.name.equals(synergymain.getSniper().name) && (syn.count!! <2))
-                                    ||(syn.name.equals(synergymain.getVanguard().name) && (syn.count!! <2))
-                                    ||(syn.name.equals(synergymain.getDemolitionist().name) && (syn.count!! <2))
-                                    ||(syn.name.equals(synergymain.getManaReaver().name) && (syn.count!! <2))){
-                                syn.synPower = 0
+                                    ||(syn.name.equals(synergymain.getVanguard().name) && (syn.count!!< 2))
+                                    ||(syn.name.equals(synergymain.getDuelist().name) && (syn.count!! <2))
+                                    ||(syn.name.equals(synergymain.getSpirit().name) && (syn.count!! < 2))
+                                    ||(syn.name.equals(synergymain.getKeeper().name) && (syn.count!!<2))
+                                    ||(syn.name.equals(synergymain.getAssassin().name) && (syn.count!! <2))
+                                    ||(syn.name.equals(synergymain.getNinja().name) && (syn.count!! >1 && syn.count!! <4))
+                                    ||(syn.name.equals(synergymain.getDazzler().name) && (syn.count!! <2))
+                                    ||(syn.name.equals(synergymain.getAdept().name) && (syn.count!! <2))
+                                    ||(syn.name.equals(synergymain.getShade().name) && (syn.count!! <2))
+                                    ||(syn.name.equals(synergymain.getHunter().name) && (syn.count!! <2))){
+                                syn.synPower = 0 //없애기
                             }
 
 
@@ -230,16 +235,16 @@ class Simulator : Fragment() {
         val champData = ChampData()
         val champList: List<Champ> =
             listOf(
-                champData.getGraves(), champData.getNocturne(), champData.getLeona(), champData.getMalphite(), champData.getPoppy(), champData.getIllaoi(),
-                champData.getJarvanIV(), champData.getXayah(), champData.getZoe(), champData.getZiggs(), champData.getCaitlyn(), champData.getTwistedFate(),
-                champData.getFiora(), champData.getNautilus(), champData.getDarius(), champData.getRakan(), champData.getLucian(), champData.getMordekaiser(),
-                champData.getBlitzcrank(), champData.getShen(), champData.getXinZhao(), champData.getAhri(), champData.getAnnie(), champData.getYasuo(),
-                champData.getZed(), champData.getKogMaw(), champData.getNeeko(), champData.getRumble(), champData.getMasterYi(), champData.getBard(),
-                champData.getVi(), champData.getVayne(), champData.getShaco(), champData.getSyndra(), champData.getAshe(), champData.getEzreal(),
-                champData.getJayce(), champData.getKarma(), champData.getCassiopeia(), champData.getGnar(), champData.getRiven(), champData.getViktor(),
-                champData.getSoraka(), champData.getWukong(), champData.getIrelia(), champData.getJhin(), champData.getJinx(), champData.getTeemo(),
-                champData.getFizz(), champData.getGangplank(), champData.getLulu(), champData.getThresh(), champData.getAurelionSol(), champData.getEkko(),
-                champData.getUrgot(), champData.getJanna(), champData.getXerath()
+                    champData.getGaren(), champData.getNami(), champData.getNidalee(), champData.getDiana(), champData.getLissandra(), champData.getMaokai(),
+                    champData.getVayne(), champData.getYasuo(), champData.getElise(), champData.getWukong(), champData.getTahmKench(), champData.getTwistedFate(),
+                    champData.getFiora(), champData.getLulu(), champData.getVi(), champData.getSylas(), champData.getThresh(), champData.getAphelios(),
+                    champData.getAnnie(), champData.getJarvanIV(), champData.getJanna(),champData.getJax(), champData.getZed(), champData.getTeemo(),
+                    champData.getPyke(), champData.getHecarim(), champData.getNunu(), champData.getLux(), champData.getVeigar(), champData.getXinZhao(),
+                    champData.getAkali(), champData.getYuumi(), champData.getIrelia(), champData.getEvelynn(), champData.getJinx(), champData.getKatarina(),
+                    champData.getKalista(), champData.getKennen(), champData.getKindred(), champData.getRiven(), champData.getMorgana(), champData.getSejuani(),
+                    champData.getShen(), champData.getAhri(), champData.getAatrox(), champData.getAshe(), champData.getWarwick(), champData.getJhin(),
+                    champData.getCassiopeia(), champData.getTalon(), champData.getLeeSin(), champData.getLillia(), champData.getSett(), champData.getAzir(),
+                    champData.getYone(), champData.getEzreal(),  champData.getZilean(), champData.getKayn()
             )
 
         val champMutableList = champList.toMutableList()
@@ -317,57 +322,75 @@ class Simulator : Fragment() {
                                     }
                                 }
                             })
-                        if ((firstSyn.name.equals(synergymain.getSpacePirate().name) && (firstSyn.count == 2 || firstSyn.count == 3))
-                                ||(firstSyn.name.equals(synergymain.getStarGuardian().name) && (firstSyn.count == 3 || firstSyn.count == 4 || firstSyn.count == 5))
-                                ||(firstSyn.name.equals(synergymain.getCybernetic().name) && (firstSyn.count == 3 || firstSyn.count == 4 || firstSyn.count == 5))
-                                ||(firstSyn.name.equals(synergymain.getChrono().name) && (firstSyn.count == 2 || firstSyn.count == 3))
-                                ||(firstSyn.name.equals(synergymain.getBattlecast().name) && (firstSyn.count == 2 || firstSyn.count == 3))
-                                ||(firstSyn.name.equals(synergymain.getRebel().name) && (firstSyn.count == 3 || firstSyn.count == 4 || firstSyn.count == 5))
-                                ||(firstSyn.name.equals(synergymain.getDarkStar().name) && (firstSyn.count == 2 || firstSyn.count == 3))
-                                ||(firstSyn.name.equals(synergymain.getCelestial().name) && (firstSyn.count == 2 || firstSyn.count == 3))) firstSyn.synPower = 1
 
-                        if ((firstSyn.name.equals(synergymain.getChrono().name) && (firstSyn.count == 4 || firstSyn.count == 5))
-                                ||(firstSyn.name.equals(synergymain.getBattlecast().name) && (firstSyn.count == 4 || firstSyn.count == 5))
-                                ||(firstSyn.name.equals(synergymain.getDarkStar().name) && (firstSyn.count == 4 || firstSyn.count == 5))
-                                ||(firstSyn.name.equals(synergymain.getCelestial().name) && (firstSyn.count == 4 || firstSyn.count == 5))) firstSyn.synPower = 2
+                        ///첫번째 시너지
+                        if ((firstSyn.name.equals(synergymain.getDivine().name) && (firstSyn.count == 2 || firstSyn.count == 3))
+                                ||(firstSyn.name.equals(synergymain.getCultist().name) && (firstSyn.count == 3 || firstSyn.count == 4 || firstSyn.count == 5))
+                                ||(firstSyn.name.equals(synergymain.getElderwood().name) && (firstSyn.count == 3 || firstSyn.count == 4 || firstSyn.count == 5))
+                                ||(firstSyn.name.equals(synergymain.getWarlord().name) && (firstSyn.count == 3 || firstSyn.count == 4 || firstSyn.count == 5))
+                                ||(firstSyn.name.equals(synergymain.getEnlightened().name) && (firstSyn.count == 2 || firstSyn.count == 3))
+                                ||(firstSyn.name.equals(synergymain.getSpirit().name) && (firstSyn.count == 2 || firstSyn.count == 3))
+                                ||(firstSyn.name.equals(synergymain.getExile().name) && (firstSyn.count == 1))
+                                ||(firstSyn.name.equals(synergymain.getNinja().name) && (firstSyn.count == 1))
+                                ||(firstSyn.name.equals(synergymain.getDusk().name) && (firstSyn.count == 2 || firstSyn.count == 3))) firstSyn.synPower = 1
+
+                        if ((firstSyn.name.equals(synergymain.getDivine().name) && (firstSyn.count == 4 || firstSyn.count == 5))
+                                ||(firstSyn.name.equals(synergymain.getEnlightened().name) && (firstSyn.count == 4 || firstSyn.count == 5))) firstSyn.synPower = 2
 
 
-                        if ((firstSyn.name.equals(synergymain.getChrono().name) && (firstSyn.count == 6 || firstSyn.count == 7 || firstSyn.count == 8))
-                                ||(firstSyn.name.equals(synergymain.getBattlecast().name) && (firstSyn.count == 6))
-                                ||(firstSyn.name.equals(synergymain.getDarkStar().name) && (firstSyn.count == 6))
-                                ||(firstSyn.name.equals(synergymain.getRebel().name) && (firstSyn.count == 6 || firstSyn.count == 7))
-                                ||(firstSyn.name.equals(synergymain.getMechPilot().name) && firstSyn.count == 3)
-                                ||(firstSyn.name.equals(synergymain.getAstro().name) && (firstSyn.count == 3))
-                                ||(firstSyn.name.equals(synergymain.getStarGuardian().name) && (firstSyn.count == 6 || firstSyn.count == 7))
-                                ||(firstSyn.name.equals(synergymain.getCybernetic().name) && (firstSyn.count == 6 || firstSyn.count == 7))
-                                ||(firstSyn.name.equals(synergymain.getSpacePirate().name) && (firstSyn.count == 4))) firstSyn.synPower = 3
+                        if ((firstSyn.name.equals(synergymain.getCultist().name) && (firstSyn.count == 6 || firstSyn.count == 7 || firstSyn.count == 8))
+                                ||(firstSyn.name.equals(synergymain.getEnlightened().name) && (firstSyn.count == 6))
+                                ||(firstSyn.name.equals(synergymain.getDivine().name) && (firstSyn.count == 6))
+                                ||(firstSyn.name.equals(synergymain.getElderwood().name) && (firstSyn.count == 6 || firstSyn.count == 7))
+                                ||(firstSyn.name.equals(synergymain.getWarlord().name) && (firstSyn.count == 6 || firstSyn.count == 7))
+                                ||(firstSyn.name.equals(synergymain.getNinja().name) && firstSyn.count == 4)
+                                ||(firstSyn.name.equals(synergymain.getSpirit().name) && firstSyn.count == 4)
+                                ||(firstSyn.name.equals(synergymain.getExile().name) && firstSyn.count == 2)
+                                ||(firstSyn.name.equals(synergymain.getTormented().name) && firstSyn.count == 1)
+                                ||(firstSyn.name.equals(synergymain.gettheboss().name) && firstSyn.count == 1)
+                                ||(firstSyn.name.equals(synergymain.getMoonlight().name) && (firstSyn.count == 3|| firstSyn.count == 4))
+                                ||(firstSyn.name.equals(synergymain.getFortune().name) && (firstSyn.count == 3 || firstSyn.count == 4 || firstSyn.count == 5))
+                                ||(firstSyn.name.equals(synergymain.getDusk().name) && (firstSyn.count == 4 || firstSyn.count == 5))) firstSyn.synPower = 3
 
-                        if((secondSyn.name.equals(synergymain.getBlademaster().name) &&(secondSyn.count == 3 || secondSyn.count == 4 || secondSyn.count == 5))
+
+                        if (firstSyn.name.equals(synergymain.gettheboss().name) || firstSyn.name.equals(synergymain.getTormented().name)){
+                            firstSyn.synPower = 3
+                        }
+
+                        ///두번째 시너지
+                        if((secondSyn.name.equals(synergymain.getDuelist().name) &&(secondSyn.count == 2 || secondSyn.count == 3))
                                 ||(secondSyn.name.equals(synergymain.getBrawler().name) &&(secondSyn.count == 2 || secondSyn.count == 3))
-                                ||(secondSyn.name.equals(synergymain.getBlaster().name) &&(secondSyn.count == 2 || secondSyn.count == 3))
-                                ||(secondSyn.name.equals(synergymain.getSorcerer().name) &&(secondSyn.count == 2 || secondSyn.count == 3))
+                                ||(secondSyn.name.equals(synergymain.getKeeper().name) &&(secondSyn.count == 2 || secondSyn.count == 3))
+                                ||(secondSyn.name.equals(synergymain.getShade().name) &&(secondSyn.count == 2))
+                                ||(secondSyn.name.equals(synergymain.getHunter().name) &&(secondSyn.count == 2))
                                 ||(secondSyn.name.equals(synergymain.getVanguard().name) &&(secondSyn.count == 2 || secondSyn.count == 3))
-                                ||(secondSyn.name.equals(synergymain.getProtector().name) &&(secondSyn.count == 2 || secondSyn.count == 3))
+                                ||(secondSyn.name.equals(synergymain.getSharpShooter().name) &&(secondSyn.count == 2 || secondSyn.count == 3))
                                 ||(secondSyn.name.equals(synergymain.getMystic().name) &&(secondSyn.count == 2 || secondSyn.count == 3))
-                                ||(secondSyn.name.equals(synergymain.getInfiltrator().name) &&(secondSyn.count == 2 || secondSyn.count == 3))
-                                ||(secondSyn.name.equals(synergymain.getSniper().name) &&(secondSyn.count == 2 || secondSyn.count == 3))) secondSyn.synPower = 1
+                                ||(secondSyn.name.equals(synergymain.getAssassin().name) &&(secondSyn.count == 2 || secondSyn.count == 3))
+                                ||(secondSyn.name.equals(synergymain.getDazzler().name) &&(secondSyn.count == 2 || secondSyn.count == 3))
+                                ||(secondSyn.name.equals(synergymain.getAdept().name) &&(secondSyn.count == 2))
+                                ||(secondSyn.name.equals(synergymain.getMage().name) &&(secondSyn.count == 3 || secondSyn.count == 4 || secondSyn.count == 5))) secondSyn.synPower = 1
 
-                        if((secondSyn.name.equals(synergymain.getVanguard().name) &&(secondSyn.count == 3 || secondSyn.count == 4 || secondSyn.count == 5))
-                                ||(secondSyn.name.equals(synergymain.getSorcerer().name) &&(secondSyn.count == 4 || secondSyn.count == 5))) secondSyn.synPower = 2
-
-                        if((secondSyn.name.equals(synergymain.getBlademaster().name) &&(secondSyn.count == 6 || secondSyn.count == 7))
+                        if((secondSyn.name.equals(synergymain.getVanguard().name) &&(secondSyn.count == 4 || secondSyn.count == 5))
+                                ||(secondSyn.name.equals(synergymain.getDuelist().name) &&(secondSyn.count == 4 || secondSyn.count == 5))
                                 ||(secondSyn.name.equals(synergymain.getBrawler().name) &&(secondSyn.count == 4 || secondSyn.count == 5))
-                                ||(secondSyn.name.equals(synergymain.getBlaster().name) &&(secondSyn.count == 4 || secondSyn.count == 5))
-                                ||(secondSyn.name.equals(synergymain.getSorcerer().name) &&(secondSyn.count == 6 || secondSyn.count == 7))
-                                ||(secondSyn.name.equals(synergymain.getVanguard().name) &&(secondSyn.count == 6))
-                                ||(secondSyn.name.equals(synergymain.getProtector().name) &&(secondSyn.count == 4 || secondSyn.count == 5))
-                                ||(secondSyn.name.equals(synergymain.getMystic().name) &&(secondSyn.count == 4 || secondSyn.count == 5))
-                                ||(secondSyn.name.equals(synergymain.getInfiltrator().name) &&(secondSyn.count == 4 || secondSyn.count == 5))
-                                ||(secondSyn.name.equals(synergymain.getSniper().name) &&(secondSyn.count == 4 || secondSyn.count == 5))
-                                ||(secondSyn.name.equals(synergymain.getDemolitionist().name) &&(secondSyn.count == 2 || secondSyn.count == 3))
-                                ||(secondSyn.name.equals(synergymain.getManaReaver().name) &&(secondSyn.count == 2 || secondSyn.count == 3))) secondSyn.synPower = 3
+                                ||(secondSyn.name.equals(synergymain.getHunter().name) &&(secondSyn.count == 3))
+                        ) secondSyn.synPower = 2
 
-                        if (secondSyn.name.equals(synergymain.getStarship().name)|| secondSyn.name.equals(synergymain.getParagon().name)){
+                        if((secondSyn.name.equals(synergymain.getDuelist().name) &&(secondSyn.count == 6))
+                                ||(secondSyn.name.equals(synergymain.getBrawler().name) &&(secondSyn.count == 6 || secondSyn.count == 7))
+                                ||(secondSyn.name.equals(synergymain.getMage().name) &&(secondSyn.count == 6 || secondSyn.count == 7))
+                                ||(secondSyn.name.equals(synergymain.getKeeper().name) &&(secondSyn.count == 4 || secondSyn.count == 5))
+                                ||(secondSyn.name.equals(synergymain.getAssassin().name) &&(secondSyn.count == 4 || secondSyn.count == 5))
+                                ||(secondSyn.name.equals(synergymain.getSharpShooter().name) &&(secondSyn.count == 4 || secondSyn.count == 5))
+                                ||(secondSyn.name.equals(synergymain.getMystic().name) &&(secondSyn.count == 4 || secondSyn.count == 5))
+                                ||(secondSyn.name.equals(synergymain.getShade().name) &&(secondSyn.count == 3))
+                                ||(secondSyn.name.equals(synergymain.getAdept().name) &&(secondSyn.count == 3))
+                                ||(secondSyn.name.equals(synergymain.getHunter().name) &&(secondSyn.count == 4))
+                                ||(secondSyn.name.equals(synergymain.getDazzler().name) &&(secondSyn.count == 4))
+                                ||(secondSyn.name.equals(synergymain.getVanguard().name) &&(secondSyn.count == 6))) secondSyn.synPower = 3
+
+                        if (secondSyn.name.equals(synergymain.getEmperor().name)){
                             secondSyn.synPower = 3
                         }
 
@@ -440,25 +463,53 @@ class Simulator : Fragment() {
                                     }
                                 }
                             })
+                        //첫번째 시너지
+                        if ((firstSyn.name.equals(synergymain.getWarlord().name) && (firstSyn.count == 3 || firstSyn.count == 4 || firstSyn.count == 5))
+                                ||(firstSyn.name.equals(synergymain.getEnlightened().name) && (firstSyn.count == 2 || firstSyn.count == 3 ))
+                                ||(firstSyn.name.equals(synergymain.getNinja().name) && (firstSyn.count == 1))
+                                ||(firstSyn.name.equals(synergymain.getDivine().name) &&(firstSyn.count == 2 || firstSyn.count == 3))) firstSyn.synPower = 1
 
-                        if ((firstSyn.name.equals(synergymain.getSpacePirate().name) && (firstSyn.count == 2 || firstSyn.count == 3))
-                                ||(firstSyn.name.equals(synergymain.getCybernetic().name) && (firstSyn.count == 3 || firstSyn.count == 4 || firstSyn.count == 5))) firstSyn.synPower = 1
+                        if ((firstSyn.name.equals(synergymain.getEnlightened().name) && (firstSyn.count == 4 || firstSyn.count == 5))
+                                ||(firstSyn.name.equals(synergymain.getDivine().name) &&(firstSyn.count == 4 || firstSyn.count == 5))) firstSyn.synPower = 2
 
+                        if ((firstSyn.name.equals(synergymain.getEnlightened().name) && (firstSyn.count == 6))
+                                ||(firstSyn.name.equals(synergymain.getWarlord().name) && (firstSyn.count == 6))
+                                ||(firstSyn.name.equals(synergymain.getNinja().name) && (firstSyn.count == 4))
+                                ||(firstSyn.name.equals(synergymain.getDivine().name) &&(firstSyn.count == 6))) firstSyn.synPower = 3
 
-                        if ((firstSyn.name.equals(synergymain.getCybernetic().name) && (firstSyn.count == 6 || firstSyn.count == 7))
-                                ||(firstSyn.name.equals(synergymain.getSpacePirate().name) && (firstSyn.count == 4))) firstSyn.synPower = 3
-
-                        if((secondSyn.name.equals(synergymain.getBlademaster().name) &&(secondSyn.count == 3 || secondSyn.count == 4 || secondSyn.count == 5)))
+                        //두번째 시너지
+                        if((secondSyn.name.equals(synergymain.getDivine().name) &&(secondSyn.count == 2 || secondSyn.count == 3))
+                                ||(secondSyn.name.equals(synergymain.getAdept().name) &&(secondSyn.count == 2))
+                                ||(secondSyn.name.equals(synergymain.getBrawler().name) &&(secondSyn.count == 2 || secondSyn.count == 3))
+                                ||(secondSyn.name.equals(synergymain.getKeeper().name) &&(secondSyn.count == 2 || secondSyn.count == 3)))
                             secondSyn.synPower = 1
 
-                        if((secondSyn.name.equals(synergymain.getBlademaster().name) &&(secondSyn.count == 6 || secondSyn.count == 7))
-                                ||(secondSyn.name.equals(synergymain.getDemolitionist().name) &&(secondSyn.count == 2 || secondSyn.count == 3))) secondSyn.synPower = 3
+                        if ((secondSyn.name.equals(synergymain.getDivine().name) && (secondSyn.count == 4 || secondSyn.count == 5))
+                                || (secondSyn.name.equals(synergymain.getAdept().name) &&(secondSyn.count == 3))
+                                || (secondSyn.name.equals(synergymain.getBrawler().name) && (secondSyn.count == 4 || secondSyn.count == 5)))secondSyn.synPower = 2
 
-                        if((thirdSyn.name.equals(synergymain.getManaReaver().name) &&(secondSyn.count == 2 || secondSyn.count == 3))) thirdSyn.synPower = 3
+                        if((secondSyn.name.equals(synergymain.getDivine().name) && (secondSyn.count == 6))
+                                ||(secondSyn.name.equals(synergymain.getFortune().name) &&(secondSyn.count == 3 || secondSyn.count == 4 || secondSyn.count == 5))
+                                ||(secondSyn.name.equals(synergymain.getAdept().name) &&(secondSyn.count == 4))
+                                ||(secondSyn.name.equals(synergymain.getBrawler().name) && (secondSyn.count == 6 || secondSyn.count == 7))
+                                ||(secondSyn.name.equals(synergymain.getKeeper().name) &&(secondSyn.count == 4 || secondSyn.count == 5))) secondSyn.synPower = 3
 
-                        if (thirdSyn.name.equals(synergymain.getMercenary().name)){
-                            thirdSyn.synPower = 3
-                        }
+
+                        //세번째 시너지
+                        if((thirdSyn.name.equals(synergymain.getAdept().name) &&(thirdSyn.count == 2))
+                                ||(thirdSyn.name.equals(synergymain.getAssassin().name) &&(thirdSyn.count == 2 || thirdSyn.count == 3))
+                                ||(thirdSyn.name.equals(synergymain.getMystic().name) &&(thirdSyn.count == 2 || thirdSyn.count == 3))
+                                ||(thirdSyn.name.equals(synergymain.getHunter().name) &&(thirdSyn.count == 2))) thirdSyn.synPower = 1
+
+                        if((thirdSyn.name.equals(synergymain.getAdept().name) &&(thirdSyn.count == 3))
+                                ||(thirdSyn.name.equals(synergymain.getHunter().name) &&(thirdSyn.count == 3))) thirdSyn.synPower = 2
+
+                        if ((thirdSyn.name.equals(synergymain.getAdept().name) &&(thirdSyn.count == 4))
+                                ||(thirdSyn.name.equals(synergymain.getAssassin().name) &&(thirdSyn.count == 4 || thirdSyn.count == 5))
+                                ||(thirdSyn.name.equals(synergymain.getMystic().name) &&(thirdSyn.count == 4 || thirdSyn.count == 5))
+                                ||(thirdSyn.name.equals(synergymain.getHunter().name) &&(thirdSyn.count == 4))
+                                ||(thirdSyn.name.equals(synergymain.getEmperor().name))) thirdSyn.synPower = 3
+
                         addChamp(simChamp)
                         addSynergy(firstSyn)
                         addSynergy(secondSyn)

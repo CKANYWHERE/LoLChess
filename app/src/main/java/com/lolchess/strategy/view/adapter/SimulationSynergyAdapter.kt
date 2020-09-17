@@ -42,84 +42,74 @@ class SimulationSynergyAdapter(private var context : Context)// recycler view bi
         은 holder.imgView.setBackgroundColor(Color.rgb(150, 182, 193))
         금 holder.imgView.setBackgroundColor(Color.rgb(232, 181, 64))
         */
-        if (((synergy.count == 2 || synergy.count == 3) && synergy.imgPath == synergymain.getBattlecast().imgPath)
-                || ((synergy.count == 2 || synergy.count == 3)  && synergy.imgPath == synergymain.getChrono().imgPath)
-                || ((synergy.count == 2 || synergy.count == 3)  && synergy.imgPath == synergymain.getSorcerer().imgPath)
+
+        if (((synergy.count == 2 || synergy.count == 3) && synergy.imgPath == synergymain.getDivine().imgPath)
+                || ((synergy.count == 2 || synergy.count == 3)  && synergy.imgPath == synergymain.getDusk().imgPath)
+                || ((synergy.count == 2 || synergy.count == 3)  && synergy.imgPath == synergymain.getEnlightened().imgPath)
+                || ((synergy.count == 2 || synergy.count == 3)  && synergy.imgPath == synergymain.getSharpShooter().imgPath)
                 || ((synergy.count == 2 || synergy.count == 3)  && synergy.imgPath == synergymain.getBrawler().imgPath)
                 || ((synergy.count == 2 || synergy.count == 3)  && synergy.imgPath == synergymain.getMystic().imgPath)
                 || ((synergy.count == 2 || synergy.count == 3)  && synergy.imgPath == synergymain.getVanguard().imgPath)
-                || ((synergy.count == 2 || synergy.count == 3)  && synergy.imgPath == synergymain.getInfiltrator().imgPath)
-                || ((synergy.count == 2 || synergy.count == 3)  && synergy.imgPath == synergymain.getDarkStar().imgPath)
-                || ((synergy.count == 2 || synergy.count == 3)  && synergy.imgPath == synergymain.getCelestial().imgPath)
-                || ((synergy.count == 2 || synergy.count == 3)  && synergy.imgPath == synergymain.getSpacePirate().imgPath)
-                || ((synergy.count == 2 || synergy.count == 3)  && synergy.imgPath == synergymain.getProtector().imgPath)
-                || ((synergy.count == 2 || synergy.count == 3)  && synergy.imgPath == synergymain.getSniper().imgPath)
-                || ((synergy.count == 2 || synergy.count == 3)  && synergy.imgPath == synergymain.getBlaster().imgPath)){
+                || ((synergy.count == 2 || synergy.count == 3)  && synergy.imgPath == synergymain.getDuelist().imgPath)
+                || ((synergy.count == 2 || synergy.count == 3)  && synergy.imgPath == synergymain.getSpirit().imgPath)
+                || ((synergy.count == 2 || synergy.count == 3)  && synergy.imgPath == synergymain.getKeeper().imgPath)
+                || ((synergy.count == 2 || synergy.count == 3)  && synergy.imgPath == synergymain.getDazzler().imgPath)
+                || ((synergy.count == 2 || synergy.count == 3)  && synergy.imgPath == synergymain.getAssassin().imgPath)
+                || ((synergy.count == 2 )  && synergy.imgPath == synergymain.getSpirit().imgPath)
+                || ((synergy.count == 2 )  && synergy.imgPath == synergymain.getDazzler().imgPath)
+                || ((synergy.count == 2 )  && synergy.imgPath == synergymain.getAdept().imgPath)
+                || ((synergy.count == 2 )  && synergy.imgPath == synergymain.getShade().imgPath)
+                || ((synergy.count == 2 )  && synergy.imgPath == synergymain.getHunter().imgPath)
+                || ((synergy.count == 3 || synergy.count == 4 || synergy.count == 5)  && synergy.imgPath == synergymain.getCultist().imgPath)
+                || ((synergy.count == 3 || synergy.count == 4 || synergy.count == 5)  && synergy.imgPath == synergymain.getElderwood().imgPath)
+                || ((synergy.count == 3 || synergy.count == 4 || synergy.count == 5)  && synergy.imgPath == synergymain.getWarlord().imgPath)
+                || ((synergy.count == 3 || synergy.count == 4 || synergy.count == 5)  && synergy.imgPath == synergymain.getMage().imgPath)
+                || ((synergy.count == 1)  && synergy.imgPath == synergymain.getNinja().imgPath)
+                || ((synergy.count == 1)  && synergy.imgPath == synergymain.getExile().imgPath)){
 
-            holder.imgView.setBackgroundColor(Color.rgb(206, 143, 125))
+            holder.imgView.setBackgroundColor(Color.rgb(206, 143, 125)) //동
 
         }else holder.imgView.setBackgroundColor(0)
 
-        if ((synergy.count == 2 && synergy.imgPath == synergymain.getManaReaver().imgPath)
-                || (synergy.count == 2 && synergy.imgPath == synergymain.getDemolitionist().imgPath)){
-            holder.imgView.setBackgroundColor(Color.rgb(232, 181, 64))
-
-        }
-        if ((synergy.count == 3 && synergy.imgPath == synergymain.getMechPilot().imgPath)
-                || (synergy.count == 3 && synergy.imgPath == synergymain.getAstro().imgPath)){
-            holder.imgView.setBackgroundColor(Color.rgb(232, 181, 64))
-        }
-        Log.e("synergycount", synergy.count.toString())
-
-        if ( ((synergy.count == 3 || synergy.count == 4 || synergy.count == 5) && synergy.imgPath == synergymain.getCybernetic().imgPath)
-                || ((synergy.count == 3 || synergy.count == 4 || synergy.count == 5) && synergy.imgPath == synergymain.getBlademaster().imgPath)
-                || ((synergy.count == 3 || synergy.count == 4 || synergy.count == 5) && synergy.imgPath == synergymain.getRebel().imgPath)
-                || ((synergy.count == 3 || synergy.count == 4 || synergy.count == 5) && synergy.imgPath == synergymain.getStarGuardian().imgPath)){
-            holder.imgView.setBackgroundColor(Color.rgb(206, 143, 125))
-        }
-
-        if (((synergy.count == 4 ||synergy.count ==5) && synergy.imgPath == synergymain.getBrawler().imgPath)
-                || ((synergy.count == 4 ||synergy.count ==5) && synergy.imgPath == synergymain.getMystic().imgPath)
-                || (synergy.count == 4 && synergy.imgPath == synergymain.getSpacePirate().imgPath)
-                || ((synergy.count == 4 ||synergy.count ==5) && synergy.imgPath == synergymain.getSniper().imgPath)
-                || ((synergy.count == 4 ||synergy.count ==5) && synergy.imgPath == synergymain.getBlaster().imgPath)
-                || ((synergy.count == 4 ||synergy.count ==5) && synergy.imgPath == synergymain.getInfiltrator().imgPath)
-                || ((synergy.count == 4 ||synergy.count ==5) && synergy.imgPath == synergymain.getProtector().imgPath)) {
-            
-            holder.imgView.setBackgroundColor(Color.rgb(232, 181, 64))
-        }
-        if ((synergy.count == 6 || synergy.count == 7) && synergy.imgPath == synergymain.getStarGuardian().imgPath
-                || ((synergy.count == 6 || synergy.count == 7 || synergy.count == 8) && synergy.imgPath == synergymain.getChrono().imgPath)
-                || ((synergy.count == 6 || synergy.count == 7) && synergy.imgPath == synergymain.getCybernetic().imgPath)
-                || (synergy.count == 6 && synergy.imgPath == synergymain.getDarkStar().imgPath)
-                || ((synergy.count == 6 || synergy.count == 7) && synergy.imgPath == synergymain.getRebel().imgPath)
-                || (synergy.count == 6 && synergy.imgPath == synergymain.getBattlecast().imgPath)
-                || ((synergy.count == 6 || synergy.count == 7) && synergy.imgPath == synergymain.getBlademaster().imgPath)
-                || ((synergy.count == 6 || synergy.count == 7) && synergy.imgPath == synergymain.getSorcerer().imgPath)
-                || (synergy.count == 6 && synergy.imgPath == synergymain.getVanguard().imgPath)){
-            holder.imgView.setBackgroundColor(Color.rgb(232, 181, 64))
+        if ((synergy.count == 6 || synergy.count == 7 || synergy.count == 8) && synergy.imgPath == synergymain.getCultist().imgPath
+                || ((synergy.count == 6 || synergy.count == 7 || synergy.count == 8) && synergy.imgPath == synergymain.getElderwood().imgPath)
+                || ((synergy.count == 6 || synergy.count == 7 || synergy.count == 8) && synergy.imgPath == synergymain.getWarlord().imgPath)
+                || ((synergy.count == 6 || synergy.count == 7 || synergy.count == 8) && synergy.imgPath == synergymain.getMage().imgPath)
+                || ((synergy.count == 6 || synergy.count == 7) && synergy.imgPath == synergymain.getBrawler().imgPath)
+                || (synergy.count == 6 && synergy.imgPath == synergymain.getDivine().imgPath)
+                || (synergy.count == 6 && synergy.imgPath == synergymain.getVanguard().imgPath)
+                || (synergy.count == 6 && synergy.imgPath == synergymain.getDuelist().imgPath)
+                || ((synergy.count == 4 || synergy.count == 5) && synergy.imgPath == synergymain.getDusk().imgPath)
+                || ((synergy.count == 4 || synergy.count == 5) && synergy.imgPath == synergymain.getKeeper().imgPath)
+                || ((synergy.count == 4 || synergy.count == 5) && synergy.imgPath == synergymain.getSharpShooter().imgPath)
+                || ((synergy.count == 4 || synergy.count == 5) && synergy.imgPath == synergymain.getMystic().imgPath)
+                || ((synergy.count == 4 || synergy.count == 5) && synergy.imgPath == synergymain.getAssassin().imgPath)
+                || ((synergy.count == 3 || synergy.count == 4 || synergy.count == 5) && synergy.imgPath == synergymain.getFortune().imgPath)
+                || ((synergy.count == 3 || synergy.count == 4) && synergy.imgPath == synergymain.getMoonlight().imgPath)
+                || (synergy.count == 4 && synergy.imgPath == synergymain.getNinja().imgPath)
+                || (synergy.count == 4 && synergy.imgPath == synergymain.getDazzler().imgPath)
+                || (synergy.count == 4 && synergy.imgPath == synergymain.getSpirit().imgPath)
+                || (synergy.count == 4 && synergy.imgPath == synergymain.getHunter().imgPath)
+                || (synergy.count == 4 && synergy.imgPath == synergymain.getAdept().imgPath)
+                || (synergy.count == 3 && synergy.imgPath == synergymain.getShade().imgPath)
+                || (synergy.count == 2 && synergy.imgPath == synergymain.getExile().imgPath)){
+            holder.imgView.setBackgroundColor(Color.rgb(232, 181, 64)) //금
 
         }
 
-        if (((synergy.count == 4 || synergy.count == 5) && synergy.imgPath == synergymain.getBattlecast().imgPath)
-                ||((synergy.count == 4 || synergy.count == 5)&& synergy.imgPath == synergymain.getSorcerer().imgPath)
+        if (((synergy.count == 3) && synergy.imgPath == synergymain.getHunter().imgPath)
+                ||((synergy.count == 4 || synergy.count == 5)&& synergy.imgPath == synergymain.getBrawler().imgPath)
+                ||((synergy.count == 4 || synergy.count == 5)&& synergy.imgPath == synergymain.getEnlightened().imgPath)
                 ||((synergy.count == 4 || synergy.count == 5)&& synergy.imgPath == synergymain.getVanguard().imgPath)
-                ||((synergy.count == 4 || synergy.count == 5)&& synergy.imgPath == synergymain.getDarkStar().imgPath)
-                ||((synergy.count == 4 || synergy.count == 5)&& synergy.imgPath == synergymain.getCelestial().imgPath)
-                ||((synergy.count == 4 || synergy.count == 5)&& synergy.imgPath == synergymain.getChrono().imgPath)) {
-            holder.imgView.setBackgroundColor(Color.rgb(150, 182, 193))
+                ||((synergy.count == 4 || synergy.count == 5)&& synergy.imgPath == synergymain.getDuelist().imgPath)
+                ||((synergy.count == 4 || synergy.count == 5)&& synergy.imgPath == synergymain.getDivine().imgPath)) {
+            holder.imgView.setBackgroundColor(Color.rgb(150, 182, 193)) //은
         }
 
-
-        if (synergy.count == 1){
-            holder.imgView.setBackgroundColor(0)
-        }
-
-
-        if (synergy.count == 1 && synergy.imgPath == synergymain.getMercenary().imgPath
-                || synergy.imgPath == synergymain.getParagon().imgPath
-                || synergy.imgPath == synergymain.getStarship().imgPath){
-            holder.imgView.setBackgroundColor(Color.rgb(232, 181, 64))
+        if (synergy.count == 1 && synergy.imgPath == synergymain.getTormented().imgPath
+                || synergy.imgPath == synergymain.gettheboss().imgPath
+                || synergy.imgPath == synergymain.getEmperor().imgPath){
+            holder.imgView.setBackgroundColor(Color.rgb(232, 181, 64)) //금
         }
 
 

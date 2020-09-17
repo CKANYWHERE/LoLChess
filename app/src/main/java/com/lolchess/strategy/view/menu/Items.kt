@@ -12,6 +12,7 @@ import android.widget.ImageButton
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.graphics.drawable.toBitmap
+import androidx.core.view.size
 import androidx.recyclerview.widget.GridLayoutManager
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.MobileAds
@@ -53,13 +54,13 @@ class Items : Fragment() {
         var basedItems: List<Based_items> = listOf(baseItemData.B_F_Sword(), baseItemData.Recurve_Bow(), baseItemData.Chain_Vest(), baseItemData.Negatron_Cloak()
                 , baseItemData.Needlessly_Large_Rod(), baseItemData.Tear_of_the_Goddess(), baseItemData.Giant_Belt(), baseItemData.Spatula(), baseItemData.Sparring_Gloves())
         val combinedData = Combined_Data()
-        combinedItems = listOf(combinedData.Battlecast_Plating(), combinedData.Blade_of_the_Ruined_King(), combinedData.Bloodthirster(), combinedData.Blue_Buff(),
-                combinedData.Bramble_Vest(), combinedData.Celestial_Orb(), combinedData.Chalice_of_Power(), combinedData.Dark_Star_Heart(), combinedData.Deathblade(), combinedData.Dragon_Claw(),
+        combinedItems = listOf(combinedData.Mantle_of_Dusk(), combinedData.Sword_Of_the_Divine(), combinedData.Bloodthirster(), combinedData.Blue_Buff(),
+                combinedData.Bramble_Vest(), combinedData.Elderwood_Heirloom(), combinedData.Chalice_of_Power(), combinedData.Youmuus_Ghostblade(), combinedData.Deathblade(), combinedData.Dragon_Claw(),
                 combinedData.Force_of_Nature(), combinedData.Frozen_Heart(), combinedData.Giant_Slayer(), combinedData.Guardian_Angel(), combinedData.Guinsoo_Rageblade(), combinedData.Hand_of_Justice(),
-                combinedData.Hextech_Gunblade(), combinedData.Infiltrator_Talons(), combinedData.Infinity_Edge(), combinedData.Ionic_Spark(), combinedData.Jeweled_Gauntlet(), combinedData.Last_Whisper(),
-                combinedData.Locket_of_the_Iron_Solari(), combinedData.Luden_Echo(), combinedData.Morellonomicon(), combinedData.Protector_Chestguard(), combinedData.Quicksilver(), combinedData.Rabadon_Deathcap(),
-                combinedData.Rapid_Firecannon(), combinedData.Rebel_Medal(), combinedData.Red_Buff(), combinedData.Redemption(), combinedData.Runaan_Hurricane(), combinedData.Shroud_of_Stillness(),
-                combinedData.Spear_of_Shojin(), combinedData.Star_Guardian_Charm(), combinedData.Statikk_Shiv(), combinedData.Sword_Breaker(), combinedData.Thief_Gloves(), combinedData.Titan_Resolve(),
+                combinedData.Hextech_Gunblade(), combinedData.Duelists_Zeal(), combinedData.Infinity_Edge(), combinedData.Ionic_Spark(), combinedData.Jeweled_Gauntlet(), combinedData.Last_Whisper(),
+                combinedData.Locket_of_the_Iron_Solari(), combinedData.Luden_Echo(), combinedData.Morellonomicon(), combinedData.Warlords_Banner(), combinedData.Quicksilver(), combinedData.Rabadon_Deathcap(),
+                combinedData.Rapid_Firecannon(), combinedData.Vanguards_Cuirass(), combinedData.Sunfire_Cape(), combinedData.Redemption(), combinedData.Runaan_Hurricane(), combinedData.Shroud_of_Stillness(),
+                combinedData.Spear_of_Shojin(), combinedData.Mages_Cap(), combinedData.Statikk_Shiv(), combinedData.Gargoyle(), combinedData.Thief_gloves(), combinedData.Titan_Resolve(),
                 combinedData.Trap_Claw(), combinedData.Warmog_Armor(), combinedData.Zeke_Herald(), combinedData.Zephar(), combinedData.ZzRot_Portal()).toMutableList()
 
         var curItem : MutableList<Int> = emptyList<Int>().toMutableList()

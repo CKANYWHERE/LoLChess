@@ -1,5 +1,6 @@
 package com.lolchess.strategy.view.activity
 
+import android.content.Context
 import android.content.res.Configuration
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
@@ -7,6 +8,8 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.AdapterView
+import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import kotlinx.android.synthetic.main.activity_main.*
@@ -19,6 +22,7 @@ import com.lolchess.strategy.R
 import com.google.android.material.navigation.NavigationView
 import com.lolchess.strategy.view.menu.*
 import kotlinx.android.synthetic.main.app_bar_main.*
+import kotlinx.android.synthetic.main.home_fragment.*
 
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -57,6 +61,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val fragment = Home.newInstance()
         replaceFragment(fragment)
         navigationView.setCheckedItem(R.id.action_home)
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean { //메뉴 생성과 초기화

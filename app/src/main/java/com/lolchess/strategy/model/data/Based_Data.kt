@@ -17,7 +17,7 @@ class Based_Data {
     }
 
     fun Needlessly_Large_Rod(): Based_items {
-        return Based_items("쓸데없이 큰 지팡이","주문력 +20%", R.drawable.needlesslyrod)
+        return Based_items("쓸데없이 큰 지팡이","주문력 +15%", R.drawable.needlesslyrod)
     }
 
     fun Negatron_Cloak(): Based_items {
@@ -29,7 +29,7 @@ class Based_Data {
     }
 
     fun Sparring_Gloves(): Based_items {
-        return Based_items("연습용 장갑","치명타 확률 +10%, 회피 확률 10%", R.drawable.glove)
+        return Based_items("연습용 장갑","치명타 확률 +10%, 회피 확률 10%", R.drawable.gloves)
     }
 
     fun Tear_of_the_Goddess(): Based_items {

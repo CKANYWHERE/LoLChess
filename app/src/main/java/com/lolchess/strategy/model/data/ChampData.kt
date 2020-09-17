@@ -9,575 +9,611 @@ import com.lolchess.strategy.model.Synergy
 
 class ChampData {
     //1코스트
-    fun getGraves(): Champ {
-        val synergy: List<Synergy> = listOf(SynergyData().getSpacePirate(), SynergyData().getBlaster())
-        val hp: List<Int> = listOf(650, 1170, 2106)
-        val attack: List<Double> = listOf(55.0, 99.0, 178.2)
+    fun getGaren(): Champ {
+        val synergy: List<Synergy> = listOf(SynergyData().getWarlord(), SynergyData().getVanguard())
+        val hp: List<Int> = listOf(600,1080,1944)
+        val attack: List<Int> = listOf(50, 90, 162)
 
-        return Champ("그레이브즈", R.drawable.graves,"연막탄"," 마나: 50/80", "그레이브즈가 공격 속도가 가장 높은 적을 향해 연막탄을 발사합니다. 연막탄은 적중 시 폭발하며 범위 내 모든 적은 마법 피해를 입고 수 초 동안 실명됩니다."
+        return Champ("가렌", R.drawable.garen,"심판"," 마나: 0/100", "가렌이 4초 동안 검을 들고 회전하며 주변 적들에게 마법 피해를 입힙니다. 그동안 받는 마법 피해가 80% 감소합니다."
 
-                , "실명 지속시간 : 3 / 4 / 6 초\n" + "피해량 : 150 / 200 / 400", 1, synergy, hp, attack, 0.55, 1, 40, 30, R.drawable.graves_skill,synergy.size)
+                , "총 피해량 : 450 / 675 / 1125", 1, synergy, hp, attack, 0.6, 1, 50, 35, R.drawable.garen_skill,synergy.size)
     }
 
-    fun getZoe(): Champ {
-        val synergy: List<Synergy> = listOf(SynergyData().getStarGuardian(), SynergyData().getSorcerer())
+    fun getNami(): Champ {
+        val synergy: List<Synergy> = listOf(SynergyData().getEnlightened(), SynergyData().getMage())
+        val hp: List<Int> = listOf(550, 990, 1782)
+        val attack: List<Int> = listOf(40, 72, 130)
+
+        return Champ("나미", R.drawable.nami,"물의 감옥", "마나: 40/80", "나미가 가장 가까이 있는 적을 물방울에 가두어 마법 피해를 입히고 수 초 동안 기절시킵니다."
+                , "피해량 : 225 / 325 / 450\n" + "기절 지속시간 : 2 / 2.5 / 3", 1, synergy, hp, attack,0.65, 3, 20, 20, R.drawable.nami_skill,synergy.size)
+    }
+
+
+
+    fun getDiana(): Champ {
+        val synergy: List<Synergy> = listOf(SynergyData().getMoonlight(), SynergyData().getAssassin())
         val hp: List<Int> = listOf(500, 900, 1620)
-        val attack: List<Double> = listOf(40.0, 72.0, 129.6)
+        val attack: List<Int> = listOf(50, 90, 162)
 
-        return Champ("조이", R.drawable.zoe,"헤롱헤롱쿨쿨방울", "마나: 40/80", "조이가 체력이 가장 높은 적에게 방울을 날려 피해를 입히고 기절시킵니다."
-                , "피해량 : 200 / 275 / 400\n" + "기절 지속시간 : 2 / 2.5 / 4", 1, synergy, hp, attack,0.70, 3, 20, 20, R.drawable.zoe_skill,synergy.size)
+        return Champ("다이애나", R.drawable.diana, "은빛 가호", "마나: 0/70","다이애나가 4초 동안 피해를 흡수하는 보호막을 얻고 자신의 주위를 도는 구체를 소환합니다. 구체는 적과 닿으면 폭발하며 마법 피해를 입히며, 마지막 구체가 폭발하면 보호막이 초기화됩니다."
+                , "구체 : 3 / 4 / 6 / 10\n" +
+                "피해량 : 70 / 80 / 90 / 100\n" +
+                "보호막 흡수량 : 200 / 300 / 450 / 650" , 1, synergy, hp, attack, 0.65, 1, 30, 20, R.drawable.diana_skill,synergy.size)
     }
 
-    fun getLeona(): Champ {
-        val synergy: List<Synergy> = listOf(SynergyData().getCybernetic(), SynergyData().getVanguard())
+    fun getElise(): Champ {
+        val synergy: List<Synergy> = listOf(SynergyData().getCultist(), SynergyData().getKeeper())
         val hp: List<Int> = listOf(600, 1080, 1944)
-        val attack: List<Double> = listOf(50.0, 90.0, 162.0)
+        val attack: List<Int> = listOf(45, 81, 146)
 
-        return Champ("레오나", R.drawable.leona,"전자 방어막","마나: 50/100",  "레오나가 4초 동안 받는 모든 피해를 감소시키는 방어막을 생성합니다."
+        return Champ("엘리스", R.drawable.elise, "거미 형태","마나: 0/75", "엘리스가 거미 형태로 변하여 최대 체력이 증가하고 기본 공격 시 체력을 회복합니다."
+                , "추가 체력 : 35% / 40% / 45%\n" +
+                "적중 시 체력 회복 : 40 / 80 / 120", 1, synergy, hp, attack, 0.65, 2, 30, 20, R.drawable.elise_skill,synergy.size)
 
-                , "피해량 감소 : 40 / 80 / 400", 1, synergy, hp, attack, 0.55, 1, 45, 30, R.drawable.leona_skill,synergy.size)
     }
 
     fun getFiora(): Champ {
-        val synergy: List<Synergy> = listOf(SynergyData().getCybernetic(), SynergyData().getBlademaster())
-        val hp: List<Int> = listOf(500, 900, 1620)
-        val attack: List<Double> = listOf(45.0, 81.0, 145.8)
+        val synergy: List<Synergy> = listOf(SynergyData().getEnlightened(), SynergyData().getDuelist())
+        val hp: List<Int> = listOf(600, 1080, 1944)
+        val attack: List<Int> = listOf(45, 81, 146)
 
-        return Champ("피오라", R.drawable.fiora, "응수", "마나: 0/85","피오라가 1.5초 동안 방어 태세를 갖추며 피해나 적 스킬에 면역 상태가 됩니다. 방어 태세가 끝나면 공격을 응수하여 근처 적에게 마법 피해를 입히고 수 초 동안 기절시킵니다."
-                , "기절 지속시간 : 1.5 / 1.5 / 3 초\n" + "피해량 : 200 / 300 / 450", 1, synergy, hp, attack, 1.0, 1, 30, 20, R.drawable.fiora_skill,synergy.size)
+        return Champ("피오라", R.drawable.fiora, "응수","마나: 0/85", "피오라가 1.5초 동안 방어 태세를 갖추며 피해나 적 스킬에 면역 상태가 됩니다. 방어 태세가 끝나면 공격해 근처 적에게 마법 피해를 입히고 기절시킵니다."
+                , "피해량 : 200 / 300 / 450\n" +
+                "기절 지속시간 : 1.5 / 2 / 3", 1, synergy, hp, attack, 0.75, 1, 35, 30, R.drawable.fiora_skill,synergy.size)
     }
 
-    fun getMalphite(): Champ {
-        val synergy: List<Synergy> = listOf(SynergyData().getRebel(), SynergyData().getBrawler())
+    fun getLissandra(): Champ {
+        val synergy: List<Synergy> = listOf(SynergyData().getMoonlight(), SynergyData().getDazzler())
+        val hp: List<Int> = listOf(550, 990, 1782)
+        val attack: List<Int> = listOf(40, 72, 130)
+
+        return Champ("리산드라", R.drawable.lissandra, "천 개의 단검", "마나: 0/50","리산드라가 대상을 향해 단검을 던져 처음 적중한 적에게 마법 피해를 입힙니다. 처음 대상에게 적중하거나 사거리 끝에 도달하면 단검이 폭발하며 근처 대상들에게 마법 피해를 입힙니다."
+                , "피해량 : 300 / 400 / 600 / 900\n" +
+                "이차 피해 : 150 / 200 / 300 / 450", 1, synergy, hp, attack, 0.6, 3, 20, 20, R.drawable.lissandra_skill,synergy.size)
+
+    }
+
+    fun getMaokai(): Champ {
+        val synergy: List<Synergy> = listOf(SynergyData().getElderwood(), SynergyData().getBrawler())
         val hp: List<Int> = listOf(700, 1260, 2268)
-        val attack: List<Double> = listOf(70.0, 126.0, 226.8)
+        val attack: List<Int> = listOf(55, 99, 178)
 
-        return Champ("말파이트", R.drawable.malphite, "에너지 방패","마나: 없음", "기본 지속 효과: 전투 시작 시 말파이트가 최대 체력에 비례하는 보호막을 얻습니다."
-                , "최대 체력 % : 40% / 45% / 70%", 1, synergy, hp, attack, 0.5, 1, 35, 30, R.drawable.malphite_skill,synergy.size)
+        return Champ("마오카이", R.drawable.maokai,"덤불 주먹", "마나: 0/75", "마오카이가 지면을 강타해 전방으로 충격파를 발사합니다. 적중한 적들은 마법 피해를 입고 3초 동안 공격 속도가 50% 감소합니다."
+                , "피해량 : 225 / 350 / 550", 1, synergy, hp, attack, 0.5, 1, 35, 20, R.drawable.maokai_skill,synergy.size)
 
     }
 
-    fun getZiggs(): Champ {
-        val synergy: List<Synergy> = listOf(SynergyData().getRebel(), SynergyData().getDemolitionist())
-        val hp: List<Int> = listOf(500, 900, 1620)
-        val attack: List<Double> = listOf(40.0, 72.0, 129.6)
+    fun getNidalee(): Champ {
+        val synergy: List<Synergy> = listOf(SynergyData().getWarlord(), SynergyData().getSharpShooter())
+        val hp: List<Int> = listOf(550, 990, 1782)
+        val attack: List<Int> = listOf(45, 81, 146)
 
-        return Champ("직스", R.drawable.ziggs, "펑!","마나: 0/40", "직스가 적에게 폭탄을 던져 마법 피해를 입힙니다."
-                , "피해량 : 300 / 400 / 600", 1, synergy, hp, attack, 0.7, 3, 20, 20, R.drawable.ziggs_skill,synergy.size)
+        return Champ("니달리", R.drawable.nidalee, "창 투척", "마나: 0/80","니달리가 가장 멀리 있는 적에게 창을 던져 기본 피해량+날아간 칸당 10%의 마법 피해를 입힙니다."
+                , "기본 피해량 : 225 / 350 / 600", 1, synergy, hp, attack, 0.7, 4, 30, 20, R.drawable.nidalee_skill,synergy.size)
     }
 
-    fun getJarvanIV(): Champ {
-        val synergy: List<Synergy> = listOf(SynergyData().getDarkStar(), SynergyData().getProtector())
+    fun getTahmKench(): Champ {
+        val synergy: List<Synergy> = listOf(SynergyData().getFortune(), SynergyData().getBrawler())
         val hp: List<Int> = listOf(700, 1260, 2268)
-        val attack: List<Double> = listOf(55.0, 99.0, 178.2)
+        val attack: List<Int> = listOf(85, 153, 275)
 
-        return Champ("자르반 4세", R.drawable.jarvanix, "영겁의 깃발", "마나: 60/100","자르반 4세가 근처에 깃발을 던져 6초 동안 주변 모든 아군의 공격 속도를 상승시킵니다."
-                , "추가 공격 속도 : 50% / 60% / 75%", 1, synergy, hp, attack, 0.6, 1, 40, 30, R.drawable.jarvanix_skill,synergy.size)
-
-    }
-
-    fun getPoppy(): Champ {
-        val synergy: List<Synergy> = listOf(SynergyData().getStarGuardian(), SynergyData().getVanguard())
-        val hp: List<Int> = listOf(650, 1170, 2106)
-        val attack: List<Double> = listOf(50.0, 90.0, 162.0)
-
-        return Champ("뽀삐", R.drawable.poppy,"방패 던지기", "마나: 50/90", "뽀삐가 가장 멀리 있는 적에게 방패를 던져 피해를 입힙니다. 적에게 적중한 방패는 돌아오며 뽀삐에게 보호막을 씌웁니다."
-                , "피해량 : 100 / 150 / 225\n" + "보호막 흡수량 : 200 / 300 / 450", 1, synergy, hp, attack, 0.55, 1, 45, 30, R.drawable.poppy_skill,synergy.size)
-
-    }
-
-    fun getXayah(): Champ {
-        val synergy: List<Synergy> = listOf(SynergyData().getCelestial(), SynergyData().getBlademaster())
-        val hp: List<Int> = listOf(500, 900, 1620)
-        val attack: List<Double> = listOf(50.0, 90.0, 162.0)
-
-        return Champ("자야", R.drawable.xayah, "죽음의 깃", "마나: 0/야60","자야가 칼날 폭풍을 일으켜 8초 동안 공격 속도가 증가합니다."
-                , "공격 속도 : 100% / 125% / 150%\n" + "지속 시간 : 8 / 8 / 8", 1, synergy, hp, attack, 0.9, 3, 20, 20, R.drawable.xayah_skill,synergy.size)
+        return Champ("탐켄치", R.drawable.tahmkench, "두꺼운 피부", "마나: 없음","탐 켄치가 받는 모든 피해량이 감소합니다."
+                , "피해량 감소 : 15 / 25 / 75", 1, synergy, hp, attack, 0.7, 3, 20, 20, R.drawable.twistedfate_skill,synergy.size)
     }
 
     fun getTwistedFate(): Champ {
-        val synergy: List<Synergy> = listOf(SynergyData().getChrono(), SynergyData().getSorcerer())
+        val synergy: List<Synergy> = listOf(SynergyData().getCultist(), SynergyData().getMage())
         val hp: List<Int> = listOf(550, 990, 1782)
-        val attack: List<Double> = listOf(40.0, 72.0, 129.6)
+        val attack: List<Int> = listOf(45, 81, 146)
 
-        return Champ("트위스티드 페이트", R.drawable.twistedfate, "와일드 카드", "마나: 0/75","트위스티드 페이트가 카드 세 장을 원뿔 형태로 던집니다. 카드는 적을 통과하며 마법 피해를 입힙니다."
-                , "피해량 : 200 / 300 / 450", 1, synergy, hp, attack, 0.7, 3, 20, 20, R.drawable.twistedfate_skill,synergy.size)
+        return Champ("트위스티드 페이트", R.drawable.twistedfate, "와일드 카드", "마나: 0/70","트위스티드 페이트가 카드 세 장을 원뿔 형태로 던집니다. 카드는 적을 통과하며 마법 피해를 입힙니다."
+                , "피해량 : 250 / 350 / 475", 1, synergy, hp, attack, 0.65, 3, 20, 20, R.drawable.twistedfate_skill,synergy.size)
     }
 
-    fun getCaitlyn(): Champ {
-        val synergy: List<Synergy> = listOf(SynergyData().getChrono(), SynergyData().getSniper())
+    fun getVayne(): Champ {
+        val synergy: List<Synergy> = listOf(SynergyData().getDusk(), SynergyData().getSharpShooter())
         val hp: List<Int> = listOf(500, 900, 1620)
-        val attack: List<Double> = listOf(45.0, 81.0, 145.8)
+        val attack: List<Int> = listOf(40, 72, 130)
 
-        return Champ("케이틀린", R.drawable.caitlyn, "비장의 한 발", "마나: 0/125","케이틀린이 가장 멀리 있는 적을 향해 강력한 총알을 발사합니다. 총알은 처음 적중한 적에게 마법 피해를 입힙니다."
-                , "피해량 : 750 / 1500 / 2250", 1, synergy, hp, attack, 0.75, 5, 20, 20, R.drawable.caitlyn_skill,synergy.size)
-    }
-
-    fun getIllaoi(): Champ {
-        val synergy: List<Synergy> = listOf(SynergyData().getBattlecast(), SynergyData().getBrawler())
-        val hp: List<Int> = listOf(700, 1260, 2268)
-        val attack: List<Double> = listOf(45.0, 81.0, 145.8)
-
-        return Champ("일라오이", R.drawable.illaoi, "촉수 강타", "마나: 40/80","일라오이가 전방에 촉수를 내려쳐 피해를 입히고, 적중한 적으로부터 방어력과 마법 저항력을 6초간 훔칩니다."
-                , "피해량 : 125 / 200 / 325\n" + "훔치는 방어력 및 마법 저항력 : 30/ 40/ 60%", 1, synergy, hp, attack, 0.7, 1, 40, 30, R.drawable.illaoi_skill,synergy.size)
+        return Champ("베인", R.drawable.vayne, "은화살", "마나: 없음","기본 지속 효과: 베인이 같은 대상을 3회 기본 공격할 때마다 추가 고정 피해를 입힙니다."
+                , "추가 고정 피해 : 40 / 75 / 125", 1, synergy, hp, attack, 0.8, 1, 20, 20, R.drawable.vayne_skill,synergy.size)
 
     }
 
-    fun getNocturne(): Champ {
-        val synergy: List<Synergy> = listOf(SynergyData().getBattlecast(), SynergyData().getInfiltrator())
-        val hp: List<Int> = listOf(500, 900, 1620)
-        val attack: List<Double> = listOf(50.0, 90.0, 162.0)
+    fun getWukong(): Champ {
+        val synergy: List<Synergy> = listOf(SynergyData().getDivine(), SynergyData().getVanguard())
+        val hp: List<Int> = listOf(650, 1170, 2106)
+        val attack: List<Int> = listOf(55, 99, 178)
 
-        return Champ("녹턴", R.drawable.nocturne, "말할 수 없는 공포","마나: 40/80",  "녹턴은 대상을 위협하여 공포로 2초간 기절시킵니다. 이 시간 동안 또는 녹턴이 죽을 때 까지 피해를 입힙니다."
-                , "피해량 : 200 / 250 / 400\n" + "기절 시간 : 2 / 2.5 / 4초", 1, synergy, hp, attack, 0.75, 1, 20, 20, R.drawable.nocturne_skill,synergy.size)
-
-    }
-
-    //2코스트
-    fun getKogMaw(): Champ {
-        val synergy: List<Synergy> = listOf(SynergyData().getBattlecast(), SynergyData().getBlaster())
-        val hp: List<Int> = listOf(550, 990, 1782)
-        val attack: List<Double> = listOf(50.0, 90.0, 162.0)
-
-        return Champ("코그모", R.drawable.kogmaw, "폭격","마나: 0/30", "코그모는 3초 동안 무한한 사거리와 80%의 공격속도를 얻으며, 공격 시 적 최대 체력의 일정% 만큼 마법 피해를 입힙니다."
-                , "피해량 : 2 / 4 / 8%", 2, synergy, hp, attack, 0.7, 1, 20, 20, R.drawable.kogmaw_skill,synergy.size)
+        return Champ("오공", R.drawable.wukong, "파쇄격","마나: 0/50",  "오공이 대상에게 여의봉을 휘둘러 공격력에 비례한 물리 피해를 입히고 수 초 동안 기절시킵니다."
+                , "공격력 % : 225% / 250% / 275%\n" +
+                "기절 지속시간 : 1.5 / 2 / 3", 1, synergy, hp, attack, 0.65, 1, 40, 30, R.drawable.wukong_skill,synergy.size)
 
     }
 
     fun getYasuo(): Champ {
-        val synergy: List<Synergy> = listOf(SynergyData().getRebel(), SynergyData().getBlademaster())
-        val hp: List<Int> = listOf(700, 1260, 2268)
-        val attack: List<Double> = listOf(50.0, 90.0, 162.0)
+        val synergy: List<Synergy> = listOf(SynergyData().getExile(), SynergyData().getDuelist())
+        val hp: List<Int> = listOf(550, 990, 1782)
+        val attack: List<Int> = listOf(50, 90, 162)
 
-        return Champ("야스오", R.drawable.yasuo, "최후의 숨결","마나: 0/80", "야스오가 기본 공격 사거리 +2칸 내에 있는 적에게 순식간에 다가간 후 1초 동안 공중에 띄워 붙들어 두고 추가 공격을 해 기본 공격 시의 피해를 입힙니다. 이때 적중 시 효과가 적용됩니다."
-                , "추가 공격 : 4 / 5 / 6", 2, synergy, hp, attack, 0.75, 1, 30, 20, R.drawable.yasuo_skill,synergy.size)
-    }
-
-    fun getShen(): Champ {
-        val synergy: List<Synergy> = listOf(SynergyData().getChrono(), SynergyData().getBlademaster())
-        val hp: List<Int> = listOf(800, 1440, 2592)
-        val attack: List<Double> = listOf(60.0, 108.0, 194.4)
-
-        return Champ("쉔", R.drawable.shen, "의지의 결계", "100/150","쉔이 주변에 수 초 동안 지속되는 결계를 생성합니다. 결계 안의 아군은 모든 기본 공격을 회피합니다. 스킬이 활성화된 동안 쉔의 마법 저항력이 증가합니다."
-                , "지속시간 : 2.5 / 3 / 5\n" + "추가 마법 저항력 : 15 / 30 / 45", 2, synergy, hp, attack, 0.7, 1, 45, 35, R.drawable.shen_skill,synergy.size)
+        return Champ("야스오", R.drawable.yasuo, "강철의 일격","마나: 0/45",  "야스오가 전방 2칸으로 검을 내질러 공격력에 비례하는 피해를 입힙니다. 현재 위치에서 대상 두 명을 타격하지 못할 경우 일단 타격이 가능한 위치로 돌진합니다."
+                , "공격력 % : 160% / 190% / 225%", 1, synergy, hp, attack, 0.7, 1, 30, 20, R.drawable.yasuo_skill,synergy.size)
 
     }
 
-    fun getBlitzcrank(): Champ {
-        val synergy: List<Synergy> = listOf(SynergyData().getChrono(), SynergyData().getBrawler())
-        val hp: List<Int> = listOf(650, 1170, 2106)
-        val attack: List<Double> = listOf(55.0, 99.0, 178.2)
-
-        return Champ("블리츠크랭크", R.drawable.blitzcrank, "로켓 손", "마나: 125/125","블리츠크랭크가 가장 멀리 있는 적을 당겨 마법 피해를 입히고 2.5초 동안 기절시킵니다. 당긴 후 다음 공격은 적을 1초 동안 공중으로 띄워 올립니다. 아군은 블리츠크랭크가 당긴 적이 사거리 안에 있을 경우 우선적으로 공격합니다."
-                , "피해량 : 200 / 350 / 1337", 2, synergy, hp, attack, 0.5, 1, 60, 35, R.drawable.blitzcrank_skill,synergy.size)
-
-    }
-
-    fun getLucian(): Champ {
-        val synergy: List<Synergy> = listOf(SynergyData().getCybernetic(), SynergyData().getBlaster())
-        val hp: List<Int> = listOf(500, 900, 1620)
-        val attack: List<Double> = listOf(50.0, 90.0, 162.0)
-
-        return Champ("루시안", R.drawable.lucian, "끈질긴 추격", "마나: 0/30","루시안이 현재 대상에서 먼 곳으로 돌진하며 기본 공격 후 이어서 추가로 공격해 마법 피해를 입힙니다."
-                , "스킬 피해량 : 175 / 250 / 600", 2, synergy, hp, attack, 0.7, 4, 25, 20, R.drawable.lucian_skill,synergy.size)
-    }
-
-    fun getMordekaiser(): Champ {
-        val synergy: List<Synergy> = listOf(SynergyData().getDarkStar(), SynergyData().getVanguard())
-        val hp: List<Int> = listOf(700, 1260, 2268)
-        val attack: List<Double> = listOf(55.0, 99.0, 178.2)
-
-        return Champ("모데카이저", R.drawable.mordekaiser, "불멸", "마나: 0/90","모데카이저가 피해를 흡수하는 보호막을 얻습니다. 보호막이 유지되는 동안 모데카이저는 주변 모든 적에게 초당 마법 피해를 입힙니다."
-                , "보호막 흡수량 : 350 / 500 / 850\n" + "초당 피해량 : 75 / 100 / 200", 2, synergy, hp, attack, 0.6, 1, 50, 35, R.drawable.mordekaiser_skill,synergy.size)
-
-    }
-
-    fun getRakan(): Champ {
-        val synergy: List<Synergy> = listOf(SynergyData().getCelestial(), SynergyData().getProtector())
-        val hp: List<Int> = listOf(650, 1170, 2106)
-        val attack: List<Double> = listOf(45.0, 81.0, 145.8)
-
-        return Champ("라칸", R.drawable.rakan, "화려한 등장", "마나: 50/100","라칸이 기본 공격 사거리 +1칸 내에 있는 적 중 가장 멀리 있는 적에게 돌진 후 공중으로 도약해 근처 모든 적을 띄워 올리고 마법 피해를 입힙니다."
-                , "피해량 : 175 / 275 / 400\n" + "띄워올리기 지속시간 : 1.5 / 1.5 / 1.5", 2, synergy, hp, attack, 0.7, 2, 45, 35, R.drawable.rakan_skill,synergy.size)
-
-    }
-
-
-    fun getXinZhao(): Champ {
-        val synergy: List<Synergy> = listOf(SynergyData().getCelestial(), SynergyData().getProtector())
-        val hp: List<Int> = listOf(650, 1170, 2106)
-        val attack: List<Double> = listOf(60.0, 108.0, 194.4)
-
-        return Champ("신 짜오", R.drawable.xinzhao, "삼조격", "마나: 0/60","신 짜오가 대상을 세 번 빠르게 타격해 기본 공격 시의 피해를 입히고 적중 시 효과를 적용합니다. 세 번째 공격은 추가 마법 피해를 입히고 대상을 1.5초 동안 공중에 띄워 올립니다."
-                , "추가 피해량 : 200 / 275 / 375", 2, synergy, hp, attack, 0.7, 1, 45, 35, R.drawable.xinzhao_skill,synergy.size)
-
-    }
-
-    fun getDarius(): Champ {
-        val synergy: List<Synergy> = listOf(SynergyData().getSpacePirate(), SynergyData().getManaReaver())
-        val hp: List<Int> = listOf(800, 1440, 2592)
-        val attack: List<Double> = listOf(60.0, 108.0, 194.4)
-
-        return Champ("다리우스", R.drawable.darius, "행성 파괴자의 단두대", "마나: 0/50","다리우스가 적을 내려찍으며 마법 피해를 입힙니다. 적을 처치하면 곧바로 스킬을 다시 사용합니다. 체력이 50%보다 낮은 대상은 두 배의 피해를 입습니다."
-                , "피해량 : 400 / 550 / 888", 2, synergy, hp, attack, 0.65, 1, 40, 30, R.drawable.darius_skill,synergy.size)
-    }
-
+    //2코스트
     fun getAnnie(): Champ {
-        val synergy: List<Synergy> = listOf(SynergyData().getMechPilot(), SynergyData().getSorcerer())
-        val hp: List<Int> = listOf(750, 1260, 2268)
-        val attack: List<Double> = listOf(40.0, 72.0, 129.6)
+        val synergy: List<Synergy> = listOf(SynergyData().getFortune(), SynergyData().getMage())
+        val hp: List<Int> = listOf(750 / 1350 / 2430)
+        val attack: List<Int> = listOf(45 / 81 / 146)
 
-        return Champ("애니", R.drawable.annie, "은하 방패-폭발", "마나: 70/140","애니가 피해를 흡수하는 보호막을 얻고 원뿔 형태의 화염을 내뿜어 적중한 대상에게 마법 피해를 입힙니다."
-                , "피해량 : 300 / 400 / 700\n" + "보호막 흡수량 : 400 / 500 / 800", 2, synergy, hp, attack, 0.65, 2, 40, 35, R.drawable.annie_skill,synergy.size)
+        return Champ("애니", R.drawable.annie, "폭발 보호막","마나: 0/65", "애니가 원뿔 형태의 화염을 내뿜어 전방의 모든 적에게 마법 피해를 입히고 8초 동안 피해를 흡수하는 보호막을 얻습니다."
+                , "피해량 : 200 / 300 / 450\n" +
+                "보호막 흡수량 : 400 / 600 / 900", 2, synergy, hp, attack, 0.6, 2, 40, 40, R.drawable.annie_skill,synergy.size)
 
     }
 
-    fun getAhri(): Champ {
-        val synergy: List<Synergy> = listOf(SynergyData().getStarGuardian(), SynergyData().getSorcerer())
-        val hp: List<Int> = listOf(600, 1080, 1944)
-        val attack: List<Double> = listOf(45.0, 81.0, 145.8)
+    fun getAphelios(): Champ {
+        val synergy: List<Synergy> = listOf(SynergyData().getMoonlight(), SynergyData().getHunter())
+        val hp: List<Int> = listOf(500, 900, 1620)
+        val attack: List<Int> = listOf(45, 81, 146)
 
-        return Champ("아리", R.drawable.ahri, "현혹의 구슬","마나: 0/60", "아리가 일직선으로 구슬을 던집니다. 구슬은 닿는 모든 적에게 마법 피해를 입힙니다. 구슬은 아리에게 되돌아오며 이때 닿는 모든 적에게 고정 피해를 입힙니다."
-                , "피해량 : 175 / 250 / 425", 2, synergy, hp, attack, 0.75, 3, 20, 20, R.drawable.ahri_skill,synergy.size)
+        return Champ("아펠리오스", R.drawable.aphelios, "파수탑","마나: 120/180", "아펠리오스가 수 초 동안 유지되는 포탑을 소환합니다. 아펠리오스의 의지가 담긴 포탑은 아펠리오스와 똑같이 공격하고 피해를 입히며, 아펠리오스가 죽으면 함께 파괴됩니다."
+                , "지속시간 : 6 / 7 / 8 / 11", 2, synergy, hp, attack, 0.7, 4, 20, 20, R.drawable.aphelios_skill,synergy.size)
     }
 
-    fun getNautilus(): Champ {
-        val synergy: List<Synergy> = listOf(SynergyData().getAstro(), SynergyData().getVanguard())
+    fun getHecarim(): Champ {
+        val synergy: List<Synergy> = listOf(SynergyData().getElderwood(), SynergyData().getVanguard())
         val hp: List<Int> = listOf(750, 1350, 2430)
-        val attack: List<Double> = listOf(60.0, 108.0, 194.4)
+        val attack: List<Int> = listOf(55, 99, 178)
 
-        return Champ("노틸러스", R.drawable.nautilus, "충격 분화구", "마나: 50/120","노틸러스가 대상 아래의 땅을 폭발시켜 공중으로 띄워 기절시키고 마법 피해를 입힙니다. 대상에 인접한 적들도 공중에 띄워 절반의 시간 동안 기절시키고 절반의 마법 피해를 입힙니다."
-                , "기절 시간 : 3 / 3 / 6초\n" + "마법 피해량 : 100 / 200 / 500", 2, synergy, hp, attack, 0.65, 1, 50, 35, R.drawable.nautilus_skill,synergy.size)
+        return Champ("헤카림", R.drawable.hecarim, "생명의 영혼", "마나: 0/120","헤카림이 3초 동안 주변에 오오라를 생성해 영역 내 적에게 마법 피해를 입히고, 자신의 체력을 회복합니다."
+                , "피해량 : 250 / 400 / 600\n" +
+                "회복량 : 250 / 350 / 500", 2, synergy, hp, attack, 0.55, 1, 45, 30, R.drawable.hecarim_skill,synergy.size)
+
+    }
+
+    fun getJanna(): Champ {
+        val synergy: List<Synergy> = listOf(SynergyData().getEnlightened(), SynergyData().getMystic())
+        val hp: List<Int> = listOf(550, 990, 1782)
+        val attack: List<Int> = listOf(40, 72, 130)
+
+        return Champ("잔나", R.drawable.janna, "폭풍의 눈", "마나: 30/60","잔나가 체력이 가장 낮은 아군들에게 4초 동안 피해를 흡수하는 보호막을 부여합니다. 지속시간 동안 해당 아군은 추가 공격력을 얻습니다."
+                , "아군 수 : 2 / 3 / 4\n" +
+                "보호막 흡수량 : 250 / 300 / 400\n" +
+                "추가 공격력 : 20 / 30 / 60", 2, synergy, hp, attack, 0.6, 4, 20, 20, R.drawable.janna_skill,synergy.size)
+
+    }
+
+    fun getJarvanIV(): Champ {
+        val synergy: List<Synergy> = listOf(SynergyData().getWarlord(), SynergyData().getKeeper())
+        val hp: List<Int> = listOf(600, 1080, 1944)
+        val attack: List<Int> = listOf(60, 108, 194)
+
+        return Champ("자르반 4세", R.drawable.jarvaniv, "용의 일격", "마나: 60/120","자르반 4세가 가장 멀리 있는 적 근처에 깃발을 던진 후, 창을 뻗으며 깃발 쪽으로 돌진합니다. 경로 상에 있는 모든 적은 마법 피해를 입으며 공중에 뜨고 2초 동안 기절합니다."
+                , "스킬 피해량 : 175 / 250 / 500", 2, synergy, hp, attack, 0.6, 1, 45, 30, R.drawable.jarvaniv_skill,synergy.size)
+    }
+
+    fun getJax(): Champ {
+        val synergy: List<Synergy> = listOf(SynergyData().getDivine(), SynergyData().getDuelist())
+        val hp: List<Int> = listOf(750, 1350, 2430)
+        val attack: List<Int> = listOf(60, 108, 194)
+
+        return Champ("잭스", R.drawable.jax, "반격", "마나: 50/125","잭스가 2초 동안 모든 공격을 회피한 후, 주변 적들을 후려쳐 마법 피해를 입히고 1.5초 동안 기절시킵니다."
+                , "피해량 : 150 / 250 / 450", 2, synergy, hp, attack, 0.65, 1, 40, 30, R.drawable.jax_skill,synergy.size)
+
+    }
+
+    fun getLulu(): Champ {
+        val synergy: List<Synergy> = listOf(SynergyData().getElderwood(), SynergyData().getMage())
+        val hp: List<Int> = listOf(500, 900, 1620)
+        val attack: List<Int> = listOf(50, 90, 162)
+
+        return Champ("룰루", R.drawable.lulu, "급성장", "마나: 60/120","룰루가 체력이 낮은 아군 하나를 커지게 해 추가 체력을 부여하고 주변 적들을 1.5초 동안 공중으로 띄워 올립니다."
+                , "추가 체력 : 400 / 600 / 950", 2, synergy, hp, attack, 0.6, 2, 45, 35, R.drawable.lulu_skill,synergy.size)
+
+    }
+
+
+    fun getPyke(): Champ {
+        val synergy: List<Synergy> = listOf(SynergyData().getCultist(), SynergyData().getAssassin())
+        val hp: List<Int> = listOf(700, 1260, 2268)
+        val attack: List<Int> = listOf(50, 90, 162)
+
+        return Champ("파이크", R.drawable.pyke, "망자의 물살", "마나: 75/125","파이크가 자신이 있던 위치에 유령을 남긴 후 가장 멀리 있는 적 뒤로 돌진합니다. 1초 후 유령이 파이크에게 되돌아오며 경로상의 모든 적에게 마법 피해를 입히고 기절시킵니다."
+                , "추가 피해량 : 200 / 275 / 375", 2, synergy, hp, attack, 0.6, 1, 50, 30, R.drawable.pyke_skill,synergy.size)
+
+    }
+
+    fun getSylas(): Champ {
+        val synergy: List<Synergy> = listOf(SynergyData().getMoonlight(), SynergyData().getBrawler())
+        val hp: List<Int> = listOf(700, 1260, 2268)
+        val attack: List<Int> = listOf(70, 126, 227)
+
+        return Champ("사일러스", R.drawable.sylas, "사슬 후려치기", "마나: 30/60","사일러스가 일직선상의 3칸에 사슬을 후려쳐 적중한 모든 적에게 마법 피해를 입히고 다음 스킬의 비용을 33% 증가시킵니다."
+                , "피해량 : 250 / 400 / 600 / 1000", 2, synergy, hp, attack, 0.6, 1, 40, 80, R.drawable.sylas_skill,synergy.size)
+    }
+
+    fun getTeemo(): Champ {
+        val synergy: List<Synergy> = listOf(SynergyData().getSpirit(), SynergyData().getSharpShooter())
+        val hp: List<Int> = listOf(500, 900, 1620)
+        val attack: List<Int> = listOf(55, 99, 178)
+
+        return Champ("티모", R.drawable.teemo, "포자 구름 다트", "마나: 0/60","티모가 공격 속도가 가장 높은 적에게 다트를 날립니다. 다트는 폭발하며 포자 구름을 생성해 주변 적들을 중독시킵니다. 중독된 적들은 수 초 동안 마법 피해를 입고 실명합니다."
+                , "피해량 : 200 / 300 / 600\n" +
+                "지속시간 : 2.5 / 3 / 4.5", 2, synergy, hp, attack, 0.7, 2, 20, 20, R.drawable.teemo_skill,synergy.size)
+
+    }
+    ////여기부터
+    fun getThresh(): Champ {
+        val synergy: List<Synergy> = listOf(SynergyData().getDusk(), SynergyData().getVanguard())
+        val hp: List<Int> = listOf(700,1260,2268)
+        val attack: List<Int> = listOf(60, 108, 194)
+
+        return Champ("쓰레쉬", R.drawable.thresh, "유령 랜턴","마나: 50/100", "쓰레쉬가 가장 체력이 낮은 아군에게 랜턴을 던져 해당 아군 및 주변의 모든 아군에게 4초 동안 피해를 흡수하는 보호막을 씌웁니다."
+                , "보호막 흡수량 : 250 / 450 / 750", 2, synergy, hp, attack, 0.55, 2, 80, 20, R.drawable.thresh_skill,synergy.size)
+    }
+
+    fun getVi(): Champ {
+        val synergy: List<Synergy> = listOf(SynergyData().getWarlord(), SynergyData().getBrawler())
+        val hp: List<Int> = listOf(700, 1260, 2268)
+        val attack: List<Int> = listOf(65, 117, 211)
+
+        return Champ("바이", R.drawable.vi, "찌그러뜨리기", "마나: 0/60","바이의 공격이 대상 및 뒤의 원뿔 영역의 모든 적에게 마법 피해를 입히고 6초 동안 방어력을 감소시킵니다."
+                , "피해량 : 250 / 400 / 600\n" +
+                "방어력 감소 : 50% / 75% / 100%", 2, synergy, hp, attack, 0.6, 1, 40, 30, R.drawable.vi_skill,synergy.size)
 
     }
 
     fun getZed(): Champ {
-        val synergy: List<Synergy> = listOf(SynergyData().getRebel(), SynergyData().getInfiltrator())
-        val hp: List<Int> = listOf(650, 1170, 2106)
-        val attack: List<Double> = listOf(55.0, 99.0, 178.2)
+        val synergy: List<Synergy> = listOf(SynergyData().getNinja(), SynergyData().getShade())
+        val hp: List<Int> = listOf(600, 1080, 1944)
+        val attack: List<Int> = listOf(55, 99, 178)
 
         return Champ("제드", R.drawable.zed,  "약자 멸시", "마나: 없음","기본 지속 효과: 세 번째 공격마다 제드가 추가 마법 피해를 입히고 대상의 현재 공격력을 훔칩니다."
-                , "훔친 공격력 : 20 / 33 / 50%\n" + "피해량 : 50 / 90 / 150", 2, synergy, hp, attack, 0.75, 1, 25, 20, R.drawable.zed_skill,synergy.size)
+                , "훔친 공격력 : 20% / 30% / 40%\n" +
+                "피해량 : 25 / 50 / 75", 2, synergy, hp, attack, 0.75, 1, 20, 20, R.drawable.zed_skill,synergy.size)
 
     }
 
-    //3코스트트
-    fun getNeeko(): Champ {
-        val synergy: List<Synergy> = listOf(SynergyData().getStarGuardian(), SynergyData().getProtector())
-        val hp: List<Int> = listOf(850, 1530, 2754)
-        val attack: List<Double> = listOf(50.0, 90.0, 162.0)
+    //3코스트
 
-        return Champ("니코", R.drawable.neeko, "만개", "마나: 35/110","니코가 공중으로 도약한 후 지면을 강타하며 주변 모든 적에게 마법 피해를 입히고 기절시킵니다."
-                , "피해량 : 150 / 250 / 450\n" + "기절 지속시간 : 1.5 / 2 / 2.5", 3, synergy, hp, attack, 0.65, 2, 50, 40, R.drawable.neeko_skill,synergy.size)
-
-    }
-
-    fun getRumble(): Champ {
-        val synergy: List<Synergy> = listOf(SynergyData().getMechPilot(), SynergyData().getDemolitionist())
-        val hp: List<Int> = listOf(900, 1440, 2592)
-        val attack: List<Double> = listOf(50.0, 90.0, 162.0)
-
-        return Champ("럼블", R.drawable.rumble, "화염방사기", "마나: 0/50","럼블이 3초 동안 원뿔 형태로 화염을 내뿜어 범위 내 적들에게 마법 피해를 입히고 5초 동안 체력 회복 효과를 80% 감소시킵니다."
-                , "피해량 : 500 / 750 / 1650", 3, synergy, hp, attack, 0.7, 1, 45, 40, R.drawable.rumble_skill,synergy.size)
-
-    }
-
-    fun getShaco(): Champ {
-        val synergy: List<Synergy> = listOf(SynergyData().getDarkStar(), SynergyData().getInfiltrator())
-        val hp: List<Int> = listOf(650, 1170, 2106)
-        val attack: List<Double> = listOf(75.0, 126.0, 226.8)
-
-        return Champ("샤코", R.drawable.shaco,  "속임수","마나: 30/70", "샤코가 순간이동해 대상을 암습합니다. 이 공격에는 항상 치명타가 적용되며, 공격력에 비례하는 피해를 입힙니다."
-                , "공격력 : 250% / 275% / 300%", 3, synergy, hp, attack, 0.8, 1, 20, 20, R.drawable.shaco_skill,synergy.size)
-    }
-
-    fun getVi(): Champ {
-        val synergy: List<Synergy> = listOf(SynergyData().getCybernetic(), SynergyData().getBrawler())
-        val hp: List<Int> = listOf(700, 1260, 2268)
-        val attack: List<Double> = listOf(60.0, 108.0, 194.4)
-
-        return Champ("바이", R.drawable.vi,  "기동타격","마나: 70/140", "바이가 가장 멀리 있는 적에게 돌진합니다. 돌진 중 경로상에 있는 모든 적을 밀어내고 마법 피해를 입힙니다. 대상에 도달하면 대상에게 마법 피해를 입히고 공중으로 띄워 올립니다."
-                , "1차피해 : 350 / 550 / 1350\n" + "2차피해 : 150 / 200 / 600\n" + "기절 지속시간 : 2 / 2.5 / 3", 3, synergy, hp, attack, 0.65, 1, 45, 40, R.drawable.vi_skill,synergy.size)
-
-    }
-
-    fun getSyndra(): Champ {
-        val synergy: List<Synergy> = listOf(SynergyData().getStarGuardian(), SynergyData().getSorcerer())
-        val hp: List<Int> = listOf(600, 1080, 1944)
-        val attack: List<Double> = listOf(45.0, 81.0, 145.8)
-
-        return Champ("신드라", R.drawable.syndra,  "풀려난 힘", "마나: 0/50","신드라가 전장에 있는 모든 구체뿐만 아니라 3개의 구체를 추가로 생성해 체력이 가장 높은 적에게 날려 하나당 마법 피해를 입힙니다."
-                , "피해량 : 100 / 140 / 220", 3, synergy, hp, attack, 0.65, 4, 20, 20, R.drawable.syndra_skill,synergy.size)
-    }
-
-    fun getMasterYi(): Champ {
-        val synergy: List<Synergy> = listOf(SynergyData().getRebel(), SynergyData().getBlademaster())
+    fun getNunu(): Champ {
+        val synergy: List<Synergy> = listOf(SynergyData().getElderwood(), SynergyData().getBrawler())
         val hp: List<Int> = listOf(750, 1350, 2430)
-        val attack: List<Double> = listOf(50.0, 90.0, 162.0)
+        val attack: List<Int> = listOf(65, 117, 211)
 
-        return Champ("마스터 이", R.drawable.masteryi, "선택받은 자", "마나: 0/55","5초 동안 마스터 이의 이동 속도가 대폭 증가하고 매초 최대 체력에 비례하여 회복합니다. 또한 기본 공격 시 추가 고정 피해를 입힙니다."
-                , "추가 고정 피해 : 75 / 95 / 145\n" +
-                "회복량 : 12%", 3, synergy, hp, attack, 0.85, 1, 50, 35, R.drawable.masteryi_skill,synergy.size)
+        return Champ("누누와 월럼프", R.drawable.nunu,"잡아먹기","마나: 0/85",  "윌럼프가 대상을 물어뜯어 마법 피해를 입힙니다. 이때 만약 대상의 체력이 윌럼프보다 적으면 50%의 추가 피해를 입히며 고정 피해로 전환됩니다."
+
+                , "피해량 : 450 / 650 / 1300", 3, synergy, hp, attack, 0.55, 1, 50, 30, R.drawable.nunu_skill,synergy.size)
     }
 
-    fun getKarma(): Champ {
-        val synergy: List<Synergy> = listOf(SynergyData().getDarkStar(), SynergyData().getMystic())
+    fun getAkali(): Champ {
+        val synergy: List<Synergy> = listOf(SynergyData().getNinja(), SynergyData().getAssassin())
+        val hp: List<Int> = listOf(650, 1170, 2106)
+        val attack: List<Int> = listOf(55, 99, 178)
+
+        return Champ("아칼리", R.drawable.akali, "오연투척검", "마나: 0/20","아칼리가 대상에게 단검을 던져 마법 피해를 입힙니다."
+                , "피해량 : 150 / 225 / 400", 3, synergy, hp, attack, 0.75, 1, 20, 20, R.drawable.akali_skill,synergy.size)
+
+    }
+
+    fun getEvelynn(): Champ {
+        val synergy: List<Synergy> = listOf(SynergyData().getCultist(), SynergyData().getShade())
         val hp: List<Int> = listOf(600, 1080, 1944)
-        val attack: List<Double> = listOf(50.0, 90.0, 162.0)
+        val attack: List<Int> = listOf(70, 126, 227)
 
-        return Champ("카르마", R.drawable.karma, "고무", "마나: 75/100","전투 시작 시 카르마가 자신과 가장 가까운 아군을 연결합니다. 카르마가 4초 동안 피해를 흡수하는 보호막을 연결된 아군(연결된 아군이 사망할 경우 무작위 아군 하나)에게 부여합니다. 보호막이 유지되는 동안 해당 아군은 추가 공격 속도를 얻습니다."
-                , "보호막 흡수량 : 300 / 450 / 900\n" +
-                "공격 속도 : 70% / 90% / 150%", 3, synergy, hp, attack, 0.65, 3, 20, 20, R.drawable.karma_skill,synergy.size)
-    }
-
-    fun getJayce() : Champ{
-        val synergy : List<Synergy> = listOf(SynergyData().getSpacePirate(),SynergyData().getVanguard())
-        val hp : List<Int> = listOf(800, 1440, 2592)
-        val attack : List<Double> = listOf(60.0, 108.0, 194.4)
-
-        return Champ("제이스",R.drawable.jayce, "하늘로!","마나: 0/80","제이스가 공중으로 도약해 망치를 내려찍으며 주변 적들에게 마법 피해를 입힙니다."
-                ,"피해량 : 450 / 600 / 1200",3,synergy,hp,attack,0.7,1,40,30, R.drawable.jayce_skill,synergy.size)
+        return Champ("이블린", R.drawable.evelynn, "최후의 포옹", "마나: 0/60","이블린이 근처의 적 유닛 최대 3명에게 마법 피해를 입히고 순간이동해 멀어집니다. 대상의 체력이 50% 이하일 경우 3배의 피해를 입힙니다."
+                , "피해량 : 350 / 500 / 900\n" +
+                "피해량 증가율 : 3 / 3 / 3", 3, synergy, hp, attack, 0.7, 1, 20, 20, R.drawable.evelynn_skill,synergy.size)
 
     }
 
-    fun getEzreal() : Champ{
-        val synergy : List<Synergy> = listOf(SynergyData().getChrono(),SynergyData().getBlaster())
-        val hp : List<Int> = listOf(600, 1080, 1944)
-        val attack : List<Double> = listOf(50.0, 90.0, 162.0)
+    fun getIrelia(): Champ {
+        val synergy: List<Synergy> = listOf(SynergyData().getEnlightened(),SynergyData().getDivine(), SynergyData().getAdept())
+        val hp: List<Int> = listOf(800, 1440, 2592)
+        val attack: List<Int> = listOf(55, 99, 178)
 
-        return Champ("이즈리얼",R.drawable.ezreal, "전자기 펄스","마나: 30/80","이즈리얼이 무작위 적에게 전자기 펄스를 발사합니다. 전자기 펄스는 적중 시 폭발하며 주변 모든 적에게 피해를 입히고 해당 적들이 다음에 사용하는 스킬의 마나 소모량을 40% 증가시킵니다."
-                ,"피해량 : 100 / 150 / 800",3,synergy,hp,attack,0.75,3,20,20, R.drawable.ezreal_skill,synergy.size)
+        return Champ("이렐리아", R.drawable.irelia,  "칼날 폭풍","마나: 50/100", "이렐리아가 전방에 칼날 폭풍을 날려 마법 피해를 입히고 적중 시 효과를 적용하며 적들을 수 초 동안 무장 해제합니다."
+                , "피해량 : 200 / 300 / 600\n" +
+                "무장 해제 지속시간 : 2.5 / 3 / 3.5", 3, synergy, hp, attack, 0.65, 1, 40, 40, R.drawable.irelia_skill,synergy.size)
     }
 
-    fun getAshe() : Champ{
-        val synergy : List<Synergy> = listOf(SynergyData().getCelestial(),SynergyData().getSniper())
+    fun getJinx(): Champ {
+        val synergy: List<Synergy> = listOf(SynergyData().getFortune(), SynergyData().getSharpShooter())
+        val hp: List<Int> = listOf(650, 1170, 2106)
+        val attack: List<Int> = listOf(75, 135, 243)
+
+        return Champ("징크스", R.drawable.jinx,  "생선대가리","마나: 0/50", "징크스가 로켓을 발사해 대상을 1.5초 동안 기절시키고 대상과 근처 모든 적에게 마법 피해를 입힙니다."
+                , "피해량 : 200 / 325 / 550", 3, synergy, hp, attack, 0.75, 1, 20, 20, R.drawable.jinx_skill,synergy.size)
+
+    }
+
+    fun getKalista(): Champ {
+        val synergy: List<Synergy> = listOf(SynergyData().getCultist(), SynergyData().getDuelist())
+        val hp: List<Int> = listOf(550, 990, 1782)
+        val attack: List<Int> = listOf(65, 117, 211)
+
+        return Champ("칼리스타", R.drawable.kalista,  "뽑아 찢기", "마나: 없음","칼리스타의 창이 대상을 꿰뚫고 유지됩니다. 창을 뽑으면 하나당 대상 최대 체력의 %에 해당하는 마법 피해를 입힙니다. 칼리스타는 적을 처치할 수 있을 때만 창을 뽑습니다."
+                , "적 최대 체력 비례 피해량 : 4% / 6% / 8%", 3, synergy, hp, attack, 1.0, 4, 20, 20, R.drawable.kalista_skill,synergy.size)
+    }
+
+    fun getKatarina(): Champ {
+        val synergy: List<Synergy> = listOf(SynergyData().getWarlord(), SynergyData().getFortune(), SynergyData().getAssassin())
+        val hp: List<Int> = listOf(500, 900, 1620)
+        val attack: List<Int> = listOf(65, 117, 211)
+
+        return Champ("카타리나", R.drawable.katarina, "죽음의 연꽃", "마나: 0/90","카타리나가 2.5초 동안 정신을 집중하며 주변 적들에게 단검을 던져 마법 피해를 입히고 5초 동안 체력 회복 효과를 50% 감소시킵니다."
+                , "총 피해량 : 600 / 900 / 1600\n" +
+                "대상 수 : 4 / 6 / 8", 3, synergy, hp, attack, 0.65, 1, 20, 20, R.drawable.katarina_skill,synergy.size)
+    }
+
+    fun getKennen(): Champ {
+        val synergy: List<Synergy> = listOf(SynergyData().getNinja(), SynergyData().getKeeper())
+        val hp: List<Int> = listOf(650, 1170, 2106)
+        val attack: List<Int> = listOf(60, 108, 194)
+
+        return Champ("케넨", R.drawable.kennen, "날카로운 소용돌이", "마나: 50/125","케넨이 주변에 3초 동안 지속되는 폭풍을 소환해 범위 내 모든 적에게 마법 피해를 입힙니다. 폭풍 지속시간 동안 매 0.5초마다 번개가 치며 번개를 3회 맞은 적은 1.5초 동안 기절합니다."
+                , "총 피해량 : 300 / 450 / 900", 3, synergy, hp, attack, 0.65, 2, 20, 20, R.drawable.kennen_skill,synergy.size)
+    }
+
+    fun getKindred() : Champ{
+        val synergy : List<Synergy> = listOf(SynergyData().getSpirit(),SynergyData().getHunter())
         val hp : List<Int> = listOf(650, 1170, 2106)
-        val attack : List<Double> = listOf(60.0, 108.0, 194.4)
+        val attack : List<Int> = listOf(70, 126, 227)
 
-        return Champ("애쉬",R.drawable.ashe, "마법의 수정화살","마나: 40/100","애쉬가 가장 멀리 있는 적에게 화살을 발사합니다. 화살은 대상에게 처음으로 적중 시 폭발하며 주변 모든 적에게 마법 피해를 입히고 기절시킵니다."
-                ,"피해량 : 200 / 300 / 600\n" +
-                "기절 지속시간 : 2 / 3 / 4",3,synergy,hp,attack,0.85,5,20,20, R.drawable.ashe_skill,synergy.size)
-    }
-
-    fun getVayne() : Champ{
-        val synergy : List<Synergy> = listOf(SynergyData().getCybernetic(),SynergyData().getSniper())
-        val hp : List<Int> = listOf(500, 900, 1620)
-        val attack : List<Double> = listOf(55.0, 99.0, 178.2)
-
-        return Champ("베인",R.drawable.vayne, "결전의 시간","마나: 0/50","베인이 10초 동안 집중한 뒤 구르기를 하며 즉시 대상에게서 멀어집니다. 이후 세 번째 공격을 할 때마다 구르기를 합니다. 베인은 구르기를 하는 동안 투명 상태가 되며 구르기 이후의 첫 공격은 공격력의 일정% 만큼 피해를 입힙니다. 베인은 구르기를 하는 동안 투명 상태가 되며 구르기 이후의 첫 공격은 공격력의 일정 피해를 입힙니다."
-                ,"피해량 : 175 / 200 / 275%",3,synergy,hp,attack,0.8,5,25,20, R.drawable.vayne_skill,synergy.size)
+        return Champ("킨드레드",R.drawable.kindred, "공포 세례","마나: 0/35","늑대가 킨드레드의 적을 물어뜯어 마법 피해를 입히고 5초 동안 체력 회복 효과를 50% 감소시킵니다. 이때 양은 대상 적으로부터 재빨리 물러납니다."
+                ,"피해량 : 450 / 600 / 1200",3,synergy,hp,attack,0.8,3,20,20, R.drawable.kindred_skill,synergy.size)
 
     }
 
-    fun getCassiopeia() : Champ{
-        val synergy : List<Synergy> = listOf(SynergyData().getBattlecast(),SynergyData().getMystic())
-        val hp : List<Int> = listOf(750, 1350, 2430)
-        val attack : List<Double> = listOf(40.0, 72.0, 129.6)
+    fun getLux() : Champ{
+        val synergy : List<Synergy> = listOf(SynergyData().getDivine(),SynergyData().getDazzler())
+        val hp : List<Int> = listOf(600, 1080, 1944)
+        val attack : List<Int> = listOf(40, 72, 130)
 
-        return Champ("카시오페아",R.drawable.cassiopeia, "맹독 폭발","마나: 0/25","카시오페아가 맹독 폴발의 영향을 받지 않은 가장 가까운 적에게 독을 발사해 14초간 피해를 입힙니다. 해당 적에게 적용된 보호막 효과를 50% 감소시킵니다."
-                ,"피해량 : 700 / 1500 / 3500",3,synergy,hp,attack,0.75,2,30,20, R.drawable.cassiopeia_skill,synergy.size)
-
+        return Champ("럭스",R.drawable.lux, "빛의 속박","마나: 40/100","럭스가 가장 멀리 있는 적에게 빛의 구체를 날립니다. 경로상의 모든 대상은 마법 피해를 입고 수 초 동안 기절합니다."
+                ,"피해량 : 300 / 400 / 700\n" +
+                "기절 지속시간 : 1.5 / 2 / 3",3,synergy,hp,attack,0.7,4,20,20, R.drawable.lux_skill,synergy.size)
     }
 
-    fun getBard() : Champ{
-        val synergy : List<Synergy> = listOf(SynergyData().getAstro(),SynergyData().getMystic())
+    fun getVeigar() : Champ{
+        val synergy : List<Synergy> = listOf(SynergyData().getElderwood(),SynergyData().getMage())
+        val hp : List<Int> = listOf(600, 1080, 1944)
+        val attack : List<Int> = listOf(40, 72, 130)
+
+        return Champ("베이가",R.drawable.veigar, "어둠의 꽃","마나: 0/45","베이가가 체력이 가장 낮은 적을 공격해 마법 피해를 입힙니다. 이 스킬로 적을 처치하면 베이가의 주문력이 영구적으로 상승합니다."
+                ,"피해량 : 500 / 650 / 1150\n" +
+                "얻는 주문력 : 1 / 2 / 5",3,synergy,hp,attack,0.6,3,20,20, R.drawable.veigar_skill,synergy.size)
+    }
+
+    fun getXinZhao() : Champ{
+        val synergy : List<Synergy> = listOf(SynergyData().getWarlord(),SynergyData().getDuelist())
         val hp : List<Int> = listOf(700, 1260, 2268)
-        val attack : List<Double> = listOf(45.0, 81.0, 145.8)
+        val attack : List<Int> = listOf(65, 117, 211)
 
-        return Champ("바드",R.drawable.bard, "방랑자의 부름","마나: 0/90","바드가 벤치에 정령을 하나 소환합니다. 정령을 판매하면 1의 경험치를 얻습니다.\n" +
-                "\n" + "패시브: 바드는 매 공격시 추가 마나를 얻습니다. 적 챔피언이 없는 라운드에서는 마나를 얻을 수 없습니다."
-                ,"추가 마나 : 5 / 20 / 90",3,synergy,hp,attack,0.7,3,30,20, R.drawable.bard_skill,synergy.size)
+
+        return Champ("신 짜오",R.drawable.xinzhao, "헌월수호","마나: 0/50","신 짜오가 주위로 창을 휘둘러 공격력에 비례한 피해를 입히고 적중한 적들에게 6초 동안 도전합니다. 도전을 받은 적에게 신 짜오의 기본 공격은 증가된 피해를 입히고, 이외의 적에게서 받는 모든 피해량이 85% 감소합니다."
+                ,"최초 피해량 : 200 / 250 / 350\n" +
+                "기본 공격 피해량 증가 : 200 / 200 / 200",3,synergy,hp,attack,0.8,1,45,30, R.drawable.xinzhao_skill,synergy.size)
+
+    }
+
+    fun getYuumi() : Champ{
+        val synergy : List<Synergy> = listOf(SynergyData().getSpirit(),SynergyData().getMystic())
+        val hp : List<Int> = listOf(600, 1080, 1944)
+        val attack : List<Int> = listOf(40, 72, 130)
+
+        return Champ("유미",R.drawable.yuumi, "슈우우웅","마나: 0/40","유미가 체력이 가장 낮은 아군에게 날아가 잃은 체력의 일부를 회복시키고 5초 동안 추가 공격 속도를 부여합니다. 그리고 가장 멀리 있는 아군에게 다시 날아가 같은 스킬을 반복합니다."
+                ,"회복량 : 30% / 45% / 60%\n" +
+                "공격 속도 : 30% / 40% / 50%",3,synergy,hp,attack,0.6,3,20,20, R.drawable.yuumi_skill,synergy.size)
 
     }
 
     //4코스트
-    fun getWukong() : Champ{
-        val synergy : List<Synergy> = listOf(SynergyData().getChrono(),SynergyData().getVanguard())
-        val hp : List<Int> = listOf(950, 1710, 3078)
-        val attack : List<Double> = listOf(50.0, 90.0, 162.0)
+    fun getAatrox() : Champ{
+        val synergy : List<Synergy> = listOf(SynergyData().getCultist(),SynergyData().getVanguard())
+        val hp : List<Int> = listOf(800, 1440, 2592)
+        val attack : List<Int> = listOf(60, 108, 194)
 
-        return Champ("오공",R.drawable.wukong, "회전격","마나: 50/150","오공이 빠르게 회전하며 주변 적들에게 2초에 걸쳐 마법 피해를 입힙니다. 처음 공격이 적중하면 오공은 적을 공중으로 띄워 올려 기절시킵니다.",
-                "피해량 : 300 / 500 / 4000\n" +
-                        "기절 지속시간 : 2 / 2 / 5",4,synergy,hp,attack,0.75,1,55,40, R.drawable.wukong_skill,synergy.size)
+        return Champ("아트록스",R.drawable.aatrox, "지옥사슬","마나: 75/150","아트록스가 가장 멀리 있는 적들을 자신 쪽으로 끌어당긴 후, 전방의 지면을 강타해 적중한 모든 적에게 피해를 입힙니다.",
+                "피해량 : 250 / 450 / 1250\n" +
+                        "대상 수 : 2 / 2 / 5",4,synergy,hp,attack,0.65,1,40,40, R.drawable.aatrox_skill,synergy.size)
 
     }
 
-    fun getSoraka() : Champ{
-        val synergy : List<Synergy> = listOf(SynergyData().getStarGuardian(),SynergyData().getMystic())
-        val hp : List<Int> = listOf(700, 1260, 2268)
-        val attack : List<Double> = listOf(45.0, 81.0, 148.8)
+    fun getAhri() : Champ{
+        val synergy : List<Synergy> = listOf(SynergyData().getSpirit(),SynergyData().getMage())
+        val hp : List<Int> = listOf(650, 1170, 2106)
+        val attack : List<Int> = listOf(40, 72, 130)
 
-        return Champ("소라카",R.drawable.soraka, "기원","마나: 50/120","소라카가 모든 아군의 체력을 회복시킵니다.",
-                "회복량 : 325 / 550 / 20000",4,synergy,hp,attack,0.75,3,30,20, R.drawable.soraka_skill,synergy.size)
+        return Champ("아리",R.drawable.ahri, "영혼 폭탄","마나: 0/80","아리가 정신을 집중해 영혼 구슬에 에너지를 주입합니다. 1.5초 후 무작위 적에게 구슬을 던져 넓은 영역 안의 모든 적에게 마법 피해를 입힙니다.",
+                "피해량 : 500 / 800 / 4000",4,synergy,hp,attack,0.75,4,20,20, R.drawable.ahri_skill,synergy.size)
     }
 
-    fun getJinx() : Champ{
-        val synergy : List<Synergy> = listOf(SynergyData().getRebel(),SynergyData().getBlaster())
-        val hp : List<Int> = listOf(600, 1080, 1944)
-        val attack : List<Double> = listOf(75.0, 135.0, 243.0)
+    fun getAshe() : Champ{
+        val synergy : List<Synergy> = listOf(SynergyData().getElderwood(),SynergyData().getHunter())
+        val hp : List<Int> = listOf(650 / 1170 / 2106)
+        val attack : List<Int> = listOf(80 / 144 / 259)
 
-        return Champ("징크스",R.drawable.jinx, "신난다!","마나: 없음","기본 지속 효과: 징크스가 적 유닛 처치에 관여하면 신난다! 상태가 됩니다. 처음 적 처치에 관여하면 공격 속도가 추가로 증가합니다. 두 번째로 적 처치에 관여하면 로켓 런처를 장착해 기본 공격으로 대상 주변의 작은 영역내 모든 적에게 추가 마법 피해를 입힙니다.",
-                "공격 속도 : 50% / 75% / 125%\n" +
-                        "피해량 : 125 / 200 / 1000",4,synergy,hp,attack,0.7,3,20,20, R.drawable.jinx_skill,synergy.size)
+        return Champ("애쉬",R.drawable.ashe, "사냥꾼의 집중","마나: 0/30,","5초 동안 애쉬의 공격 속도가 오르며 기본 공격이 다발 공격으로 변경되어 물리 피해를 입힙니다.",
+                "공격 속도 : 50% / 75% / 300%\n" +
+                        "화살당 피해량 : 45% / 45% / 45%",4,synergy,hp,attack,0.75,4,25,20, R.drawable.ashe_skill,synergy.size)
 
     }
 
     fun getJhin() : Champ{
-        val synergy : List<Synergy> = listOf(SynergyData().getDarkStar(),SynergyData().getSniper())
+        val synergy : List<Synergy> = listOf(SynergyData().getCultist(),SynergyData().getSharpShooter())
         val hp : List<Int> = listOf(600, 1080, 1944)
-        val attack : List<Double> = listOf(85.0, 153.0, 275.4)
+        val attack : List<Int> = listOf(85, 153, 275)
 
-        return Champ("진",R.drawable.jhin, "속삭임","마나: 없음","기본 지속 효과: 진은 추가 공격 속도 1%를 공격력 0.8로 전환합니다. 진의 4번째 총탄은 공격력의 비례한 만큼 피해를 입힙니다.",
-                "공격력 : 344% / 444% / 4444%",4,synergy,hp,attack, 0.85,5,20,20, R.drawable.jhin_skill,synergy.size)
-
-    }
-
-    fun getIrelia() : Champ{
-        val synergy : List<Synergy> = listOf(SynergyData().getCybernetic(),SynergyData().getBlademaster(),SynergyData().getManaReaver())
-        val hp : List<Int> = listOf(900, 1620, 2916)
-        val attack : List<Double> = listOf(70.0, 126.0, 226.8)
-
-        return Champ("이렐리아",R.drawable.irelia, "칼날 쇄도","마나: 0/30","이렐리아가 돌진하여 지나친 대상에게 공격력에 비례한 피해를 입힙니다. 만약 대상이 죽으면 마나가 가장 높은 적에게 스킬을 곧바로 다시 사용합니다.",
-                "공격력 : 225% / 250% / 500%",4,synergy,hp,attack,0.85,1,50,40, R.drawable.irelia_skill,synergy.size)
-    }
-
-    fun getFizz() : Champ{
-        val synergy : List<Synergy> = listOf(SynergyData().getMechPilot(),SynergyData().getInfiltrator())
-        val hp : List<Int> = listOf(700, 1080, 1944)
-        val attack : List<Double> = listOf(60.0, 108.0, 194.4)
-
-        return Champ("피즈",R.drawable.fizz, "미끼 뿌리기","마나: 50/120","피즈가 미끼를 뿌립니다. 잠시 후 상어가 위로 솟구치며 부딪친 적들에게 마법 피해를 입히고 뒤로 밀어내며 1.5초 동안 기절시킵니다.",
-                "피해량 : 350 / 550 / 4000",4,synergy,hp,attack,0.85,1,25,20, R.drawable.fizz_skill,synergy.size)
+        return Champ("진",R.drawable.jhin, "속삭임","마나: 없음","기본 지속 효과: 진이 항상 일정한 초당 공격 속도를 갖습니다. 진의 추가 공격 속도 1%는 0.8의 공격력으로 전환됩니다. 기본 지속 효과: 진의 4번째 총탄은 공격력에 비례한 피해를 입힙니다.",
+                "공격력 : 444% / 544% / 4444%\n" +"초당 공격 횟수 : 0.85 / 0.9 / 1.2",4,synergy,hp,attack, 0.85,4,20,20, R.drawable.jhin_skill,synergy.size)
 
     }
 
-    fun getViktor() : Champ{
-        val synergy : List<Synergy> = listOf(SynergyData().getBattlecast(),SynergyData().getSorcerer())
-        val hp : List<Int> = listOf(650, 1170, 2106)
-        val attack : List<Double> = listOf(45.0, 81.0, 145.8)
+    fun getMorgana() : Champ{
+        val synergy : List<Synergy> = listOf(SynergyData().getEnlightened(),SynergyData().getDazzler())
+        val hp : List<Int> = listOf(750, 1350, 2430)
+        val attack : List<Int> = listOf(50, 90, 162)
 
-        return Champ("빅토르",R.drawable.viktor, "죽음의 광선","마나: 0/60","빅토르는 서로 가장 멀리 떨어져 있는 두 적 사이의 경로를 불태웁니다. 먼저 최대 체력의 25%만큼 피해를 입히고, 같은 경로를 따라 폭발을 일으켜 250 만큼의 피해를 입힙니다.",
-                "초기 피해량 : 15 / 20 / 80%\n" +
-                        "후속 피해량 : 200 / 325 / 1500",4,synergy,hp,attack,0.75,3,20,20, R.drawable.viktor_skill,synergy.size)
+        return Champ("모르가나",R.drawable.morgana, "신성한 땅","마나: 60/120","모르가나가 대상 아래의 땅을 신성화해 영역 내 적들에게 5초 동안 마법 피해를 입히고 영역 내에 있는 동안 마법 저항력을 40% 감소시킵니다. 모르가나는 피해량의 %만큼 체력을 회복합니다.",
+                "피해량 : 250 / 400 / 2000\n" +
+                        "회복량 : 20% / 25% / 30%",4,synergy,hp,attack,0.7,3,30,60, R.drawable.morgana_skill,synergy.size)
+    }
+
+    fun getSejuani() : Champ{
+        val synergy : List<Synergy> = listOf(SynergyData().getFortune(),SynergyData().getVanguard())
+        val hp : List<Int> = listOf(1000, 1800, 3240)
+        val attack : List<Int> = listOf(45, 81, 146)
+
+        return Champ("세주아니",R.drawable.sejuani, "불꽃놀이","마나: 50/130","세주아니가 가장 가까운 적에게 거대한 폭죽을 던집니다. 폭죽은 2초 후에 폭발하며 범위 내의 적들은 마법 피해를 입고 수 초 동안 기절합니다.",
+                "피해량 : 100 / 200 / 800\n" +
+                        "기절 지속시간 : 2.5 / 3 / 6",4,synergy,hp,attack,0.55,1,60,40, R.drawable.sejuani_skill,synergy.size)
 
     }
 
-    fun getTeemo() : Champ{
-        val synergy : List<Synergy> = listOf(SynergyData().getAstro(),SynergyData().getSniper())
-        val hp : List<Int> = listOf(600, 1080, 1944)
-        val attack : List<Double> = listOf(45.0, 81.0, 145.8)
+    fun getShen() : Champ{
+        val synergy : List<Synergy> = listOf(SynergyData().getNinja(),SynergyData().getAdept(), SynergyData().getMystic())
+        val hp : List<Int> = listOf(950, 1710, 3078)
+        val attack : List<Int> = listOf(60, 108, 194)
+
+        return Champ("쉔",R.drawable.shen, "그림자 돌진","마나: 60/120","쉔이 대상을 통과해 돌진하며 4초 동안 피해를 흡수하는 보호막을 얻고 근처 모든 적을 도발합니다.",
+                "보호막 흡수량 : 500 / 800 / 4000",4,synergy,hp,attack,0.65,1,50,40, R.drawable.shen_skill,synergy.size)
+
+    }
+
+    fun getTalon() : Champ{
+        val synergy : List<Synergy> = listOf(SynergyData().getEnlightened(),SynergyData().getAssassin())
+        val hp : List<Int> = listOf(750, 1350, 2430)
+        val attack : List<Int> = listOf(90, 162, 291)
 
 
-        return Champ("티모",R.drawable.teemo, "위성 함정","마나: 0/80","티모는 가장 가까운 적 주위에 함정을 3개를 뿌립니다. 적이 함정에 가까이 오거나 3초가 지나면 폭발하며, 근처의 적에게 피해를 입히고, 3초 동안 둔화됩니다.",
-                "피해량 : 125 / 175 / 550",4,synergy,hp,attack,0.95,5,20,20, R.drawable.teemo_skill,synergy.size)
+        return Champ("탈론",R.drawable.talon, "예리한 일격","마나: 0/50","탈론이 대상을 공격해 공격력에 비례한 추가 물리 피해를 입힙니다. 대상을 처치하면 탈론은 저지 불가 및 무적, 대상으로 지정할 수 없는 상태가 되어 해당 라운드에 가장 입힌 피해량이 높은 적에게 도약합니다. 그리고 마나를 전부 회복합니다.",
+                "추가 물리 공격력 % : 2 / 2.5 / 3\n" +
+                        "추가 피해량 : 125 / 200 / 600",4,synergy,hp,attack,0.8,1,30,20, R.drawable.talon_skill,synergy.size)
 
     }
 
     fun getRiven() : Champ{
-        val synergy : List<Synergy> = listOf(SynergyData().getChrono(),SynergyData().getBlademaster())
-        val hp : List<Int> = listOf(850, 1530, 2754)
-        val attack : List<Double> = listOf(70.0, 126.0, 226.8)
+        val synergy : List<Synergy> = listOf(SynergyData().getDusk(),SynergyData().getKeeper())
+        val hp : List<Int> = listOf(800, 1440, 2592)
+        val attack : List<Int> = listOf(70, 126, 227)
 
-        return Champ("리븐",R.drawable.riven, "에너지 가르기","마나: 0/25","리븐이 돌진하며 피해를 흡수하는 보호막을 얻은 후 전방을 베어 근처 적에게 마법 피해를 입힙니다. 리븐은 세 번째 공격마다 공중으로 도약한 후 앞으로 커다란 에너지 파를 발사하여 마법 피해를 입힙니다.",
-                "보호막 흡수량 : 200 / 350 / 1200\n" +
-                        "피해량 : 100 / 150 /600\n" +
-                        "파동 피해량 : 300 / 500 / 1500",4,synergy,hp,attack,0.85,1,35,30, R.drawable.riven_skill,synergy.size)
+        return Champ("리븐",R.drawable.riven, "휩쓰는 공격","마나: 0/20","리븐이 돌진하며 피해를 흡수하는 보호막을 얻은 후 전방을 베어 근처 적에게 마법 피해를 입힙니다. 리븐은 세 번째 공격마다 공중으로 도약한 후 앞으로 커다란 에너지 파동을 발사하여 마법 피해를 입힙니다.",
+                "보호막 흡수량 : 175 / 250 / 1000\n" +
+                        "피해량 : 180 / 250 / 1000\n" +
+                        "파동 피해량 : 300 / 450 / 2000",4,synergy,hp,attack,0.75,1,35,30, R.drawable.riven_skill,synergy.size)
 
     }
 
-    fun getGnar() : Champ{
-        val synergy : List<Synergy> = listOf(SynergyData().getAstro(),SynergyData().getBrawler())
-        val hp : List<Int> = listOf(750, 1350, 2430)
-        val attack : List<Double> = listOf(50.0, 90.0, 162.0)
+    fun getWarwick() : Champ{
+        val synergy : List<Synergy> = listOf(SynergyData().getDivine(),SynergyData().getBrawler(), SynergyData().getHunter())
+        val hp : List<Int> = listOf(950, 1710, 3078)
+        val attack : List<Int> = listOf(70, 126, 227)
 
-        return Champ("나르",R.drawable.gnar, "나르!","마나: 0/100","나르가 대상에게 도약하며 메가나르로 변신합니다. 이대 적들을 집어던지며 마법피해를 입히고 1.5초간 기절시킵니다. 메가 나르 모습인 동안에는 추가 체력과 공격력을 얻고 근접 공격을 합니다.",
-                "피해량 : 100 / 200 / 800\n" +
-                        "추가 체력 : 750 / 1250 / 5000\n" +
-                        "추가 피해량 : 100 / 175 / 550",4,synergy,hp,attack,0.8,2,45,40, R.drawable.gnar_skill,synergy.size)
+        return Champ("워윅",R.drawable.warwick, "태고의 굶주림","마나: 0/70","워윅이 공격 속도 증가와 생명력 흡수 효과를 얻고 전투가 끝날 때까지 더 빠르게 움직입니다. 이 상태에서 처치에 관여하면 포효하여 근처 모든 적을 수 초 동안 기절시킵니다.",
+                "공격 속도 : 175% / 200% / 500%\n" +
+                        "생명력 흡수 : 50% / 50% / 200%\n" +
+                        "기절 지속시간 : 1.5 / 1.5 / 3",4,synergy,hp,attack,0.9,1,40,40, R.drawable.warwick_skill,synergy.size)
+
+    }
+
+    fun getCassiopeia() : Champ{
+        val synergy : List<Synergy> = listOf(SynergyData().getDusk(),SynergyData().getMystic())
+        val hp : List<Int> = listOf(750, 1350, 2430)
+        val attack : List<Int> = listOf(55, 99, 178)
+
+        return Champ("카시오페아",R.drawable.cassiopeia, "석화의 응시","마나: 60/120","카시오페아가 대상을 향해 원뿔 모양의 에너지를 발사해 적중한 모든 적에게 마법 피해를 입히고 기절시킵니다. 기절한 적은 받는 피해량이 10% 증가합니다.",
+                "피해량 : 275 / 400 / 2000\n" +
+                        "기절 지속시간 : 2.5 / 3 / 5",4,synergy,hp,attack,0.6,2,30,20, R.drawable.cassiopeia_skill,synergy.size)
 
     }
 
     //5코스트
-    fun getXerath() : Champ{
-        val synergy : List<Synergy> = listOf(SynergyData().getDarkStar(),SynergyData().getSorcerer())
-        val hp : List<Int> = listOf(700, 1260, 2268)
-        val attack : List<Double> = listOf(60.0, 108.0, 194.4)
+    fun getAzir() : Champ{
+        val synergy : List<Synergy> = listOf(SynergyData().getWarlord(),SynergyData().getKeeper(),SynergyData().getEmperor())
+        val hp : List<Int> = listOf(950 / 1710 / 3078)
+        val attack : List<Int> = listOf(70 / 126 / 227)
 
-        return Champ("제라스",R.drawable.xerath, "심연 포격","마나: 20/80","제라스가 변신해 6초 동안 기본 공격 대신 무작위 적에게 유성을 소환해 떨어뜨립니다. 유성은 적중 시 320의 마법 피해를 입히며, 대상이 사망하면 주변 모든 적이 25%(기본 피해량에 비례)의 마법 피해를 입고 1.5초 동안 기절합니다.",
-                "피해량 : 320 / 440 / 2500\n" +"광역 피해량: 80/110/625\n"+
-                        "변신 지속시간 : 6 / 8 / 45",5,synergy,hp,attack,0.9,5,20,20, R.drawable.xerath_skill,synergy.size)
+        return Champ("아지르",R.drawable.azir, "황제의 진영","마나: 50/125","아지르가 뒤에서 병사들을 일렬로 소환해 돌진시키며 적중한 모든 적에게 마법 피해를 입히고 4초 동안 둔화시킵니다. 아지르 근처에 있는 적은 뒤로 밀려나며, 멀리 있는 적은 2초 동안 공중에 뜹니다.",
+                "돌진 피해량 : 200 / 350 / 2000",5,synergy,hp,attack,0.85,4,30,20, R.drawable.azir_skill,synergy.size)
     }
 
-    fun getThresh() : Champ{
-        val synergy : List<Synergy> = listOf(SynergyData().getChrono(),SynergyData().getManaReaver())
-        val hp : List<Int> = listOf(950, 1710, 3078)
-        val attack : List<Double> = listOf(50.0, 90.0, 162.0)
-
-        return Champ("쓰레쉬",R.drawable.thresh, "시간의 통로","마나: 50/90","쓰레쉬가 랜턴을 던져 대기석에 있는 무작위 유닛을 현재 전투에 합류시킵니다. 합류한 유닛과 쓰레쉬는 추가 마나를 얻습니다. 특성은 영향을 받지 않습니다.",
-                "추가 마나 : 25 / 50 / 200\n" +
-                        "끌어당긴 유닛 : 1 / 1 / 9",5,synergy,hp,attack,0.95,2,55,40, R.drawable.thresh_skill,synergy.size)
-
-    }
-
-    fun getLulu() : Champ{
-        val synergy : List<Synergy> = listOf(SynergyData().getCelestial(),SynergyData().getMystic())
-        val hp : List<Int> = listOf(800, 1440, 2592)
-        val attack : List<Double> = listOf(45.0, 81.0, 145.8)
-
-        return Champ("룰루",R.drawable.lulu, "대규모 변이","마나: 75/150","룰루가 가까이 있는 적을 변이시킵니다. 변이된 적은 공격하거나 스킬을 사용할 수 없는 상태로 주위를 뛰어다니며 추가 피해를 입습니다.",
-                "대상 수 : 2 / 4 / 12\n" +
-                        "추가 피해량 : 5% / 10% / 25%\n" +
-                        "지속 시간 : 3초 / 3초 / 8초",5,synergy,hp,attack,0.8,3,25,20, R.drawable.lulu_skill,synergy.size)
-    }
-
-    fun getGangplank() : Champ{
-        val synergy : List<Synergy> = listOf(SynergyData().getSpacePirate(), SynergyData().getDemolitionist(), SynergyData().getMercenary())
-        val hp : List<Int> = listOf(1000, 1800, 3240)
-        val attack : List<Double> = listOf(60.0, 108.0, 194.4)
-        return Champ("갱플랭크",R.drawable.gangplank, "궤도 포격","마나: 70/160","갱플랭크가 대상 주변 넓은 지역으로 궤도 포격을 요청합니다. 범위 내의 모든 적은 2초 후 피해를 입습니다.",
-                "피해량 : 525 / 675 / 9001",5,synergy,hp,attack,1.0,1,30,20, R.drawable.gangplank_skill,synergy.size)
-
-    }
-
-    fun getEkko() : Champ{
-        val synergy : List<Synergy> = listOf(SynergyData().getCybernetic(),SynergyData().getInfiltrator())
-        val hp : List<Int> = listOf(850, 1530, 2754)
-        val attack : List<Double> = listOf(60.0, 108.0, 194.4)
-
-        return Champ("에코",R.drawable.ekko, "시공간 붕괴","마나: 80/150","에코가 시간의 균열을 열어 모든 유닛의 시간을 멈춘 후 적들을 공격합니다. 공격 시 추가 마법 피해를 입히고 적중 시 효과를 적용합니다. 공격당한 모든 적의 공격 속도가 7초 동안 50% 감소합니다.",
-                "피해량 : 100 / 150 / 2000\n" + "공격 횟수: 5/7/20",5,synergy,hp,attack,0.9,1,30,20, R.drawable.ekko_skill,synergy.size)
-
-    }
-
-    fun getAurelionSol() : Champ{
-        val synergy : List<Synergy> = listOf(SynergyData().getRebel(),SynergyData().getStarship())
-        val hp : List<Int> = listOf(1100, 1980, 3564)
-        val attack : List<Double> = listOf(10.0, 18.0, 32.4)
-
-
-        return Champ("아우렐리온 솔",R.drawable.aurelionsol, "함대 출격","마나: 120/120","아우렐리온 솔이 전투기를 출격시킵니다. 처음 스킬 사용 시 4대의 전투기가 출격합니다. 이후 스킬을 사용할 때마다 2대의 전투기가 추가로 출격합니다. 전투기는 가까운 적을 먼저 공격합니다.\n " +
-                "전투기가 대상의 마나를 감소시킵니다.",
-                "피해량 : 90 / 150 / 1000\n" +"마나 흡수량 : 10 / 15 / 50",5,synergy,hp,attack,0.2,1,55,40, R.drawable.aurelionsol_skill,synergy.size)
-
-    }
-
-    fun getUrgot() : Champ{
-        val synergy : List<Synergy> = listOf(SynergyData().getBattlecast(),SynergyData().getProtector())
-        val hp : List<Int> = listOf(950, 1710, 3078)
-        val attack : List<Double> = listOf(80.0, 144.0, 259.2)
-
-        return Champ("우르곳",R.drawable.urgot, "불사의 공포","마나: 50/100","우르곳이 가장 먼 적에게 드릴을 발사하여 당겨옵니다. 이제 불사의 공포가 항상 목표 대상에 적중하는 것이 아닌 먼저 적중한 적에게 적중합니다. 당겨진 적은 2000의 고정 피해를 지속적으로 입으면서 우르곳에게 닿으면 사망하고, 우르곳의 스킬 마나 소모량이 줄어듭니다.",
-                "줄어드는 마나 소모량 : 20 / 30 / 100\n" + "끌어당기는 시간 : 3/ 2/ 1",5,synergy,hp,attack,0.7,2,40,40, R.drawable.urgot_skill,synergy.size)
-
-    }
-
-    fun getJanna() : Champ{
-        val synergy : List<Synergy> = listOf(SynergyData().getStarGuardian(),SynergyData().getParagon())
+    fun getEzreal() : Champ{
+        val synergy : List<Synergy> = listOf(SynergyData().getElderwood(),SynergyData().getDazzler())
         val hp : List<Int> = listOf(750, 1350, 2430)
-        val attack : List<Double> = listOf(60.0, 106.0, 194.4)
+        val attack : List<Int> = listOf(80, 144, 259)
 
-        return Champ("잔나",R.drawable.janna, "울부짖는 돌풍","마나: 20/100","잔나가 부채꼴 모양으로 5개의 회오리바람을 날립니다. 회오리 바람에 닿은 아군은 공격 속도가 5초 동안 빨라지며, 적은 1.5초 동안 공중으로 띄워올려져 기절 상태가 됩니다.",
+        return Champ("이즈리얼",R.drawable.ezreal, "흐름의 일격","마나: 75/150","이즈리얼이 공격 속도가 가장 빠른 적을 향해 미사일을 발사해 통과한 모든 아군의 체력을 회복하고 5초 동안 50%의 공격 속도를 부여합니다. 적들에게는 마법 피해를 입히며 5초 동안 공격 속도를 50% 감소시킵니다.",
+                "피해량 : 250 / 450 / 9999\n" +
+                        "회복 : 250 / 450 / 9999",5,synergy,hp,attack,0.9,4,20,20, R.drawable.ezreal_skill,synergy.size)
 
-                "공격 속도 증가량 : 80 / 125 / 500%\n" + "기절 지속시간: 1.5/ 1.5/ 8",5,synergy,hp,attack,0.7,3,30,20, R.drawable.janna_skill, synergy.size)
+    }
+
+    fun getKayn() : Champ{
+        val synergy : List<Synergy> = listOf(SynergyData().getTormented(),SynergyData().getShade())
+        val hp : List<Int> = listOf(900, 1620, 2916)
+        val attack : List<Int> = listOf(80, 144, 259)
+
+        return Champ("케인",R.drawable.kayn, "살상돌격","마나: 0/50","케인이 대상 방향으로 돌진하며 근처 모든 적을 베어 피해를 입히고 다음 스킬의 비용을 33% 증가시킵니다. 만약 스킬이 단 한 명의 적에게만 적중하면 곧바로 다시 사용합니다. 라아스트: 살상돌격으로 입힌 피해의 50%만큼 케인의 체력을 회복합니다. 그림자 암살자: 전투 시작 후 10초 동안 살상돌격의 피해량이 75% 증가합니다.",
+                "피해량 : 450 / 600 / 6666",5,synergy,hp,attack,1.0,1,40,40, R.drawable.kayn_skill,synergy.size)
+    }
+
+    fun getLeeSin() : Champ{
+        val synergy : List<Synergy> = listOf(SynergyData().getDivine(), SynergyData().getDuelist())
+        val hp : List<Int> = listOf(1000, 1800, 3240)
+        val attack : List<Int> = listOf(60, 108, 194)
+        return Champ("리신",R.drawable.leesin, "신의 권","마나: 0/50","리 신이 대상에게 주먹을 휘둘러 마법 피해를 입히고 전장 끝으로 날려 버리며 수 초 동안 기절시킵니다. 날아가는 대상과 충돌하는 적들은 절반의 피해를 입고 1.5초 동안 기절합니다. 만약 더 날아갈 공간이 없을 경우, 대상은 전장 밖으로 나가며 전투에서 제외됩니다. 대상이 살아 있으면 리 신이 돌진합니다",
+                "피해량 : 250 / 450 / 1000\n" +
+                        "기절 지속시간 : 3 / 4 / 10",5,synergy,hp,attack,0.85,1,50,50, R.drawable.leesin_skill,synergy.size)
+
+    }
+
+    fun getLillia() : Champ{
+        val synergy : List<Synergy> = listOf(SynergyData().getDusk(),SynergyData().getMage())
+        val hp : List<Int> = listOf(950 / 1710 / 3078)
+        val attack : List<Int> = listOf(40 / 72 / 130)
+
+        return Champ("릴리아",R.drawable.lillia, "감미로운 자장가","마나: 75/125","릴리아가 마법의 자장가를 연주해 현재 체력이 높은 순서로 적을 3.5초 동안 잠들게 합니다. 잠든 적은 일정량의 피해를 입으면 깨어나며 마법 피해를 추가로 입습니다.",
+                "대상 수 : 2 / 3 / 10\n" +
+                        "기상 피해 : 500 / 750 / 1000\n" +
+                        "피해량 : 500 / 750 / 5000",5,synergy,hp,attack,0.75,2,50,80, R.drawable.lillia_skill,synergy.size)
+
+    }
+
+    fun getSett() : Champ{
+        val synergy : List<Synergy> = listOf(SynergyData().gettheboss(),SynergyData().getBrawler())
+        val hp : List<Int> = listOf(1100, 1980, 3564)
+        val attack : List<Int> = listOf(60, 108, 194)
+
+
+        return Champ("세트",R.drawable.sett, "대미 장식","마나: 50/125","세트가 대상을 붙잡아 앞으로 내리꽂으며 대상 최대 체력에 비례한 마법 피해를 입힙니다. 내리꽂은 지점 주변 넓은 영역 내의 모든 적은 대상 최대 체력의 %에 해당하는 피해를 입습니다." ,
+                "1차 피해량 % : 35% / 45% / 400%\n" +
+                        "2차 피해량 % : 20% / 30% / 200%",5,synergy,hp,attack,0.75,1,60,30, R.drawable.sett_skill,synergy.size)
+
+    }
+
+    fun getYone() : Champ{
+        val synergy : List<Synergy> = listOf(SynergyData().getExile(),SynergyData().getAdept())
+        val hp : List<Int> = listOf(950, 1710, 3078)
+        val attack : List<Int> = listOf(80, 144, 259)
+
+        return Champ("요네",R.drawable.yone, "운명봉인","마나: 0/100","요네가 전방의 경로에 있는 적들을 공격해 마법 피해를 나눠서 입히고 1.5초 동안 공중에 띄웁니다. 적중한 적들에게는 죽음의 표식이 남아 방어력과 마법 저항력이 60% 감소합니다. 그리고 죽음의 표식이 남은 적이 모두 사라질 때까지 요네의 스킬이 잊히지 못한 자로 바뀝니다. 잊히지 못한 자 (20마나): 요네가 죽음의 표식이 남은 적들 중 가장 체력이 낮은 적에게 돌진해 기본 마법 피해와 대상이 잃은 체력에 비례한 추가 마법 피해를 입힙니다.",
+                "피해량 : 800 / 1300 / 9999\n" +
+                        "잊히지 못한 자 기본 피해량 : 250 / 400 / 1000",5,synergy,hp,attack,0.95,1,40,40, R.drawable.yone_skill,synergy.size)
+
+    }
+
+    fun getZilean() : Champ{
+        val synergy : List<Synergy> = listOf(SynergyData().getCultist(),SynergyData().getMystic())
+        val hp : List<Int> = listOf(750 / 1350 / 2430)
+        val attack : List<Int> = listOf(45 / 81 / 146)
+
+        return Champ("질리언",R.drawable.zilean, "운명의 역행","마나: 100/150","질리언이 체력이 가장 낮은 아군들에게 보호용 시간 룬을 걸어 줍니다. 아군이 사망하면 수 초 후에 일정량의 체력을 얻고 모든 해로운 효과가 사라진 상태로 부활합니다. 부활한 아군은 전투가 끝날 때까지 50%의 추가 공격 속도를 얻습니다.",
+
+                "대상 수 : 2 / 2 / 10\n" +
+                        "부활까지 걸리는 시간 : 3.5 / 3 / 1\n" +
+                        "체력 회복량 : 350 / 700 / 3000",5,synergy,hp,attack,0.75,3,20,20, R.drawable.zilean_skill, synergy.size)
     }
 }

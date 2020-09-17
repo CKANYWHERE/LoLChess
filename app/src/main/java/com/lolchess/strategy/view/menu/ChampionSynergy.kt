@@ -50,28 +50,28 @@ class ChampionSynergy: Fragment() {
         initAd()
         val champData = ChampData()
         val champList1Cost: List<Champ> =
-                listOf(champData.getGraves(), champData.getNocturne(), champData.getLeona(), champData.getMalphite(), champData.getPoppy(), champData.getIllaoi(),
-                        champData.getJarvanIV(), champData.getXayah(), champData.getZoe(), champData.getZiggs(), champData.getCaitlyn(), champData.getTwistedFate(),
+                listOf(champData.getGaren(), champData.getNami(), champData.getNidalee(), champData.getDiana(), champData.getLissandra(), champData.getMaokai(),
+                        champData.getVayne(), champData.getYasuo(), champData.getElise(), champData.getWukong(), champData.getTahmKench(), champData.getTwistedFate(),
                         champData.getFiora())
 
         val champList2Cost: List<Champ> =
-                listOf(champData.getNautilus(), champData.getDarius(), champData.getRakan(), champData.getLucian(), champData.getMordekaiser(),
-                        champData.getBlitzcrank(), champData.getShen(), champData.getXinZhao(), champData.getAhri(), champData.getAnnie(), champData.getYasuo(),
-                        champData.getZed(), champData.getKogMaw())
+                listOf(champData.getLulu(), champData.getVi(), champData.getSylas(), champData.getThresh(), champData.getAphelios(),
+                        champData.getAnnie(), champData.getJarvanIV(), champData.getJanna(),champData.getJax(), champData.getZed(), champData.getTeemo(),
+                        champData.getPyke(), champData.getHecarim())
 
         val champList3Cost: List<Champ> =
-                listOf(champData.getNeeko(), champData.getRumble(), champData.getMasterYi(), champData.getBard(),
-                        champData.getVi(), champData.getVayne(), champData.getShaco(), champData.getSyndra(), champData.getAshe(), champData.getEzreal(),
-                        champData.getJayce(), champData.getKarma(), champData.getCassiopeia())
+                listOf(champData.getNunu(), champData.getLux(), champData.getVeigar(), champData.getXinZhao(),
+                        champData.getAkali(), champData.getYuumi(), champData.getIrelia(), champData.getEvelynn(), champData.getJinx(), champData.getKatarina(),
+                        champData.getKalista(), champData.getKennen(), champData.getKindred())
 
         val champList4Cost: List<Champ> =
-                listOf(champData.getGnar(), champData.getRiven(), champData.getViktor(),
-                        champData.getSoraka(), champData.getWukong(), champData.getIrelia(), champData.getJhin(), champData.getJinx(), champData.getTeemo(),
-                        champData.getFizz())
+                listOf(champData.getRiven(), champData.getMorgana(), champData.getSejuani(),
+                        champData.getShen(), champData.getAhri(), champData.getAatrox(), champData.getAshe(), champData.getWarwick(), champData.getJhin(),
+                        champData.getCassiopeia(), champData.getTalon())
 
         val champList5Cost: List<Champ> =
-                listOf(champData.getGangplank(), champData.getLulu(), champData.getThresh(), champData.getAurelionSol(), champData.getEkko(),
-                        champData.getUrgot(), champData.getJanna(), champData.getXerath())
+                listOf(champData.getLeeSin(), champData.getLillia(), champData.getSett(), champData.getAzir(),
+                        champData.getYone(), champData.getEzreal(),  champData.getZilean(), champData.getKayn())
 
         val champMutableList1 = champList1Cost.toMutableList()
         val champMutableList2 = champList2Cost.toMutableList()

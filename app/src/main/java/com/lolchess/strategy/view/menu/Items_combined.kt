@@ -47,13 +47,15 @@ class Items_combined() : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initAd()
         val combinedData = Combined_Data()
-        var combinedItems: List<Combined_items> = listOf(combinedData.Locket_of_the_Iron_Solari(), combinedData.Titan_Resolve(), combinedData.Giant_Slayer(), combinedData.Rapid_Firecannon(), combinedData.Guinsoo_Rageblade(),
-                combinedData.Redemption(), combinedData.Bramble_Vest(),  combinedData.Trap_Claw(), combinedData.Thief_Gloves(), combinedData.Force_of_Nature(), combinedData.Rabadon_Deathcap(),  combinedData.Runaan_Hurricane(),
-                combinedData.Luden_Echo(), combinedData.Hextech_Gunblade(), combinedData.Morellonomicon(), combinedData.Blade_of_the_Ruined_King(), combinedData.Infinity_Edge(), combinedData.Rebel_Medal(),
-                combinedData.Star_Guardian_Charm(), combinedData.Jeweled_Gauntlet(), combinedData.Red_Buff(), combinedData.Zephar(),  combinedData.Spear_of_Shojin(), combinedData.Quicksilver(),
-                combinedData.Protector_Chestguard(), combinedData.Guardian_Angel(), combinedData.Statikk_Shiv(), combinedData.Dark_Star_Heart(), combinedData.Frozen_Heart(), combinedData.Dragon_Claw(), combinedData.Warmog_Armor(),
-                combinedData.Ionic_Spark(), combinedData.Infiltrator_Talons(), combinedData.Battlecast_Plating(), combinedData.Hand_of_Justice(), combinedData.Deathblade(), combinedData.ZzRot_Portal(), combinedData.Zeke_Herald(),
-                combinedData.Celestial_Orb(), combinedData.Last_Whisper(), combinedData.Shroud_of_Stillness(),  combinedData.Sword_Breaker(), combinedData.Bloodthirster(), combinedData.Blue_Buff(), combinedData.Chalice_of_Power())
+        var combinedItems: List<Combined_items> = listOf( combinedData.Bloodthirster(), combinedData.Blue_Buff(), combinedData.Bramble_Vest(),  combinedData.Chalice_of_Power(), combinedData.Deathblade(),
+                combinedData.Dragon_Claw(), combinedData.Force_of_Nature(), combinedData.Frozen_Heart(), combinedData.Giant_Slayer(), combinedData.Guardian_Angel(),
+                combinedData.Guinsoo_Rageblade(), combinedData.Hand_of_Justice(), combinedData.Hextech_Gunblade(), combinedData.Duelists_Zeal(), combinedData.Infinity_Edge(),
+                combinedData.Ionic_Spark(), combinedData.Jeweled_Gauntlet(), combinedData.Last_Whisper(), combinedData.Locket_of_the_Iron_Solari(), combinedData.Luden_Echo(),
+                combinedData.Morellonomicon(), combinedData.Quicksilver(), combinedData.Rabadon_Deathcap(), combinedData.Rapid_Firecannon(), combinedData.Sunfire_Cape(),
+                combinedData.Redemption(), combinedData.Runaan_Hurricane(), combinedData.Shroud_of_Stillness(), combinedData.Spear_of_Shojin(),  combinedData.Statikk_Shiv(),
+                combinedData.Gargoyle(), combinedData.Thief_gloves(), combinedData.Titan_Resolve(), combinedData.Trap_Claw(), combinedData.Warmog_Armor(),
+                combinedData.Zeke_Herald(), combinedData.Zephar(), combinedData.ZzRot_Portal(), combinedData.Mantle_of_Dusk(), combinedData.Sword_Of_the_Divine(),
+                combinedData.Elderwood_Heirloom(),combinedData.Mages_Cap(),combinedData.Vanguards_Cuirass(), combinedData.Warlords_Banner(), combinedData.Youmuus_Ghostblade())
 
 
         val combined = combinedItems.toMutableList()
