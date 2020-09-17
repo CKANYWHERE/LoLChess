@@ -48,17 +48,17 @@ class Overlay : Service() {
             WindowManager.LayoutParams.TYPE_PHONE
         }
         val params = WindowManager.LayoutParams(
-            WindowManager.LayoutParams.WRAP_CONTENT,
-            WindowManager.LayoutParams.WRAP_CONTENT,
-            LAYOUT_FLAG,
-            WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
-            PixelFormat.TRANSLUCENT
+                WindowManager.LayoutParams.WRAP_CONTENT,
+                WindowManager.LayoutParams.WRAP_CONTENT,
+                LAYOUT_FLAG,
+                WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE,
+                PixelFormat.TRANSLUCENT
         )
 
         this.params = params
         //Specify the view position
         params.gravity =
-            Gravity.TOP or Gravity.LEFT //Initially view will be added to top-left corner
+                Gravity.TOP or Gravity.LEFT //Initially view will be added to top-left corner
         params.x = 0
         params.y = 100
 
@@ -67,7 +67,7 @@ class Overlay : Service() {
         manager.addView(floatingView, params)
 
         floatingView.findViewById<View>(R.id.btnService)?.setOnTouchListener(object :
-            View.OnTouchListener {
+                View.OnTouchListener {
 
             var initialX: Int? = null
             var initialY: Int? = null
@@ -110,7 +110,7 @@ class Overlay : Service() {
                     MotionEvent.ACTION_MOVE -> {
 
                         params.y =
-                            initialY!!.plus((motionEvent.getRawY() - initialTouchY!!).roundToInt())
+                                initialY!!.plus((motionEvent.getRawY() - initialTouchY!!).roundToInt())
                         manager.updateViewLayout(floatingView, params)
                         return false
 
@@ -120,7 +120,7 @@ class Overlay : Service() {
                 return false
             }
         })
-        return START_NOT_STICKY
+        return START_STICKY
     }
 
     private fun createSynergyView(){
@@ -144,13 +144,14 @@ class Overlay : Service() {
             channel.setShowBadge(showBadge)
 
             val notificationManager = context.getSystemService(NotificationManager::class.java)
+
             notificationManager.createNotificationChannel(channel)
         }
     }
 
     private fun createForground() {
         createNotificationChannel(this, NotificationManagerCompat.IMPORTANCE_DEFAULT,
-            false, getString(R.string.app_name), "App notification channel")
+                false, getString(R.string.app_name), "App notification channel")
 
         val channelId = "$packageName-${getString(R.string.app_name)}"
         val title = "TFT 공략"
@@ -161,10 +162,10 @@ class Overlay : Service() {
 
 
         val pendingIntent = PendingIntent.getActivity(baseContext, 0,
-            intent, PendingIntent.FLAG_UPDATE_CURRENT)
+                intent, PendingIntent.FLAG_UPDATE_CURRENT)
 
-        val builder = NotificationCompat.Builder(this, channelId)
-        builder.setSmallIcon(R.drawable.overlay)
+        val builder = NotificationCompat.Builder(this, channelId).setOngoing(true)
+        builder.setSmallIcon(R.mipmap.ic_tftmain)
         builder.setContentTitle(title)
         builder.setContentText(content)
         builder.priority = NotificationCompat.PRIORITY_DEFAULT
