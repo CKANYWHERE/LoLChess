@@ -25,7 +25,7 @@ class ChampData {
         val attack: List<Int> = listOf(40, 72, 130)
 
         return Champ("나미", R.drawable.nami,"물의 감옥", "마나: 40/80", "나미가 가장 가까이 있는 적을 물방울에 가두어 마법 피해를 입히고 수 초 동안 기절시킵니다."
-                , "피해량 : 225 / 325 / 450\n" + "기절 지속시간 : 2 / 2.5 / 3", 1, synergy, hp, attack,0.65, 3, 20, 20, R.drawable.nami_skill,synergy.size)
+                , "피해량 : 225 / 325 / 450\n" + "기절 지속시간 : 2.5 / 3 / 4", 1, synergy, hp, attack,0.65, 3, 20, 20, R.drawable.nami_skill,synergy.size)
     }
 
 
@@ -36,7 +36,7 @@ class ChampData {
         val attack: List<Int> = listOf(50, 90, 162)
 
         return Champ("다이애나", R.drawable.diana, "은빛 가호", "마나: 0/70","다이애나가 4초 동안 피해를 흡수하는 보호막을 얻고 자신의 주위를 도는 구체를 소환합니다. 구체는 적과 닿으면 폭발하며 마법 피해를 입히며, 마지막 구체가 폭발하면 보호막이 초기화됩니다."
-                , "구체 : 3 / 4 / 6 / 10\n" +
+                , "구체 : 4 / 5 / 6 / 10\n" +
                 "피해량 : 70 / 80 / 90 / 100\n" +
                 "보호막 흡수량 : 200 / 300 / 450 / 650" , 1, synergy, hp, attack, 0.65, 1, 30, 20, R.drawable.diana_skill,synergy.size)
     }
@@ -68,8 +68,8 @@ class ChampData {
         val attack: List<Int> = listOf(40, 72, 130)
 
         return Champ("리산드라", R.drawable.lissandra, "천 개의 단검", "마나: 0/50","리산드라가 대상을 향해 단검을 던져 처음 적중한 적에게 마법 피해를 입힙니다. 처음 대상에게 적중하거나 사거리 끝에 도달하면 단검이 폭발하며 근처 대상들에게 마법 피해를 입힙니다."
-                , "피해량 : 300 / 400 / 600 / 900\n" +
-                "이차 피해 : 150 / 200 / 300 / 450", 1, synergy, hp, attack, 0.6, 3, 20, 20, R.drawable.lissandra_skill,synergy.size)
+                , "피해량 : 350 / 450 / 600 / 900\n" +
+                "이차 피해 : 175 / 225 / 300 / 450", 1, synergy, hp, attack, 0.6, 3, 20, 20, R.drawable.lissandra_skill,synergy.size)
 
     }
 
@@ -116,7 +116,7 @@ class ChampData {
         val attack: List<Int> = listOf(40, 72, 130)
 
         return Champ("베인", R.drawable.vayne, "은화살", "마나: 없음","기본 지속 효과: 베인이 같은 대상을 3회 기본 공격할 때마다 추가 고정 피해를 입힙니다."
-                , "추가 고정 피해 : 40 / 75 / 125", 1, synergy, hp, attack, 0.8, 1, 20, 20, R.drawable.vayne_skill,synergy.size)
+                , "추가 고정 피해 : 40 / 75 / 125", 1, synergy, hp, attack, 0.9, 1, 20, 20, R.drawable.vayne_skill,synergy.size)
 
     }
 
@@ -148,8 +148,8 @@ class ChampData {
         val attack: List<Int> = listOf(45 / 81 / 146)
 
         return Champ("애니", R.drawable.annie, "폭발 보호막","마나: 0/65", "애니가 원뿔 형태의 화염을 내뿜어 전방의 모든 적에게 마법 피해를 입히고 8초 동안 피해를 흡수하는 보호막을 얻습니다."
-                , "피해량 : 200 / 300 / 450\n" +
-                "보호막 흡수량 : 400 / 600 / 900", 2, synergy, hp, attack, 0.6, 2, 40, 40, R.drawable.annie_skill,synergy.size)
+                , "피해량 : 250 / 350 / 450\n" +
+                "보호막 흡수량 : 500 / 700 / 900", 2, synergy, hp, attack, 0.6, 2, 40, 40, R.drawable.annie_skill,synergy.size)
 
     }
 
@@ -158,8 +158,8 @@ class ChampData {
         val hp: List<Int> = listOf(500, 900, 1620)
         val attack: List<Int> = listOf(45, 81, 146)
 
-        return Champ("아펠리오스", R.drawable.aphelios, "파수탑","마나: 120/180", "아펠리오스가 수 초 동안 유지되는 포탑을 소환합니다. 아펠리오스의 의지가 담긴 포탑은 아펠리오스와 똑같이 공격하고 피해를 입히며, 아펠리오스가 죽으면 함께 파괴됩니다."
-                , "지속시간 : 6 / 7 / 8 / 11", 2, synergy, hp, attack, 0.7, 4, 20, 20, R.drawable.aphelios_skill,synergy.size)
+        return Champ("아펠리오스", R.drawable.aphelios, "파수탑","마나: 90/180", "아펠리오스가 수 초 동안 유지되는 포탑을 소환합니다. 아펠리오스의 의지가 담긴 포탑은 아펠리오스와 똑같이 공격하고 피해를 입히며, 아펠리오스가 죽으면 함께 파괴됩니다."
+                , "지속시간 : 7 / 8 / 9 / 11", 2, synergy, hp, attack, 0.7, 4, 20, 20, R.drawable.aphelios_skill,synergy.size)
     }
 
     fun getHecarim(): Champ {
@@ -199,8 +199,8 @@ class ChampData {
         val hp: List<Int> = listOf(750, 1350, 2430)
         val attack: List<Int> = listOf(60, 108, 194)
 
-        return Champ("잭스", R.drawable.jax, "반격", "마나: 50/125","잭스가 2초 동안 모든 공격을 회피한 후, 주변 적들을 후려쳐 마법 피해를 입히고 1.5초 동안 기절시킵니다."
-                , "피해량 : 150 / 250 / 450", 2, synergy, hp, attack, 0.65, 1, 40, 30, R.drawable.jax_skill,synergy.size)
+        return Champ("잭스", R.drawable.jax, "반격", "마나: 50/100","잭스가 2초 동안 모든 공격을 회피한 후, 주변 적들을 후려쳐 마법 피해를 입히고 1.5초 동안 기절시킵니다."
+                , "피해량 : 150 / 250 / 450", 2, synergy, hp, attack, 0.75, 1, 40, 30, R.drawable.jax_skill,synergy.size)
 
     }
 
@@ -383,8 +383,8 @@ class ChampData {
         val attack : List<Int> = listOf(40, 72, 130)
 
         return Champ("베이가",R.drawable.veigar, "어둠의 꽃","마나: 0/45","베이가가 체력이 가장 낮은 적을 공격해 마법 피해를 입힙니다. 이 스킬로 적을 처치하면 베이가의 주문력이 영구적으로 상승합니다."
-                ,"피해량 : 500 / 650 / 1150\n" +
-                "얻는 주문력 : 1 / 2 / 5",3,synergy,hp,attack,0.6,3,20,20, R.drawable.veigar_skill,synergy.size)
+                ,"피해량 : 450 / 600 / 900\n" +
+                "얻는 주문력 : 1 / 2 / 4",3,synergy,hp,attack,0.6,3,20,20, R.drawable.veigar_skill,synergy.size)
     }
 
     fun getXinZhao() : Champ{
@@ -393,7 +393,7 @@ class ChampData {
         val attack : List<Int> = listOf(65, 117, 211)
 
 
-        return Champ("신 짜오",R.drawable.xinzhao, "헌월수호","마나: 0/50","신 짜오가 주위로 창을 휘둘러 공격력에 비례한 피해를 입히고 적중한 적들에게 6초 동안 도전합니다. 도전을 받은 적에게 신 짜오의 기본 공격은 증가된 피해를 입히고, 이외의 적에게서 받는 모든 피해량이 85% 감소합니다."
+        return Champ("신 짜오",R.drawable.xinzhao, "헌월수호","마나: 0/30","신 짜오가 주위로 창을 휘둘러 공격력에 비례한 피해를 입히고 적중한 적들에게 6초 동안 도전합니다. 도전을 받은 적에게 신 짜오의 기본 공격은 증가된 피해를 입히고, 이외의 적에게서 받는 모든 피해량이 85% 감소합니다."
                 ,"최초 피해량 : 200 / 250 / 350\n" +
                 "기본 공격 피해량 증가 : 200 / 200 / 200",3,synergy,hp,attack,0.8,1,45,30, R.drawable.xinzhao_skill,synergy.size)
 
@@ -405,7 +405,7 @@ class ChampData {
         val attack : List<Int> = listOf(40, 72, 130)
 
         return Champ("유미",R.drawable.yuumi, "슈우우웅","마나: 0/40","유미가 체력이 가장 낮은 아군에게 날아가 잃은 체력의 일부를 회복시키고 5초 동안 추가 공격 속도를 부여합니다. 그리고 가장 멀리 있는 아군에게 다시 날아가 같은 스킬을 반복합니다."
-                ,"회복량 : 30% / 45% / 60%\n" +
+                ,"회복량 : 30% / 40% / 60%\n" +
                 "공격 속도 : 30% / 40% / 50%",3,synergy,hp,attack,0.6,3,20,20, R.drawable.yuumi_skill,synergy.size)
 
     }
@@ -437,7 +437,7 @@ class ChampData {
         val attack : List<Int> = listOf(80 / 144 / 259)
 
         return Champ("애쉬",R.drawable.ashe, "사냥꾼의 집중","마나: 0/30,","5초 동안 애쉬의 공격 속도가 오르며 기본 공격이 다발 공격으로 변경되어 물리 피해를 입힙니다.",
-                "공격 속도 : 50% / 75% / 300%\n" +
+                "공격 속도 : 45% / 65% / 300%\n" +
                         "화살당 피해량 : 45% / 45% / 45%",4,synergy,hp,attack,0.75,4,25,20, R.drawable.ashe_skill,synergy.size)
 
     }
@@ -478,8 +478,8 @@ class ChampData {
         val hp : List<Int> = listOf(950, 1710, 3078)
         val attack : List<Int> = listOf(60, 108, 194)
 
-        return Champ("쉔",R.drawable.shen, "그림자 돌진","마나: 60/120","쉔이 대상을 통과해 돌진하며 4초 동안 피해를 흡수하는 보호막을 얻고 근처 모든 적을 도발합니다.",
-                "보호막 흡수량 : 500 / 800 / 4000",4,synergy,hp,attack,0.65,1,50,40, R.drawable.shen_skill,synergy.size)
+        return Champ("쉔",R.drawable.shen, "그림자 돌진","마나: 50/100","쉔이 대상을 통과해 돌진하며 4초 동안 피해를 흡수하는 보호막을 얻고 근처 모든 적을 도발합니다.",
+                "보호막 흡수량 : 500 / 800 / 4000\n" +"쉔 그림자 돌진 보호막 및 도발 지속시간: 4 / 4 / 8",4,synergy,hp,attack,0.65,1,50,40, R.drawable.shen_skill,synergy.size)
 
     }
 
@@ -501,9 +501,9 @@ class ChampData {
         val attack : List<Int> = listOf(70, 126, 227)
 
         return Champ("리븐",R.drawable.riven, "휩쓰는 공격","마나: 0/20","리븐이 돌진하며 피해를 흡수하는 보호막을 얻은 후 전방을 베어 근처 적에게 마법 피해를 입힙니다. 리븐은 세 번째 공격마다 공중으로 도약한 후 앞으로 커다란 에너지 파동을 발사하여 마법 피해를 입힙니다.",
-                "보호막 흡수량 : 175 / 250 / 1000\n" +
-                        "피해량 : 180 / 250 / 1000\n" +
-                        "파동 피해량 : 300 / 450 / 2000",4,synergy,hp,attack,0.75,1,35,30, R.drawable.riven_skill,synergy.size)
+                "보호막 흡수량 : 175 / 250 / 750\n" +
+                        "피해량 : 180 / 250 / 750\n" +
+                        "파동 피해량 : 300 / 450 / 1500",4,synergy,hp,attack,0.75,1,35,30, R.drawable.riven_skill,synergy.size)
 
     }
 
@@ -564,7 +564,7 @@ class ChampData {
         val synergy : List<Synergy> = listOf(SynergyData().getDivine(), SynergyData().getDuelist())
         val hp : List<Int> = listOf(1000, 1800, 3240)
         val attack : List<Int> = listOf(60, 108, 194)
-        return Champ("리신",R.drawable.leesin, "신의 권","마나: 0/50","리 신이 대상에게 주먹을 휘둘러 마법 피해를 입히고 전장 끝으로 날려 버리며 수 초 동안 기절시킵니다. 날아가는 대상과 충돌하는 적들은 절반의 피해를 입고 1.5초 동안 기절합니다. 만약 더 날아갈 공간이 없을 경우, 대상은 전장 밖으로 나가며 전투에서 제외됩니다. 대상이 살아 있으면 리 신이 돌진합니다",
+        return Champ("리신",R.drawable.leesin, "신의 권","마나: 0/40","리 신이 대상에게 주먹을 휘둘러 마법 피해를 입히고 전장 끝으로 날려 버리며 수 초 동안 기절시킵니다. 날아가는 대상과 충돌하는 적들은 절반의 피해를 입고 1.5초 동안 기절합니다. 만약 더 날아갈 공간이 없을 경우, 대상은 전장 밖으로 나가며 전투에서 제외됩니다. 대상이 살아 있으면 리 신이 돌진합니다",
                 "피해량 : 250 / 450 / 1000\n" +
                         "기절 지속시간 : 3 / 4 / 10",5,synergy,hp,attack,0.85,1,50,50, R.drawable.leesin_skill,synergy.size)
 
@@ -588,7 +588,7 @@ class ChampData {
         val attack : List<Int> = listOf(60, 108, 194)
 
 
-        return Champ("세트",R.drawable.sett, "대미 장식","마나: 50/125","세트가 대상을 붙잡아 앞으로 내리꽂으며 대상 최대 체력에 비례한 마법 피해를 입힙니다. 내리꽂은 지점 주변 넓은 영역 내의 모든 적은 대상 최대 체력의 %에 해당하는 피해를 입습니다." ,
+        return Champ("세트",R.drawable.sett, "대미 장식","마나: 70/175","세트가 대상을 붙잡아 앞으로 내리꽂으며 대상 최대 체력에 비례한 마법 피해를 입힙니다. 내리꽂은 지점 주변 넓은 영역 내의 모든 적은 대상 최대 체력의 %에 해당하는 피해를 입습니다." ,
                 "1차 피해량 % : 35% / 45% / 400%\n" +
                         "2차 피해량 % : 20% / 30% / 200%",5,synergy,hp,attack,0.75,1,60,30, R.drawable.sett_skill,synergy.size)
 
@@ -599,7 +599,7 @@ class ChampData {
         val hp : List<Int> = listOf(950, 1710, 3078)
         val attack : List<Int> = listOf(80, 144, 259)
 
-        return Champ("요네",R.drawable.yone, "운명봉인","마나: 0/100","요네가 전방의 경로에 있는 적들을 공격해 마법 피해를 나눠서 입히고 1.5초 동안 공중에 띄웁니다. 적중한 적들에게는 죽음의 표식이 남아 방어력과 마법 저항력이 60% 감소합니다. 그리고 죽음의 표식이 남은 적이 모두 사라질 때까지 요네의 스킬이 잊히지 못한 자로 바뀝니다. 잊히지 못한 자 (20마나): 요네가 죽음의 표식이 남은 적들 중 가장 체력이 낮은 적에게 돌진해 기본 마법 피해와 대상이 잃은 체력에 비례한 추가 마법 피해를 입힙니다.",
+        return Champ("요네",R.drawable.yone, "운명봉인","마나: 0/80","요네가 전방의 경로에 있는 적들을 공격해 마법 피해를 나눠서 입히고 1.5초 동안 공중에 띄웁니다. 적중한 적들에게는 죽음의 표식이 남아 방어력과 마법 저항력이 60% 감소합니다. 그리고 죽음의 표식이 남은 적이 모두 사라질 때까지 요네의 스킬이 잊히지 못한 자로 바뀝니다. 잊히지 못한 자 (20마나): 요네가 죽음의 표식이 남은 적들 중 가장 체력이 낮은 적에게 돌진해 기본 마법 피해와 대상이 잃은 체력에 비례한 추가 마법 피해를 입힙니다.",
                 "피해량 : 800 / 1300 / 9999\n" +
                         "잊히지 못한 자 기본 피해량 : 250 / 400 / 1000",5,synergy,hp,attack,0.95,1,40,40, R.drawable.yone_skill,synergy.size)
 

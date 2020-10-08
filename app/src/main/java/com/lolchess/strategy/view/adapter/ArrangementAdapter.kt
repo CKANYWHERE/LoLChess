@@ -5,15 +5,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.lolchess.strategy.R
-import com.lolchess.strategy.model.Combined_items
-import com.lolchess.strategy.model.Tips
-import com.lolchess.strategy.model.data.Combined_Data
+import com.lolchess.strategy.model.Arrangement_tips
 import com.lolchess.strategy.view.viewholder.ArrangementViewHolder
 
-import com.lolchess.strategy.view.viewholder.ItemCombinedViewHolder
 
-
-class ArrangementAdapter(private var items: MutableList<Tips>)// recycler view binding 해주는 클래스
+class ArrangementAdapter(private var items: MutableList<Arrangement_tips>)// recycler view binding 해주는 클래스
     : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):  RecyclerView.ViewHolder{

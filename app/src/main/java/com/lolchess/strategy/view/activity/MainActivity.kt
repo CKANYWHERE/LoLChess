@@ -103,6 +103,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 true
             }
 
+            R.id.action_tips -> {
+                val fragment = Tips.newInstance()
+                replaceFragment(fragment)
+                true
+            }
+
             R.id.action_arrangement -> {
                 val fragment = Arrangement.newInstance()
                 replaceFragment(fragment)

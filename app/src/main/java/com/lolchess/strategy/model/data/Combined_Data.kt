@@ -81,13 +81,13 @@ class Combined_Data {
 
 
     fun Sunfire_Cape(): Combined_items{
-        return Combined_items("태양불꽃 망토", "고유] 전투 시작 시 및 1초마다 2칸 내에 있는 무작위 적 하나가 불타 10초 동안 최대 체력의 25%에 해당하는 피해를 입고 체력 회복 효과 50% 감소"
+        return Combined_items("태양불꽃 망토", "[고유 효과] 전투 시작 시 및 2초마다 2칸 내에 있는 무작위 적 하나가 불타 10초 동안 최대 체력의 25%에 해당하는 피해를 입고 체력 회복 효과 50% 감소"
                 , "체력 +200, 방어력 +25", R.drawable.sunfirecape, R.drawable.belt, R.drawable.vest)
     }
 
 
     fun Statikk_Shiv(): Combined_items{
-        return Combined_items("스태틱의 단검", "세 번째 기본 공격마다 3/4/5 명의 적에게 80의 마법 피해, 보호막을 가진 적이나 군중 제어 효과에 적중된 적에게 고정 피해 85를 추가로 입힙니다."
+        return Combined_items("스태틱의 단검", "세 번째 기본 공격마다 3/4/5 명의 적에게 85의 마법 피해, 보호막을 가진 적이나 군중 제어 효과에 적중된 적에게 고정 피해 85를 추가로 입힙니다."
                 , "시작 마나 +15, 공격속도 +15%",R.drawable.statikk,  R.drawable.tear, R.drawable.bow)
     }
 
@@ -179,7 +179,7 @@ class Combined_Data {
     }
 
     fun Luden_Echo(): Combined_items{
-        return Combined_items("루덴의 메아리", "스킬 사용 시 처음 마법 피해를 입은 적과 주변에 있는 최대 3명의 적에게 180의 추가 마법 피해"
+        return Combined_items("루덴의 메아리", "스킬 사용 시 처음 마법 피해를 입은 적과 주변에 있는 최대 3명의 적에게 200의 추가 마법 피해"
                 , "시작 마나 +15, 주문력 +15%", R.drawable.luden, R.drawable.needlesslyrod, R.drawable.tear)
     }
     fun Frozen_Heart(): Combined_items{

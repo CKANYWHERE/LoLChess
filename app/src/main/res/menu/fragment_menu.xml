@@ -29,9 +29,15 @@
         />
 
     <item
+        android:id = "@+id/action_tips"
+        android:title="소소한 팁"
+        android:icon = "@drawable/ic_image5"
+        />
+
+    <item
         android:id = "@+id/action_simulator"
         android:title="@string/simulator"
-        android:icon = "@drawable/ic_image5"
+        android:icon = "@drawable/ic_image6"
         />
     </group>
 </menu>

@@ -23,7 +23,7 @@ class SynergyData {
 
     fun getDusk(): Synergy{
         val description : String = "황혼 챔피언은 모든 아군의 주문력을 증가시킵니다."
-        val option : List<String> = listOf("② 모든 아군의 주문력이 20% 증가", "④ 황혼 챔피언의 주문력이 추가로 50% 증가", "⑥ 모든 아군의 주문력이 50%, 황혼 챔피언의 주문력이 추가로 75% 증가")
+        val option : List<String> = listOf("② 모든 아군의 주문력이 20% 증가", "④ 황혼 챔피언의 주문력이 추가로 50% 증가", "⑥ 모든 아군의 주문력이 40%, 황혼 챔피언의 주문력이 추가로 70% 증가")
         val level: List<Int> = listOf(2, 4, 6, 8)
 
         return Synergy("황혼", R.drawable.dusk,description, option, level)
@@ -84,7 +84,7 @@ class SynergyData {
 
     fun getSpirit(): Synergy{
         val description : String = "영혼이 처음 스킬을 사용하면 해당 스킬 마나 소모량에 비례해 모든 아군의 공격 속도가 증가합니다."
-        val option : List<String> = listOf("② 마나 소모량의 35%", "④ 마나 소모량의 90%")
+        val option : List<String> = listOf("② 마나 소모량의 35%", "④ 마나 소모량의 70%")
         val level: List<Int> = listOf(2, 4)
 
         return Synergy("영혼", R.drawable.spirit,description, option, level)
